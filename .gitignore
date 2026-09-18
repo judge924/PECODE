@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Env
+.env
+
+# Lockfile (Windows/Linux 크로스플랫폼 빌드 문제로 제외)
+package-lock.json
