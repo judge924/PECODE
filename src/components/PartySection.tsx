@@ -371,13 +371,10 @@ export const PartySection: React.FC<PartySectionProps> = ({
     onSelectPolitician,
     fullOrgChart = false,
 }) => {
-    // String()으로 유연하게 변환하여 '무소속 및 기타' 비교 시 타입 에러를 원천 방지
+    // 무소속 섹션으로 들어온 의원들은 100% 누락 없이 통과
     const members = politicians.filter((p) => {
-        const pParty = String(p.party || '');
-        if (party === '무소속' || party === '무소속 및 기타') {
-            return pParty === '무소속' || pParty === '무소속 및 기타' || pParty === '';
-        }
-        return pParty === party;
+        if (party.includes('무소속')) return true;
+        return String(p.party || '') === party;
     });
     if (members.length === 0) return null;
 

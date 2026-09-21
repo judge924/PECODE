@@ -80,12 +80,12 @@ export const HomeOrgView: React.FC<HomeOrgViewProps> = ({
                         </div>
                     </div>
 
-                    {/* 무소속 및 기타 영역 */}
+                    {/* 무소속 및 기타 영역 (타입 충돌 없이 원본 그대로 전달) */}
                     {independents.length > 0 && (
                         <div className="mt-8">
                             <PartySection
                                 party="무소속 및 기타"
-                                politicians={independents.map((p) => ({ ...p, party: '무소속 및 기타' }))}
+                                politicians={independents}
                                 selectedPolitician={selectedPolitician}
                                 onSelectPolitician={onSelectPolitician}
                             />
