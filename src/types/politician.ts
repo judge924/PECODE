@@ -36,6 +36,10 @@ export interface Politician {
   level: PoliticianLevel;
   levelLabel: string; // '국회의원' | '서울특별시의원' | '마포구의원' 등
   party: PartyType;
+  partyRole?: string;       // 정당 내 직책: '당대표' | '원내대표' | '정책위의장' | '사무총장' | '최고위원' | undefined(일반 의원)
+  partyRoleOrder?: number;  // 조직도 배치 순서: 1=당대표, 2=원내대표, 3=정책위의장, 4=사무총장, 5=최고위원
+  isAssemblyMember?: boolean;
+  electedTerms?: number[]; // 당선된 대수 목록, 예: [21, 22]
   metroRegion: string; // 예: '서울특별시'
   localRegion: string; // 예: '마포구'
   district: string; // 예: '마포구 갑', '마포구 제1선거구', '마포구 가선거구'

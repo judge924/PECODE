@@ -1,12 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 
+// 내 컴퓨터에서 직접 실행할 때 .env 파일이 있으면 자동으로 키를 읽어옵니다.
+if (!process.env.ASSEMBLY_API_KEY && fs.existsSync('.env')) {
+    const envContent = fs.readFileSync('.env', 'utf-8');
+    const match = envContent.match(/ASSEMBLY_API_KEY\s*=\s*["']?([^"'\r\n]+)["']?/);
+    if (match) {
+        process.env.ASSEMBLY_API_KEY = match[1].trim();
+    }
+}
+
 const API_KEY = process.env.ASSEMBLY_API_KEY;
 const SERVICE_ID = 'ALLNAMEMBER'; // 공식 명세서 기준 서비스 ID (사진 포함!)
 const BASE_URL = `https://open.assembly.go.kr/portal/openapi/${SERVICE_ID}`;
 
 if (!API_KEY) {
-    console.error('❌ ASSEMBLY_API_KEY가 없습니다. .env 파일을 확인해주세요.');
+    console.error('❌ ASSEMBLY_API_KEY가 없습니다. .env 파일에 ASSEMBLY_API_KEY=키값 이 적혀있는지 확인해주세요.');
     process.exit(1);
 }
 
@@ -38,6 +47,44 @@ const MANUAL_INDEPENDENT_NAMES = [
     '김병기', '이춘석', '최혁진', '한동훈',
 ];
 
+// 정당 지도부 명단 (당대표/원내대표/정책위의장/사무총장/최고위원)
+// ⚠️ 전당대회 등으로 지도부가 바뀌면 이 목록을 직접 업데이트해야 합니다. (기준일: 2026년 9월)
+const PARTY_LEADERSHIP = {
+    // ── 국민의힘 ──
+    '장동혁': { role: '당대표', order: 1 },
+    '정점식': { role: '원내대표', order: 2 },
+    '신동욱': { role: '최고위원', order: 3 },
+    '김민수': { role: '최고위원', order: 3 },
+    '양향자': { role: '최고위원', order: 3 },
+    '김재원': { role: '최고위원', order: 3 },
+    '우재준': { role: '최고위원', order: 3 },
+    '조광한': { role: '최고위원', order: 3 },
+    '임이자': { role: '정책위의장', order: 4 },
+    '정희용': { role: '사무총장', order: 5 },
+
+    // ── 더불어민주당 ──
+    '김민석': { role: '당대표', order: 1 },
+    '한병도': { role: '원내대표', order: 2 },
+    '최민희': { role: '최고위원', order: 3 },
+    '박선원': { role: '최고위원', order: 3 },
+    '서미화': { role: '최고위원', order: 3 },
+    '이성윤': { role: '최고위원', order: 3 },
+    '한민수': { role: '최고위원', order: 3 },
+    '전용기': { role: '최고위원', order: 3 },
+    '권미경': { role: '최고위원', order: 3 },
+    '권칠승': { role: '정책위의장', order: 4 },
+    '한정애': { role: '사무총장', order: 5 },
+};
+
+// 지도부 중 국회의원이 아닌 사람은 API에 없으니, 여기에 최소 정보만 직접 채워주세요.
+// 이름은 자동 검출 로그(⚠️ 국회의원이 아닌 당직자)를 보고 채우면 됩니다.
+const NON_MP_PARTY_OFFICIALS = [
+    { name: '김민수', party: '국민의힘' },
+    { name: '양향자', party: '국민의힘' },
+    { name: '조광한', party: '국민의힘' },
+    { name: '권미경', party: '더불어민주당' },
+];
+
 function normalizeParty(polyNm) {
     const resolved = PARTY_ALIASES[polyNm] || polyNm;
     if (KNOWN_PARTIES.includes(resolved)) return resolved;
@@ -62,6 +109,18 @@ function takeLatest(value) {
     if (!value) return '';
     const parts = String(value).split('/');
     return parts[parts.length - 1].trim();
+}
+
+// "제21대, 제22대" 같은 문자열에서 숫자만 뽑아 [21, 22] 형태로 반환
+function parseElectedTerms(gteltEraco) {
+    if (!gteltEraco) return [];
+    return gteltEraco
+        .split(',')
+        .map((s) => {
+            const m = s.trim().match(/(\d+)대/);
+            return m ? parseInt(m[1], 10) : null;
+        })
+        .filter((n) => n !== null);
 }
 
 // 국회 API가 주는 사진은 원본 고화질이라 용량이 큽니다.
@@ -133,25 +192,6 @@ async function main() {
     );
     console.log(`🔍 제22대 현직 의원 필터링 결과: ${currentRows.length}명`);
 
-    // ── 진단용: 같은 지역구에 2명 이상 잡히는 경우 찾기 ──
-    const districtMap = {};
-    for (const row of currentRows) {
-        const district = takeLatest(row.ELECD_NM);
-        if (district === '비례대표') continue; // 비례대표는 여러 명 있는 게 정상
-        if (!districtMap[district]) districtMap[district] = [];
-        districtMap[district].push(row);
-    }
-    for (const [district, members] of Object.entries(districtMap)) {
-        if (members.length > 1) {
-            console.log(`\n⚠️ 지역구 중복 발견: "${district}"`);
-            members.forEach((m) => {
-                console.log(
-                    `   - ${m.NAAS_NM} (${m.NAAS_CD}) / 정당: ${m.PLPT_NM} / 당선대수: ${m.GTELT_ERACO} / 직책: ${m.DTY_NM}`
-                );
-            });
-        }
-    }
-
     // ── 3. 우리 프로젝트 형태로 변환 ──
     const politicians = currentRows.map((row) => {
         const currentDistrict = takeLatest(row.ELECD_NM);
@@ -168,6 +208,10 @@ async function main() {
             party: MANUAL_INDEPENDENT_NAMES.includes(row.NAAS_NM)
                 ? '무소속'
                 : normalizeParty(takeLatest(row.PLPT_NM)),
+            partyRole: PARTY_LEADERSHIP[row.NAAS_NM]?.role,
+            partyRoleOrder: PARTY_LEADERSHIP[row.NAAS_NM]?.order,
+            isAssemblyMember: true,
+            electedTerms: parseElectedTerms(row.GTELT_ERACO),
             metroRegion,
             localRegion,
             district: currentDistrict || '비례대표',
@@ -191,9 +235,98 @@ async function main() {
         };
     });
 
+    // ── 정당 지도부 중 국회의원이 아닌 사람 찾아내기 ──
+    const matchedNames = politicians.map((p) => p.name);
+    const unmatchedLeaders = Object.keys(PARTY_LEADERSHIP).filter(
+        (name) => !matchedNames.includes(name)
+    );
+    if (unmatchedLeaders.length > 0) {
+        console.log(`\n⚠️ 국회의원이 아닌 당직자 (NON_MP_PARTY_OFFICIALS에 추가 필요): ${unmatchedLeaders.join(', ')}`);
+    }
+
+    // ── 비국회의원 당직자 처리 (이미 받아둔 역대 3,296명 명단에서 과거 당선 이력 자동 매칭!) ──
+    const nonMpEntries = NON_MP_PARTY_OFFICIALS.map((official, idx) => {
+        const leadership = PARTY_LEADERSHIP[official.name];
+        // 3,296건의 역대 전체 의원 명단(allRows)에서 해당 이름의 전직 의원 데이터가 있는지 자동 검색!
+        const histRow = allRows.find((row) => row.NAAS_NM === official.name);
+
+        if (histRow) {
+            console.log(`✨ 전직 국회의원 당직자 발견: ${official.name} (선출 대수: ${histRow.GTELT_ERACO || '기록 없음'})`);
+            const pastDistrict = takeLatest(histRow.ELECD_NM);
+            const { metroRegion, localRegion } = parseRegion(pastDistrict);
+
+            return {
+                id: histRow.NAAS_CD || `party-official-${idx}`,
+                name: official.name,
+                hanjaName: histRow.NAAS_CH_NM || '',
+                birthDate: histRow.BIRDY_DT || '',
+                photoUrl: toThumbnail(histRow.NAAS_PIC), // 과거 국회 공식 사진 자동 연동
+                level: 'NATIONAL',
+                levelLabel: '당직자',
+                party: official.party,
+                partyRole: leadership?.role,
+                partyRoleOrder: leadership?.order,
+                isAssemblyMember: false, // 22대 현역은 아니므로 false
+                electedTerms: parseElectedTerms(histRow.GTELT_ERACO), // 과거 당선 대수 [21] 자동 추출!
+                metroRegion,
+                localRegion,
+                district: pastDistrict || '비례대표',
+                roleTitle: leadership?.role || '',
+                committee: '',
+                term: takeLatest(histRow.GTELT_ERACO) || '',
+                timesElected: parseTimesElected(histRow.RLCT_DIV_NM), // 1선 자동 파싱!
+                attendanceRate: 0,
+                billsCount: 0,
+                propertyAsset: 0,
+                career: histRow.BRF_HST
+                    ? histRow.BRF_HST.split('\r\n').map((line) => line.trim()).filter(Boolean)
+                    : [],
+                bills: [],
+                pledges: [],
+                contact: {
+                    phone: histRow.NAAS_TEL_NO || '',
+                    email: histRow.NAAS_EMAIL_ADDR || '',
+                    blogOrSns: histRow.NAAS_HP_URL || '',
+                },
+            };
+        }
+
+        // 역대 국회의원 이력이 전혀 없는 순수 당직자 (예: 김민수, 조광한 등)
+        return {
+            id: `party-official-${idx}`,
+            name: official.name,
+            hanjaName: '',
+            birthDate: '',
+            photoUrl: '',
+            level: 'NATIONAL',
+            levelLabel: '당직자',
+            party: official.party,
+            partyRole: leadership?.role,
+            partyRoleOrder: leadership?.order,
+            isAssemblyMember: false,
+            electedTerms: [],
+            metroRegion: '',
+            localRegion: '',
+            district: '',
+            roleTitle: leadership?.role || '',
+            committee: '',
+            term: '',
+            timesElected: 0,
+            attendanceRate: 0,
+            billsCount: 0,
+            propertyAsset: 0,
+            career: [],
+            bills: [],
+            pledges: [],
+            contact: {},
+        };
+    });
+
+    const finalPoliticians = [...politicians, ...nonMpEntries];
+
     const outputPath = path.resolve('src/data/politicians.json');
-    fs.writeFileSync(outputPath, JSON.stringify(politicians, null, 2), 'utf-8');
-    console.log(`🎉 완료! ${politicians.length}명의 국회의원 데이터(사진 포함)를 저장했습니다.`);
+    fs.writeFileSync(outputPath, JSON.stringify(finalPoliticians, null, 2), 'utf-8');
+    console.log(`🎉 완료! ${finalPoliticians.length}명의 데이터를 저장했습니다. (국회의원 ${politicians.length}명 + 당직자 ${nonMpEntries.length}명)`);
 }
 
 main().catch((err) => {

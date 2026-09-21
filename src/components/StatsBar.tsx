@@ -6,8 +6,13 @@ interface StatsBarProps {
 }
 
 export const StatsBar: React.FC<StatsBarProps> = ({ hierarchy }) => {
+  // 정당 지도부 중 비의원(당직자)은 "국회의원 수"에서 제외
+  const nationalAssemblyOnly = hierarchy.nationalAssembly.filter(
+    (p) => p.isAssemblyMember !== false
+  );
+
   const allMembers = [
-    ...hierarchy.nationalAssembly,
+    ...nationalAssemblyOnly,
     ...hierarchy.metroCouncil,
     ...hierarchy.localCouncil,
   ];
@@ -44,7 +49,7 @@ export const StatsBar: React.FC<StatsBarProps> = ({ hierarchy }) => {
               <Landmark className="w-3 h-3" /> 국회의원
             </div>
             <div className="font-mono text-xl font-black text-neutral-900 mt-0.5">
-              {hierarchy.nationalAssembly.length}
+              {nationalAssemblyOnly.length}
               <span className="text-xs font-normal text-neutral-500 ml-0.5">석</span>
             </div>
           </div>

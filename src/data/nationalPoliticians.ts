@@ -19,8 +19,13 @@ export const NATIONAL_ASSEMBLY_299: Politician[] = (rawData as any[]).map((p) =>
   birthDate: p.birthDate,
   photoUrl: p.photoUrl || '',
   level: 'NATIONAL',
-  levelLabel: buildLevelLabel(p.term, p.timesElected),
+  levelLabel: p.isAssemblyMember === false
+    ? (p.partyRole || '당직자')
+    : buildLevelLabel(p.term, p.timesElected),
   party: p.party as PartyType,
+  partyRole: p.partyRole,
+  partyRoleOrder: p.partyRoleOrder,
+  isAssemblyMember: p.isAssemblyMember,
   metroRegion: p.metroRegion,
   localRegion: p.localRegion,
   district: p.district,

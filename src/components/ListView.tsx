@@ -7,6 +7,7 @@ interface ListViewProps {
   politicians: Politician[];
   selectedPolitician: Politician | null;
   onSelectPolitician: (politician: Politician) => void;
+  onPartyClick?: (party: string) => void;
 }
 
 // 진보·범야권 정당 목록
@@ -18,6 +19,7 @@ export const ListView: React.FC<ListViewProps> = ({
   politicians,
   selectedPolitician,
   onSelectPolitician,
+  onPartyClick,
 }) => {
   const [selectedLevel, setSelectedLevel] = useState<string>('ALL');
   const [selectedParty, setSelectedParty] = useState<string>('ALL');
@@ -27,6 +29,7 @@ export const ListView: React.FC<ListViewProps> = ({
   const filtered = useMemo(() => {
     return politicians
       .filter((p) => {
+        if (p.isAssemblyMember === false) return false; // 당직자(비의원)는 목록에서 제외
         if (selectedLevel !== 'ALL' && p.level !== selectedLevel) return false;
         if (selectedParty !== 'ALL' && p.party !== selectedParty) return false;
         return true;
@@ -139,6 +142,7 @@ export const ListView: React.FC<ListViewProps> = ({
                 politician={politician}
                 isSelected={selectedPolitician?.id === politician.id}
                 onClick={onSelectPolitician}
+                onPartyClick={onPartyClick}
               />
             ))}
             {leftWingPoliticians.length === 0 && (
@@ -165,6 +169,7 @@ export const ListView: React.FC<ListViewProps> = ({
                 politician={politician}
                 isSelected={selectedPolitician?.id === politician.id}
                 onClick={onSelectPolitician}
+                onPartyClick={onPartyClick}
               />
             ))}
             {rightWingPoliticians.length === 0 && (
@@ -193,6 +198,7 @@ export const ListView: React.FC<ListViewProps> = ({
                 politician={politician}
                 isSelected={selectedPolitician?.id === politician.id}
                 onClick={onSelectPolitician}
+                onPartyClick={onPartyClick}
               />
             ))}
           </div>

@@ -8,6 +8,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -48,6 +52,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "동구군위군을",
     "district": "대구 동구군위군을",
@@ -126,6 +135,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안양시만안구",
     "district": "경기 안양시만안구",
@@ -175,6 +189,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "구미시을",
     "district": "경북 구미시을",
@@ -219,6 +237,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "진주시을",
     "district": "경남 진주시을",
@@ -273,6 +296,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -321,6 +348,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강서구갑",
     "district": "서울 강서구갑",
@@ -385,6 +417,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "홍성군예산군",
     "district": "충남 홍성군예산군",
@@ -424,6 +461,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "세종특별자치시을",
     "localRegion": "세종특별자치시을",
     "district": "세종특별자치시을",
@@ -468,6 +510,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강남구병",
     "district": "서울 강남구병",
@@ -501,6 +547,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "광진구을",
     "district": "서울 광진구을",
@@ -554,6 +605,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "서구동구",
     "district": "부산 서구동구",
@@ -600,6 +655,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "종로구",
     "district": "서울 종로구",
@@ -656,6 +715,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "구미시갑",
     "district": "경북 구미시갑",
@@ -702,6 +766,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      16,
+      17,
+      18,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "용산구",
     "district": "서울 용산구",
@@ -737,6 +809,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "달서구병",
     "district": "대구 달서구병",
@@ -778,6 +855,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "정책위의장",
+    "partyRoleOrder": 4,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "화성시병",
     "district": "경기 화성시병",
@@ -827,6 +912,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "순천시광양시곡성군구례군을",
     "district": "전남 순천시광양시곡성군구례군을",
@@ -868,6 +957,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -906,6 +999,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "서구갑",
     "district": "인천 서구갑",
@@ -947,6 +1046,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "중구남구",
     "district": "대구 중구남구",
@@ -995,6 +1098,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "부천시을",
     "district": "경기 부천시을",
@@ -1039,6 +1146,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      18,
+      19,
+      21,
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "남구을",
     "district": "울산 남구을",
@@ -1084,6 +1199,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안산시갑",
     "district": "경기 안산시갑",
@@ -1124,6 +1244,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "성북구을",
     "district": "서울 성북구을",
@@ -1168,6 +1292,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "계양구을",
     "district": "인천 계양구을",
@@ -1205,6 +1333,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "광명시을",
     "district": "경기 광명시을",
@@ -1261,6 +1393,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "사상구",
     "district": "부산 사상구",
@@ -1311,6 +1447,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "강서구",
     "district": "부산 강서구",
@@ -1398,6 +1541,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "서대문구갑",
     "district": "서울 서대문구갑",
@@ -1436,6 +1583,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "순천시광양시곡성군구례군갑",
     "district": "전남 순천시광양시곡성군구례군갑",
@@ -1473,6 +1624,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "해운대구을",
     "district": "부산 해운대구을",
@@ -1510,6 +1666,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "당대표",
+    "partyRoleOrder": 1,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      15,
+      16,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "영등포구을",
     "district": "서울 영등포구을",
@@ -1558,6 +1723,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -1611,6 +1780,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "동작구갑",
     "district": "서울 동작구갑",
@@ -1658,6 +1833,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "남양주시을",
     "district": "경기 남양주시을",
@@ -1715,6 +1895,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "서구",
     "district": "대구 서구",
@@ -1762,6 +1949,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "경주시",
     "district": "경북 경주시",
@@ -1824,6 +2017,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "여주시양평군",
     "district": "경기 여주시양평군",
@@ -1862,6 +2060,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -1908,6 +2110,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "제주",
     "localRegion": "서귀포시",
     "district": "제주 서귀포시",
@@ -1944,6 +2150,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "동두천시양주시연천구을",
     "district": "경기 동두천시양주시연천구을",
@@ -2016,6 +2228,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "노원구을",
     "district": "서울 노원구을",
@@ -2054,6 +2272,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "고양시갑",
     "district": "경기 고양시갑",
@@ -2096,6 +2318,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -2145,6 +2371,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "북구을",
     "district": "대구 북구을",
@@ -2203,6 +2434,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "수원시갑",
     "district": "경기 수원시갑",
@@ -2255,6 +2491,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "성북구갑",
     "district": "서울 성북구갑",
@@ -2309,6 +2550,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "수원시병",
     "district": "경기 수원시병",
@@ -2358,6 +2605,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "서대문구을",
     "district": "서울 서대문구을",
@@ -2438,6 +2691,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "고양시정",
     "district": "경기 고양시정",
@@ -2487,6 +2744,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -2571,6 +2833,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "하남시을",
     "district": "경기 하남시을",
@@ -2610,6 +2876,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "남양주시병",
     "district": "경기 남양주시병",
@@ -2651,6 +2922,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "포천시가평군",
     "district": "경기 포천시가평군",
@@ -2695,6 +2970,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "은평구을",
     "district": "서울 은평구을",
@@ -2732,6 +3011,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "목포시",
     "district": "전남 목포시",
@@ -2779,6 +3063,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -2815,6 +3103,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -2858,6 +3150,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      21,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "전주시갑",
     "district": "전북 전주시갑",
@@ -2895,6 +3193,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "성남시분당구을",
     "district": "경기 성남시분당구을",
@@ -2941,6 +3244,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "군산시김제시부안군갑",
     "district": "전북 군산시김제시부안군갑",
@@ -2978,6 +3286,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -3018,6 +3330,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "도봉구갑",
     "district": "서울 도봉구갑",
@@ -3058,6 +3374,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -3109,6 +3431,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "포항시북구",
     "district": "경북 포항시북구",
@@ -3170,6 +3498,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "김해시을",
     "district": "경남 김해시을",
@@ -3218,6 +3552,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "세종특별자치시갑",
     "localRegion": "세종특별자치시갑",
     "district": "세종특별자치시갑",
@@ -3275,6 +3615,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "창원시의창구",
     "district": "경남 창원시의창구",
@@ -3316,6 +3660,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "김포시갑",
     "district": "경기 김포시갑",
@@ -3362,6 +3711,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "수원시정",
     "district": "경기 수원시정",
@@ -3397,6 +3750,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -3437,6 +3794,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -3474,6 +3835,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "남구갑",
     "district": "울산 남구갑",
@@ -3502,6 +3867,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "성남시수정구",
     "district": "경기 성남시수정구",
@@ -3545,6 +3918,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "동구",
     "district": "울산 동구",
@@ -3583,6 +3960,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "양산시을",
     "district": "경남 양산시을",
@@ -3620,6 +4004,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "제주",
     "localRegion": "제주시을",
     "district": "제주 제주시을",
@@ -3661,6 +4050,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안산시을",
     "district": "경기 안산시을",
@@ -3706,6 +4100,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "평택시병",
     "district": "경기 평택시병",
@@ -3743,6 +4141,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "안동시예천군",
     "district": "경북 안동시예천군",
@@ -3790,6 +4193,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -3827,6 +4234,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "연제구",
     "district": "부산 연제구",
@@ -3865,6 +4278,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      18,
+      19,
+      20,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "동작구을",
     "district": "서울 동작구을",
@@ -3905,6 +4326,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "송파구병",
     "district": "서울 송파구병",
@@ -3955,6 +4383,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "부평구갑",
     "district": "인천 부평구갑",
@@ -3983,6 +4415,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "남동구갑",
     "district": "인천 남동구갑",
@@ -4039,6 +4477,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "서구병",
     "district": "인천 서구병",
@@ -4075,6 +4517,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "고흥군보성군장흥군강진군",
     "district": "전남 고흥군보성군장흥군강진군",
@@ -4112,6 +4558,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "제주",
     "localRegion": "제주시갑",
     "district": "제주 제주시갑",
@@ -4148,6 +4598,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "시흥시갑",
     "district": "경기 시흥시갑",
@@ -4190,6 +4645,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "천안시갑",
     "district": "충남 천안시갑",
@@ -4241,6 +4701,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안양시동안구갑",
     "district": "경기 안양시동안구갑",
@@ -4301,6 +4766,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "김해시갑",
     "district": "경남 김해시갑",
@@ -4364,6 +4836,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "광산구갑",
     "district": "광주 광산구갑",
@@ -4421,6 +4897,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "진주시갑",
     "district": "경남 진주시갑",
@@ -4465,6 +4948,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "보은군옥천군영동군괴산군",
     "district": "충북 보은군옥천군영동군괴산군",
@@ -4516,6 +5006,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "관악구갑",
     "district": "서울 관악구갑",
@@ -4572,6 +5066,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "서구을",
     "district": "대전 서구을",
@@ -4636,6 +5137,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "밀양시의령군함안군창녕군",
     "district": "경남 밀양시의령군함안군창녕군",
@@ -4684,6 +5189,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "김포시을",
     "district": "경기 김포시을",
@@ -4739,6 +5249,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "부평구을",
     "district": "인천 부평구을",
@@ -4790,6 +5306,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "중구",
     "district": "울산 중구",
@@ -4840,6 +5361,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "중구성동구을",
     "district": "서울 중구성동구을",
@@ -4890,6 +5416,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "북구을",
     "district": "부산 북구을",
@@ -4932,6 +5462,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강남구을",
     "district": "서울 강남구을",
@@ -4973,6 +5507,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "남구",
     "district": "부산 남구",
@@ -5027,6 +5566,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "중구",
     "district": "대전 중구",
@@ -5064,6 +5607,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5098,6 +5645,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "파주시을",
     "district": "경기 파주시을",
@@ -5155,6 +5708,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "원주시갑",
     "district": "강원 원주시갑",
@@ -5201,6 +5759,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "대덕구",
     "district": "대전 대덕구",
@@ -5240,6 +5802,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "송파구갑",
     "district": "서울 송파구갑",
@@ -5268,6 +5834,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "은평구갑",
     "district": "서울 은평구갑",
@@ -5335,6 +5907,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5373,6 +5949,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "군산시김제시부안군을",
     "district": "전북 군산시김제시부안군을",
@@ -5416,6 +5996,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      14,
+      18,
+      19,
+      20,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "해남군완도군진도군",
     "district": "전남 해남군완도군진도군",
@@ -5455,6 +6043,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "의정부시갑",
     "district": "경기 의정부시갑",
@@ -5502,6 +6094,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5543,6 +6139,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안산시병",
     "district": "경기 안산시병",
@@ -5588,6 +6188,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "의성군청송군영덕군울진군",
     "district": "경북 의성군청송군영덕군울진군",
@@ -5639,6 +6244,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "중랑구을",
     "district": "서울 중랑구을",
@@ -5680,6 +6292,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5731,6 +6347,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "남원시장수군임실군순창군",
     "district": "전북 남원시장수군임실군순창군",
@@ -5780,6 +6400,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "중구강화군옹진군",
     "district": "인천 중구강화군옹진군",
@@ -5831,6 +6456,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "송파구을",
     "district": "서울 송파구을",
@@ -5905,6 +6535,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5943,6 +6577,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -5986,6 +6624,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "금정구",
     "district": "부산 금정구",
@@ -6034,6 +6677,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "수원시을",
     "district": "경기 수원시을",
@@ -6073,6 +6722,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "아산시갑",
     "district": "충남 아산시갑",
@@ -6119,6 +6773,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "용인시병",
     "district": "경기 용인시병",
@@ -6164,6 +6822,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강남구갑",
     "district": "서울 강남구갑",
@@ -6198,6 +6860,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -6239,6 +6907,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "울주군",
     "district": "울산 울주군",
@@ -6288,6 +6961,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "영암군무안군신안군",
     "district": "전남 영암군무안군신안군",
@@ -6335,6 +7014,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "중랑구갑",
     "district": "서울 중랑구갑",
@@ -6380,6 +7066,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "부천시갑",
     "district": "경기 부천시갑",
@@ -6440,6 +7131,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -6492,6 +7187,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "거제시",
     "district": "경남 거제시",
@@ -6542,6 +7242,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "동래구",
     "district": "부산 동래구",
@@ -6587,6 +7291,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "사천시남해군하동군",
     "district": "경남 사천시남해군하동군",
@@ -6631,6 +7339,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "서산시태안군",
     "district": "충남 서산시태안군",
@@ -6720,6 +7434,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "광주시갑",
     "district": "경기 광주시갑",
@@ -6768,6 +7488,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "용인시을",
     "district": "경기 용인시을",
@@ -6805,6 +7529,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -6838,6 +7566,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "원주시을",
     "district": "강원 원주시을",
@@ -6892,6 +7626,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "이천시",
     "district": "경기 이천시",
@@ -6950,6 +7690,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "김천시",
     "district": "경북 김천시",
@@ -7003,6 +7749,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      16,
+      17,
+      18,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "연수구갑",
     "district": "인천 연수구갑",
@@ -7044,6 +7799,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "화성시갑",
     "district": "경기 화성시갑",
@@ -7082,6 +7843,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "청주시청원구",
     "district": "충북 청주시청원구",
@@ -7133,6 +7898,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "서초구을",
     "district": "서울 서초구을",
@@ -7177,6 +7948,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "산청군함양군거창군합천군",
     "district": "경남 산청군함양군거창군합천군",
@@ -7217,6 +7994,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -7260,6 +8041,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      21,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "나주시화순군",
     "district": "전남 나주시화순군",
@@ -7301,6 +8088,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "동대문구갑",
     "district": "서울 동대문구갑",
@@ -7389,6 +8184,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "동구남구을",
     "district": "광주 동구남구을",
@@ -7439,6 +8238,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -7477,6 +8280,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "성남시분당구갑",
     "district": "경기 성남시분당구갑",
@@ -7516,6 +8326,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "광주시을",
     "district": "경기 광주시을",
@@ -7554,6 +8368,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "완주군진안군무주군",
     "district": "전북 완주군진안군무주군",
@@ -7612,6 +8432,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "서구을",
     "district": "광주 서구을",
@@ -7655,6 +8479,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "당진시",
     "district": "충남 당진시",
@@ -7758,6 +8588,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "제천시단양군",
     "district": "충북 제천시단양군",
@@ -7827,6 +8662,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "수원시무",
     "district": "경기 수원시무",
@@ -7862,6 +8701,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "도봉구을",
     "district": "서울 도봉구을",
@@ -7900,6 +8744,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -7955,6 +8803,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -7995,6 +8848,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "노원구갑",
     "district": "서울 노원구갑",
@@ -8077,6 +8938,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "북구갑",
     "district": "대구 북구갑",
@@ -8112,6 +8979,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "계양구갑",
     "district": "인천 계양구갑",
@@ -8157,6 +9030,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "홍천군횡성군영월군평창군",
     "district": "강원 홍천군횡성군영월군평창군",
@@ -8214,6 +9092,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "달서구갑",
     "district": "대구 달서구갑",
@@ -8262,6 +9144,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -8295,6 +9181,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "평택시을",
     "district": "경기 평택시을",
@@ -8341,6 +9234,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "구로구을",
     "district": "서울 구로구을",
@@ -8375,6 +9273,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "동구미추홀구을",
     "district": "인천 동구미추홀구을",
@@ -8431,6 +9337,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "양산시갑",
     "district": "경남 양산시갑",
@@ -8466,6 +9379,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "공주시부여군청양군",
     "district": "충남 공주시부여군청양군",
@@ -8499,6 +9416,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "달서구을",
     "district": "대구 달서구을",
@@ -8543,6 +9467,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안성시",
     "district": "경기 안성시",
@@ -8581,6 +9509,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "진보당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      22
+    ],
     "metroRegion": "울산",
     "localRegion": "북구",
     "district": "울산 북구",
@@ -8630,6 +9563,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "정읍시고창군",
     "district": "전북 정읍시고창군",
@@ -8681,6 +9619,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "창원시마산회원구",
     "district": "경남 창원시마산회원구",
@@ -8725,6 +9669,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "구리시",
     "district": "경기 구리시",
@@ -8783,6 +9735,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "파주시갑",
     "district": "경기 파주시갑",
@@ -8833,6 +9792,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "청주시상당구",
     "district": "충북 청주시상당구",
@@ -8929,6 +9892,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "담양군함평군영광군장성군",
     "district": "전남 담양군함평군영광군장성군",
@@ -8980,6 +9950,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "부천시병",
     "district": "경기 부천시병",
@@ -9029,6 +10003,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "청주시서원구",
     "district": "충북 청주시서원구",
@@ -9078,6 +10056,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "고양시병",
     "district": "경기 고양시병",
@@ -9127,6 +10109,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -9176,6 +10162,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "영천시청도군",
     "district": "경북 영천시청도군",
@@ -9213,6 +10205,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "용인시갑",
     "district": "경기 용인시갑",
@@ -9258,6 +10254,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "포항시남구울릉군",
     "district": "경북 포항시남구울릉군",
@@ -9300,6 +10300,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "사하구갑",
     "district": "부산 사하구갑",
@@ -9347,6 +10352,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "전주시을",
     "district": "전북 전주시을",
@@ -9388,6 +10399,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "의왕시과천시",
     "district": "경기 의왕시과천시",
@@ -9439,6 +10455,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -9481,6 +10501,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "성남시중원구",
     "district": "경기 성남시중원구",
@@ -9526,6 +10551,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "속초시인제군고성군양양군",
     "district": "강원 속초시인제군고성군양양군",
@@ -9571,6 +10602,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "용인시정",
     "district": "경기 용인시정",
@@ -9628,6 +10665,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "청주시흥덕구",
     "district": "충북 청주시흥덕구",
@@ -9671,6 +10712,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "양천구을",
     "district": "서울 양천구을",
@@ -9727,6 +10773,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "서구을",
     "district": "인천 서구을",
@@ -9777,6 +10827,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "수성구을",
     "district": "대구 수성구을",
@@ -9823,6 +10878,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "구로구갑",
     "district": "서울 구로구갑",
@@ -9863,6 +10926,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "의정부시을",
     "district": "경기 의정부시을",
@@ -9898,6 +10965,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "천안시을",
     "district": "충남 천안시을",
@@ -9945,6 +11016,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "안양시동안구을",
     "district": "경기 안양시동안구을",
@@ -9997,6 +11074,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "천안시병",
     "district": "충남 천안시병",
@@ -10052,6 +11134,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "광진구갑",
     "district": "서울 광진구갑",
@@ -10101,6 +11187,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "충주시",
     "district": "충북 충주시",
@@ -10139,6 +11232,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "창원시진해구",
     "district": "경남 창원시진해구",
@@ -10199,6 +11296,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "개혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -10240,6 +11341,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -10255,15 +11360,32 @@
       "- 서울대학교 지구과학교육과 학사",
       "- 한양대학교 법학전문대학원 석사",
       "■ 주요경력",
-      "- 변호사시험 합격(7회)",
-      "- 법무법인 다산 변호사",
-      "- 경제정의실천연합 회원",
-      "- 서울지방변호사회 인권위원회 위원",
-      "- 민주사회를위한변호사모임언론연대 사무차장",
-      "- 더불어민주당 원내부대표(현)",
-      "- 더불어민주당 법률위원회 부위원장(현)",
+      "- 더불어민주당 원내대변인(현)",
       "- 과학기술정보방송통신위원회 위원(현)",
-      "- 여성가족위원회 위원(현)"
+      "- 국회운영위원회 위원(현)",
+      "- 성평등가족위원회 위원(현)",
+      "- 한-알제리 의원친선협회 부회장(현)",
+      "- 더불어민주당 경찰개혁 TF 위원(현)",
+      "- 더불어민주당 미디어공공성강화 TF 위원(현)",
+      "- 더불어민주당 제7차 중앙위원회 중앙위원(현)",
+      "- 법무법인 다산 변호사(전)",
+      "- 서울지방변호사회 인권위원회 위원(전)",
+      "- 민주사회를위한변호사모임 언론연대 사무차장(전)",
+      "- 국회 기후특별위원회 위원(전)",
+      "- 더불어민주당 원내부대표(전)",
+      "- 더불어민주당 법률위원회 부위원장(전)",
+      "- 더불어민주당 정책위원회 부의장(전)",
+      "- 더불어민주당 정치검찰조작기소대응특별위원회 위원(전)",
+      "- 더불어민주당 을지키는민생실천위원회 운영위원(전)",
+      "- 더불어민주당 APEC 성과확산 및 한미관세협상 후속지원위원회 위원(전)",
+      "- 더불어민주당 윤석열정권조작기소진상규명 및 공소취소를위한국정조사추진위원회 위원(전)",
+      "- 더불어민주당 언론개혁특별위원회 위원(전)",
+      "- 더불어민주당 언론개혁특별위원회 위원(전)",
+      "- 더불어민주당 민생&middot;경제 대도약 추진단 위원(전)",
+      "- 더불어민주당 서울 삼성역 GTX 철근누락 은폐의혹 진상규명 TF 위원(전)",
+      "- 더불어민주당 선거관리제도개선특별위원회 산하 선거제도개혁 TF 위원(전)",
+      "- 더불어민주당 제1~6차 중앙위원회 중앙위원(전)",
+      "- 더불어민주당 공천신문고(제9회 전국동시지방선거) 위원(전)"
     ],
     "bills": [],
     "pledges": [],
@@ -10282,6 +11404,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "개혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "화성시을",
     "district": "경기 화성시을",
@@ -10320,6 +11446,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "달성군",
     "district": "대구 달성군",
@@ -10359,6 +11489,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "동해시태백시삼척시정선군",
     "district": "강원 동해시태백시삼척시정선군",
@@ -10412,6 +11548,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      20,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "익산시갑",
     "district": "전북 익산시갑",
@@ -10469,6 +11612,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "군포시",
     "district": "경기 군포시",
@@ -10502,8 +11652,8 @@
       "더불어민주당 당무감사원장,",
       "국회 예산결산특별위원회 위원",
       "환경노동위원회 위원",
-      "2024.06 ~ 현재      제22대 국회의원(경기 군포) 전반기 환경노동위원회 위원",
-      "국회 부의장"
+      "국회 부의장",
+      "2024.06 ~ 현재      제22대 국회의원(경기 군포) 기후에너지환경노동위원회 위원"
     ],
     "bills": [],
     "pledges": [],
@@ -10522,6 +11672,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강동구을",
     "district": "서울 강동구을",
@@ -10571,6 +11726,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "부산진구을",
     "district": "부산 부산진구을",
@@ -10624,6 +11786,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "남동구을",
     "district": "인천 남동구을",
@@ -10678,6 +11844,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "광산구을",
     "district": "광주 광산구을",
@@ -10716,6 +11886,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -10753,6 +11927,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "광명시갑",
     "district": "경기 광명시갑",
@@ -10866,6 +12045,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "정책위의장",
+    "partyRoleOrder": 4,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "상주시문경시",
     "district": "경북 상주시문경시",
@@ -10899,6 +12086,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "영주시영양군봉화군",
     "district": "경북 영주시영양군봉화군",
@@ -10956,6 +12147,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "충북",
     "localRegion": "증평군진천군음성군",
     "district": "충북 증평군진천군음성군",
@@ -10996,6 +12192,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "동대문구을",
     "district": "서울 동대문구을",
@@ -11046,6 +12247,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "당대표",
+    "partyRoleOrder": 1,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "보령시서천군",
     "district": "충남 보령시서천군",
@@ -11095,6 +12303,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "서구갑",
     "district": "대전 서구갑",
@@ -11148,6 +12360,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "동구",
     "district": "대전 동구",
@@ -11184,6 +12401,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "화성시정",
     "district": "경기 화성시정",
@@ -11238,6 +12462,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "아산시을",
     "district": "충남 아산시을",
@@ -11274,6 +12502,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -11308,6 +12540,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "북구을",
     "district": "광주 북구을",
@@ -11356,6 +12592,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      20,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "중구성동구갑",
     "district": "서울 중구성동구갑",
@@ -11384,6 +12626,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "기장군",
     "district": "부산 기장군",
@@ -11431,6 +12678,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      15,
+      16,
+      18,
+      20,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "전주시병",
     "district": "전북 전주시병",
@@ -11472,6 +12727,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "부산진구갑",
     "district": "부산 부산진구갑",
@@ -11517,6 +12776,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "동두천시양주시연천군갑",
     "district": "경기 동두천시양주시연천군갑",
@@ -11562,6 +12829,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "수영구",
     "district": "부산 수영구",
@@ -11602,6 +12873,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "연수구을",
     "district": "인천 연수구을",
@@ -11647,6 +12923,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "원내대표",
+    "partyRoleOrder": 2,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "통영시고성군",
     "district": "경남 통영시고성군",
@@ -11696,6 +12980,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "북구갑",
     "district": "광주 북구갑",
@@ -11740,6 +13028,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "동구남구갑",
     "district": "광주 동구남구갑",
@@ -11780,6 +13072,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      19,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "마포구을",
     "district": "서울 마포구을",
@@ -11849,6 +13148,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -11886,6 +13189,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "관악구을",
     "district": "서울 관악구을",
@@ -11935,6 +13243,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -11965,6 +13277,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "partyRole": "사무총장",
+    "partyRoleOrder": 5,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "고령군성주군칠곡군",
     "district": "경북 고령군성주군칠곡군",
@@ -12023,6 +13342,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "사하구을",
     "district": "부산 사하구을",
@@ -12058,6 +13386,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "여수시을",
     "district": "전남 여수시을",
@@ -12097,6 +13429,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      16,
+      17,
+      18,
+      20,
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -12138,6 +13478,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "유성구갑",
     "district": "대전 유성구갑",
@@ -12202,6 +13548,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "중구영도구",
     "district": "부산 중구영도구",
@@ -12248,6 +13598,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "서초구갑",
     "district": "서울 서초구갑",
@@ -12283,6 +13638,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "광주",
     "localRegion": "서구갑",
     "district": "광주 서구갑",
@@ -12329,6 +13688,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "시흥시을",
     "district": "경기 시흥시을",
@@ -12378,6 +13746,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "마포구갑",
     "district": "서울 마포구갑",
@@ -12434,6 +13807,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경북",
     "localRegion": "경산시",
     "district": "경북 경산시",
@@ -12496,6 +13873,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "해운대구갑",
     "district": "부산 해운대구갑",
@@ -12540,6 +13921,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "전남",
     "localRegion": "여수시갑",
     "district": "전남 여수시갑",
@@ -12580,6 +13966,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "수성구갑",
     "district": "대구 수성구갑",
@@ -12646,6 +14041,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강동구갑",
     "district": "서울 강동구갑",
@@ -12691,6 +14093,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강서구을",
     "district": "서울 강서구을",
@@ -12733,6 +14141,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -12786,6 +14198,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -12829,6 +14245,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "오산시",
     "district": "경기 오산시",
@@ -12879,6 +14299,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "영등포구갑",
     "district": "서울 영등포구갑",
@@ -12921,6 +14345,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강북구갑",
     "district": "서울 강북구갑",
@@ -12962,6 +14391,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "개혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -12990,6 +14423,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "금천구",
     "district": "서울 금천구",
@@ -13065,6 +14503,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "남양주시갑",
     "district": "경기 남양주시갑",
@@ -13101,6 +14546,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -13142,6 +14591,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -13189,6 +14642,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대구",
     "localRegion": "동구군위군갑",
     "district": "대구 동구군위군갑",
@@ -13228,6 +14685,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -13270,6 +14731,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "창원시마산합포구",
     "district": "경남 창원시마산합포구",
@@ -13311,6 +14777,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      15,
+      16,
+      18,
+      19,
+      20,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "하남시갑",
     "district": "경기 하남시갑",
@@ -13362,6 +14837,13 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      18,
+      19,
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "춘천시철원군화천군양구군을",
     "district": "강원 춘천시철원군화천군양구군을",
@@ -13400,6 +14882,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "부산",
     "localRegion": "북구갑",
     "district": "부산 북구갑",
@@ -13439,6 +14925,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강북구을",
     "district": "서울 강북구을",
@@ -13482,6 +14974,14 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "원내대표",
+    "partyRoleOrder": 2,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      17,
+      21,
+      22
+    ],
     "metroRegion": "전북",
     "localRegion": "익산시을",
     "district": "전북 익산시을",
@@ -13538,6 +15038,15 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "partyRole": "사무총장",
+    "partyRoleOrder": 5,
+    "isAssemblyMember": true,
+    "electedTerms": [
+      19,
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "강서구병",
     "district": "서울 강서구병",
@@ -13612,6 +15121,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "고양시을",
     "district": "경기 고양시을",
@@ -13664,6 +15178,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -13700,6 +15218,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -13737,6 +15259,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "경남",
     "localRegion": "창원시성산구",
     "district": "경남 창원시성산구",
@@ -13776,6 +15302,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "강원",
     "localRegion": "춘천시철원군화천군양구군갑",
     "district": "강원 춘천시철원군화천군양구군갑",
@@ -13821,6 +15352,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "인천",
     "localRegion": "동구미추홀구갑",
     "district": "인천 동구미추홀구갑",
@@ -13857,6 +15393,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "경기",
     "localRegion": "평택시갑",
     "district": "경기 평택시갑",
@@ -13918,6 +15459,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "충남",
     "localRegion": "논산시계룡시금산군",
     "district": "충남 논산시계룡시금산군",
@@ -13955,6 +15500,11 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "조국혁신당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      21,
+      22
+    ],
     "metroRegion": "비례대표",
     "localRegion": "비례대표",
     "district": "비례대표",
@@ -14006,6 +15556,10 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      22
+    ],
     "metroRegion": "대전",
     "localRegion": "유성구을",
     "district": "대전 유성구을",
@@ -14043,6 +15597,12 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      20,
+      21,
+      22
+    ],
     "metroRegion": "서울",
     "localRegion": "양천구갑",
     "district": "서울 양천구갑",
@@ -14090,5 +15650,141 @@
       "email": "hwanghee6728@gmail.com",
       "blogOrSns": "http://blog.naver.com/hwanghee67"
     }
+  },
+  {
+    "id": "party-official-0",
+    "name": "김민수",
+    "hanjaName": "",
+    "birthDate": "",
+    "photoUrl": "",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [],
+    "metroRegion": "",
+    "localRegion": "",
+    "district": "",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "",
+    "timesElected": 0,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {}
+  },
+  {
+    "id": "WHV3448W",
+    "name": "양향자",
+    "hanjaName": "梁香子",
+    "birthDate": "1967-04-04",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WHV3448W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [
+      21
+    ],
+    "metroRegion": "광주",
+    "localRegion": "서구을",
+    "district": "광주 서구을",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "제21대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [
+      "현)",
+      "개혁신당 원내대표",
+      "제21대 국회의원 (개혁신당/광주서구을)",
+      "국회 산업통상자원중소벤처기업위원회, 예산결산특별위원회, 첨단전략산업특별위원회  위원",
+      "전)",
+      "한국의희망 당대표",
+      "국민의힘 반도체산업 경쟁력강화 특별위원회 위원장",
+      "제21대 국회 전반기 법제사법위원회 위원",
+      "제21대 국회 전반기 기획재정위원회 위원",
+      "제21대 국회 전반기 예산결산특별위원회 위원",
+      "더불어민주당 반도체기술특별위원회 부위원장",
+      "더불어민주당 미래전환 K-뉴딜위원회 부위원장",
+      "더불어민주당 최고위원",
+      "더불어민주당 일본경제침략대책특별위원회 부위원장",
+      "국가공무원인재개발원 원장",
+      "더불어민주당 전국여성위원장",
+      "삼성전자 메모리사업부 플래시개발실/설계팀 상무"
+    ],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "party-official-2",
+    "name": "조광한",
+    "hanjaName": "",
+    "birthDate": "",
+    "photoUrl": "",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [],
+    "metroRegion": "",
+    "localRegion": "",
+    "district": "",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "",
+    "timesElected": 0,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {}
+  },
+  {
+    "id": "party-official-3",
+    "name": "권미경",
+    "hanjaName": "",
+    "birthDate": "",
+    "photoUrl": "",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "더불어민주당",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [],
+    "metroRegion": "",
+    "localRegion": "",
+    "district": "",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "",
+    "timesElected": 0,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {}
   }
 ]

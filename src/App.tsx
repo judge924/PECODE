@@ -2,9 +2,11 @@ import { useState, useMemo } from 'react';
 import type { Politician } from './types/politician';
 import { REGIONS_DATA, ALL_POLITICIANS } from './data/politicians';
 import { Header } from './components/Header';
-import { StatsBar } from './components/StatsBar';
+// 헬퍼 블랙 티켓 게이지 컴포넌트 연결
+import { BlackTicketGauge } from './components/BlackTicketGauge';
 import { OrgChart } from './components/OrgChart';
 import { ListView } from './components/ListView';
+import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 
 export function App() {
@@ -12,6 +14,7 @@ export function App() {
   const [viewMode, setViewMode] = useState<'chart' | 'list'>('list');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
+  const [partyView, setPartyView] = useState<string | null>(null);
 
   // Current Hierarchy
   const currentHierarchy = REGIONS_DATA[currentRegion] || REGIONS_DATA['대한민국 국회'];
@@ -41,24 +44,24 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white">
-      {/* 1. The Org Header */}
-      <Header
-        currentRegion={currentRegion}
-        onRegionChange={(reg) => {
-          setCurrentRegion(reg);
-          setSearchQuery('');
-        }}
-        viewMode={viewMode}
-        onViewModeChange={setViewMode}
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-      />
+      {/* [상단 고정 묶음] 헤더와 블랙티켓을 하나로 묶어 스크롤 시 함께 화면 상단에 고정 */}
+      <div className="sticky top-0 z-30 bg-[#fcfcfc]">
+        <Header
+          currentRegion={currentRegion}
+          onRegionChange={(reg) => {
+            setCurrentRegion(reg);
+            setSearchQuery('');
+          }}
+          viewMode={viewMode}
+          onViewModeChange={setViewMode}
+          searchQuery={searchQuery}
+          onSearchChange={setSearchQuery}
+        />
+        <BlackTicketGauge politicians={displayedPoliticians} />
+      </div>
 
-      {/* 2. Stats Bar */}
-      <StatsBar hierarchy={currentHierarchy} />
-
-      {/* 3. Main Body */}
-      <main className="flex-1 max-w-7xl w-full mx-auto pb-16">
+      {/* 3. Main Body (가로폭 제약 max-w-7xl을 풀고 와이드 화면을 넓게 쓰도록 변경) */}
+      <main className="flex-1 w-full max-w-[1800px] mx-auto pb-16">
         {/* Search Results Notice (if active) */}
         {searchResults !== null ? (
           <div className="px-4 py-8">
@@ -85,7 +88,7 @@ export function App() {
             />
           </div>
         ) : (
-          /* Normal View: Org Chart or Directory */
+          /* Normal View: Org Chart, Directory, or Party Org Chart */
           <div className="py-4">
             {viewMode === 'chart' ? (
               <OrgChart
@@ -94,7 +97,7 @@ export function App() {
                 onSelectPolitician={setSelectedPolitician}
               />
             ) : (
-              <ListView
+              <HomeOrgView
                 politicians={displayedPoliticians}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={setSelectedPolitician}
@@ -115,10 +118,11 @@ export function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 font-black text-neutral-900 text-base tracking-tight mb-1">
-              PORG KOREA
+              PECODE KOREA
             </div>
             <p className="max-w-md text-neutral-500 leading-relaxed text-[11px]">
-              시민의 알 권리와 풀뿌리 민주주의의 정보 비대칭 해소를 위해 대한민국 모든 선출직 공직자의 공개 의정 데이터를 객관적으로 제공합니다.
+              복잡한 정치 난제를 명쾌하게 풀어내는 데이터 테크 서비스<br />
+              난해하고 어두운 정치(Politics)를 시각화하여 명쾌하게 해독(Decode)합니다.
             </p>
           </div>
 

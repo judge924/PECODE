@@ -5,6 +5,7 @@ interface PoliticianCardProps {
   politician: Politician;
   isSelected?: boolean;
   onClick: (politician: Politician) => void;
+  onPartyClick?: (party: string) => void;
   compact?: boolean;
 }
 
@@ -12,8 +13,12 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
   politician,
   isSelected,
   onClick,
+  onPartyClick,
   compact = false,
 }) => {
+  // 당직자(비의원)는 준비중 대신 정보없음으로 표시
+  const noDataLabel = politician.isAssemblyMember === false ? '정보없음' : '준비중';
+
   // Level badge style (Monochrome The Org style)
   const getLevelBadge = (level: Politician['level']) => {
     switch (level) {
@@ -41,13 +46,24 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
             politician.level
           )}`}
         >
-          {politician.level === 'NATIONAL'
-            ? '국회의원'
-            : politician.level === 'METROPOLITAN'
-              ? '시의원'
-              : '구의원'}
+          {politician.isAssemblyMember === false
+            ? '당직자'
+            : politician.level === 'NATIONAL'
+              ? '국회의원'
+              : politician.level === 'METROPOLITAN'
+                ? '시의원'
+                : '구의원'}
         </span>
-        <span className="text-[12px] font-medium text-neutral-500 border border-neutral-200 px-2 py-0.5 rounded-md bg-neutral-50">
+        <span
+          onClick={(e) => {
+            if (onPartyClick) {
+              e.stopPropagation();
+              onPartyClick(politician.party);
+            }
+          }}
+          className={`text-[12px] font-medium text-neutral-500 border border-neutral-200 px-2 py-0.5 rounded-md bg-neutral-50 ${onPartyClick ? 'hover:bg-black hover:text-white hover:border-black transition-colors' : ''
+            }`}
+        >
           {politician.party}
         </span>
       </div>
@@ -83,10 +99,10 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
             )}
           </div>
           <p className="text-xs text-neutral-600 truncate font-medium mt-0.5">
-            {politician.district}
+            {politician.partyRole || politician.district || '정보없음'}
           </p>
           <p className="text-[11px] text-neutral-400 truncate">
-            {politician.committee}
+            {politician.committee || '정보없음'}
           </p>
         </div>
       </div>
@@ -100,7 +116,7 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
           </div>
           <div className="font-mono text-xs font-bold text-neutral-900">
             {politician.attendanceRate > 0 ? `${politician.attendanceRate}%` : (
-              <span className="text-neutral-300 font-sans font-normal">준비중</span>
+              <span className="text-neutral-300 font-sans font-normal">{noDataLabel}</span>
             )}
           </div>
         </div>
@@ -111,7 +127,7 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
           </div>
           <div className="font-mono text-xs font-bold text-neutral-900">
             {politician.billsCount > 0 ? `${politician.billsCount}건` : (
-              <span className="text-neutral-300 font-sans font-normal">준비중</span>
+              <span className="text-neutral-300 font-sans font-normal">{noDataLabel}</span>
             )}
           </div>
         </div>
@@ -126,7 +142,7 @@ export const PoliticianCard: React.FC<PoliticianCardProps> = ({
                 ? `${Math.floor(politician.propertyAsset)}억`
                 : `${politician.propertyAsset}억`
             ) : (
-              <span className="text-neutral-300 font-sans font-normal">준비중</span>
+              <span className="text-neutral-300 font-sans font-normal">{noDataLabel}</span>
             )}
           </div>
         </div>
