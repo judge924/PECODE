@@ -7,7 +7,6 @@ interface DistrictMapProps {
     onSelectPolitician: (politician: Politician) => void;
 }
 
-// 정당별 지도 채색 공식 색상
 const PARTY_MAP_COLORS: Record<string, string> = {
     '더불어민주당': '#004EA2',
     '국민의힘': '#E61E2B',
@@ -20,7 +19,6 @@ const PARTY_MAP_COLORS: Record<string, string> = {
     '무소속 및 기타': '#71717A',
 };
 
-// 17개 광역 시·도 풀네임 매칭표
 const SIDO_FULL_NAMES: Record<string, string> = {
     '서울': '서울특별시',
     '부산': '부산광역시',
@@ -47,7 +45,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
     onSelectPolitician,
 }) => {
     const [geoData, setGeoData] = useState<any>(null);
-    // null이면 1단계 전국 17개 시도 뷰, 값이 있으면 2단계 세부 선거구 줌인 뷰
     const [selectedSido, setSelectedSido] = useState<string | null>(null);
 
     const [hoveredSido, setHoveredSido] = useState<string | null>(null);
@@ -63,7 +60,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
             .catch((err) => console.error('지도 데이터 로드 실패:', err));
     }, []);
 
-    // 세종갑, 세종을 등 특수 지역구까지 100% 매칭
     const cleanDistrictName = (s: string) => {
         if (!s) return '';
         const raw = s.replace(/[\s·-]/g, '');
@@ -74,11 +70,8 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
 
     const politicianDistrictMap = useMemo(() => {
         const map = new Map<string, Politician>();
-
         politicians.forEach((p) => {
-            if (p.district) {
-                map.set(cleanDistrictName(p.district), p);
-            }
+            if (p.district) map.set(cleanDistrictName(p.district), p);
             if (p.metroRegion && p.localRegion) {
                 map.set(cleanDistrictName(`${p.metroRegion}${p.localRegion}`), p);
             }
@@ -86,7 +79,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
         return map;
     }, [politicians]);
 
-    // 좌표 투영 + 시·도별 통계 + 경계선 추출
     const { svgPaths, sidoBounds, sidoStats, sidoBoundaryPathD } = useMemo(() => {
         if (!geoData || !geoData.features) {
             return { svgPaths: [], sidoBounds: {}, sidoStats: {}, sidoBoundaryPathD: '' };
@@ -134,10 +126,7 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
         };
 
         const trackPoint = (x: number, y: number, sido: string, lng: number) => {
-            // 인천의 서해 5도 먼 섬(백령도 등)은 줌인 계산에서 제외하여 본토 중심 10배 확대
-            if (sido === '인천' && lng < 126.25) {
-                return;
-            }
+            if (sido === '인천' && lng < 126.25) return;
 
             if (!bounds[sido]) {
                 bounds[sido] = { minX: x, maxX: x, minY: y, maxY: y };
@@ -165,9 +154,7 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
                 }
             }
 
-            if (!stats[sido]) {
-                stats[sido] = { total: 0, partyCounts: {} };
-            }
+            if (!stats[sido]) stats[sido] = { total: 0, partyCounts: {} };
             stats[sido].total += 1;
             const party = matched?.party || '무소속';
             stats[sido].partyCounts[party] = (stats[sido].partyCounts[party] || 0) + 1;
@@ -232,56 +219,22 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
         return { svgPaths: paths, sidoBounds: bounds, sidoStats: stats, sidoBoundaryPathD: boundaryD };
     }, [geoData, politicianDistrictMap]);
 
-    // 다수당 판별 및 동률 보라색(#7f54a7)
     const sidoDominantColor = useMemo(() => {
-        const result: Record<string, { color: string; mainParty: string; isTie: boolean; breakdownText: string }> = {};
-
+        const result: Record<string, { color: string }> = {};
         Object.entries(sidoStats).forEach(([sido, data]) => {
             const counts = Object.entries(data.partyCounts).filter(([_, c]) => c > 0);
             if (counts.length === 0) {
-                result[sido] = { color: '#71717A', mainParty: '무소속', isTie: false, breakdownText: '' };
+                result[sido] = { color: '#71717A' };
                 return;
             }
-
             counts.sort((a, b) => b[1] - a[1]);
             const top = counts[0];
             const isTie = counts.length > 1 && counts[1][1] === top[1];
-
-            const formatPartyName = (partyName: string) => {
-                if (partyName.includes('민주')) return '민주당';
-                if (partyName.includes('국민의힘') || partyName.includes('국힘')) return '국힘';
-                if (partyName.includes('조국')) return '조국혁신';
-                if (partyName.includes('개혁')) return '개혁신당';
-                if (partyName.includes('진보')) return '진보당';
-                return partyName;
-            };
-
-            const breakdownText = counts
-                .slice(0, 2)
-                .map(([p, c]) => `${formatPartyName(p)} ${c}`)
-                .join(' · ');
-
-            if (isTie) {
-                result[sido] = {
-                    color: '#7f54a7', // 동률 보라색
-                    mainParty: '동률',
-                    isTie: true,
-                    breakdownText,
-                };
-            } else {
-                result[sido] = {
-                    color: PARTY_MAP_COLORS[top[0]] || '#71717A',
-                    mainParty: top[0],
-                    isTie: false,
-                    breakdownText,
-                };
-            }
+            result[sido] = { color: isTie ? '#7f54a7' : (PARTY_MAP_COLORS[top[0]] || '#71717A') };
         });
-
         return result;
     }, [sidoStats]);
 
-    // 17개 시·도 모두 위젯에 꽉 차도록 비율 자동 계산
     const currentViewBox = useMemo(() => {
         if (!selectedSido || !sidoBounds[selectedSido]) {
             return '0 0 500 680';
@@ -290,11 +243,9 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
         const b = sidoBounds[selectedSido];
         const rawW = b.maxX - b.minX;
         const rawH = b.maxY - b.minY;
-
         const pad = Math.max(rawW, rawH) * 0.1;
         const wWithPad = rawW + pad * 2;
         const hWithPad = rawH + pad * 2;
-
         const targetAspect = 500 / 680;
         const currentAspect = wWithPad / hWithPad;
 
@@ -324,61 +275,31 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
     }, [svgPaths]);
 
     return (
-        <div className="select-none relative w-full">
+        // 제목 영역을 완전히 없애고 순수 지도만 표출
+        <div className="select-none relative w-full flex items-center justify-center">
 
-            {/* 1. 상단 타이틀 바 */}
-            <div className="flex items-center justify-between mb-1.5 text-[11px] text-neutral-900">
-                {selectedSido ? (
-                    <div className="flex items-center justify-between w-full">
-                        <button
-                            onClick={() => setSelectedSido(null)}
-                            className="text-[10px] font-medium text-neutral-800 hover:text-black flex items-center gap-1 bg-neutral-100 hover:bg-neutral-200 px-2 py-0.5 rounded cursor-pointer transition-colors"
-                        >
-                            ← 전체 지도
-                        </button>
-                        <span className="text-[11px] font-bold text-neutral-900">
-                            {SIDO_FULL_NAMES[selectedSido] || selectedSido}
-                        </span>
-                    </div>
-                ) : (
-                    <div className="w-full text-center text-[11px] font-bold text-neutral-900">
-                        대한민국 제22대 국회의원 선거
-                    </div>
-                )}
-            </div>
+            {/* 줌인 시 좌측 상단에 작게 뜨는 미니 복귀 버튼 */}
+            {selectedSido && (
+                <button
+                    onClick={() => setSelectedSido(null)}
+                    className="absolute top-0 left-0 z-30 bg-black/80 hover:bg-black text-white text-[9px] font-bold px-1.5 py-0.5 rounded cursor-pointer transition-colors backdrop-blur-xs shadow-xs"
+                >
+                    ← 전체
+                </button>
+            )}
 
-            {/* 2. 인터랙티브 안내 툴팁 (일반 폰트 font-normal 적용) */}
-            <div className="h-5 flex items-center text-[10px] mb-1 overflow-hidden">
-                {selectedSido ? (
-                    hoveredDistrict ? (
-                        <div className="flex items-center justify-between w-full truncate">
-                            <span className="font-normal text-neutral-900 truncate">{hoveredDistrict.sggName}</span>
-                            {hoveredDistrict.politician && (
-                                <span className="flex items-center gap-1 font-normal text-neutral-900 shrink-0 ml-1">
-                                    <span
-                                        className="w-1.5 h-1.5 rounded-full"
-                                        style={{ backgroundColor: PARTY_MAP_COLORS[hoveredDistrict.politician.party] || '#71717A' }}
-                                    />
-                                    {hoveredDistrict.politician.name} ({hoveredDistrict.politician.party})
-                                </span>
-                            )}
-                        </div>
-                    ) : null
-                ) : (
-                    hoveredSido ? (
-                        <div className="flex items-center justify-between w-full">
-                            <span className="font-normal text-neutral-900 truncate">
-                                {SIDO_FULL_NAMES[hoveredSido] || hoveredSido} ({sidoStats[hoveredSido]?.total || 0}석)
-                            </span>
-                            <span className="text-[10px] text-neutral-900 font-normal shrink-0 ml-1">
-                                {sidoDominantColor[hoveredSido]?.breakdownText || ''}
-                            </span>
-                        </div>
-                    ) : null
-                )}
-            </div>
+            {/* 마우스 호버 시 지도 아래에 은은하게 뜨는 미니 툴팁 */}
+            {hoveredDistrict && selectedSido ? (
+                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-30 bg-neutral-900/90 text-white text-[9px] px-2 py-0.5 rounded backdrop-blur-xs shadow-sm whitespace-nowrap pointer-events-none">
+                    {hoveredDistrict.sggName} {hoveredDistrict.politician ? `· ${hoveredDistrict.politician.name}` : ''}
+                </div>
+            ) : hoveredSido && !selectedSido ? (
+                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-30 bg-neutral-900/90 text-white text-[9px] px-2 py-0.5 rounded backdrop-blur-xs shadow-sm whitespace-nowrap pointer-events-none">
+                    {SIDO_FULL_NAMES[hoveredSido] || hoveredSido} ({sidoStats[hoveredSido]?.total || 0}석)
+                </div>
+            ) : null}
 
-            {/* 3. 지도 본체 SVG */}
+            {/* 순수 대한민국 지도 본체 SVG */}
             <div className="relative w-full aspect-[500/680] flex items-center justify-center overflow-hidden">
                 {svgPaths.length === 0 ? (
                     <div className="text-[10px] text-neutral-400 font-mono animate-pulse">지도 로딩 중...</div>
@@ -388,9 +309,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
                         className="w-full h-full drop-shadow-xs transition-all duration-500 ease-out"
                     >
                         {selectedSido === null ? (
-                            // =========================================================================
-                            // [1단계: 17개 시·도 모드] - 다수당 색상 채색 + 17개 시도 분할 흰색 실선
-                            // =========================================================================
                             <>
                                 {Object.entries(groupedPathsBySido).map(([sido, paths]: [string, any]) => {
                                     const dominant = sidoDominantColor[sido] || { color: '#71717A' };
@@ -418,7 +336,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
                                     );
                                 })}
 
-                                {/* 17개 시·도 사이를 가르는 선명하고 얇은 화이트 실선 (두께 고정) */}
                                 {sidoBoundaryPathD && (
                                     <path
                                         d={sidoBoundaryPathD}
@@ -433,10 +350,6 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
                                 )}
                             </>
                         ) : (
-                            // =========================================================================
-                            // [2단계: 17개 시·도 각각 확대 모드]
-                            // 아무리 줌인해도 선 두께가 0.75px 초슬림 실선으로 완벽하게 고정됨!
-                            // =========================================================================
                             (groupedPathsBySido[selectedSido] || []).map((item: any) => {
                                 const isSelected = selectedPolitician && item.matched?.id === selectedPolitician.id;
 
@@ -446,8 +359,8 @@ export const DistrictMap: React.FC<DistrictMapProps> = ({
                                         d={item.pathD}
                                         fill={item.partyColor}
                                         stroke={isSelected ? '#000000' : 'rgba(255, 255, 255, 0.95)'}
-                                        strokeWidth={isSelected ? '1.5' : '0.75'} // ★ 17개 지역 모두 0.75px 초슬림 선 두께 적용
-                                        vectorEffect="non-scaling-stroke"        // ★ 지도를 10배 확대해도 선이 절대로 굵어지지 않는 핵심 속성
+                                        strokeWidth={isSelected ? '1.5' : '0.75'}
+                                        vectorEffect="non-scaling-stroke"
                                         className="transition-all duration-100 cursor-pointer hover:brightness-110 hover:stroke-black"
                                         onMouseEnter={() => {
                                             setHoveredDistrict({

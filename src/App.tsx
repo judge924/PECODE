@@ -2,14 +2,17 @@ import { useState, useMemo } from 'react';
 import type { Politician } from './types/politician';
 import { REGIONS_DATA, ALL_POLITICIANS } from './data/politicians';
 import { Header } from './components/Header';
-// 헬퍼 블랙 티켓 게이지 컴포넌트 연결
 import { BlackTicketGauge } from './components/BlackTicketGauge';
+import { LiveSidebar } from './components/LiveSidebar';
 import { OrgChart } from './components/OrgChart';
 import { ListView } from './components/ListView';
 import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 
 export function App() {
+  // 1단계에서 복사한 구글 앱스 스크립트 웹 앱 URL을 여기에 붙여넣습니다.
+  const LIVE_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
+
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
   const [viewMode, setViewMode] = useState<'chart' | 'list'>('list');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -43,7 +46,13 @@ export function App() {
   }, [currentHierarchy]);
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white">
+    <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white relative">
+      {/* 좌측 날개: 범야권 / 진보 실시간 라이브 랭킹 */}
+      <LiveSidebar camp="left" apiUrl={LIVE_API_URL} />
+
+      {/* 우측 날개: 범여권 / 보수 실시간 라이브 랭킹 */}
+      <LiveSidebar camp="right" apiUrl={LIVE_API_URL} />
+
       {/* [상단 고정 묶음] 헤더와 블랙티켓을 하나로 묶어 스크롤 시 함께 화면 상단에 고정 */}
       <div className="sticky top-0 z-30 bg-[#fcfcfc]">
         <Header
@@ -143,7 +152,7 @@ export function App() {
         </div>
 
         <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-neutral-400 font-mono">
-          <div>© 2026 PORG · ALL RIGHTS RESERVED</div>
+          <div>© 2026 PECODE · ALL RIGHTS RESERVED</div>
           <div>BUILT WITH THE ORG DESIGN SYSTEM FOR KOREAN CITIZENS</div>
         </div>
       </footer>

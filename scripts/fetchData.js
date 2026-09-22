@@ -76,13 +76,23 @@ const PARTY_LEADERSHIP = {
     '한정애': { role: '사무총장', order: 5 },
 };
 
-// 지도부 중 국회의원이 아닌 사람은 API에 없으니, 여기에 최소 정보만 직접 채워주세요.
-// 이름은 자동 검출 로그(⚠️ 국회의원이 아닌 당직자)를 보고 채우면 됩니다.
+// 지도부 중 국회의원이 아닌 당직자 프로필 사진 연동
 const NON_MP_PARTY_OFFICIALS = [
-    { name: '김민수', party: '국민의힘' },
-    { name: '양향자', party: '국민의힘' },
-    { name: '조광한', party: '국민의힘' },
-    { name: '권미경', party: '더불어민주당' },
+    {
+        name: '김민수',
+        party: '국민의힘',
+        photoUrl: 'https://i.namu.wiki/i/3hNg00sBYmh31g_QH-ro7L0qq0_DxKrPOXz3DbLMvU7uv1FAQv_u7mgmOUE1ikZWFwuVst9IJ1ooj0UcTez8FILo8GeC-sFO9fj4kUPZYnBeAnib7MZwmD55kozMdrVR-6waSY4zw4QTRwQyV9tZEQ.webp',
+    },
+    {
+        name: '조광한',
+        party: '국민의힘',
+        photoUrl: 'https://i.namu.wiki/i/U3SVaCRCT6CQ4oXbYQAgEL5UbAvrWANuo7xBXva1bvxylo9c19TrpFHvGG7KXt5tQNjoJH9uNoHtNwOpRXVOlHuHWoYjmpFCC-cJX0__zsoe27YjCDlscy-D6jEK5BjEBTwcJqErvIHylMtMZJhACQ.webp',
+    },
+    {
+        name: '권미경',
+        party: '더불어민주당',
+        photoUrl: 'https://i.namu.wiki/i/MCjMWzpg7uI875UnnCMdX9Exgng_2pYzU9zTpxiQhSPTsVZi2yKoonEnDVW8TIeHw3KV55yOXAwSfO6afqnlJy--mlQs1XwVYelMu11Ej86mDMz_yM-vJ13H5rCCrMMlZYfr1yt6EKOKeTru4xrqzQ.webp',
+    },
 ];
 
 function normalizeParty(polyNm) {
@@ -297,7 +307,7 @@ async function main() {
             name: official.name,
             hanjaName: '',
             birthDate: '',
-            photoUrl: '',
+            photoUrl: official.photoUrl || '', // 나무위키 사진 주소 자동 반영
             level: 'NATIONAL',
             levelLabel: '당직자',
             party: official.party,

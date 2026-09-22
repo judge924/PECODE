@@ -144,6 +144,7 @@ const MiniAvatar = ({
                     <img
                         src={politician.photoUrl}
                         alt={politician.name}
+                        referrerPolicy="no-referrer" // 나무위키 외부 링크 차단 보안 우회
                         className="w-full h-full object-cover select-none"
                         draggable={false}
                         onDragStart={(e) => e.preventDefault()}
@@ -176,15 +177,14 @@ const PARTY_STYLES: Record<string, { logoUrl?: string }> = {
     '무소속 및 기타': { logoUrl: '/logos/무소속.png' },
 };
 
-// [수정 1] 배경 박스 없이 모든 로고를 동일한 크기(w-10 h-10)로 깔끔하게 출력
-const PartyHeader = ({ party, count }: { party: string; count: number }) => {
+// [수정 1] 정당 헤더: align="right" 전달 시 우측 정렬 지원
+const PartyHeader = ({ party, count, align = 'left' }: { party: string; count: number; align?: 'left' | 'right' }) => {
     const config = PARTY_STYLES[party] || {};
     const [imgError, setImgError] = useState(false);
     const firstLetter = party.slice(0, 1);
 
     return (
-        <div className="flex items-center gap-3">
-            {/* 박스/배경/그림자 없이 동일한 비율과 크기로 맞춤 */}
+        <div className={`flex items-center gap-3 ${align === 'right' ? 'flex-row-reverse text-right' : 'text-left'}`}>
             <div className="w-10 h-10 flex items-center justify-center shrink-0">
                 {config.logoUrl && !imgError ? (
                     <img
@@ -194,13 +194,12 @@ const PartyHeader = ({ party, count }: { party: string; count: number }) => {
                         onError={() => setImgError(true)}
                     />
                 ) : (
-                    // 무소속 등 이미지가 없을 때만 은은한 회색 원 안에 첫 글자 표시
                     <div className="w-10 h-10 rounded-full bg-neutral-100 flex items-center justify-center text-sm font-bold text-neutral-600">
                         {firstLetter}
                     </div>
                 )}
             </div>
-            <div className="flex flex-col text-left">
+            <div className="flex flex-col">
                 <span className="text-base font-bold text-neutral-900 leading-tight">{party}</span>
                 <span className="text-xs text-neutral-500 font-normal mt-0.5">{count}명</span>
             </div>
@@ -219,7 +218,7 @@ const ToggleBadge = ({ count, revealed, onClick }: { count?: number; revealed: b
     </button>
 );
 
-// 지도부 그룹 — 중진/소속의원과 동일하게 "지도부" 타이틀(좌측) + 토글키(우측) 구조로 통일
+// 지도부 그룹 — 한 줄에 5명씩 정렬
 const RestLeadershipToggle = ({
     members,
     selectedPolitician,
@@ -234,14 +233,12 @@ const RestLeadershipToggle = ({
 
     return (
         <div className="mt-6 pt-4 border-t border-neutral-100 w-full">
-            {/* 상단: 좌측 "지도부" 타이틀 + 우측 토글 버튼 */}
             <div className="flex items-center justify-between mb-3">
                 <span className="text-[11px] font-bold text-neutral-500">지도부</span>
                 <ToggleBadge count={members.length} revealed={expanded} onClick={() => setExpanded((v) => !v)} />
             </div>
-            {/* 하단: 원내대표, 최고위원 등 명단 그리드 */}
             {expanded && (
-                <div className="grid grid-cols-5 sm:grid-cols-6 gap-x-1 gap-y-3">
+                <div className="grid grid-cols-5 gap-x-2 gap-y-3">
                     {members.map((p) => (
                         <MiniAvatar
                             key={p.id}
@@ -258,7 +255,7 @@ const RestLeadershipToggle = ({
     );
 };
 
-// 중진 / 소속의원 그룹 — 기본은 첫 행(6명) 선명하게 표시, 버튼 클릭 시 전체 펼침
+// 중진 / 소속의원 그룹 — 기본 5명씩 표시 (5칸 그리드)
 const NamedGroup = ({
     title,
     members,
@@ -273,7 +270,7 @@ const NamedGroup = ({
     const [expanded, setExpanded] = useState(false);
     if (members.length === 0) return null;
 
-    const PREVIEW_COUNT = 6;
+    const PREVIEW_COUNT = 5; // 기본 5명으로 변경
     const visibleMembers = expanded ? members : members.slice(0, PREVIEW_COUNT);
 
     return (
@@ -284,7 +281,7 @@ const NamedGroup = ({
                     <ToggleBadge count={members.length} revealed={expanded} onClick={() => setExpanded((v) => !v)} />
                 )}
             </div>
-            <div className="grid grid-cols-5 sm:grid-cols-6 gap-x-1 gap-y-3">
+            <div className="grid grid-cols-5 gap-x-2 gap-y-3">
                 {visibleMembers.map((p) => (
                     <MiniAvatar
                         key={p.id}
@@ -292,7 +289,7 @@ const NamedGroup = ({
                         selected={selectedPolitician?.id === p.id}
                         onClick={() => onSelectPolitician(p)}
                         size="sm"
-                        blurred={false} // 블러 완전 해제
+                        blurred={false}
                     />
                 ))}
             </div>
@@ -300,7 +297,7 @@ const NamedGroup = ({
     );
 };
 
-// 소수 정당 및 무소속 전용 — 윗 정당들(민주당/국힘)과 100% 동일한 6열 그리드로 세로줄 칼정렬
+// 소수 정당 및 무소속 전용 — 모든 정당 5명씩 노출로 통일
 const CompactPartySection = ({
     party,
     members,
@@ -315,8 +312,7 @@ const CompactPartySection = ({
     const [expanded, setExpanded] = useState(false);
     const sorted = [...members].sort((a, b) => b.timesElected - a.timesElected);
 
-    const isIndependent = party.includes('무소속');
-    const PREVIEW_COUNT = isIndependent ? members.length : 6;
+    const PREVIEW_COUNT = 5; // 소수정당 및 무소속도 기본 5명으로 변경
     const visibleMembers = expanded ? sorted : sorted.slice(0, PREVIEW_COUNT);
 
     return (
@@ -330,36 +326,19 @@ const CompactPartySection = ({
                 />
             </div>
 
-            {/* [핵심] 윗 정당들과 100% 동일한 규격의 그리드로 정렬하여 세로줄을 정확히 일치시킴 */}
-            {!isIndependent ? (
-                // 1. 소수정당(조국혁신당, 개혁신당 등): 윗 정당들과 똑같이 한 줄에 6명씩 반듯하게 정렬
-                <div className="grid grid-cols-5 sm:grid-cols-6 gap-x-1 gap-y-3">
-                    {visibleMembers.map((p) => (
-                        <MiniAvatar
-                            key={p.id}
-                            politician={p}
-                            selected={selectedPolitician?.id === p.id}
-                            onClick={() => onSelectPolitician(p)}
-                            size="sm"
-                            blurred={false}
-                        />
-                    ))}
-                </div>
-            ) : (
-                // 2. 무소속: 화면 전체 폭에 맞춰 윗 정당들의 그리드 간격과 동일하게 일치시킴
-                <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 gap-x-1 gap-y-3">
-                    {visibleMembers.map((p) => (
-                        <MiniAvatar
-                            key={p.id}
-                            politician={p}
-                            selected={selectedPolitician?.id === p.id}
-                            onClick={() => onSelectPolitician(p)}
-                            size="sm"
-                            blurred={false}
-                        />
-                    ))}
-                </div>
-            )}
+            {/* 모든 정당 및 무소속 5칸 그리드 적용 */}
+            <div className="grid grid-cols-5 gap-x-2 gap-y-3">
+                {visibleMembers.map((p) => (
+                    <MiniAvatar
+                        key={p.id}
+                        politician={p}
+                        selected={selectedPolitician?.id === p.id}
+                        onClick={() => onSelectPolitician(p)}
+                        size="sm"
+                        blurred={false}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
@@ -417,9 +396,13 @@ export const PartySection: React.FC<PartySectionProps> = ({
 
     return (
         <div className="mb-8">
-            {/* 정당 로고 헤더 (로고 또는 첫 글자 + 정당명 + 인원수) */}
+            {/* 정당 로고 헤더: 국민의힘 등 우측 정당은 align="right"로 우측 정렬 */}
             <div className="mb-5">
-                <PartyHeader party={party} count={members.length} />
+                <PartyHeader
+                    party={party}
+                    count={members.length}
+                    align={party === '국민의힘' ? 'right' : 'left'}
+                />
             </div>
 
             {/* 1. 당대표 단독 카드 (토글키 없이 깔끔하게 독립) */}

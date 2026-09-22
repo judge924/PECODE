@@ -52,7 +52,7 @@ export const OrgChart: React.FC<OrgChartProps> = ({
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-mono font-bold tracking-widest text-neutral-400 uppercase">
-                PORG · DISTRICT ORG
+                PECODE · DISTRICT ORG
               </span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-800">
                 총 {totalMembers}명의 대리인

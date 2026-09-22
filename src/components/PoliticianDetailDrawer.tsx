@@ -51,7 +51,7 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
         <div className="sticky top-0 bg-white/95 backdrop-blur-sm z-20 px-6 py-4 border-b border-neutral-200 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-xs font-mono font-bold tracking-wider text-neutral-500 uppercase">
-              PORG / PROFILE
+              PECODE / PROFILE
             </span>
           </div>
           <button
@@ -157,8 +157,8 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
             <button
               onClick={() => setActiveTab('facts')}
               className={`py-3.5 px-3 text-xs font-semibold border-b-2 transition-colors ${activeTab === 'facts'
-                  ? 'border-black text-black'
-                  : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                ? 'border-black text-black'
+                : 'border-transparent text-neutral-400 hover:text-neutral-700'
                 }`}
             >
               의정 활동 지표
@@ -166,8 +166,8 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
             <button
               onClick={() => setActiveTab('bills')}
               className={`py-3.5 px-3 text-xs font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${activeTab === 'bills'
-                  ? 'border-black text-black'
-                  : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                ? 'border-black text-black'
+                : 'border-transparent text-neutral-400 hover:text-neutral-700'
                 }`}
             >
               대표발의 법안
@@ -178,8 +178,8 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
             <button
               onClick={() => setActiveTab('pledges')}
               className={`py-3.5 px-3 text-xs font-semibold border-b-2 transition-colors flex items-center gap-1.5 ${activeTab === 'pledges'
-                  ? 'border-black text-black'
-                  : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                ? 'border-black text-black'
+                : 'border-transparent text-neutral-400 hover:text-neutral-700'
                 }`}
             >
               핵심 공약
@@ -190,8 +190,8 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
             <button
               onClick={() => setActiveTab('career')}
               className={`py-3.5 px-3 text-xs font-semibold border-b-2 transition-colors ${activeTab === 'career'
-                  ? 'border-black text-black'
-                  : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                ? 'border-black text-black'
+                : 'border-transparent text-neutral-400 hover:text-neutral-700'
                 }`}
             >
               약력 및 연락처
@@ -275,8 +275,8 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
                         </span>
                         <span
                           className={`text-[11px] font-semibold px-2 py-0.5 rounded-md ${bill.status === '원안가결' || bill.status === '수정가결'
-                              ? 'bg-neutral-900 text-white'
-                              : 'bg-neutral-100 text-neutral-700'
+                            ? 'bg-neutral-900 text-white'
+                            : 'bg-neutral-100 text-neutral-700'
                             }`}
                         >
                           {bill.status}
@@ -423,7 +423,7 @@ export const PoliticianDetailDrawer: React.FC<PoliticianDetailDrawerProps> = ({
         {/* Footer info banner */}
         <div className="p-4 bg-neutral-100 border-t border-neutral-200 text-center">
           <p className="text-[11px] text-neutral-500 font-mono">
-            PORG · 대한민국 공공의정 데이터 표준 연동 플랫폼
+            PECODE · 대한민국 공공의정 데이터 표준 연동 플랫폼
           </p>
         </div>
       </div>
