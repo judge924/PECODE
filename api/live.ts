@@ -8,17 +8,16 @@ interface ChannelItem {
     url?: string;
 }
 
-let LAST_SUCCESS_DATA: { left: any[]; right: any[]; updatedAt: string } | null = null;
-
 export default async function handler(req: any, res: any) {
+    // ⭐️ [핵심] 방문자가 새로고침을 10만 번 해도 유튜브를 찌르지 않고 1분간 저장된 데이터 즉시 반환
     res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=60');
 
     try {
-        // 1. 활성 채널 목록 수집
+        // 1. 구글 시트에서 활성 채널 목록 가져오기 (타임아웃 4초로 넉넉히)
         let channels: ChannelItem[] = [];
         try {
             const sheetController = new AbortController();
-            const sheetTimeout = setTimeout(() => sheetController.abort(), 3500);
+            const sheetTimeout = setTimeout(() => sheetController.abort(), 4000);
             const sheetRes = await fetch(`${APPS_SCRIPT_URL}?action=channels`, { signal: sheetController.signal });
             clearTimeout(sheetTimeout);
             const sheetData = await sheetRes.json();
@@ -26,17 +25,16 @@ export default async function handler(req: any, res: any) {
                 channels = sheetData.channels.filter((c: any) => c.channelId && c.channelId.startsWith('UC'));
             }
         } catch (e) {
-            console.warn("구글 시트 연동 지연");
+            console.warn("구글 시트 지연 발생");
         }
 
         if (channels.length === 0) {
-            if (LAST_SUCCESS_DATA) return res.status(200).json(LAST_SUCCESS_DATA);
             return res.status(200).json({ left: [], right: [], updatedAt: new Date().toISOString() });
         }
 
-        // 2. ⭐️ [핵심 개선] 채널당 1개가 아닌 최신 3개 영상 ID를 전부 수집하여 라이브 누락 100% 방지
+        // 2. 유튜브 공식 RSS 피드에서 영상 ID 수집 (타임아웃 넉넉히 4초 보장)
         const detectedVideos: Array<{ camp: string; channelName: string; videoId: string }> = [];
-        const chunkSize = 40;
+        const chunkSize = 25;
 
         for (let i = 0; i < channels.length; i += chunkSize) {
             const chunk = channels.slice(i, i + chunkSize);
@@ -44,7 +42,7 @@ export default async function handler(req: any, res: any) {
                 try {
                     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`;
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 2500);
+                    const timeoutId = setTimeout(() => controller.abort(), 4000); // ⭐️ 넉넉한 4초로 끊김 방지
 
                     const rssRes = await fetch(rssUrl, {
                         signal: controller.signal,
@@ -55,18 +53,18 @@ export default async function handler(req: any, res: any) {
                     clearTimeout(timeoutId);
 
                     const xmlText = await rssRes.text();
-                    // 정규식으로 상위 3개 영상 ID 전부 추출
-                    const matches = Array.from(xmlText.matchAll(/<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g));
-                    const topMatches = matches.slice(0, 3);
 
-                    for (const m of topMatches) {
-                        if (m && m[1]) {
-                            detectedVideos.push({
-                                camp: ch.camp,
-                                channelName: ch.name,
-                                videoId: m[1]
-                            });
-                        }
+                    // 가장 안전한 정규식으로 상위 영상 ID 추출
+                    const regex = /<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g;
+                    let match;
+                    let count = 0;
+                    while ((match = regex.exec(xmlText)) !== null && count < 2) {
+                        detectedVideos.push({
+                            camp: ch.camp,
+                            channelName: ch.name,
+                            videoId: match[1]
+                        });
+                        count++;
                     }
                 } catch (e) { }
             });
@@ -77,7 +75,7 @@ export default async function handler(req: any, res: any) {
         const uniqueVideoIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
         const liveDetailsMap: Record<string, { viewers: number; title: string }> = {};
 
-        // 3. 구글 공식 API로 진짜 생방송 판별 (최대 3~4회 호출 = 3~4점 소모로 매우 안전)
+        // 3. 구글 공식 API로 생방송 여부 및 시청자 수 조회 (단 2~3점 소모)
         if (uniqueVideoIds.length > 0) {
             for (let i = 0; i < uniqueVideoIds.length; i += 50) {
                 const idBatch = uniqueVideoIds.slice(i, i + 50);
@@ -104,7 +102,7 @@ export default async function handler(req: any, res: any) {
             }
         }
 
-        // 4. 좌/우 분류 (채널당 시청자 가장 높은 1개 단일 노출)
+        // 4. 좌/우 분류 및 1개 채널당 시청자 가장 높은 1개 단일 노출
         const leftMap: Record<string, any> = {};
         const rightMap: Record<string, any> = {};
 
@@ -131,23 +129,13 @@ export default async function handler(req: any, res: any) {
         const leftList = Object.values(leftMap).sort((a: any, b: any) => b.viewers - a.viewers);
         const rightList = Object.values(rightMap).sort((a: any, b: any) => b.viewers - a.viewers);
 
-        if (leftList.length > 0 || rightList.length > 0) {
-            LAST_SUCCESS_DATA = {
-                left: leftList,
-                right: rightList,
-                updatedAt: new Date().toISOString()
-            };
-            return res.status(200).json(LAST_SUCCESS_DATA);
-        }
-
-        if (LAST_SUCCESS_DATA) {
-            return res.status(200).json(LAST_SUCCESS_DATA);
-        }
-
-        return res.status(200).json({ left: [], right: [], updatedAt: new Date().toISOString() });
+        return res.status(200).json({
+            left: leftList,
+            right: rightList,
+            updatedAt: new Date().toISOString()
+        });
 
     } catch (error: any) {
-        if (LAST_SUCCESS_DATA) return res.status(200).json(LAST_SUCCESS_DATA);
         return res.status(200).json({ left: [], right: [], error: error?.message || 'error' });
     }
 }
