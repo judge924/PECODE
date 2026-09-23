@@ -8,6 +8,7 @@ interface HeaderProps {
   onViewModeChange?: (mode: 'chart' | 'list') => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
+  onAdminClick?: () => void; // ⭐️ 관리자 모달 클릭 이벤트
 }
 
 // -------------------------------------------------------------
@@ -47,9 +48,10 @@ export const Header: React.FC<HeaderProps> = ({
   onRegionChange,
   searchQuery,
   onSearchChange,
+  onAdminClick,
 }) => {
   return (
-    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-neutral-100">
       {/* 좌우 1280px 족쇄를 풀고 화면 좌우 끝까지 시원하게 꽉 채움 */}
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
         <div className="flex items-center justify-between h-16 gap-4">
@@ -57,7 +59,6 @@ export const Header: React.FC<HeaderProps> = ({
           {/* 1. 왼쪽: [태극기 심볼] + 브랜드명 + 국회 선택창 */}
           <div className="flex items-center gap-4 shrink-0">
             <div className="flex items-center gap-3">
-              {/* PECODE 검은 상자 대신 단정하게 들어간 순수 태극기 심볼 */}
               <Taegeukgi className="w-[45px] h-[30px] sm:w-[54px] sm:h-[36px] rounded-[2px]" />
 
               <div className="flex flex-col justify-center">
@@ -91,9 +92,9 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* 2. 오른쪽: 검색창 (오른쪽 끝 완벽 밀착) */}
-          <div className="ml-auto w-full max-w-xs sm:max-w-sm hidden md:block">
-            <div className="relative flex items-center">
+          {/* 2. 오른쪽: 검색창 + [관리자 버튼] (나란히 칼정렬) */}
+          <div className="ml-auto flex items-center gap-2">
+            <div className="w-64 lg:w-80 relative hidden md:flex items-center">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
               <input
                 type="text"
@@ -106,6 +107,18 @@ export const Header: React.FC<HeaderProps> = ({
                 검색
               </span>
             </div>
+
+            {/* ⭐️ 검색창 바로 옆 관리자 버튼 (로그인/회원가입 자리) */}
+            {onAdminClick && (
+              <button
+                onClick={onAdminClick}
+                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm"
+                title="PECODE 채널 관리자 모드"
+              >
+                <span className="text-xs">🛡️</span>
+                <span>관리자</span>
+              </button>
+            )}
           </div>
 
         </div>

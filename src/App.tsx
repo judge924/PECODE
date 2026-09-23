@@ -8,12 +8,10 @@ import { OrgChart } from './components/OrgChart';
 import { ListView } from './components/ListView';
 import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
+import { AdminModal } from './components/AdminModal';
 
 export function App() {
-  // ⭐️ 라이브 방송 데이터는 우리 프로젝트 자체 API(/api/live)에서 100% 독립 조회
   const LIVE_API_URL = "/api/live";
-
-  // ⭐️ 사용자 채널 건의는 구글 시트로 안전하게 전송
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
@@ -21,10 +19,11 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
 
-  // Current Hierarchy
+  // 관리자 모달 열림/닫힘 상태
+  const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
+
   const currentHierarchy = REGIONS_DATA[currentRegion] || REGIONS_DATA['대한민국 국회'];
 
-  // Global search filtering
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return null;
     const query = searchQuery.toLowerCase().trim();
@@ -49,13 +48,13 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white relative">
-      {/* 좌측 날개: 범야권 / 진보 실시간 라이브 랭킹 */}
+      {/* 좌측 날개 */}
       <LiveSidebar camp="left" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
-      {/* 우측 날개: 범여권 / 보수 실시간 라이브 랭킹 */}
+      {/* 우측 날개 */}
       <LiveSidebar camp="right" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
-      {/* [상단 고정 묶음] 헤더와 블랙티켓을 하나로 묶어 스크롤 시 함께 화면 상단에 고정 */}
+      {/* 상단 고정 헤더 & 블랙티켓 */}
       <div className="sticky top-0 z-30 bg-[#fcfcfc]">
         <Header
           currentRegion={currentRegion}
@@ -67,13 +66,13 @@ export function App() {
           onViewModeChange={setViewMode}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
+          onAdminClick={() => setIsAdminOpen(true)} // ⭐️ 헤더 안의 관리자 버튼 클릭 시 열림
         />
         <BlackTicketGauge politicians={displayedPoliticians} />
       </div>
 
       {/* 3. Main Body */}
       <main className="flex-1 w-full max-w-[1800px] mx-auto pb-16">
-        {/* Search Results Notice (if active) */}
         {searchResults !== null ? (
           <div className="px-4 py-8">
             <div className="max-w-6xl mx-auto mb-6 flex items-center justify-between">
@@ -99,7 +98,6 @@ export function App() {
             />
           </div>
         ) : (
-          /* Normal View: Org Chart, Directory, or Party Org Chart */
           <div className="py-4">
             {viewMode === 'chart' ? (
               <OrgChart
@@ -118,13 +116,17 @@ export function App() {
         )}
       </main>
 
-      {/* 4. Slide-over Profile Drawer */}
       <PoliticianDetailDrawer
         politician={selectedPolitician}
         onClose={() => setSelectedPolitician(null)}
       />
 
-      {/* 5. Minimal The Org Footer */}
+      {/* 관리자 모달 */}
+      <AdminModal
+        isOpen={isAdminOpen}
+        onClose={() => setIsAdminOpen(false)}
+      />
+
       <footer className="border-t border-neutral-200 bg-white py-12 px-4 text-xs text-neutral-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
