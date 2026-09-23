@@ -228,7 +228,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                 {firstVideoId ? (
                                     <iframe
-                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`}
+                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
                                         title={firstChannel.channelName}
                                         className="w-full h-full object-cover pointer-events-none scale-105"
                                         allow="autoplay; encrypted-media"
@@ -299,7 +299,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                         {isHovered && videoId ? (
                                             <iframe
-                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`}
+                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
                                                 title={channel.channelName}
                                                 className="w-full h-full object-cover pointer-events-none scale-105 animate-fade-in"
                                                 allow="autoplay; encrypted-media"
