@@ -44,6 +44,14 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     // ⭐️ 2위 이하 채널 마우스 호버(Hover) 재생 상태 관리
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
+    // ⭐️ 1위 영상 초기 일시정지 깜빡임을 가려주는 부드러운 페이드인 상태
+    const [isVideoReady, setIsVideoReady] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsVideoReady(true), 1200);
+        return () => clearTimeout(timer);
+    }, []);
+
     // 건의하기 팝업 상태
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [suggestName, setSuggestName] = useState('');
@@ -224,28 +232,29 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* ⭐️ 3행: 1위 접속 즉시 실시간 자동 재생 (음소거) */}
+                            {/* ⭐️ 3행: 1위 접속 즉시 실시간 자동 재생 (일시정지 아이콘 완벽 가림) */}
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
-                                {firstVideoId ? (
+                                {firstVideoId && (
                                     <iframe
                                         src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
                                         title={firstChannel.channelName}
                                         className="w-full h-full object-cover pointer-events-none scale-105"
                                         allow="autoplay; encrypted-media"
                                     />
-                                ) : firstChannel.thumbnail ? (
+                                )}
+
+                                {/* 1.2초 동안 일시정지 아이콘을 가려주고 스르륵 사라지는 커버 썸네일 */}
+                                {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
                                         alt={firstChannel.channelName}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none ${isVideoReady ? 'opacity-0' : 'opacity-100'
+                                            }`}
                                         referrerPolicy="no-referrer"
                                     />
-                                ) : (
-                                    <div className="w-full h-full bg-neutral-100 flex items-center justify-center text-[10px] text-neutral-400">
-                                        LIVE
-                                    </div>
                                 )}
-                                <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none">
+
+                                <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none z-10">
                                     LIVE
                                 </span>
                             </div>
