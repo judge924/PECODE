@@ -65,7 +65,12 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                 const res = await fetch(apiUrl);
                 const data = await res.json();
                 const list: LiveChannel[] = isLeft ? data.left : data.right;
-                setChannels(list || []);
+
+                // ⭐️ [화면 보호] 새 데이터가 정상적으로 1개 이상 있을 때만 화면을 갱신하고,
+                // 만약 일시적인 랙으로 0개가 오면 기존에 잘 나오던 목록을 지우지 않고 유지!
+                if (list && list.length > 0) {
+                    setChannels(list);
+                }
             } catch (err) {
                 console.warn("라이브 데이터 갱신 중:", err);
             } finally {
