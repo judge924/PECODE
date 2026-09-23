@@ -130,13 +130,13 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const restChannels = uniqueChannels.slice(1);
     const firstVideoId = firstChannel ? extractVideoId(firstChannel.liveUrl, firstChannel.thumbnail) : '';
 
-    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 4.5초간 썸네일 가림막 완벽 유지
+    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 5초간 썸네일 가림막 완벽 유지
     useEffect(() => {
         if (firstVideoId) {
             setIsVideoReady(false);
             const timer = setTimeout(() => {
                 setIsVideoReady(true);
-            }, 4500); // 4.5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
+            }, 5000); // 5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
             return () => clearTimeout(timer);
         }
     }, [firstVideoId]);
@@ -247,7 +247,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* 1위 영상 화면: 썸네일이 4.5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
+                            {/* 1위 영상 화면: 썸네일이 5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                 {firstVideoId && (
                                     <iframe
@@ -258,7 +258,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     />
                                 )}
 
-                                {/* 가림막 썸네일 (4.5초 뒤 스르륵 투명화) */}
+                                {/* 가림막 썸네일 (5초 뒤 스르륵 투명화) */}
                                 {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
