@@ -1,21 +1,21 @@
 import { YOUTUBE_CHANNELS } from '../src/data/youtubeChannels';
 
-// ⭐️ 발급받으신 유튜브 API 키를 코드에 직접 등록 (Vercel 배포 시 100% 즉시 인식)
-const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || process.env.VITE_YOUTUBE_API_KEY || "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
+// ⭐️ 발급받으신 API 키를 직접 장착하여 Vercel에서 100% 즉시 작동
+const API_KEY = "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
 
 export default async function handler(req: any, res: any) {
-    // ⭐️ 60초 동안 Vercel 전 세계 엣지 서버 캐시: 0.01초 만에 즉시 응답
-    res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=30');
+    // Vercel 엣지 캐시: 30초 동안 초고속 즉시 반환
+    res.setHeader('Cache-Control', 's-maxage=30, stale-while-revalidate=15');
 
     try {
-        // 1. 83개 채널을 병렬로 초고속 스캔 (각 요청당 3초 타임아웃 제한으로 Vercel 속도 보장)
+        // 1. 등록된 채널들 중 라이브 중인 비디오 ID 스캔
         const scanPromises = YOUTUBE_CHANNELS.map(async (ch) => {
             try {
                 const cleanBase = ch.url.split('?')[0].replace(/\/live\/?$/, '').replace(/\/$/, '');
                 const liveUrl = cleanBase + '/live';
 
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3500);
+                const timeoutId = setTimeout(() => controller.abort(), 4000);
 
                 const response = await fetch(liveUrl, {
                     signal: controller.signal,
@@ -50,11 +50,11 @@ export default async function handler(req: any, res: any) {
         const detailsMap: Record<string, { viewers: number; title: string }> = {};
 
         // 2. 유튜브 공식 API로 실시간 동시 시청자 수와 제목 일괄 조회
-        if (videoIds.length > 0 && YOUTUBE_API_KEY) {
+        if (videoIds.length > 0) {
             for (let i = 0; i < videoIds.length; i += 50) {
                 const chunk = videoIds.slice(i, i + 50);
                 try {
-                    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,snippet&id=${chunk.join(',')}&key=${YOUTUBE_API_KEY}`;
+                    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,snippet&id=${chunk.join(',')}&key=${API_KEY}`;
                     const apiRes = await fetch(apiUrl);
                     const apiData = await apiRes.json();
 
@@ -75,14 +75,13 @@ export default async function handler(req: any, res: any) {
             }
         }
 
-        // 3. 진영 분류 및 0명(대기방/예약방송) 원천 제외
+        // 3. 진영별 분류 및 0명 제외
         const leftMap: Record<string, any> = {};
         const rightMap: Record<string, any> = {};
 
         for (const d of detected) {
             const details = detailsMap[d.videoId] || { viewers: 0, title: '' };
 
-            // 시청자 수가 1명 이상인 '진짜 생방송'만 추가
             if (details.viewers > 0) {
                 const item = {
                     channelName: d.name,
