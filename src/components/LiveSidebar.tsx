@@ -19,12 +19,30 @@ const formatViewers = (count: number) => {
     return `${count.toLocaleString()}명`;
 };
 
+// ⭐️ 유튜브 URL 또는 썸네일에서 11자리 고유 영상 ID 추출 헬퍼 함수
+const extractVideoId = (url: string, thumb?: string): string => {
+    if (url) {
+        const vMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+        if (vMatch) return vMatch[1];
+        const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+        if (shortMatch) return shortMatch[1];
+    }
+    if (thumb) {
+        const thumbMatch = thumb.match(/\/vi\/([a-zA-Z0-9_-]{11})\//);
+        if (thumbMatch) return thumbMatch[1];
+    }
+    return '';
+};
+
 export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestApiUrl }) => {
     const isLeft = camp === 'left';
     const [channels, setChannels] = useState<LiveChannel[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const sidebarRef = useRef<HTMLElement | null>(null);
     const scrollableRef = useRef<HTMLDivElement | null>(null);
+
+    // ⭐️ 2위 이하 채널 마우스 호버(Hover) 재생 상태 관리
+    const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
     // 건의하기 팝업 상태
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,7 +76,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         return () => clearInterval(timer);
     }, [apiUrl, isLeft]);
 
-    // ⭐️ [스크롤 제어] 1위 카드를 건드려도 2위 이하 목록이 자연스럽게 스크롤되며 본문은 고정
+    // [스크롤 제어] 1위 카드를 건드려도 2위 이하 목록이 자연스럽게 스크롤되며 본문은 고정
     const handleWheel = useCallback((e: WheelEvent) => {
         const scrollEl = scrollableRef.current;
         if (!scrollEl) {
@@ -78,7 +96,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         if (isAtTop || isAtBottom) {
             e.preventDefault();
         } else if (!scrollEl.contains(e.target as Node)) {
-            // 마우스가 1위 고정 카드 위에 있을 때도 아래 스크롤 목록을 연동하여 굴려줌
             scrollEl.scrollTop += e.deltaY;
             e.preventDefault();
         }
@@ -96,8 +113,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
     const uniqueChannels = useMemo(() => {
         const channelMap = new Map<string, LiveChannel>();
-
-        // ⭐️ 시청자 수가 0명인 대기방 / 예약 방송은 1차로 완전 제외!
         const liveNowChannels = channels.filter((c) => c.viewers > 0);
 
         for (const item of liveNowChannels) {
@@ -109,9 +124,11 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         return Array.from(channelMap.values()).sort((a, b) => b.viewers - a.viewers);
     }, [channels]);
 
-    // ⭐️ 1위 채널과 2위 이하 채널 분리
+    // 1위 채널과 2위 이하 채널 분리
     const firstChannel = uniqueChannels[0];
     const restChannels = uniqueChannels.slice(1);
+
+    const firstVideoId = firstChannel ? extractVideoId(firstChannel.liveUrl, firstChannel.thumbnail) : '';
 
     const handleSuggestSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -150,14 +167,12 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
     const badgeColor = isLeft ? 'bg-[#004ea2] text-white' : 'bg-[#e61e2b] text-white';
 
-    // ⭐️ 방송이 0개이거나 로딩 중이어도 사이드바가 절대 화면에서 증발하지 않음!
-
     return (
         <>
             <aside
                 ref={setSidebarRef}
                 className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
-                    } max-h-[calc(100vh-140px)] z-20 pointer-events-auto`}
+                    } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
             >
                 {/* ⭐️ [상단 고정 영역: 헤더 + 1위 채널] */}
                 <div className="shrink-0 flex flex-col gap-1.5 pb-2.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
@@ -209,9 +224,16 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* 3행: 화면 썸네일 */}
-                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-neutral-100 shadow-sm border border-neutral-200/60 mt-0.5">
-                                {firstChannel.thumbnail ? (
+                            {/* ⭐️ 3행: 1위 접속 즉시 실시간 자동 재생 (음소거) */}
+                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
+                                {firstVideoId ? (
+                                    <iframe
+                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                                        title={firstChannel.channelName}
+                                        className="w-full h-full object-cover pointer-events-none scale-105"
+                                        allow="autoplay; encrypted-media"
+                                    />
+                                ) : firstChannel.thumbnail ? (
                                     <img
                                         src={firstChannel.thumbnail}
                                         alt={firstChannel.channelName}
@@ -223,7 +245,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         LIVE
                                     </div>
                                 )}
-                                <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none">
+                                <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none">
                                     LIVE
                                 </span>
                             </div>
@@ -237,61 +259,75 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                         ref={scrollableRef}
                         className="flex-1 overflow-y-auto overscroll-y-contain scrollbar-none pt-2.5 flex flex-col gap-3"
                     >
-                        {restChannels.map((channel, idx) => (
-                            <a
-                                key={idx}
-                                href={channel.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5"
-                            >
-                                {/* 1행: 순위(2위부터), 채널명, 시청자 수 */}
-                                <div className="flex items-center justify-between gap-1 text-[11px]">
-                                    <div className="flex items-center gap-1.5 min-w-0">
-                                        <span className="w-3.5 h-3.5 flex items-center justify-center rounded text-[9px] font-black shrink-0 bg-neutral-200 text-neutral-600">
-                                            {idx + 2}
-                                        </span>
-                                        <span className="font-normal text-neutral-800 truncate group-hover:text-black">
-                                            {channel.channelName}
+                        {restChannels.map((channel, idx) => {
+                            const videoId = extractVideoId(channel.liveUrl, channel.thumbnail);
+                            const isHovered = hoveredIdx === idx;
+
+                            return (
+                                <a
+                                    key={idx}
+                                    href={channel.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onMouseEnter={() => setHoveredIdx(idx)}
+                                    onMouseLeave={() => setHoveredIdx(null)}
+                                    className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5"
+                                >
+                                    {/* 1행: 순위(2위부터), 채널명, 시청자 수 */}
+                                    <div className="flex items-center justify-between gap-1 text-[11px]">
+                                        <div className="flex items-center gap-1.5 min-w-0">
+                                            <span className="w-3.5 h-3.5 flex items-center justify-center rounded text-[9px] font-black shrink-0 bg-neutral-200 text-neutral-600">
+                                                {idx + 2}
+                                            </span>
+                                            <span className="font-normal text-neutral-800 truncate group-hover:text-black">
+                                                {channel.channelName}
+                                            </span>
+                                        </div>
+                                        <span className="font-normal text-neutral-900 shrink-0 tabular-nums text-[10px]">
+                                            {formatViewers(channel.viewers)}
                                         </span>
                                     </div>
-                                    <span className="font-normal text-neutral-900 shrink-0 tabular-nums text-[10px]">
-                                        {formatViewers(channel.viewers)}
-                                    </span>
-                                </div>
 
-                                {/* 2행: 방송 제목 */}
-                                {channel.title && (
-                                    <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
-                                        {channel.title}
-                                    </div>
-                                )}
-
-                                {/* 3행: 화면 썸네일 */}
-                                <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-neutral-100 shadow-sm border border-neutral-200/60 mt-0.5">
-                                    {channel.thumbnail ? (
-                                        <img
-                                            src={channel.thumbnail}
-                                            alt={channel.channelName}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                                            referrerPolicy="no-referrer"
-                                        />
-                                    ) : (
-                                        <div className="w-full h-full bg-neutral-100 flex items-center justify-center text-[10px] text-neutral-400">
-                                            LIVE
+                                    {/* 2행: 방송 제목 */}
+                                    {channel.title && (
+                                        <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
+                                            {channel.title}
                                         </div>
                                     )}
-                                    <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none">
-                                        LIVE
-                                    </span>
-                                </div>
-                            </a>
-                        ))}
+
+                                    {/* ⭐️ 3행: 마우스 올리면(Hover) 즉시 음소거 재생, 마우스 떼면 썸네일 복귀 */}
+                                    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
+                                        {isHovered && videoId ? (
+                                            <iframe
+                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                                                title={channel.channelName}
+                                                className="w-full h-full object-cover pointer-events-none scale-105 animate-fade-in"
+                                                allow="autoplay; encrypted-media"
+                                            />
+                                        ) : channel.thumbnail ? (
+                                            <img
+                                                src={channel.thumbnail}
+                                                alt={channel.channelName}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                                referrerPolicy="no-referrer"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-neutral-100 flex items-center justify-center text-[10px] text-neutral-400">
+                                                LIVE
+                                            </div>
+                                        )}
+                                        <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none">
+                                            LIVE
+                                        </span>
+                                    </div>
+                                </a>
+                            );
+                        })}
                     </div>
                 )}
             </aside>
 
-            {/* ⭐️ 유튜브 채널 건의 팝업 모달 */}
+            {/* 유튜브 채널 건의 팝업 모달 */}
             {isModalOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-xs p-4 animate-fade-in">
                     <div className="bg-white rounded-2xl p-6 shadow-2xl max-w-sm w-full border border-neutral-200 relative">
@@ -338,8 +374,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     </label>
                                     <div className="flex gap-2">
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '좌파'
-                                            ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
-                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                                ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
+                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
@@ -353,8 +389,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </label>
 
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '우파'
-                                            ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
-                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                                ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
+                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
