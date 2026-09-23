@@ -130,13 +130,13 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const restChannels = uniqueChannels.slice(1);
     const firstVideoId = firstChannel ? extractVideoId(firstChannel.liveUrl, firstChannel.thumbnail) : '';
 
-    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 2.5초간 썸네일 가림막 완벽 유지
+    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 3.5초간 썸네일 가림막 완벽 유지
     useEffect(() => {
         if (firstVideoId) {
             setIsVideoReady(false);
             const timer = setTimeout(() => {
                 setIsVideoReady(true);
-            }, 2500); // 2.5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
+            }, 3500); // 3.5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
             return () => clearTimeout(timer);
         }
     }, [firstVideoId]);
@@ -247,7 +247,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* 1위 영상 화면: 썸네일이 2.5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
+                            {/* 1위 영상 화면: 썸네일이 3.5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                 {firstVideoId && (
                                     <iframe
@@ -258,7 +258,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     />
                                 )}
 
-                                {/* 가림막 썸네일 (2.5초 뒤 스르륵 투명화) */}
+                                {/* 가림막 썸네일 (3.5초 뒤 스르륵 투명화) */}
                                 {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
@@ -396,8 +396,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     </label>
                                     <div className="flex gap-2">
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '좌파'
-                                                ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
-                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                            ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
+                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
@@ -411,8 +411,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </label>
 
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '우파'
-                                                ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
-                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                            ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
+                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
