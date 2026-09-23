@@ -150,13 +150,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
     const badgeColor = isLeft ? 'bg-[#004ea2] text-white' : 'bg-[#e61e2b] text-white';
 
-    if (loading && uniqueChannels.length === 0) {
-        return null;
-    }
-
-    if (uniqueChannels.length === 0) {
-        return null;
-    }
+    // ⭐️ 방송이 0개이거나 로딩 중이어도 사이드바가 절대 화면에서 증발하지 않음!
 
     return (
         <>

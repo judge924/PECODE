@@ -11,7 +11,7 @@ import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 
 export function App() {
   // ⭐️ 라이브 방송 데이터는 프로젝트 초고속 API(/api/live)에서 0.01초 만에 가져옴
-  const LIVE_API_URL = "/api/live";
+  const LIVE_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
   // ⭐️ 사용자 채널 건의는 구글 시트로 안전하게 전송 (처음 복사해두셨던 실제 주소를 넣어주세요)
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
