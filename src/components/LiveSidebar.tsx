@@ -228,7 +228,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                 {firstVideoId ? (
                                     <iframe
-                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`}
                                         title={firstChannel.channelName}
                                         className="w-full h-full object-cover pointer-events-none scale-105"
                                         allow="autoplay; encrypted-media"
@@ -299,7 +299,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                         {isHovered && videoId ? (
                                             <iframe
-                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&iv_load_policy=3`}
                                                 title={channel.channelName}
                                                 className="w-full h-full object-cover pointer-events-none scale-105 animate-fade-in"
                                                 allow="autoplay; encrypted-media"
@@ -374,8 +374,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     </label>
                                     <div className="flex gap-2">
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '좌파'
-                                                ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
-                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                            ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
+                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
@@ -389,8 +389,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </label>
 
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '우파'
-                                                ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
-                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                            ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
+                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
