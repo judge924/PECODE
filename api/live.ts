@@ -1,4 +1,4 @@
-// ⭐️ 구글 시트 웹앱 주소 (활성 채널 목록 실시간 조회용)
+// ⭐️ 구글 시트 웹앱 주소 및 API 키
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 const API_KEY = "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
 
@@ -9,31 +9,42 @@ interface ChannelItem {
     url?: string;
 }
 
+// ⭐️ [방어막 1] 직전 성공 데이터를 서버 메모리에 영구 보관 (빈 화면 원천 방어)
+let LAST_SUCCESS_DATA: { left: any[]; right: any[]; updatedAt: string } | null = null;
+
 export default async function handler(req: any, res: any) {
-    // ⭐️ 1분 실시간 캐시: 방문자는 0.05초 만에 즉시 보고, 60초마다 백그라운드 최신 갱신
+    // Vercel SWR 캐시 (60초 유지)
     res.setHeader('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=60');
 
     try {
-        // 1. 구글 시트에서 [활성 채널] 명단 가져오기
+        // 1. 구글 시트에서 [활성 채널] 명단 가져오기 (타임아웃 3초 제한)
         let channels: ChannelItem[] = [];
         try {
-            const sheetRes = await fetch(`${APPS_SCRIPT_URL}?action=channels`);
+            const sheetController = new AbortController();
+            const sheetTimeout = setTimeout(() => sheetController.abort(), 3000);
+
+            const sheetRes = await fetch(`${APPS_SCRIPT_URL}?action=channels`, { signal: sheetController.signal });
+            clearTimeout(sheetTimeout);
+
             const sheetData = await sheetRes.json();
             if (sheetData.channels && Array.isArray(sheetData.channels)) {
                 channels = sheetData.channels.filter((c: any) => c.channelId && c.channelId.startsWith('UC'));
             }
         } catch (e) {
-            console.error("구글 시트 연동 에러:", e);
+            console.warn("구글 시트 연동 지연 발생");
         }
 
+        // 구글 시트 통신이 실패했고, 직전 성공 데이터가 있다면 즉시 반환하여 빈 화면 방어!
         if (channels.length === 0) {
+            if (LAST_SUCCESS_DATA && (LAST_SUCCESS_DATA.left.length > 0 || LAST_SUCCESS_DATA.right.length > 0)) {
+                return res.status(200).json(LAST_SUCCESS_DATA);
+            }
             return res.status(200).json({ left: [], right: [], updatedAt: new Date().toISOString() });
         }
 
-        // 2. [1단계: 비용 0점] 각 채널의 유튜브 공식 무료 RSS 피드에서 최신 영상 ID 수집
-        // 유튜브 방화벽 차단을 완벽 방지하기 위해 20개씩 묶어서(Chunk) 부드럽게 병렬 처리
+        // 2. [방어막 2: 40개씩 고속 병렬 스캔] Vercel 10초 타임아웃 완벽 방어
         const detectedVideos: Array<{ camp: string; channelName: string; videoId: string }> = [];
-        const chunkSize = 20;
+        const chunkSize = 40;
 
         for (let i = 0; i < channels.length; i += chunkSize) {
             const chunk = channels.slice(i, i + chunkSize);
@@ -41,7 +52,7 @@ export default async function handler(req: any, res: any) {
                 try {
                     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`;
                     const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 3500);
+                    const timeoutId = setTimeout(() => controller.abort(), 2500);
 
                     const rssRes = await fetch(rssUrl, {
                         signal: controller.signal,
@@ -52,7 +63,6 @@ export default async function handler(req: any, res: any) {
                     clearTimeout(timeoutId);
 
                     const xmlText = await rssRes.text();
-                    // 최신 영상 ID 추출 (<yt:videoId>XXXX</yt:videoId>)
                     const match = xmlText.match(/<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/);
                     if (match && match[1]) {
                         return {
@@ -72,11 +82,9 @@ export default async function handler(req: any, res: any) {
         }
 
         const uniqueVideoIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
-
-        // 3. [2단계: 비용 단 2점] 구글 공식 videos API로 50개씩 묶어서 '진짜 생방송'과 시청자 수 조회
-        // ⭐️ 0명짜리 예약 대기방(upcoming) 및 지난 녹화영상(none) 100% 자동 필터링
         const liveDetailsMap: Record<string, { viewers: number; title: string }> = {};
 
+        // 3. 구글 공식 videos API로 생방송 검증 (단 2점 소모)
         if (uniqueVideoIds.length > 0) {
             for (let i = 0; i < uniqueVideoIds.length; i += 50) {
                 const idBatch = uniqueVideoIds.slice(i, i + 50);
@@ -87,7 +95,6 @@ export default async function handler(req: any, res: any) {
 
                     if (vData.items && Array.isArray(vData.items)) {
                         for (const item of vData.items) {
-                            // ⭐️ 핵심: 현재 실시간 방송(live) 중이며, 시청자가 1명 이상인 경우만 합격!
                             const isLive = item.snippet?.liveBroadcastContent === 'live';
                             const concurrentViewers = item.liveStreamingDetails?.concurrentViewers;
                             const viewers = concurrentViewers ? parseInt(concurrentViewers, 10) : 0;
@@ -100,13 +107,11 @@ export default async function handler(req: any, res: any) {
                             }
                         }
                     }
-                } catch (err) {
-                    console.error("유튜브 API 영상 조회 오류:", err);
-                }
+                } catch (err) { }
             }
         }
 
-        // 4. 좌/우 진영 분류 및 채널당 1개 단일 노출 (시청자 최고치)
+        // 4. 좌/우 진영 분류 및 채널당 1개 단일 노출
         const leftMap: Record<string, any> = {};
         const rightMap: Record<string, any> = {};
 
@@ -130,20 +135,35 @@ export default async function handler(req: any, res: any) {
             }
         }
 
-        // 시청자 수 기준 내림차순 정렬 (1위가 맨 위)
         const leftList = Object.values(leftMap).sort((a: any, b: any) => b.viewers - a.viewers);
         const rightList = Object.values(rightMap).sort((a: any, b: any) => b.viewers - a.viewers);
 
-        return res.status(200).json({
-            left: leftList,
-            right: rightList,
-            updatedAt: new Date().toISOString()
-        });
-    } catch (error: any) {
+        // ⭐️ 새로운 라이브 데이터가 정상 수집되었을 때 메모리 캐시 업데이트
+        if (leftList.length > 0 || rightList.length > 0) {
+            LAST_SUCCESS_DATA = {
+                left: leftList,
+                right: rightList,
+                updatedAt: new Date().toISOString()
+            };
+            return res.status(200).json(LAST_SUCCESS_DATA);
+        }
+
+        // 만약 일시적인 네트워크 랙으로 0개가 잡혔더라도, 직전 성공 데이터가 있으면 그것을 보여줌!
+        if (LAST_SUCCESS_DATA && (LAST_SUCCESS_DATA.left.length > 0 || LAST_SUCCESS_DATA.right.length > 0)) {
+            return res.status(200).json(LAST_SUCCESS_DATA);
+        }
+
         return res.status(200).json({
             left: [],
             right: [],
-            error: error?.message || 'error'
+            updatedAt: new Date().toISOString()
         });
+
+    } catch (error: any) {
+        // 에러 발생 시에도 직전 성공 데이터로 100% 방어
+        if (LAST_SUCCESS_DATA) {
+            return res.status(200).json(LAST_SUCCESS_DATA);
+        }
+        return res.status(200).json({ left: [], right: [], error: error?.message || 'error' });
     }
 }
