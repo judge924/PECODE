@@ -19,7 +19,6 @@ const formatViewers = (count: number) => {
     return `${count.toLocaleString()}명`;
 };
 
-// ⭐️ 유튜브 URL 또는 썸네일에서 11자리 고유 영상 ID 추출 헬퍼 함수
 const extractVideoId = (url: string, thumb?: string): string => {
     if (url) {
         const vMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
@@ -41,16 +40,11 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const sidebarRef = useRef<HTMLElement | null>(null);
     const scrollableRef = useRef<HTMLDivElement | null>(null);
 
-    // ⭐️ 2위 이하 채널 마우스 호버(Hover) 재생 상태 관리
+    // 2위 이하 호버 재생
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
-    // ⭐️ 1위 영상 초기 일시정지 깜빡임을 가려주는 부드러운 페이드인 상태
+    // ⭐️ 1위 영상 일시정지 아이콘 완벽 방어 타이머
     const [isVideoReady, setIsVideoReady] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setIsVideoReady(true), 1200);
-        return () => clearTimeout(timer);
-    }, []);
 
     // 건의하기 팝업 상태
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -84,7 +78,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         return () => clearInterval(timer);
     }, [apiUrl, isLeft]);
 
-    // [스크롤 제어] 1위 카드를 건드려도 2위 이하 목록이 자연스럽게 스크롤되며 본문은 고정
+    // ⭐️ [스크롤 제어] 1위 고정 및 스크롤 전파 방지
     const handleWheel = useCallback((e: WheelEvent) => {
         const scrollEl = scrollableRef.current;
         if (!scrollEl) {
@@ -132,11 +126,20 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         return Array.from(channelMap.values()).sort((a, b) => b.viewers - a.viewers);
     }, [channels]);
 
-    // 1위 채널과 2위 이하 채널 분리
     const firstChannel = uniqueChannels[0];
     const restChannels = uniqueChannels.slice(1);
-
     const firstVideoId = firstChannel ? extractVideoId(firstChannel.liveUrl, firstChannel.thumbnail) : '';
+
+    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 2.5초간 썸네일 가림막 완벽 유지
+    useEffect(() => {
+        if (firstVideoId) {
+            setIsVideoReady(false);
+            const timer = setTimeout(() => {
+                setIsVideoReady(true);
+            }, 2500); // 2.5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
+            return () => clearTimeout(timer);
+        }
+    }, [firstVideoId]);
 
     const handleSuggestSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -182,11 +185,10 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                 className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
                     } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
             >
-                {/* ⭐️ [상단 고정 영역: 헤더 + 1위 채널] */}
-                <div className="shrink-0 flex flex-col gap-1.5 pb-2.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
-                    {/* 상단 안내 & 건의 버튼 */}
+                {/* 1. 상단 헤더 영역 */}
+                <div className="shrink-0 flex flex-col gap-1.5 pb-2 border-b border-neutral-200/70 bg-[#fcfcfc]">
                     <div className="flex items-center justify-between pb-1 border-b border-neutral-200/50">
-                        <span className="text-[10px] font-normal text-neutral-400">
+                        <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
                             {isLeft ? 'The Left' : 'The Right'}
                         </span>
                         <button
@@ -194,21 +196,35 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 setSuggestCamp(isLeft ? '좌파' : '우파');
                                 setIsModalOpen(true);
                             }}
-                            className="text-[10px] text-neutral-500 hover:text-black flex items-center gap-0.5 font-normal transition cursor-pointer hover:underline"
+                            className="text-[10px] text-neutral-400 hover:text-neutral-900 flex items-center gap-0.5 font-normal transition cursor-pointer hover:underline"
                         >
                             <span>+ 채널 건의</span>
                         </button>
                     </div>
 
-                    {/* 대망의 1위 고정 채널 카드 */}
-                    {firstChannel && (
+                    {/* ⭐️ [첫 1초 로딩 중 화면] 세련된 미니 스피너 및 안내 메시지 */}
+                    {loading && (
+                        <div className="py-6 flex flex-col items-center justify-center gap-2 text-neutral-400">
+                            <div className="w-4 h-4 border-2 border-neutral-200 border-t-neutral-700 rounded-full animate-spin" />
+                            <span className="text-[10px] font-medium tracking-tight">실시간 라이브 집계 중...</span>
+                        </div>
+                    )}
+
+                    {/* 로딩 완료 후 방송이 0개일 때 */}
+                    {!loading && uniqueChannels.length === 0 && (
+                        <div className="py-6 text-center text-[10px] text-neutral-400 font-normal leading-relaxed">
+                            현재 진행 중인<br />생방송이 없습니다.
+                        </div>
+                    )}
+
+                    {/* ⭐️ 대망의 1위 고정 채널 카드 */}
+                    {!loading && firstChannel && (
                         <a
                             href={firstChannel.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 mt-1"
+                            className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 mt-0.5"
                         >
-                            {/* 1행: 순위 배지, 채널명, 시청자 수 */}
                             <div className="flex items-center justify-between gap-1 text-[11px]">
                                 <div className="flex items-center gap-1.5 min-w-0">
                                     <span
@@ -225,14 +241,13 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </span>
                             </div>
 
-                            {/* 2행: 방송 제목 */}
                             {firstChannel.title && (
                                 <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
                                     {firstChannel.title}
                                 </div>
                             )}
 
-                            {/* ⭐️ 3행: 1위 접속 즉시 실시간 자동 재생 (일시정지 아이콘 완벽 가림) */}
+                            {/* 1위 영상 화면: 썸네일이 2.5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
                             <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                 {firstVideoId && (
                                     <iframe
@@ -243,7 +258,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     />
                                 )}
 
-                                {/* 1.2초 동안 일시정지 아이콘을 가려주고 스르륵 사라지는 커버 썸네일 */}
+                                {/* 가림막 썸네일 (2.5초 뒤 스르륵 투명화) */}
                                 {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
@@ -262,8 +277,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                     )}
                 </div>
 
-                {/* ⭐️ [하단 독립 스크롤 영역: 2위부터 나머지 채널들] */}
-                {restChannels.length > 0 && (
+                {/* 2. 하단 독립 스크롤 영역 (2위부터) */}
+                {!loading && restChannels.length > 0 && (
                     <div
                         ref={scrollableRef}
                         className="flex-1 overflow-y-auto overscroll-y-contain scrollbar-none pt-2.5 flex flex-col gap-3"
@@ -282,7 +297,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     onMouseLeave={() => setHoveredIdx(null)}
                                     className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5"
                                 >
-                                    {/* 1행: 순위(2위부터), 채널명, 시청자 수 */}
                                     <div className="flex items-center justify-between gap-1 text-[11px]">
                                         <div className="flex items-center gap-1.5 min-w-0">
                                             <span className="w-3.5 h-3.5 flex items-center justify-center rounded text-[9px] font-black shrink-0 bg-neutral-200 text-neutral-600">
@@ -297,14 +311,13 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </span>
                                     </div>
 
-                                    {/* 2행: 방송 제목 */}
                                     {channel.title && (
                                         <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
                                             {channel.title}
                                         </div>
                                     )}
 
-                                    {/* ⭐️ 3행: 마우스 올리면(Hover) 즉시 음소거 재생, 마우스 떼면 썸네일 복귀 */}
+                                    {/* 2위 이하 호버 재생 */}
                                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
                                         {isHovered && videoId ? (
                                             <iframe
@@ -383,8 +396,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     </label>
                                     <div className="flex gap-2">
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '좌파'
-                                            ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
-                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                                ? 'border-[#004ea2] bg-blue-50/50 text-[#004ea2]'
+                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
@@ -398,8 +411,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </label>
 
                                         <label className={`flex-1 flex items-center justify-center py-2 px-3 rounded-lg border text-xs cursor-pointer font-medium transition ${suggestCamp === '우파'
-                                            ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
-                                            : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
+                                                ? 'border-[#e61e2b] bg-red-50/50 text-[#e61e2b]'
+                                                : 'border-neutral-200 text-neutral-600 hover:bg-neutral-50'
                                             }`}>
                                             <input
                                                 type="radio"
