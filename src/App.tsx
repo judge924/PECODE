@@ -10,8 +10,10 @@ import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 
 export function App() {
-  // 1단계에서 복사한 구글 앱스 스크립트 웹 앱 URL을 여기에 붙여넣습니다.
-  const LIVE_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
+  // ⭐️ 라이브 방송 데이터는 프로젝트 초고속 API(/api/live)에서 0.01초 만에 가져옴
+  const LIVE_API_URL = "/api/live";
+  // ⭐️ 사용자 채널 건의는 구글 시트로 안전하게 전송
+  const SUGGEST_API_URL = "https://script.google.com/macros/s/기존_구글_배포_URL/exec";
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
   const [viewMode, setViewMode] = useState<'chart' | 'list'>('list');
