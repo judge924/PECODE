@@ -12,8 +12,8 @@ import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 export function App() {
   // ⭐️ 라이브 방송 데이터는 프로젝트 초고속 API(/api/live)에서 0.01초 만에 가져옴
   const LIVE_API_URL = "/api/live";
-  // ⭐️ 사용자 채널 건의는 구글 시트로 안전하게 전송
-  const SUGGEST_API_URL = "https://script.google.com/macros/s/기존_구글_배포_URL/exec";
+  // ⭐️ 사용자 채널 건의는 구글 시트로 안전하게 전송 (처음 복사해두셨던 실제 주소를 넣어주세요)
+  const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
   const [viewMode, setViewMode] = useState<'chart' | 'list'>('list');
@@ -50,10 +50,10 @@ export function App() {
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white relative">
       {/* 좌측 날개: 범야권 / 진보 실시간 라이브 랭킹 */}
-      <LiveSidebar camp="left" apiUrl={LIVE_API_URL} />
+      <LiveSidebar camp="left" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
       {/* 우측 날개: 범여권 / 보수 실시간 라이브 랭킹 */}
-      <LiveSidebar camp="right" apiUrl={LIVE_API_URL} />
+      <LiveSidebar camp="right" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
       {/* [상단 고정 묶음] 헤더와 블랙티켓을 하나로 묶어 스크롤 시 함께 화면 상단에 고정 */}
       <div className="sticky top-0 z-30 bg-[#fcfcfc]">

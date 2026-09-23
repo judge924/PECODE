@@ -1,26 +1,33 @@
 import { YOUTUBE_CHANNELS } from '../src/data/youtubeChannels';
 
+// ⭐️ 발급받으신 유튜브 API 키를 코드에 직접 등록 (Vercel 배포 시 100% 즉시 인식)
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY || process.env.VITE_YOUTUBE_API_KEY || "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
+
 export default async function handler(req: any, res: any) {
-    // ⭐️ Vercel 전 세계 엣지 서버 캐시: 60초간 응답을 보관해 0.01초 만에 즉시 반환
+    // ⭐️ 60초 동안 Vercel 전 세계 엣지 서버 캐시: 0.01초 만에 즉시 응답
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=30');
 
-    const apiKey = process.env.VITE_YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY || '';
-
     try {
-        // 1. 83개 전체 채널의 /live URL을 초고속 병렬 스캔
+        // 1. 83개 채널을 병렬로 초고속 스캔 (각 요청당 3초 타임아웃 제한으로 Vercel 속도 보장)
         const scanPromises = YOUTUBE_CHANNELS.map(async (ch) => {
             try {
                 const cleanBase = ch.url.split('?')[0].replace(/\/live\/?$/, '').replace(/\/$/, '');
                 const liveUrl = cleanBase + '/live';
 
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3500);
+
                 const response = await fetch(liveUrl, {
+                    signal: controller.signal,
                     headers: {
                         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                        'Accept-Language': 'ko-KR,ko;q=0.9',
                     },
                     redirect: 'follow',
                 });
-                const html = await response.text();
+                clearTimeout(timeoutId);
 
+                const html = await response.text();
                 const videoIdMatch = html.match(/\/watch\?v=([a-zA-Z0-9_-]{11})/) || html.match(/"videoId":"([a-zA-Z0-9_-]{11})"/);
                 const videoId = videoIdMatch ? videoIdMatch[1] : '';
                 const isLive = html.includes('"isLive":true') || html.includes('watching') || html.includes('시청 중');
@@ -42,12 +49,12 @@ export default async function handler(req: any, res: any) {
         const videoIds = Array.from(new Set(detected.map((d) => d.videoId)));
         const detailsMap: Record<string, { viewers: number; title: string }> = {};
 
-        // 2. 유튜브 공식 API로 시청자 수와 제목 일괄 조회 (50개 단위 청크)
-        if (videoIds.length > 0 && apiKey) {
+        // 2. 유튜브 공식 API로 실시간 동시 시청자 수와 제목 일괄 조회
+        if (videoIds.length > 0 && YOUTUBE_API_KEY) {
             for (let i = 0; i < videoIds.length; i += 50) {
                 const chunk = videoIds.slice(i, i + 50);
                 try {
-                    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,snippet&id=${chunk.join(',')}&key=${apiKey}`;
+                    const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=liveStreamingDetails,snippet&id=${chunk.join(',')}&key=${YOUTUBE_API_KEY}`;
                     const apiRes = await fetch(apiUrl);
                     const apiData = await apiRes.json();
 
@@ -64,9 +71,7 @@ export default async function handler(req: any, res: any) {
                             };
                         }
                     }
-                } catch (err) {
-                    console.warn('YouTube API 조회 실패:', err);
-                }
+                } catch (err) { }
             }
         }
 
@@ -76,7 +81,8 @@ export default async function handler(req: any, res: any) {
 
         for (const d of detected) {
             const details = detailsMap[d.videoId] || { viewers: 0, title: '' };
-            // 실제로 1명 이상 시청 중인 생방송만 수록
+
+            // 시청자 수가 1명 이상인 '진짜 생방송'만 추가
             if (details.viewers > 0) {
                 const item = {
                     channelName: d.name,

@@ -11,6 +11,7 @@ export interface LiveChannel {
 interface LiveSidebarProps {
     camp: 'left' | 'right';
     apiUrl?: string;
+    suggestApiUrl?: string;
 }
 
 const formatViewers = (count: number) => {
@@ -18,7 +19,7 @@ const formatViewers = (count: number) => {
     return `${count.toLocaleString()}명`;
 };
 
-export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl }) => {
+export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestApiUrl }) => {
     const isLeft = camp === 'left';
     const [channels, setChannels] = useState<LiveChannel[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -121,8 +122,9 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl }) => {
 
         setIsSubmitting(true);
         try {
-            if (apiUrl) {
-                await fetch(apiUrl, {
+            const targetUrl = suggestApiUrl || apiUrl;
+            if (targetUrl) {
+                await fetch(targetUrl, {
                     method: 'POST',
                     body: JSON.stringify({
                         channelName: suggestName.trim(),
@@ -131,6 +133,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl }) => {
                     })
                 });
             }
+
             setSubmitSuccess(true);
             setTimeout(() => {
                 setIsModalOpen(false);
