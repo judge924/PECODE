@@ -37,6 +37,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
     // 직접 등록 폼
     const [newCamp, setNewCamp] = useState<'left' | 'right'>('left');
     const [newName, setNewName] = useState('');
+    const [newChannelId, setNewChannelId] = useState(''); // ⭐️ 고유 채널 ID 상태 추가
     const [newUrl, setNewUrl] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -113,8 +114,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
 
     const handleAddDirect = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!newName || !newUrl) {
-            alert('채널명과 채널 URL을 모두 입력해 주세요.');
+        if (!newName.trim() || !newChannelId.trim()) {
+            alert('채널명과 고유 채널 ID(UC...)를 모두 입력해 주세요.');
             return;
         }
 
@@ -125,14 +126,16 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                 body: JSON.stringify({
                     action: 'add',
                     camp: newCamp,
-                    channelName: newName,
-                    channelUrl: newUrl
+                    channelName: newName.trim(),
+                    channelId: newChannelId.trim(), // ⭐️ 관리자가 적은 고유 ID 전송
+                    channelUrl: newUrl.trim()
                 })
             });
             const json = await res.json();
             if (json.success) {
                 alert('채널이 성공적으로 등록되었습니다.');
                 setNewName('');
+                setNewChannelId('');
                 setNewUrl('');
                 fetchData();
             } else {
@@ -260,8 +263,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                 <button
                                     onClick={() => setCurrentTab('suggestions')}
                                     className={`py-3 text-xs font-bold border-b-2 transition-colors ${currentTab === 'suggestions'
-                                            ? 'border-neutral-900 text-neutral-900'
-                                            : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                                        ? 'border-neutral-900 text-neutral-900'
+                                        : 'border-transparent text-neutral-400 hover:text-neutral-700'
                                         }`}
                                 >
                                     📢 방문자 채널 건의함
@@ -269,8 +272,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                 <button
                                     onClick={() => setCurrentTab('active')}
                                     className={`py-3 text-xs font-bold border-b-2 transition-colors ${currentTab === 'active'
-                                            ? 'border-neutral-900 text-neutral-900'
-                                            : 'border-transparent text-neutral-400 hover:text-neutral-700'
+                                        ? 'border-neutral-900 text-neutral-900'
+                                        : 'border-transparent text-neutral-400 hover:text-neutral-700'
                                         }`}
                                 >
                                     ⚡ 활성 채널 목록 ({activeChannels.length})
@@ -318,8 +321,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                                             <td className="p-3 text-neutral-400 font-mono text-[10px]">{sug.date}</td>
                                                             <td className="p-3">
                                                                 <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${sug.camp.includes('좌') || sug.camp === 'left'
-                                                                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                                                                        : 'bg-red-50 text-red-700 border border-red-200'
+                                                                    ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                                                                    : 'bg-red-50 text-red-700 border border-red-200'
                                                                     }`}>
                                                                     {sug.camp}
                                                                 </span>
@@ -337,8 +340,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                                             </td>
                                                             <td className="p-3">
                                                                 <span className={`px-2 py-0.5 rounded text-[10px] font-semibold ${sug.status === '승인완료'
-                                                                        ? 'bg-green-50 text-green-700 border border-green-200'
-                                                                        : 'bg-neutral-100 text-neutral-600'
+                                                                    ? 'bg-green-50 text-green-700 border border-green-200'
+                                                                    : 'bg-neutral-100 text-neutral-600'
                                                                     }`}>
                                                                     {sug.status}
                                                                 </span>
@@ -364,18 +367,18 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                             ) : (
                                 // 2) 활성 채널 탭
                                 <div className="space-y-5">
-                                    {/* 새 채널 직접 등록 폼 */}
+                                    {/* 새 채널 직접 등록 폼 (5칸 분리 정렬) */}
                                     <form onSubmit={handleAddDirect} className="p-4 rounded-xl border border-neutral-200 bg-white shadow-sm">
                                         <h4 className="text-xs font-bold text-neutral-900 mb-3">➕ 새 정치 유튜브 채널 직접 등록</h4>
-                                        <div className="grid grid-cols-1 md:grid-cols-4 gap-2.5">
+                                        <div className="grid grid-cols-1 md:grid-cols-5 gap-2.5">
                                             <div>
                                                 <select
                                                     value={newCamp}
                                                     onChange={(e: any) => setNewCamp(e.target.value)}
                                                     className="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-900 focus:outline-none focus:border-neutral-900"
                                                 >
-                                                    <option value="left">The Left (좌파/야권)</option>
-                                                    <option value="right">The Right (우파/여권)</option>
+                                                    <option value="left">좌파</option>
+                                                    <option value="right">우파</option>
                                                 </select>
                                             </div>
                                             <div>
@@ -391,11 +394,20 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                             <div>
                                                 <input
                                                     type="text"
+                                                    value={newChannelId}
+                                                    onChange={(e) => setNewChannelId(e.target.value)}
+                                                    placeholder="고유 채널 ID (UC...)"
+                                                    className="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 bg-white text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900 font-mono text-[11px]"
+                                                    required
+                                                />
+                                            </div>
+                                            <div>
+                                                <input
+                                                    type="text"
                                                     value={newUrl}
                                                     onChange={(e) => setNewUrl(e.target.value)}
-                                                    placeholder="채널 주소 (@핸들 또는 URL)"
+                                                    placeholder="채널 주소 (선택)"
                                                     className="w-full text-xs px-3 py-2 rounded-lg border border-neutral-200 bg-white text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900"
-                                                    required
                                                 />
                                             </div>
                                             <div>
@@ -430,8 +442,8 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                                                         <tr key={idx} className="hover:bg-neutral-50/60 transition-colors">
                                                             <td className="p-3">
                                                                 <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${ch.camp === 'left'
-                                                                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                                                                        : 'bg-red-50 text-red-700 border border-red-200'
+                                                                    ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                                                                    : 'bg-red-50 text-red-700 border border-red-200'
                                                                     }`}>
                                                                     {ch.camp === 'left' ? 'The Left' : 'The Right'}
                                                                 </span>
