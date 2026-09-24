@@ -190,18 +190,34 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                 className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
                     } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
             >
-                {/* 1. 상단 헤더 영역 */}
-                <div className="shrink-0 flex flex-col gap-1.5 pb-2 border-b border-neutral-200/70 bg-[#fcfcfc]">
+                {/* 1. 상단 헤더 영역 (1줄 미니멀 칼정렬) */}
+                <div className="shrink-0 flex flex-col pb-1.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
                     <div className="flex items-center justify-between pb-1 border-b border-neutral-200/50">
-                        <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
-                            {isLeft ? 'The Left' : 'The Right'}
-                        </span>
+                        {/* 좌측: 타이틀 + 5분 간격 갱신 */}
+                        <div className="flex items-center gap-1.5 min-w-0">
+                            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider shrink-0">
+                                {isLeft ? 'The Left' : 'The Right'}
+                            </span>
+
+                            {/* ⭐️ 초록색 펄스 라이브 점 + 5분 간격 갱신 */}
+                            <div className="flex items-center gap-1 shrink-0">
+                                <span className="relative flex h-1.5 w-1.5 shrink-0">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                                </span>
+                                <span className="text-[8.5px] font-medium text-neutral-400 tracking-tight">
+                                    5분 간격 갱신
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* 우측: 채널 건의 버튼 */}
                         <button
                             onClick={() => {
                                 setSuggestCamp(isLeft ? '좌파' : '우파');
                                 setIsModalOpen(true);
                             }}
-                            className="text-[10px] text-neutral-400 hover:text-neutral-900 flex items-center gap-0.5 font-normal transition cursor-pointer hover:underline"
+                            className="text-[9px] text-neutral-400 hover:text-neutral-900 flex items-center font-normal transition cursor-pointer hover:underline shrink-0"
                         >
                             <span>+ 채널 건의</span>
                         </button>
