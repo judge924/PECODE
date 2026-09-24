@@ -1,0 +1,30 @@
+name: 🔴 실시간 정치 유튜브 라이브 데이터 자동 갱신
+
+on:
+  schedule:
+    # 5분마다 24시간 내내 백그라운드 자동 실행
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # 사장님이 원할 때 수동 실행 가능
+
+jobs:
+  update-live:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Node.js 세팅
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 라이브 데이터 수집 실행
+        run: node scripts/fetchLive.js
+
+      - name: live.json 변경사항 깃허브 자동 커밋 & 푸시
+        run: |
+          git config --global user.name "pecode-bot"
+          git config --global user.email "bot@pecode.kr"
+          git add public/live.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: 실시간 라이브 랭킹 업데이트 [skip ci]" && git push)
