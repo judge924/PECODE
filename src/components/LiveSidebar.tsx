@@ -263,12 +263,12 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                     />
                                 )}
 
-                                {/* 가림막 썸네일 (5초 뒤 스르륵 투명화) */}
+                                {/* ⭐️ z-20 층수 잠금: 5초 동안 일시정지 아이콘이 절대 뚫고 나오지 못함 */}
                                 {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
                                         alt={firstChannel.channelName}
-                                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none ${isVideoReady ? 'opacity-0' : 'opacity-100'
+                                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none z-20 ${isVideoReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
                                             }`}
                                         referrerPolicy="no-referrer"
                                     />
@@ -324,26 +324,26 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
                                     {/* 2위 이하 호버 재생 */}
                                     <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
-                                        {isHovered && videoId ? (
+                                        {isHovered && videoId && (
                                             <iframe
                                                 src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
                                                 title={channel.channelName}
-                                                className="w-full h-full object-cover pointer-events-none scale-105 animate-fade-in"
+                                                className="w-full h-full object-cover pointer-events-none scale-105"
                                                 allow="autoplay; encrypted-media"
                                             />
-                                        ) : channel.thumbnail ? (
+                                        )}
+
+                                        {/* 호버되지 않았을 때 썸네일 표시 */}
+                                        {!isHovered && channel.thumbnail && (
                                             <img
                                                 src={channel.thumbnail}
                                                 alt={channel.channelName}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 z-10"
                                                 referrerPolicy="no-referrer"
                                             />
-                                        ) : (
-                                            <div className="w-full h-full bg-neutral-100 flex items-center justify-center text-[10px] text-neutral-400">
-                                                LIVE
-                                            </div>
                                         )}
-                                        <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none">
+
+                                        <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none z-30">
                                             LIVE
                                         </span>
                                     </div>
