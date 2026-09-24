@@ -11,7 +11,8 @@ import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 import { AdminModal } from './components/AdminModal';
 
 export function App() {
-  const LIVE_API_URL = "/api/live";
+  // ⭐️ 0.001초 만에 읽어오는 무적 정적 캐시 파일 직통 연결
+  const LIVE_API_URL = "/live.json";
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
