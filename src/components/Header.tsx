@@ -8,7 +8,8 @@ interface HeaderProps {
   onViewModeChange?: (mode: 'chart' | 'list') => void;
   searchQuery: string;
   onSearchChange: (query: string) => void;
-  onAdminClick?: () => void; // ⭐️ 관리자 모달 클릭 이벤트
+  onAdminClick?: () => void;
+  onFeedbackClick?: () => void; // ⭐️ 오류 제보 클릭 타입 정의
 }
 
 // -------------------------------------------------------------
@@ -19,23 +20,17 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
     viewBox="-72 -48 144 96"
     className={`${className} select-none shrink-0 block`}
   >
-    {/* 1. 흰색 바탕 (3:2 공식 비율, 미세 라운딩) */}
     <rect x="-72" y="-48" width="144" height="96" fill="#ffffff" rx="2" />
-
-    {/* 2. 건(상단왼쪽)·곤(하단오른쪽) 괘 */}
     <g stroke="#000000" strokeWidth="4">
       <path
         transform="rotate(33.69006752598)"
         d="M-50-12v24m6 0v-24m6 0v24m76 0V1m0-2v-11m6 0v11m0 2v11m6 0V1m0-2v-11"
       />
-      {/* 3. 감(상단오른쪽)·리(하단왼쪽) 괘 */}
       <path
         transform="rotate(-33.69006752598)"
         d="M-50-12v24m6 0V1m0-2v-11m6 0v24m76 0V1m0-2v-11m6 0v24m6 0V1m0-2v-11"
       />
     </g>
-
-    {/* 4. 중앙 정방향 태극 */}
     <g transform="rotate(33.69006752598)">
       <path fill="#cd2e3a" d="M12 0a18 18 0 11-36 0 24 24 0 1148 0" />
       <path fill="#0047a0" d="M0 0a12 12 0 1124 0 24 24 0 11-48 0 12 12 0 1024 0" />
@@ -49,10 +44,10 @@ export const Header: React.FC<HeaderProps> = ({
   searchQuery,
   onSearchChange,
   onAdminClick,
+  onFeedbackClick, // ⭐️ 함수 입구에서 onFeedbackClick 정상 수신!
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-neutral-100">
-      {/* 좌우 1280px 족쇄를 풀고 화면 좌우 끝까지 시원하게 꽉 채움 */}
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
         <div className="flex items-center justify-between h-16 gap-4">
 
@@ -76,10 +71,8 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* 깔끔한 세로 구분선 */}
             <div className="h-4 w-[1px] bg-neutral-200 hidden sm:block" />
 
-            {/* 국회 선택창 */}
             <div className="relative flex items-center">
               <select
                 value={currentRegion}
@@ -92,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* 2. 오른쪽: 검색창 + [관리자 버튼] (나란히 칼정렬) */}
+          {/* 2. 오른쪽: 검색창 + [오류 제보 버튼] + [관리자 버튼] (나란히 칼정렬) */}
           <div className="ml-auto flex items-center gap-2">
             <div className="w-64 lg:w-80 relative hidden md:flex items-center">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
@@ -108,11 +101,23 @@ export const Header: React.FC<HeaderProps> = ({
               </span>
             </div>
 
-            {/* ⭐️ 검색창 바로 옆 관리자 버튼 (로그인/회원가입 자리) */}
+            {/* ⭐️ [오류 제보] 버튼 */}
+            {onFeedbackClick && (
+              <button
+                onClick={onFeedbackClick}
+                className="h-9 px-3 text-xs font-semibold text-neutral-600 hover:text-neutral-900 bg-white hover:bg-neutral-100 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
+                title="데이터 오류 수정 의견 보내기"
+              >
+                <span className="text-xs">✍️</span>
+                <span>오류 제보</span>
+              </button>
+            )}
+
+            {/* [관리자] 버튼 */}
             {onAdminClick && (
               <button
                 onClick={onAdminClick}
-                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm"
+                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
                 title="PECODE 채널 관리자 모드"
               >
                 <span className="text-xs">🛡️</span>

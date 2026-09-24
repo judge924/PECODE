@@ -1,7 +1,32 @@
 import { useState } from 'react';
 import type { Politician } from '../types/politician';
-// 원본 json 데이터에서 electedTerms를 직접 가져오기 위해 연결합니다.
 import rawPoliticiansData from '../data/politicians.json';
+
+// ⭐️ [1대~22대 전체 자동 수집] src/data/terms/ 폴더 내 모든 국회 타임캡슐 파일을 100% 완전 자동 로드!
+const termFiles = import.meta.glob('../data/terms/term-*.json', { eager: true });
+
+// 1대부터 22대까지(향후 23대 등 미래 국회 포함) 모든 대수의 비례대표/전국구 명단 자동 구축
+const PROPORTIONAL_NAMES_BY_TERM: Record<number, Set<string>> = {};
+
+for (const filePath in termFiles) {
+    const match = filePath.match(/term-(\d+)\.json$/);
+    if (match) {
+        const termNum = parseInt(match[1], 10);
+        const content: any = termFiles[filePath];
+        const list: any[] = Array.isArray(content) ? content : content.default || [];
+
+        const set = new Set<string>();
+        list.forEach((item: any) => {
+            const dist = String(item.district || '');
+            // 현행 '비례대표' 및 16대 이전의 '전국구'까지 100% 자동 포함
+            if (dist.includes('비례') || dist.includes('전국구')) {
+                if (item.name) set.add(String(item.name).trim());
+            }
+        });
+
+        PROPORTIONAL_NAMES_BY_TERM[termNum] = set;
+    }
+}
 
 interface PartySectionProps {
     party: string;
@@ -9,6 +34,7 @@ interface PartySectionProps {
     selectedPolitician: Politician | null;
     onSelectPolitician: (politician: Politician) => void;
     fullOrgChart?: boolean;
+    align?: 'left' | 'right'; // ⭐️ 좌우 정렬 방향 전달
 }
 
 // JSON 포장지(.default)를 확실하게 벗겨서 순수 배열 데이터를 꺼냅니다.
@@ -16,9 +42,11 @@ const rawList: any[] = Array.isArray(rawPoliticiansData)
     ? rawPoliticiansData
     : (rawPoliticiansData as any)?.default || (rawPoliticiansData as any)?.data || [];
 
-// ID뿐만 아니라 이름(name)으로도 찾을 수 있게 2개의 사전을 만듭니다.
+// ID와 이름으로 대수 및 비례대표 팩트 데이터(termsDetails)를 찾는 사전 생성
 const termsMapById = new Map<string, number[]>();
 const termsMapByName = new Map<string, number[]>();
+const termsDetailsMapById = new Map<string, any[]>();
+const termsDetailsMapByName = new Map<string, any[]>();
 
 rawList.forEach((item: any) => {
     const rawTerms = item.electedTerms || item.terms || item.elected_terms;
@@ -32,24 +60,65 @@ rawList.forEach((item: any) => {
             if (item.name) termsMapByName.set(String(item.name), cleanTerms);
         }
     }
+
+    // ⭐️ 국회 공식 비례대표 팩트 데이터(termsDetails) 사전 매핑
+    const details = item.termsDetails || item.details;
+    if (Array.isArray(details) && details.length > 0) {
+        if (item.id) termsDetailsMapById.set(String(item.id), details);
+        if (item.name) termsDetailsMapByName.set(String(item.name), details);
+    }
 });
 
-// 선출 기수(예: 21 또는 20•21•22)를 찾아내는 도우미 함수
+// ⭐️ [1대~22대 무적 알고리즘] 박지원 14대 전국구 & 역대 비례대표 팩트 확인
+function isProportionalForTerm(p: Politician, termNum: number): boolean {
+    const memberName = String(p.name).trim();
+    const anyP = p as any;
+
+    // 1순위: 1대부터 22대까지 해당 대수 타임캡슐 파일(term-X.json)에 전국구/비례대표로 기록되어 있는가?
+    if (PROPORTIONAL_NAMES_BY_TERM[termNum]?.has(memberName)) {
+        return true;
+    }
+
+    // 2순위: politicians.json 원본의 termsDetails(대수별 상세)에서 확인
+    if (Array.isArray(anyP.termsDetails)) {
+        const detail = anyP.termsDetails.find((d: any) => Number(d.term) === Number(termNum));
+        if (detail) {
+            const distStr = String(detail.district || '');
+            if (detail.isProportional || distStr.includes('비례') || distStr.includes('전국구')) {
+                return true;
+            }
+        }
+    }
+
+    // 3순위: 공식 약력(career) 문장에서 "제14대...전국구", "제21대...비례대표" 등 자동 탐지
+    if (Array.isArray(anyP.career)) {
+        const regex = new RegExp(`(?:제\\s*)?${termNum}\\s*대[^,\n\r()]*?(?:\\([^)]*?)?(비례|전국구)`, 'i');
+        for (const line of anyP.career) {
+            if (regex.test(String(line))) return true;
+        }
+    }
+
+    // 4순위: 제22대 현역 비례대표 확인
+    if (termNum === 22 && p.district && String(p.district).includes('비례')) {
+        return true;
+    }
+
+    return false;
+}
+
+// 선출 기수(예: 21(비례)•22(비례) 또는 15•16•21•22)를 찾아내는 도우미 함수
 function getElectedTerms(p: Politician): string {
     const anyP = p as any;
     let terms: number[] = [];
 
-    // [1순위] 원본 json에서 ID로 대수 조회
     if (p.id && termsMapById.has(String(p.id))) {
         terms = termsMapById.get(String(p.id)) || [];
     }
 
-    // [2순위] ID 매칭 실패 시 이름(name)으로 대수 조회
     if (terms.length === 0 && p.name && termsMapByName.has(String(p.name))) {
         terms = termsMapByName.get(String(p.name)) || [];
     }
 
-    // [3순위] 전달받은 p 객체 자체의 electedTerms 확인
     if (terms.length === 0) {
         const raw = p.electedTerms || anyP.terms || anyP.elected_terms;
         if (Array.isArray(raw) && raw.length > 0) {
@@ -57,7 +126,6 @@ function getElectedTerms(p: Politician): string {
         }
     }
 
-    // [4순위] 약력(career)에서 "제OO대 국회의원" 추출 (전직 의원 약력 추적)
     if (terms.length === 0 && Array.isArray(anyP.career)) {
         anyP.career.forEach((c: string) => {
             const match = c.match(/제?\s*(\d+)\s*대\s*국회의원/);
@@ -67,7 +135,6 @@ function getElectedTerms(p: Politician): string {
         });
     }
 
-    // [5순위] p.term 항목에서 대수 추출 (예: "제21대" -> 21)
     if (terms.length === 0 && anyP.term) {
         const match = String(anyP.term).match(/\d+/);
         if (match) {
@@ -75,15 +142,23 @@ function getElectedTerms(p: Politician): string {
         }
     }
 
-    // 중복 제거 및 작은 숫자부터 오름차순 정렬 (예: [21] 또는 [20, 21, 22])
+    // ⭐️ 헌정사 공식 기준: 15대 이하(1996년 이전)는 '(전국구)', 16대 이상(2000년 이후)은 '(비례)' [2.2, 2.3]
     const uniqueTerms = Array.from(new Set(terms)).sort((a, b) => a - b);
     if (uniqueTerms.length > 0) {
-        return uniqueTerms.join('•');
+        return uniqueTerms
+            .map((t) => {
+                const isProp = isProportionalForTerm(p, t);
+                if (!isProp) return `${t}`;
+                // ⭐️ 15대 이하는 전국구, 16대 이상은 비례대표 표기! [2.2, 2.3]
+                return t <= 15 ? `${t}(전국구)` : `${t}(비례)`;
+            })
+            .join('•');
     }
 
     // 현역 의원(22대)이면서 1선(초선)인 경우 기본 22
     if (p.isAssemblyMember !== false && p.timesElected === 1) {
-        return '22';
+        const isProp = isProportionalForTerm(p, 22);
+        return isProp ? '22(비례)' : '22';
     }
 
     return '';
@@ -159,7 +234,10 @@ const MiniAvatar = ({
             <div className={`font-normal text-neutral-900 mt-1 leading-tight ${nameSize} ${blurred ? 'blur-sm' : ''}`}>
                 {politician.name}
             </div>
-            <div className={`text-neutral-500 leading-tight ${subSize}`}>{roleLabel(politician)}</div>
+            {/* ⭐️ min-h-[26px]로 글자가 1줄이든 2줄이든 카드 높이를 완벽 일치시켜 토글키 수평 칼정렬! */}
+            <div className={`text-neutral-500 leading-tight min-h-[26px] flex items-center justify-center ${subSize}`}>
+                {roleLabel(politician)}
+            </div>
         </button>
     );
 };
@@ -177,11 +255,25 @@ const PARTY_STYLES: Record<string, { logoUrl?: string }> = {
     '무소속 및 기타': { logoUrl: '/logos/무소속.png' },
 };
 
-// [수정 1] 정당 헤더: align="right" 전달 시 우측 정렬 지원
-const PartyHeader = ({ party, count, align = 'left' }: { party: string; count: number; align?: 'left' | 'right' }) => {
+// ⭐️ 정당 헤더: 현역 국회의원만 의석수에 산입 & [총 N석 (지역구 X석, 비례대표 Y석)] 상세 표기
+const PartyHeader = ({
+    party,
+    members,
+    align = 'left'
+}: {
+    party: string;
+    members: Politician[];
+    align?: 'left' | 'right'
+}) => {
     const config = PARTY_STYLES[party] || {};
     const [imgError, setImgError] = useState(false);
     const firstLetter = party.slice(0, 1);
+
+    // ⭐️ [원외 당직자 제외] 오직 현역 국회의원(isAssemblyMember !== false)만 의석수에 산입!
+    const assemblyMembers = members.filter((p) => p.isAssemblyMember !== false);
+    const districtSeats = assemblyMembers.filter((p) => !p.district || !p.district.includes('비례')).length;
+    const proportionalSeats = assemblyMembers.filter((p) => p.district && p.district.includes('비례')).length;
+    const totalSeats = assemblyMembers.length;
 
     return (
         <div className={`flex items-center gap-3 ${align === 'right' ? 'flex-row-reverse text-right' : 'text-left'}`}>
@@ -201,7 +293,9 @@ const PartyHeader = ({ party, count, align = 'left' }: { party: string; count: n
             </div>
             <div className="flex flex-col">
                 <span className="text-base font-bold text-neutral-900 leading-tight">{party}</span>
-                <span className="text-xs text-neutral-500 font-normal mt-0.5">{count}명</span>
+                <span className="text-xs text-neutral-500 font-normal mt-0.5">
+                    {totalSeats}석 (지역구 {districtSeats}석, 비례대표 {proportionalSeats}석)
+                </span>
             </div>
         </div>
     );
@@ -218,22 +312,24 @@ const ToggleBadge = ({ count, revealed, onClick }: { count?: number; revealed: b
     </button>
 );
 
-// 지도부 그룹 — 한 줄에 5명씩 정렬
+// 지도부 그룹 — 한 줄에 5명씩 정렬 (우파는 토글키 좌측 반전)
 const RestLeadershipToggle = ({
     members,
     selectedPolitician,
     onSelectPolitician,
+    align = 'left',
 }: {
     members: Politician[];
     selectedPolitician: Politician | null;
     onSelectPolitician: (p: Politician) => void;
+    align?: 'left' | 'right';
 }) => {
     const [expanded, setExpanded] = useState(true);
     if (members.length === 0) return null;
 
     return (
         <div className="mt-6 pt-4 border-t border-neutral-100 w-full">
-            <div className="flex items-center justify-between mb-3">
+            <div className={`flex items-center justify-between mb-3 ${align === 'right' ? 'flex-row-reverse' : ''}`}>
                 <span className="text-[11px] font-bold text-neutral-500">지도부</span>
                 <ToggleBadge count={members.length} revealed={expanded} onClick={() => setExpanded((v) => !v)} />
             </div>
@@ -255,27 +351,29 @@ const RestLeadershipToggle = ({
     );
 };
 
-// 중진 / 소속의원 그룹 — 기본 5명씩 표시 (5칸 그리드)
+// 중진 / 초선·재선 그룹 — 우파는 토글키 좌측 반전 적용
 const NamedGroup = ({
     title,
     members,
     selectedPolitician,
     onSelectPolitician,
+    align = 'left',
 }: {
     title: string;
     members: Politician[];
     selectedPolitician: Politician | null;
     onSelectPolitician: (p: Politician) => void;
+    align?: 'left' | 'right';
 }) => {
     const [expanded, setExpanded] = useState(false);
     if (members.length === 0) return null;
 
-    const PREVIEW_COUNT = 5; // 기본 5명으로 변경
+    const PREVIEW_COUNT = 5;
     const visibleMembers = expanded ? members : members.slice(0, PREVIEW_COUNT);
 
     return (
         <div className="mt-4 pt-4 border-t border-neutral-100">
-            <div className="flex items-center justify-between mb-3">
+            <div className={`flex items-center justify-between mb-3 ${align === 'right' ? 'flex-row-reverse' : ''}`}>
                 <span className="text-[11px] font-bold text-neutral-500">{title}</span>
                 {members.length > 0 && (
                     <ToggleBadge count={members.length} revealed={expanded} onClick={() => setExpanded((v) => !v)} />
@@ -297,30 +395,33 @@ const NamedGroup = ({
     );
 };
 
-// 소수 정당 및 무소속 전용 — 모든 정당 5명씩 노출로 통일
+// 소수 정당 및 무소속 전용 — 우파 정당은 자동 우측 반전 정렬
 const CompactPartySection = ({
     party,
     members,
     selectedPolitician,
     onSelectPolitician,
+    align = 'left',
 }: {
     party: string;
     members: Politician[];
     selectedPolitician: Politician | null;
     onSelectPolitician: (p: Politician) => void;
+    align?: 'left' | 'right';
 }) => {
     const [expanded, setExpanded] = useState(false);
     const sorted = [...members].sort((a, b) => b.timesElected - a.timesElected);
 
-    const PREVIEW_COUNT = 5; // 소수정당 및 무소속도 기본 5명으로 변경
+    const PREVIEW_COUNT = 5;
     const visibleMembers = expanded ? sorted : sorted.slice(0, PREVIEW_COUNT);
 
     return (
-        <div className="mb-8 pt-6 border-t border-neutral-300">
-            <div className="flex items-center justify-between mb-4">
-                <PartyHeader party={party} count={members.length} />
+        <div className="mb-8">
+            {/* ⭐️ align === 'right' 일 때 flex-row-reverse로 완벽한 좌우 대칭 완성! */}
+            <div className={`flex items-center justify-between mb-4 ${align === 'right' ? 'flex-row-reverse' : ''}`}>
+                <PartyHeader party={party} members={members} align={align} />
                 <ToggleBadge
-                    count={members.length}
+                    count={members.filter((p) => p.isAssemblyMember !== false).length}
                     revealed={expanded}
                     onClick={() => setExpanded((v) => !v)}
                 />
@@ -349,6 +450,7 @@ export const PartySection: React.FC<PartySectionProps> = ({
     selectedPolitician,
     onSelectPolitician,
     fullOrgChart = false,
+    align = 'left', // ⭐️ align 받아오기
 }) => {
     // 무소속 섹션으로 들어온 의원들은 100% 누락 없이 통과
     const members = politicians.filter((p) => {
@@ -366,6 +468,7 @@ export const PartySection: React.FC<PartySectionProps> = ({
                 members={members}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={onSelectPolitician}
+                align={align} // ⭐️ 소수정당 컴포넌트로 전달
             />
         );
     }
@@ -406,12 +509,12 @@ export const PartySection: React.FC<PartySectionProps> = ({
 
     return (
         <div className="mb-8">
-            {/* 정당 로고 헤더: 국민의힘 등 우측 정당은 align="right"로 우측 정렬 */}
+            {/* 정당 로고 헤더: 우파 정당은 자동 우측 정렬 */}
             <div className="mb-5">
                 <PartyHeader
                     party={party}
-                    count={members.length}
-                    align={party === '국민의힘' ? 'right' : 'left'}
+                    members={members}
+                    align={align}
                 />
             </div>
 
@@ -445,12 +548,13 @@ export const PartySection: React.FC<PartySectionProps> = ({
                 </div>
             )}
 
-            {/* 2. 지도부 그룹 (중진, 소속의원과 완벽히 동일한 타이틀+토글키 구조) */}
+            {/* 2. 지도부 그룹 (우파는 토글키 좌측으로 쓱 이동) */}
             {restLeadership.length > 0 && (
                 <RestLeadershipToggle
                     members={restLeadership}
                     selectedPolitician={selectedPolitician}
                     onSelectPolitician={onSelectPolitician}
+                    align={align}
                 />
             )}
 
@@ -459,12 +563,14 @@ export const PartySection: React.FC<PartySectionProps> = ({
                 members={senior}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={onSelectPolitician}
+                align={align}
             />
             <NamedGroup
                 title="초선·재선"
                 members={junior}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={onSelectPolitician}
+                align={align}
             />
         </div>
     );

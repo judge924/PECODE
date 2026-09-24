@@ -1,0 +1,8177 @@
+[
+  {
+    "id": "6CP1084K",
+    "name": "강문봉",
+    "hanjaName": "姜文奉",
+    "birthDate": "1923-10-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/6CP1084K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "U3F5217R",
+    "name": "강상욱",
+    "hanjaName": "姜尙郁",
+    "birthDate": "1927-02-28",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/U3F5217R.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "서울 동대문구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "동대문구",
+    "district": "서울 동대문구",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "G0M9313H",
+    "name": "강선규",
+    "hanjaName": "姜善圭",
+    "birthDate": "1925-06-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/G0M9313H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 마산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "마산",
+    "district": "경남 마산",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "YN67326D",
+    "name": "강승구",
+    "hanjaName": "姜昇求",
+    "birthDate": "1903-10-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/YN67326D.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "경기 양주군을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경기 양주군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경기 의정부시,양주군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "의정부시,양주군",
+    "district": "경기 의정부시,양주군",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "8FK1860S",
+    "name": "계광순",
+    "hanjaName": "桂珖淳",
+    "birthDate": "1909-02-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/8FK1860S.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "강원 춘천",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "강원 춘천",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "강원 춘천",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "춘천",
+    "district": "강원 춘천",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "5JH3112W",
+    "name": "고형곤",
+    "hanjaName": "高亨坤",
+    "birthDate": "1906-04-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/5JH3112W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 군산시,옥구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "군산시,옥구",
+    "district": "전북 군산시,옥구",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 예산결산특별위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "EYV9357U",
+    "name": "고흥문",
+    "hanjaName": "高興門",
+    "birthDate": "1921-08-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/EYV9357U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "서울 성북구병",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "성북구병",
+    "district": "서울 성북구병",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "S903593H",
+    "name": "구태회",
+    "hanjaName": "具泰會",
+    "birthDate": "1923-06-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/S903593H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경남 진양",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 진주,진양",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "진주,진양",
+    "district": "경남 진주,진양",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "BXN8084E",
+    "name": "권오석",
+    "hanjaName": "權五錫",
+    "birthDate": "1923-04-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/BXN8084E.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 화성",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "화성",
+    "district": "경기 화성",
+    "roleTitle": "국회의원",
+    "committee": "교육체육청소년위원회, 문교체육위원회, 문교공보위원회, 재무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "23R8195M",
+    "name": "권오훈",
+    "hanjaName": "權五勳",
+    "birthDate": "1916-10-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/23R8195M.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 안동",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "안동",
+    "district": "경북 안동",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "0A04065B",
+    "name": "길재호",
+    "hanjaName": "吉在號",
+    "birthDate": "1923-04-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/0A04065B.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 금산군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "금산군",
+    "district": "충남 금산군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WFD5707I",
+    "name": "길전식",
+    "hanjaName": "吉典植",
+    "birthDate": "1924-10-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WFD5707I.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 장흥군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "장흥군",
+    "district": "전남 장흥군",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "0WP29701",
+    "name": "김대중",
+    "hanjaName": "金大中",
+    "birthDate": "1925-12-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/0WP29701.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "강원 인제",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 목포",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "목포",
+    "district": "전남 목포",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "02E7012K",
+    "name": "김도연",
+    "hanjaName": "金度演",
+    "birthDate": "1894-06-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/02E7012K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "서울 서대문구",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 서대문구갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 서대문구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 서대문구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "서대문구갑",
+    "district": "서울 서대문구갑",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "59Y79201",
+    "name": "김동환",
+    "hanjaName": "金東煥",
+    "birthDate": "1927-02-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/59Y79201.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 내무위원회, 농림위원회, 재정경제위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JCX7039R",
+    "name": "김두한",
+    "hanjaName": "金斗漢",
+    "birthDate": "1918-05-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JCX7039R.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "서울 종로구을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 용산구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "용산구",
+    "district": "서울 용산구",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9HG7146S",
+    "name": "김병순",
+    "hanjaName": "金柄淳",
+    "birthDate": "1910-03-26",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9HG7146S.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전남 해남군갑",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전남 해남군갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 해남",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "해남",
+    "district": "전남 해남",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ATK8082V",
+    "name": "김봉환",
+    "hanjaName": "金鳳煥",
+    "birthDate": "1921-01-02",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ATK8082V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 군위,선산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "군위,선산",
+    "district": "경북 군위,선산",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "0ZU8146O",
+    "name": "김삼",
+    "hanjaName": "金三",
+    "birthDate": "1918-09-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/0ZU8146O.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 강릉,명주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "강릉,명주",
+    "district": "강원 강릉,명주",
+    "roleTitle": "국회의원",
+    "committee": "지리산도벌사건조사특별위원회, 예산결산특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JJ64316E",
+    "name": "김상현",
+    "hanjaName": "金相賢",
+    "birthDate": "1935-12-06",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JJ64316E.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "서울 서대문구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "서대문구갑",
+    "district": "서울 서대문구갑",
+    "roleTitle": "국회의원",
+    "committee": "통일외교통상위원회, 장애인특별위원회, 보건복지위원회, 환경노동위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZWN5573D",
+    "name": "김상흠",
+    "hanjaName": "金相欽",
+    "birthDate": "1919-10-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZWN5573D.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전북 고창군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 고창군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "고창군",
+    "district": "전북 고창군",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "W5K46908",
+    "name": "김선주",
+    "hanjaName": "金善周",
+    "birthDate": "1909-01-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/W5K46908.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 광양,구례군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "광양,구례군",
+    "district": "전남 광양,구례군",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "FCE8204Q",
+    "name": "김성곤",
+    "hanjaName": "金成坤",
+    "birthDate": "1913-07-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/FCE8204Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경북 달성군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 달성,고령군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "달성,고령군",
+    "district": "경북 달성,고령군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "FUS8484L",
+    "name": "김성용",
+    "hanjaName": "金星鏞",
+    "birthDate": "1918-01-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/FUS8484L.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "HEP9748I",
+    "name": "김성진",
+    "hanjaName": "金晟鎭",
+    "birthDate": "1905-10-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/HEP9748I.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JTW1054Z",
+    "name": "김성철",
+    "hanjaName": "金聲喆",
+    "birthDate": "1913-07-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JTW1054Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 이리시,익산군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "이리시,익산군",
+    "district": "전북 이리시,익산군",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "PB86833Y",
+    "name": "김영삼",
+    "hanjaName": "金泳三",
+    "birthDate": "1927-12-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/PB86833Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "경남 거제군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경남 부산시,서구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "부산 서구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "서구",
+    "district": "부산 서구",
+    "roleTitle": "국회의원",
+    "committee": "행정위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "54K2140N",
+    "name": "김용순",
+    "hanjaName": "金容珣",
+    "birthDate": "1927-04-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/54K2140N.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 사천,하동,삼천포",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "사천,하동,삼천포",
+    "district": "경남 사천,하동,삼천포",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 외무위원회, 보건사회위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "BBS5382L",
+    "name": "김용태",
+    "hanjaName": "金龍泰",
+    "birthDate": "1926-12-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/BBS5382L.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 대덕,연기군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "대덕,연기군",
+    "district": "충남 대덕,연기군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "YVJ33772",
+    "name": "김우경",
+    "hanjaName": "金遇敬",
+    "birthDate": "1931-05-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/YVJ33772.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 순천시,승주군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "순천시,승주군",
+    "district": "전남 순천시,승주군",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 재정경제위원회, 예산결산특별위원회, 국방위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1VS9671T",
+    "name": "김은하",
+    "hanjaName": "金殷夏",
+    "birthDate": "1923-07-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1VS9671T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 인천시을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "인천시을",
+    "district": "경기 인천시을",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Q0G1675P",
+    "name": "김익기",
+    "hanjaName": "金翼基",
+    "birthDate": "1916-02-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Q0G1675P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "경북 안동갑",
+        "isProportional": false
+      },
+      {
+        "term": 3,
+        "district": "경북 안동을",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "경북 안동을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 안동을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "안동을",
+    "district": "경북 안동을",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회, 국회운영위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "XJ268659",
+    "name": "김임식",
+    "hanjaName": "金任植",
+    "birthDate": "1923-04-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/XJ268659.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "부산 진구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "진구갑",
+    "district": "부산 진구갑",
+    "roleTitle": "국회의원",
+    "committee": "재무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "LBW3224V",
+    "name": "김장섭",
+    "hanjaName": "金長涉",
+    "birthDate": "1910-08-17",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/LBW3224V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경북 영일군을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경북 2부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 포항시,영일,울릉군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "포항시,영일,울릉군",
+    "district": "경북 포항시,영일,울릉군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "DSL4089Q",
+    "name": "김재광",
+    "hanjaName": "金在光",
+    "birthDate": "1922-05-21",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/DSL4089Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "서울 서대문구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "서대문구갑",
+    "district": "서울 서대문구갑",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 법제사법위원회, 보건사회위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "NPZ9074T",
+    "name": "김재순",
+    "hanjaName": "金在淳",
+    "birthDate": "1923-11-30",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/NPZ9074T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "강원 양구",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "강원 철원,화천,양구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "철원,화천,양구",
+    "district": "강원 철원,화천,양구",
+    "roleTitle": "국회의원",
+    "committee": "경제과학위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "MD021272",
+    "name": "김재위",
+    "hanjaName": "金載瑋",
+    "birthDate": "1921-08-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/MD021272.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경남 산청군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 산청군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "산청군",
+    "district": "경남 산청군",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "NOT24186",
+    "name": "김정근",
+    "hanjaName": "金正根",
+    "birthDate": "1916-05-12",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/NOT24186.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경북 상주군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 상주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "상주",
+    "district": "경북 상주",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 국방위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ESM84514",
+    "name": "김종갑",
+    "hanjaName": "金鍾甲",
+    "birthDate": "1922-10-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ESM84514.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 보령시,서천군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "보령시,서천군",
+    "district": "충남 보령시,서천군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "K2R2354H",
+    "name": "김종무",
+    "hanjaName": "金鍾茂",
+    "birthDate": "1908-08-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/K2R2354H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 제천시단양군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "제천시단양군",
+    "district": "충북 제천시단양군",
+    "roleTitle": "국회의원",
+    "committee": "지리산도벌사건조사특별위원회, 국공유지등부정불하진상조사특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "PAR7137B",
+    "name": "김종필",
+    "hanjaName": "金鍾泌",
+    "birthDate": "1926-01-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/PAR7137B.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 부여군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "부여군",
+    "district": "충남 부여군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회, 과학기술정보통신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "NK94811P",
+    "name": "김종호",
+    "hanjaName": "金鍾浩",
+    "birthDate": "1919-06-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/NK94811P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 속초시,고성,양양",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "속초시,고성,양양",
+    "district": "강원 속초시,고성,양양",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 문교행정실태파악을위한특별국정감사특별위원회, 국회운영위원회, 예산결산특별위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "7BK95965",
+    "name": "김종환",
+    "hanjaName": "金鍾煥",
+    "birthDate": "1906-01-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/7BK95965.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 대구시,북,서구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시,북,서구",
+    "district": "경북 대구시,북,서구",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회, 예산결산특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "OIP6203T",
+    "name": "김주인",
+    "hanjaName": "金周仁",
+    "birthDate": "1916-02-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/OIP6203T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 거제",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "거제",
+    "district": "경남 거제",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "B7963485",
+    "name": "김준연",
+    "hanjaName": "金俊淵",
+    "birthDate": "1895-03-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/B7963485.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전남 영암",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전남 영암군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전남 영암군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 영암군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "영암군",
+    "district": "전남 영암군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "XCO4741M",
+    "name": "김준태",
+    "hanjaName": "金濬泰",
+    "birthDate": "1915-09-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/XCO4741M.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "경북 청도",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경북 청도군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 경산시,청도군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "경산시,청도군",
+    "district": "경북 경산시,청도군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2OJ59805",
+    "name": "김중한",
+    "hanjaName": "金重漢",
+    "birthDate": "1909-05-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2OJ59805.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 청송,영덕",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "청송,영덕",
+    "district": "경북 청송,영덕",
+    "roleTitle": "국회의원",
+    "committee": "지리산도벌사건조사특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4CS27498",
+    "name": "김진만",
+    "hanjaName": "金振晩",
+    "birthDate": "1918-11-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4CS27498.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "강원 삼척군",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "강원 삼척군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "강원 삼척군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "삼척군",
+    "district": "강원 삼척군",
+    "roleTitle": "국회의원",
+    "committee": "경제과학위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "VX862398",
+    "name": "김창근",
+    "hanjaName": "金昌槿",
+    "birthDate": "1930-10-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/VX862398.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 영주,봉화군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "영주,봉화군",
+    "district": "경북 영주,봉화군",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "PED99438",
+    "name": "김택수",
+    "hanjaName": "金澤壽",
+    "birthDate": "1926-09-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/PED99438.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 김해",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "김해",
+    "district": "경남 김해",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "PA35164W",
+    "name": "김형일",
+    "hanjaName": "金炯一",
+    "birthDate": "1923-10-28",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/PA35164W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 화성",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "화성",
+    "district": "경기 화성",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 경제과학위원회, 국회운영위원회, 예산결산특별위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "08I8941Z",
+    "name": "김호칠",
+    "hanjaName": "金好七",
+    "birthDate": "1926-11-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/08I8941Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1C747415",
+    "name": "나용균",
+    "hanjaName": "羅容均",
+    "birthDate": "1895-11-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1C747415.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "전북 정읍갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전북 정읍군갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 정읍군갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "정읍군갑",
+    "district": "전북 정읍군갑",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "POA91248",
+    "name": "노재필",
+    "hanjaName": "盧載弼",
+    "birthDate": "1916-02-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/POA91248.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 양산,동래군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "양산,동래군",
+    "district": "경남 양산,동래군",
+    "roleTitle": "국회의원",
+    "committee": "국회법중개정법률안기초특별위원회, 법제사법위원회, 예산결산특별위원회, 교통체신위원회, 국회운영위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "LNU9698K",
+    "name": "류진",
+    "hanjaName": "柳津",
+    "birthDate": "1905-08-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/LNU9698K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전북 고창군갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 고창군갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "고창군갑",
+    "district": "전북 고창군갑",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "B6M4773K",
+    "name": "류홍",
+    "hanjaName": "柳鴻",
+    "birthDate": "1899-11-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/B6M4773K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "서울 영등포구을",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 영등포구을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 영등포구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "영등포구을",
+    "district": "서울 영등포구을",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 보건사회위원회, 농림위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "IFZ22975",
+    "name": "민관식",
+    "hanjaName": "閔寬植",
+    "birthDate": "1918-05-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/IFZ22975.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "서울 동대문구",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 동대문구갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 동대문구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 동대문구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "동대문구갑",
+    "district": "서울 동대문구갑",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "NBP98519",
+    "name": "민병권",
+    "hanjaName": "閔丙權",
+    "birthDate": "1918-09-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/NBP98519.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 함양,거창군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "함양,거창군",
+    "district": "경남 함양,거창군",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회, 국회운영위원회, 국회상임위원회위원정수에관한규칙중개정안기초특별위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "IBC2672Y",
+    "name": "민병기",
+    "hanjaName": "閔丙棋",
+    "birthDate": "1901-04-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/IBC2672Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ME56811B",
+    "name": "민영남",
+    "hanjaName": "閔永南",
+    "birthDate": "1907-07-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ME56811B.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전남 해남군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 해남군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "해남군",
+    "district": "전남 해남군",
+    "roleTitle": "국회의원",
+    "committee": "국공유지등부정불하진상조사특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4TM4500S",
+    "name": "박규상",
+    "hanjaName": "朴奎祥",
+    "birthDate": "1924-11-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4TM4500S.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ANU4865X",
+    "name": "박삼준",
+    "hanjaName": "朴三俊",
+    "birthDate": "1918-07-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ANU4865X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 재정경제위원회, 예산결산특별위원회, 국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9PW85797",
+    "name": "박순천",
+    "hanjaName": "朴順天",
+    "birthDate": "1898-09-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9PW85797.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "경남 부산시,동구갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경남 부산시,동구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 마포구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "마포구",
+    "district": "서울 마포구",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "V622444H",
+    "name": "박승규",
+    "hanjaName": "朴升圭",
+    "birthDate": "1921-05-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/V622444H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 담양,장성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "담양,장성군",
+    "district": "전남 담양,장성군",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "59H12309",
+    "name": "박영록",
+    "hanjaName": "朴永祿",
+    "birthDate": "1922-03-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/59H12309.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 원주시원성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "원주시원성군",
+    "district": "강원 원주시원성군",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "TT897193",
+    "name": "박종태",
+    "hanjaName": "朴鍾泰",
+    "birthDate": "1920-02-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/TT897193.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 광산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "광산",
+    "district": "전남 광산",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 대전국제무역산업박람회지원특별위원회, 재무위원회, 양대부정선거조사특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "QHJ1904L",
+    "name": "박준규",
+    "hanjaName": "朴浚圭",
+    "birthDate": "1925-09-12",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/QHJ1904L.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 달성군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 성동구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "성동구을",
+    "district": "서울 성동구을",
+    "roleTitle": "국회의원",
+    "committee": "통일외교통상위원회, 통일외무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "D9L33040",
+    "name": "박중한",
+    "hanjaName": "朴重漢",
+    "birthDate": "1895-07-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/D9L33040.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "VJ78615I",
+    "name": "박찬",
+    "hanjaName": "朴瓚",
+    "birthDate": "1924-07-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/VJ78615I.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 공주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "공주",
+    "district": "충남 공주",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "D4D6998Z",
+    "name": "박한상",
+    "hanjaName": "朴漢相",
+    "birthDate": "1922-04-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/D4D6998Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "서울 영등포구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "영등포구을",
+    "district": "서울 영등포구을",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 예산결산특별위원회, 상공위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1PM2680D",
+    "name": "박현숙",
+    "hanjaName": "朴賢淑",
+    "birthDate": "1896-10-17",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1PM2680D.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "강원 금화",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "강원 금화",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "금화",
+    "district": "강원 금화",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZM05883H",
+    "name": "방성출",
+    "hanjaName": "方性出",
+    "birthDate": "1924-10-04",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZM05883H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 의령,함안군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "의령,함안군",
+    "district": "경남 의령,함안군",
+    "roleTitle": "국회의원",
+    "committee": "정치테러사건진상조사특별위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2688009X",
+    "name": "방일홍",
+    "hanjaName": "方一弘",
+    "birthDate": "1933-03-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2688009X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국토통일연구원특별위원회, 박한상의원및최영철기자테러사건진상조사특별위원회, 정치테러사건진상조사특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "TS39783Y",
+    "name": "배길도",
+    "hanjaName": "裵吉道",
+    "birthDate": "1922-03-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/TS39783Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 무안",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "무안",
+    "district": "전남 무안",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 문교공보위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "TNS31153",
+    "name": "백남억",
+    "hanjaName": "百南檍",
+    "birthDate": "1914-11-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/TNS31153.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 1부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 김천시금릉",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "김천시금릉",
+    "district": "경북 김천시금릉",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "8GA31641",
+    "name": "변종봉",
+    "hanjaName": "卞鍾捧",
+    "birthDate": "1919-01-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/8GA31641.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 산청,합천군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "산청,합천군",
+    "district": "경남 산청,합천군",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 예산결산특별위원회, 외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1TA8481U",
+    "name": "서민호",
+    "hanjaName": "徐珉濠",
+    "birthDate": "1903-04-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1TA8481U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "전남 고흥을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전남 고흥군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 용산구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "용산구",
+    "district": "서울 용산구",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "XWY90381",
+    "name": "서범석",
+    "hanjaName": "徐範錫",
+    "birthDate": "1902-10-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/XWY90381.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "경기 옹진갑",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 성북구",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 성북구",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 성북구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "성북구을",
+    "district": "서울 성북구을",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JGC5964P",
+    "name": "서상린",
+    "hanjaName": "徐相燐",
+    "birthDate": "1925-08-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JGC5964P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 용인,안성",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "용인,안성",
+    "district": "경기 용인,안성",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Q691796X",
+    "name": "서인석",
+    "hanjaName": "徐仁錫",
+    "birthDate": "1926-01-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Q691796X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WYS77814",
+    "name": "소선규",
+    "hanjaName": "蘇宣奎",
+    "birthDate": "1903-11-30",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WYS77814.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "전북 익산갑",
+        "isProportional": false
+      },
+      {
+        "term": 3,
+        "district": "전북 익산갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전북 1부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 1부",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "1부",
+    "district": "전북 1부",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 정치테러사건진상조사특별위원회, 한일간조약과제협정비준동의안심사특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9RI7216Q",
+    "name": "손창규",
+    "hanjaName": "孫昌奎",
+    "birthDate": "1926-08-26",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9RI7216Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회, 내무위원회, 국방위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JWG5063I",
+    "name": "송관수",
+    "hanjaName": "宋寬洙",
+    "birthDate": "1907-01-12",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JWG5063I.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 1부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 대구시,중구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시,중구",
+    "district": "경북 대구시,중구",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 지리산도벌사건조사특별위원회, 예산결산특별위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WSH8502Q",
+    "name": "송한철",
+    "hanjaName": "宋漢喆",
+    "birthDate": "1929-03-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WSH8502Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 성주,칠곡군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "성주,칠곡군",
+    "district": "경북 성주,칠곡군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 보건사회위원회, 예산결산특별위원회, 국회운영위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Y794261C",
+    "name": "신관우",
+    "hanjaName": "申灌雨",
+    "birthDate": "1926-03-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Y794261C.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 청원군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "청원군",
+    "district": "충북 청원군",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "J1D5637T",
+    "name": "신영주",
+    "hanjaName": "辛泳柱",
+    "birthDate": "1916-10-02",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/J1D5637T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경남 창녕군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 창녕",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "창녕",
+    "district": "경남 창녕",
+    "roleTitle": "국회의원",
+    "committee": "특정재벌밀수사건진상조사특별위원회, 국회운영위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "DDF1102W",
+    "name": "신옥철",
+    "hanjaName": "申玉澈",
+    "birthDate": "1908-10-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/DDF1102W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 춘천,춘성",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "춘천,춘성",
+    "district": "강원 춘천,춘성",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "M5Q11399",
+    "name": "신윤창",
+    "hanjaName": "申允昌",
+    "birthDate": "1926-02-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/M5Q11399.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 파주,고양군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "파주,고양군",
+    "district": "경기 파주,고양군",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4CA6285C",
+    "name": "신인우",
+    "hanjaName": "申仁雨",
+    "birthDate": "1914-04-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4CA6285C.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "강원 정선군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 중구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "중구",
+    "district": "서울 중구",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회, 정치테러사건진상조사특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "BCA49185",
+    "name": "신하균",
+    "hanjaName": "申河均",
+    "birthDate": "1918-09-02",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/BCA49185.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "경기 광주",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경기 광주",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경기 광주,이천",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "광주,이천",
+    "district": "경기 광주,이천",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4BC2508K",
+    "name": "신형식",
+    "hanjaName": "申泂植",
+    "birthDate": "1926-10-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4BC2508K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 고흥",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "고흥",
+    "district": "전남 고흥",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "C6F2967H",
+    "name": "안동준",
+    "hanjaName": "安東濬",
+    "birthDate": "1919-05-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/C6F2967H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "충북 괴산군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충북 괴산군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충북 괴산군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "괴산군",
+    "district": "충북 괴산군",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회, 내무위원회, 예산결산특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "JLH4180W",
+    "name": "양극필",
+    "hanjaName": "梁剋弼",
+    "birthDate": "1925-09-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/JLH4180W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 동래",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "동래",
+    "district": "경남 동래",
+    "roleTitle": "국회의원",
+    "committee": "특정재벌밀수사건진상조사특별위원회, 박한상의원및최영철기자테러사건진상조사특별위원회, 상공위원회, 예산결산특별위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZQO33825",
+    "name": "양순직",
+    "hanjaName": "楊淳稙",
+    "birthDate": "1925-05-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZQO33825.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 논산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "논산",
+    "district": "충남 논산",
+    "roleTitle": "국회의원",
+    "committee": "건설교통위원회, 교통위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "93D9038H",
+    "name": "양회수",
+    "hanjaName": "梁會璲",
+    "birthDate": "1922-03-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/93D9038H.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 곡성,화순군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "곡성,화순군",
+    "district": "전남 곡성,화순군",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 국방위원회, 법제사법위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "QDG4445P",
+    "name": "엄정주",
+    "hanjaName": "嚴廷柱",
+    "birthDate": "1920-04-28",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/QDG4445P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 영월,정선군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "영월,정선군",
+    "district": "강원 영월,정선군",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "7WM8289J",
+    "name": "예춘호",
+    "hanjaName": "芮春浩",
+    "birthDate": "1928-02-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/7WM8289J.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "부산 영도구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "영도구",
+    "district": "부산 영도구",
+    "roleTitle": "국회의원",
+    "committee": "재무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "16R8959D",
+    "name": "오상직",
+    "hanjaName": "吳相稙",
+    "birthDate": "1925-04-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/16R8959D.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 의성갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 의성",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "의성",
+    "district": "경북 의성",
+    "roleTitle": "국회의원",
+    "committee": "정치테러사건진상조사특별위원회, 재정경제위원회, 국방위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "A3M1546A",
+    "name": "오치성",
+    "hanjaName": "吳致成",
+    "birthDate": "1926-02-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/A3M1546A.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 연천,포천,가평군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "연천,포천,가평군",
+    "district": "경기 연천,포천,가평군",
+    "roleTitle": "국회의원",
+    "committee": "농수산위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "M584072W",
+    "name": "오학진",
+    "hanjaName": "吳學鎭",
+    "birthDate": "1928-01-04",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/M584072W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 시흥,부천,옹진군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "시흥,부천,옹진군",
+    "district": "경기 시흥,부천,옹진군",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "K206472E",
+    "name": "옥조남",
+    "hanjaName": "玉朝南",
+    "birthDate": "1918-02-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/K206472E.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 시흥,부천,옹진군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "시흥,부천,옹진군",
+    "district": "경기 시흥,부천,옹진군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WRD84532",
+    "name": "우갑린",
+    "hanjaName": "禹甲麟",
+    "birthDate": "1909-02-21",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WRD84532.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "I0M2449K",
+    "name": "유광현",
+    "hanjaName": "柳光鉉",
+    "birthDate": "1927-08-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/I0M2449K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 남원",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "남원",
+    "district": "전북 남원",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "8941463K",
+    "name": "유성권",
+    "hanjaName": "劉聖權",
+    "birthDate": "1915-04-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/8941463K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "서울 성동구갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 성동구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 성동구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "성동구갑",
+    "district": "서울 성동구갑",
+    "roleTitle": "국회의원",
+    "committee": "국토통일연구원특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "T856148T",
+    "name": "유수현",
+    "hanjaName": "劉守鉉",
+    "birthDate": "1915-01-30",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/T856148T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 광주시갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "광주시갑",
+    "district": "전남 광주시갑",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4QG8322V",
+    "name": "유승원",
+    "hanjaName": "柳承源",
+    "birthDate": "1921-06-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4QG8322V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 인천시갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "인천시갑",
+    "district": "경기 인천시갑",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "T7T8359U",
+    "name": "유진산",
+    "hanjaName": "柳珍山",
+    "birthDate": "1905-10-18",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/T7T8359U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "충남 금산군",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "충남 금산군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충남 금산군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 영등포구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "영등포구갑",
+    "district": "서울 영등포구갑",
+    "roleTitle": "국회의원",
+    "committee": "경제과학위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "NQY2893P",
+    "name": "유창열",
+    "hanjaName": "柳昌烈",
+    "birthDate": "1914-12-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/NQY2893P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국공유지등부정불하진상조사특별위원회, 재정경제위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "MT56949U",
+    "name": "유청",
+    "hanjaName": "柳靑",
+    "birthDate": "1919-03-13",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/MT56949U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "전북 전주시갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전북 전주시갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 전주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "전주",
+    "district": "전북 전주",
+    "roleTitle": "국회의원",
+    "committee": "경제과학위원회, 건설위원회, 재무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1OF99975",
+    "name": "유치송",
+    "hanjaName": "柳致松",
+    "birthDate": "1924-10-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1OF99975.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 평택군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "평택군",
+    "district": "경기 평택군",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "VKN9171V",
+    "name": "육인수",
+    "hanjaName": "陸寅修",
+    "birthDate": "1919-12-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/VKN9171V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 보은,옥천군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "보은,옥천군",
+    "district": "충북 보은,옥천군",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "01B9062T",
+    "name": "윤보선",
+    "hanjaName": "尹潽善",
+    "birthDate": "1897-08-26",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/01B9062T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "종로구갑",
+    "district": "서울 종로구갑",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "J2O5434U",
+    "name": "윤제술",
+    "hanjaName": "尹濟述",
+    "birthDate": "1904-01-29",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/J2O5434U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전북 김제군을",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전북 김제군을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전북 김제군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 서대문구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "서대문구을",
+    "district": "서울 서대문구을",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회, 농림위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2FQ58160",
+    "name": "이남준",
+    "hanjaName": "李南俊",
+    "birthDate": "1919-02-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2FQ58160.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 진도군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "진도군",
+    "district": "전남 진도군",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 법제사법위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "YG94643C",
+    "name": "이돈해",
+    "hanjaName": "李暾海",
+    "birthDate": "1916-06-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/YG94643C.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 김포,강화",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "김포,강화",
+    "district": "경기 김포,강화",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "MFB7723Q",
+    "name": "이동녕",
+    "hanjaName": "李東寧",
+    "birthDate": "1905-01-21",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/MFB7723Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경북 문경시",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 문경시",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "문경시",
+    "district": "경북 문경시",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2081986U",
+    "name": "이동진",
+    "hanjaName": "李東鎭",
+    "birthDate": "1931-10-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2081986U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 영동군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "영동군",
+    "district": "충북 영동군",
+    "roleTitle": "국회의원",
+    "committee": "대전국제무역산업박람회지원특별위원회, 양대부정선거조사특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "IYC3468T",
+    "name": "이만섭",
+    "hanjaName": "李萬燮",
+    "birthDate": "1932-02-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/IYC3468T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 대구시,중구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시,중구",
+    "district": "경북 대구시,중구",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WMP4503Z",
+    "name": "이백일",
+    "hanjaName": "李白日",
+    "birthDate": "1921-03-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WMP4503Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 여주,양평군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "여주,양평군",
+    "district": "경기 여주,양평군",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 예산결산특별위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "U4Z83433",
+    "name": "이병옥",
+    "hanjaName": "李炳玉",
+    "birthDate": "1927-04-17",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/U4Z83433.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 부안군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 부안군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "부안군",
+    "district": "전북 부안군",
+    "roleTitle": "국회의원",
+    "committee": "재무위원회, 농수산위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9VF7142D",
+    "name": "이병희",
+    "hanjaName": "李秉禧",
+    "birthDate": "1926-08-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9VF7142D.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 수원",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "수원",
+    "district": "경기 수원",
+    "roleTitle": "국회의원",
+    "committee": "문화체육공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZNS6961Q",
+    "name": "이상돈",
+    "hanjaName": "李相敦",
+    "birthDate": "1912-03-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZNS6961Q.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "충남 천안",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충남 천안을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "천안을",
+    "district": "충남 천안을",
+    "roleTitle": "국회의원",
+    "committee": "박한상의원및최영철기자테러사건진상조사특별위원회, 건설위원회, 국공유지등부정불하진상조사특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "71X80031",
+    "name": "이상무",
+    "hanjaName": "李相武",
+    "birthDate": "1919-09-29",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/71X80031.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 경주,월성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "경주,월성군",
+    "district": "경북 경주,월성군",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 문교공보위원회, 상공위원회, 국회운영위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "V478504T",
+    "name": "이상철",
+    "hanjaName": "李相喆",
+    "birthDate": "1893-01-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/V478504T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "충남 청양",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충남 청양군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충남 청양,홍성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "청양,홍성군",
+    "district": "충남 청양,홍성군",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회, 국방위원회, 국회운영위원회, 예산결산특별위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "OZD1470G",
+    "name": "이상희",
+    "hanjaName": "李相禧",
+    "birthDate": "1923-01-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/OZD1470G.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 서산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "서산",
+    "district": "충남 서산",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회, 국회법중개정법률안기초특별위원회, 예산결산특별위원회, 국회운영위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "33E7076V",
+    "name": "이승춘",
+    "hanjaName": "李承春",
+    "birthDate": "1914-05-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/33E7076V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "강원 홍천,인제군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "홍천,인제군",
+    "district": "강원 홍천,인제군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 외무위원회, 보건사회위원회, 예산결산특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "S326239W",
+    "name": "이영준",
+    "hanjaName": "李榮俊",
+    "birthDate": "1896-09-17",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/S326239W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "서울 동대문구을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 동대문구을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 동대문구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "동대문구을",
+    "district": "서울 동대문구을",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 재정경제위원회, 보건사회위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "AP02342T",
+    "name": "이영진",
+    "hanjaName": "李寧鎭",
+    "birthDate": "1908-08-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/AP02342T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 아산",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "아산",
+    "district": "충남 아산",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "02G3199K",
+    "name": "이우태",
+    "hanjaName": "李遇兌",
+    "birthDate": "1922-11-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/02G3199K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "H446831O",
+    "name": "이우헌",
+    "hanjaName": "李于憲",
+    "birthDate": "1902-09-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/H446831O.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 여수시,여천군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "여수시,여천군",
+    "district": "전남 여수시,여천군",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회, 건설위원회, 예산결산특별위원회, 보건사회위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "8QN2498E",
+    "name": "이원만",
+    "hanjaName": "李原万",
+    "birthDate": "1904-09-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/8QN2498E.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 2부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 대구시,동구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시,동구",
+    "district": "경북 대구시,동구",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "6O61738R",
+    "name": "이원홍",
+    "hanjaName": "李原弘",
+    "birthDate": "1903-03-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/6O61738R.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 합천갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "합천갑",
+    "district": "경남 합천갑",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4YY13241",
+    "name": "이재만",
+    "hanjaName": "李在晩",
+    "birthDate": "1923-11-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4YY13241.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 밀양",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "밀양",
+    "district": "경남 밀양",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1C853454",
+    "name": "이정래",
+    "hanjaName": "李晶來",
+    "birthDate": "1899-05-07",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1C853454.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전남 보성",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 보성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "보성군",
+    "district": "전남 보성군",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 예산결산특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "6MO9040Z",
+    "name": "이종극",
+    "hanjaName": "李鍾極",
+    "birthDate": "1907-11-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/6MO9040Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국토통일연구원특별위원회, 농림위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "DCY93694",
+    "name": "이종근",
+    "hanjaName": "李鐘根",
+    "birthDate": "1923-10-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/DCY93694.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 충주시중원",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "충주시중원",
+    "district": "충북 충주시중원",
+    "roleTitle": "국회의원",
+    "committee": "농림수산위원회, 보건사회위원회, 교육위원회, 문화체육공보위원회, 윤리특별위원회, 노동위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "GAW4142V",
+    "name": "이종순",
+    "hanjaName": "李鍾諄",
+    "birthDate": "1906-01-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/GAW4142V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "부산 동구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "동구",
+    "district": "부산 동구",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "TN53355N",
+    "name": "이중재",
+    "hanjaName": "李重載",
+    "birthDate": "1925-01-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/TN53355N.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 보성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "보성군",
+    "district": "전남 보성군",
+    "roleTitle": "국회의원",
+    "committee": "산업자원위원회, 국제경쟁력강화및경제제도개혁에관한특별위원회, 재정경제위원회, 통상산업위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZXL9063Y",
+    "name": "이충환",
+    "hanjaName": "李忠煥",
+    "birthDate": "1917-09-13",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZXL9063Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "충북 진천",
+        "isProportional": false
+      },
+      {
+        "term": 3,
+        "district": "충북 진천군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충북 진천군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충북 진천,음성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "진천,음성군",
+    "district": "충북 진천,음성군",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "E0N2954V",
+    "name": "이태용",
+    "hanjaName": "李泰鎔",
+    "birthDate": "1909-03-16",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/E0N2954V.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "충북 제천",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "충북 제천",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충북 제천",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충북 제천",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "제천",
+    "district": "충북 제천",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "57O8885T",
+    "name": "이활",
+    "hanjaName": "李活",
+    "birthDate": "1899-09-08",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/57O8885T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 영천",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "영천",
+    "district": "경북 영천",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2B247480",
+    "name": "이효상",
+    "hanjaName": "李孝祥",
+    "birthDate": "1906-01-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2B247480.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경북 1부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 대구시,남구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시,남구",
+    "district": "경북 대구시,남구",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "K5A8588U",
+    "name": "이희승",
+    "hanjaName": "李喜承",
+    "birthDate": "1913-10-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/K5A8588U.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 충주시중원",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "충주시중원",
+    "district": "충북 충주시중원",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 예산결산특별위원회, 국회운영위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "3MF9619J",
+    "name": "인태식",
+    "hanjaName": "印泰植",
+    "birthDate": "1902-12-17",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/3MF9619J.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "충남 당진군갑",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "충남 당진갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충남 당진",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "당진",
+    "district": "충남 당진",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회, 예산결산특별위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZIL6794T",
+    "name": "임병수",
+    "hanjaName": "任炳洙",
+    "birthDate": "1918-03-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZIL6794T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "제주 제주,북제주군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "제주",
+    "localRegion": "제주,북제주군",
+    "district": "제주 제주,북제주군",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 내무위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4UE4157N",
+    "name": "임차주",
+    "hanjaName": "林次周",
+    "birthDate": "1918-08-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4UE4157N.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전북 순창군",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전북 순창군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 순창군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "순창군",
+    "district": "전북 순창군",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2OJ1050R",
+    "name": "장경순",
+    "hanjaName": "張坰淳",
+    "birthDate": "1922-03-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2OJ1050R.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 김제",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "김제",
+    "district": "전북 김제",
+    "roleTitle": "국회의원",
+    "committee": "농수산위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "95A15686",
+    "name": "장치훈",
+    "hanjaName": "張致勳",
+    "birthDate": "1910-01-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/95A15686.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WGG9113S",
+    "name": "전진한",
+    "hanjaName": "錢鎭漢",
+    "birthDate": "1901-11-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WGG9113S.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "경북 상주을",
+        "isProportional": false
+      },
+      {
+        "term": 3,
+        "district": "경남 부산무",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경남 부산시을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 종로구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "종로구갑",
+    "district": "서울 종로구갑",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "O9P4549S",
+    "name": "전휴상",
+    "hanjaName": "全烋相",
+    "birthDate": "1934-01-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/O9P4549S.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전북 진안군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 진안,무주,장수",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "진안,무주,장수",
+    "district": "전북 진안,무주,장수",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "U9942857",
+    "name": "정구영",
+    "hanjaName": "鄭求瑛",
+    "birthDate": "1894-05-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/U9942857.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회, 교통체신위원회, 상공위원회, 재정경제위원회, 6.8선거부정조사특별위원회법제정특별위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "CXO2156G",
+    "name": "정래정",
+    "hanjaName": "丁來正",
+    "birthDate": "1923-04-09",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/CXO2156G.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 광주을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "광주을",
+    "district": "전남 광주을",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 교통체신위원회, 국회운영위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Z457542X",
+    "name": "정명섭",
+    "hanjaName": "丁明燮",
+    "birthDate": "1910-02-12",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Z457542X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전남 나주군을",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전남 나주군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 나주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "나주",
+    "district": "전남 나주",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "3ZY8842T",
+    "name": "정성태",
+    "hanjaName": "鄭成太",
+    "birthDate": "1915-07-28",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/3ZY8842T.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "전남 광주",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "전남 광주갑",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "전남 광주갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 광주갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "광주갑",
+    "district": "전남 광주갑",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "R093697J",
+    "name": "정운근",
+    "hanjaName": "鄭雲近",
+    "birthDate": "1907-07-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/R093697J.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 국방위원회, 국공유지등부정불하진상조사특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Q699375L",
+    "name": "정일형",
+    "hanjaName": "鄭一亨",
+    "birthDate": "1904-02-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Q699375L.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "서울 중구을",
+        "isProportional": false
+      },
+      {
+        "term": 3,
+        "district": "서울 중구을",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "서울 중구을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 중구을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 중구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "중구",
+    "district": "서울 중구",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회",
+    "term": "제6대",
+    "timesElected": 5,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WEX28089",
+    "name": "정진동",
+    "hanjaName": "鄭鎭東",
+    "birthDate": "1910-03-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WEX28089.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 예천군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "예천군",
+    "district": "경북 예천군",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "8TF6180R",
+    "name": "정태성",
+    "hanjaName": "鄭泰成",
+    "birthDate": "1926-12-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/8TF6180R.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충북 청주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충북",
+    "localRegion": "청주",
+    "district": "충북 청주",
+    "roleTitle": "국회의원",
+    "committee": "재정경제위원회, 건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "35G1176L",
+    "name": "정해영",
+    "hanjaName": "鄭海永",
+    "birthDate": "1915-09-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/35G1176L.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "경남 울산군을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경남 울산군을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "부산 진구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "진구을",
+    "district": "부산 진구을",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "VXE7857Z",
+    "name": "정헌조",
+    "hanjaName": "鄭憲祚",
+    "birthDate": "1919-08-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/VXE7857Z.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "전남 영광",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전남 함평,영광군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "함평,영광군",
+    "district": "전남 함평,영광군",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "V3Y4027M",
+    "name": "조경한",
+    "hanjaName": "趙擎韓",
+    "birthDate": "1900-07-13",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/V3Y4027M.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 순천시,승주군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "순천시,승주군",
+    "district": "전남 순천시,승주군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1L75529M",
+    "name": "조남철",
+    "hanjaName": "趙南哲",
+    "birthDate": "1923-05-08",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1L75529M.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9ER78348",
+    "name": "조시형",
+    "hanjaName": "趙始衡",
+    "birthDate": "1927-04-13",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9ER78348.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "부산 중구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "중구",
+    "district": "부산 중구",
+    "roleTitle": "국회의원",
+    "committee": "한일간조약과제협정비준동의안심사특별위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "BPU25498",
+    "name": "조윤형",
+    "hanjaName": "趙尹衡",
+    "birthDate": "1932-11-26",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/BPU25498.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경기 양주군갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 성북구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "성북구갑",
+    "district": "서울 성북구갑",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회, 문화공보위원회, 행정위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "1AT5639X",
+    "name": "조재천",
+    "hanjaName": "曹在千",
+    "birthDate": "1912-11-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/1AT5639X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 3,
+        "district": "경북 달성군",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "경북 대구시정",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경북 대구시정",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 대구시정",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "대구시정",
+    "district": "경북 대구시정",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZJB3211N",
+    "name": "조창대",
+    "hanjaName": "曺昌大",
+    "birthDate": "1928-07-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZJB3211N.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 진해,창원시",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "진해,창원시",
+    "district": "경남 진해,창원시",
+    "roleTitle": "국회의원",
+    "committee": "상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "C354091P",
+    "name": "진기배",
+    "hanjaName": "陳基培",
+    "birthDate": "1921-08-01",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/C354091P.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경북 영양,울진군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "영양,울진군",
+    "district": "경북 영양,울진군",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "C5E1016K",
+    "name": "진형하",
+    "hanjaName": "陳馨夏",
+    "birthDate": "1907-03-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/C5E1016K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "충남 대전을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "충남 대전을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "충남 대전",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "대전",
+    "district": "충남 대전",
+    "roleTitle": "국회의원",
+    "committee": "지리산도벌사건조사특별위원회, 예산결산특별위원회, 법제사법위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "D2H3317X",
+    "name": "차지철",
+    "hanjaName": "車智澈",
+    "birthDate": "1934-11-06",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/D2H3317X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경기 광주,이천",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "광주,이천",
+    "district": "경기 광주,이천",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "HDI20908",
+    "name": "최두고",
+    "hanjaName": "崔斗高",
+    "birthDate": "1921-10-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/HDI20908.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "부산 진구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "부산",
+    "localRegion": "진구을",
+    "district": "부산 진구을",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "98V59336",
+    "name": "최서일",
+    "hanjaName": "崔瑞日",
+    "birthDate": "1906-09-27",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/98V59336.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전남 완도",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전남",
+    "localRegion": "완도",
+    "district": "전남 완도",
+    "roleTitle": "국회의원",
+    "committee": "지리산도벌사건조사특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "HFQ1835Y",
+    "name": "최석림",
+    "hanjaName": "崔奭林",
+    "birthDate": "1922-10-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/HFQ1835Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경남 고성군",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경남 고성군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 충무,통영,고성군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "충무,통영,고성군",
+    "district": "경남 충무,통영,고성군",
+    "roleTitle": "국회의원",
+    "committee": "예산결산특별위원회, 농림위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "QNN54052",
+    "name": "최수룡",
+    "hanjaName": "催守龍",
+    "birthDate": "1921-03-11",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/QNN54052.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "경남 진해,창원시",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "진해,창원시",
+    "district": "경남 진해,창원시",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 상공위원회, 농림위원회, 재정경제위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "2RB25984",
+    "name": "최영근",
+    "hanjaName": "崔泳謹",
+    "birthDate": "1922-04-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/2RB25984.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경남 울산군갑",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 울산시울주구",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "울산시울주구",
+    "district": "경남 울산시울주구",
+    "roleTitle": "국회의원",
+    "committee": "윤리특별위원회, 문화공보위원회, 상공위원회, 보건사회위원회, 대전국제무역산업박람회지원특별위원회, 노동위원회, 지역감정해소특별위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "H6251808",
+    "name": "최영두",
+    "hanjaName": "崔永斗",
+    "birthDate": "1923-03-15",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/H6251808.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "전북 완주",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "완주",
+    "district": "전북 완주",
+    "roleTitle": "국회의원",
+    "committee": "문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "XDJ1378K",
+    "name": "최정기",
+    "hanjaName": "崔貞基",
+    "birthDate": "1913-04-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/XDJ1378K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 문교공보위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "55Q77773",
+    "name": "최치환",
+    "hanjaName": "崔致煥",
+    "birthDate": "1923-10-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/55Q77773.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경남 남해군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경남 남해군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경남",
+    "localRegion": "남해군",
+    "district": "경남 남해군",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "KFJ9834X",
+    "name": "최희송",
+    "hanjaName": "崔熙松",
+    "birthDate": "1894-05-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/KFJ9834X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "경북 대구시을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경북 2부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경북 2부",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경북",
+    "localRegion": "2부",
+    "district": "경북 2부",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회, 보건사회위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "ZDR33316",
+    "name": "한건수",
+    "hanjaName": "韓建洙",
+    "birthDate": "1921-08-10",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/ZDR33316.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "충남 예산군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "충남",
+    "localRegion": "예산군",
+    "district": "충남 예산군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "V9C9847B",
+    "name": "한근조",
+    "hanjaName": "韓根祖",
+    "birthDate": "1895-07-19",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/V9C9847B.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "서울 종로구을",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "서울 종로구을",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 종로구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "종로구을",
+    "district": "서울 종로구을",
+    "roleTitle": "국회의원",
+    "committee": "외무위원회",
+    "term": "제6대",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "Z7864733",
+    "name": "한상준",
+    "hanjaName": "韓相駿",
+    "birthDate": "1921-08-25",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/Z7864733.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전북 임실군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "전북 임실군,순창군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "전북",
+    "localRegion": "임실군,순창군",
+    "district": "전북 임실군,순창군",
+    "roleTitle": "국회의원",
+    "committee": "보건사회위원회, 국방위원회, 내무위원회, 예산결산특별위원회, 교통체신위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "RU086118",
+    "name": "한태연",
+    "hanjaName": "韓泰淵",
+    "birthDate": "1916-01-05",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/RU086118.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "법제사법위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "3HV2016Y",
+    "name": "한통숙",
+    "hanjaName": "韓通淑",
+    "birthDate": "1906-04-14",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/3HV2016Y.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "서울 1부",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 영등포구갑",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "영등포구갑",
+    "district": "서울 영등포구갑",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회, 외무위원회, 문교공보위원회, 내무위원회, 예산결산특별위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "3W060175",
+    "name": "함덕용",
+    "hanjaName": "咸德用",
+    "birthDate": "1904-11-23",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/3W060175.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 6,
+        "district": "비례대표",
+        "isProportional": true
+      }
+    ],
+    "metroRegion": "비례대표",
+    "localRegion": "비례대표",
+    "district": "비례대표",
+    "roleTitle": "국회의원",
+    "committee": "내무위원회, 상공위원회",
+    "term": "제6대",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "O6K5681N",
+    "name": "현오봉",
+    "hanjaName": "玄梧鳳",
+    "birthDate": "1923-03-26",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/O6K5681N.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "제주 남제주군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "제주 남제주군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "제주",
+    "localRegion": "남제주군",
+    "district": "제주 남제주군",
+    "roleTitle": "국회의원",
+    "committee": "건설위원회, 국회운영위원회, 국회상임위원회위원정수에관한규칙개정특별위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "9U97658K",
+    "name": "홍영기",
+    "hanjaName": "洪英基",
+    "birthDate": "1918-12-03",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/9U97658K.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "전북 순창군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "서울 서대문구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "서울",
+    "localRegion": "서대문구을",
+    "district": "서울 서대문구을",
+    "roleTitle": "국회의원",
+    "committee": "환경노동위원회, 노동환경위원회, 법제사법위원회, 예산결산특별위원회, 재무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "3AA37867",
+    "name": "홍익표",
+    "hanjaName": "洪翼杓",
+    "birthDate": "1910-01-24",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/3AA37867.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      2,
+      4,
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 2,
+        "district": "경기 가평",
+        "isProportional": false
+      },
+      {
+        "term": 4,
+        "district": "경기 가평",
+        "isProportional": false
+      },
+      {
+        "term": 5,
+        "district": "경기 가평군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경기 가평군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "가평군",
+    "district": "경기 가평군",
+    "roleTitle": "국회의원",
+    "committee": "국회운영위원회, 문교공보위원회, 국방위원회",
+    "term": "제6대",
+    "timesElected": 4,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "WEP8494X",
+    "name": "황인원",
+    "hanjaName": "黃仁元",
+    "birthDate": "1920-09-13",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WEP8494X.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      5,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 5,
+        "district": "경기 파주군",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "경기 파주,고양군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "경기",
+    "localRegion": "파주,고양군",
+    "district": "경기 파주,고양군",
+    "roleTitle": "국회의원",
+    "committee": "국방위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  },
+  {
+    "id": "4IR7382A",
+    "name": "황호현",
+    "hanjaName": "黃虎鉉",
+    "birthDate": "1911-03-22",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/4IR7382A.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "국회의원",
+    "party": "무소속",
+    "isAssemblyMember": true,
+    "electedTerms": [
+      4,
+      6
+    ],
+    "termsDetails": [
+      {
+        "term": 4,
+        "district": "강원 평창",
+        "isProportional": false
+      },
+      {
+        "term": 6,
+        "district": "강원 평창군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "강원",
+    "localRegion": "평창군",
+    "district": "강원 평창군",
+    "roleTitle": "국회의원",
+    "committee": "정당법및선거관계법중개정법률안심사특별위원회, 국토통일연구원특별위원회, 정치테러사건진상조사특별위원회, 국회운영위원회, 내무위원회",
+    "term": "제6대",
+    "timesElected": 2,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {
+      "phone": "",
+      "email": "",
+      "blogOrSns": ""
+    }
+  }
+]

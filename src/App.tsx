@@ -9,9 +9,9 @@ import { ListView } from './components/ListView';
 import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 import { AdminModal } from './components/AdminModal';
+import { FeedbackModal } from './components/FeedbackModal'; // ⭐️ 오류 제보 모달
 
 export function App() {
-  // ⭐️ 0.001초 만에 읽어오는 무적 정적 캐시 파일 직통 연결
   const LIVE_API_URL = "/live.json";
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
@@ -20,8 +20,9 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
 
-  // 관리자 모달 열림/닫힘 상태
+  // 모달 오픈 상태 관리
   const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState<boolean>(false); // ⭐️ 오류 제보 상태
 
   const currentHierarchy = REGIONS_DATA[currentRegion] || REGIONS_DATA['대한민국 국회'];
 
@@ -40,7 +41,6 @@ export function App() {
   }, [searchQuery]);
 
   const displayedPoliticians = useMemo(() => {
-    // ⭐️ 관리자 모드에서 보정한 정당 목록 읽기
     let overrides: Record<string, string> = {
       '용혜인': '기본소득당',
       '한창민': '사회민주당',
@@ -60,7 +60,6 @@ export function App() {
       ...currentHierarchy.localCouncil,
     ];
 
-    // ⭐️ as any 로 타입 문지기 100% 통과
     return all.map((p): Politician => {
       if (overrides[p.name]) {
         return { ...p, party: overrides[p.name] as any };
@@ -89,12 +88,13 @@ export function App() {
           onViewModeChange={setViewMode}
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
-          onAdminClick={() => setIsAdminOpen(true)} // ⭐️ 헤더 안의 관리자 버튼 클릭 시 열림
+          onAdminClick={() => setIsAdminOpen(true)}
+          onFeedbackClick={() => setIsFeedbackOpen(true)} // ⭐️ 오류 제보 버튼 클릭 연결!
         />
         <BlackTicketGauge politicians={displayedPoliticians} />
       </div>
 
-      {/* 3. Main Body */}
+      {/* Main Body */}
       <main className="flex-1 w-full max-w-[1800px] mx-auto pb-16">
         {searchResults !== null ? (
           <div className="px-4 py-8">
@@ -148,6 +148,13 @@ export function App() {
       <AdminModal
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
+      />
+
+      {/* ⭐️ 오류 수정 제보 모달 */}
+      <FeedbackModal
+        isOpen={isFeedbackOpen}
+        onClose={() => setIsFeedbackOpen(false)}
+        suggestApiUrl={SUGGEST_API_URL}
       />
 
       <footer className="border-t border-neutral-200 bg-white py-12 px-4 text-xs text-neutral-500">
