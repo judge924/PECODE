@@ -385,14 +385,24 @@ export const PartySection: React.FC<PartySectionProps> = ({
 
     const leadershipIds = new Set(members.filter((p) => p.partyRoleOrder != null).map((p) => p.id));
 
+    // ⭐️ 1. 중진: 당선 횟수 3선 이상 (다선 순 -> 동선이면 가나다순)
     const senior = members
-        .filter((p) => !leadershipIds.has(p.id) && p.timesElected >= 2)
-        .sort((a, b) => b.timesElected - a.timesElected);
+        .filter((p) => !leadershipIds.has(p.id) && (p.timesElected || 1) >= 3)
+        .sort((a, b) => {
+            const termDiff = (b.timesElected || 1) - (a.timesElected || 1);
+            if (termDiff !== 0) return termDiff;
+            return a.name.localeCompare(b.name, 'ko');
+        });
     const seniorIds = new Set(senior.map((p) => p.id));
 
-    const general = members
+    // ⭐️ 2. 초선·재선: 3선 미만 의원들 (재선 -> 초선 -> 가나다순)
+    const junior = members
         .filter((p) => !leadershipIds.has(p.id) && !seniorIds.has(p.id))
-        .sort((a, b) => b.timesElected - a.timesElected);
+        .sort((a, b) => {
+            const termDiff = (b.timesElected || 1) - (a.timesElected || 1);
+            if (termDiff !== 0) return termDiff;
+            return a.name.localeCompare(b.name, 'ko');
+        });
 
     return (
         <div className="mb-8">
@@ -445,14 +455,14 @@ export const PartySection: React.FC<PartySectionProps> = ({
             )}
 
             <NamedGroup
-                title="중진 (재선 이상)"
+                title="중진 (3선 이상)"
                 members={senior}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={onSelectPolitician}
             />
             <NamedGroup
-                title="소속의원"
-                members={general}
+                title="초선·재선"
+                members={junior}
                 selectedPolitician={selectedPolitician}
                 onSelectPolitician={onSelectPolitician}
             />

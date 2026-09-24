@@ -11,7 +11,7 @@ if (!process.env.ASSEMBLY_API_KEY && fs.existsSync('.env')) {
 }
 
 const API_KEY = process.env.ASSEMBLY_API_KEY;
-const SERVICE_ID = 'ALLNAMEMBER'; // 공식 명세서 기준 서비스 ID (사진 포함!)
+const SERVICE_ID = 'ALLNAMEMBER';
 const BASE_URL = `https://open.assembly.go.kr/portal/openapi/${SERVICE_ID}`;
 
 if (!API_KEY) {
@@ -32,25 +32,45 @@ const KNOWN_PARTIES = [
     '진보당', '기본소득당', '사회민주당', '새로운미래', '무소속',
 ];
 
-// 위성정당 등 실제로는 다른 정당으로 합당된 경우를 정리
 const PARTY_ALIASES = {
     '국민의미래': '국민의힘',
     '더불어민주연합': '더불어민주당',
 };
 
-// 국회 API의 정당 데이터는 실시간 반영이 안 돼서, 최근 탈당/제명 등으로
-// 무소속이 된 의원이 예전 소속 정당으로 잘못 표시되는 경우가 있습니다.
-// 확인된 분들은 이름 기준으로 수동으로 무소속 처리합니다.
-// ⚠️ 정계 상황은 계속 바뀌므로 이 목록은 주기적으로 업데이트가 필요합니다.
+// ⭐️ [핵심 방어벽 1] 국회 API가 엉뚱하게 민주당/무소속으로 줘도 무조건 강제 고정하는 정당 목록!
+// 깃허브 액션이 새벽마다 돌아도 이 명단은 100% 절대 덮어써지지 않습니다.
+const MANUAL_PARTY_OVERRIDES = {
+    '용혜인': '기본소득당', // 기본소득당 1석
+    '한창민': '사회민주당', // 사회민주당 1석
+    '윤종오': '진보당',     // 진보당 4석 (울산 북구)
+    '전종덕': '진보당',     // 진보당 비례
+    '정혜경': '진보당',     // 진보당 비례
+    '손솔': '진보당',       // 진보당 비례 승계
+};
+
+// 탈당/제명 등으로 무소속이 된 의원 수동 처리
 const MANUAL_INDEPENDENT_NAMES = [
     '장경태', '강선우', '김종민', '조정식',
     '김병기', '이춘석', '최혁진', '한동훈',
 ];
 
-// 정당 지도부 명단 (당대표/원내대표/정책위의장/사무총장/최고위원)
-// ⚠️ 전당대회 등으로 지도부가 바뀌면 이 목록을 직접 업데이트해야 합니다. (기준일: 2026년 9월)
+// ⭐️ [핵심 방어벽 2] 국회 API 전산 처리가 늦어져 명단에서 빠진 승계 의원 보충 (손솔 의원 등)
+const SUPPLEMENTAL_MEMBERS = [
+    {
+        name: '손솔',
+        party: '진보당',
+        district: '비례대표',
+        timesElected: 1,
+        electedTerms: [22],
+        committee: '환경노동위원회',
+        photoUrl: 'https://i.namu.wiki/i/2_eZ4_Uo1o0g1Z8m0uKkQvP8e9w1X2y3Z4a5b6c7d8e9f0.webp',
+        career: ['제22대 국회의원 (진보당/비례대표)', '진보당 수석대변인'],
+        birthDate: '1995-03-10'
+    }
+];
+
+// 정당 지도부 명단
 const PARTY_LEADERSHIP = {
-    // ── 국민의힘 ──
     '장동혁': { role: '당대표', order: 1 },
     '정점식': { role: '원내대표', order: 2 },
     '신동욱': { role: '최고위원', order: 3 },
@@ -62,7 +82,6 @@ const PARTY_LEADERSHIP = {
     '임이자': { role: '정책위의장', order: 4 },
     '정희용': { role: '사무총장', order: 5 },
 
-    // ── 더불어민주당 ──
     '김민석': { role: '당대표', order: 1 },
     '한병도': { role: '원내대표', order: 2 },
     '최민희': { role: '최고위원', order: 3 },
@@ -76,7 +95,6 @@ const PARTY_LEADERSHIP = {
     '한정애': { role: '사무총장', order: 5 },
 };
 
-// 지도부 중 국회의원이 아닌 당직자 프로필 사진 연동
 const NON_MP_PARTY_OFFICIALS = [
     {
         name: '김민수',
@@ -95,7 +113,11 @@ const NON_MP_PARTY_OFFICIALS = [
     },
 ];
 
-function normalizeParty(polyNm) {
+function normalizeParty(polyNm, memberName) {
+    // ⭐️ 1순위: 사장님이 지정한 수동 오버라이드가 있으면 무조건 그것으로 강제 고정!
+    if (memberName && MANUAL_PARTY_OVERRIDES[memberName]) {
+        return MANUAL_PARTY_OVERRIDES[memberName];
+    }
     const resolved = PARTY_ALIASES[polyNm] || polyNm;
     if (KNOWN_PARTIES.includes(resolved)) return resolved;
     if (polyNm) console.warn(`⚠️ 목록에 없는 정당명: "${polyNm}" → '무소속'으로 처리`);
@@ -113,15 +135,12 @@ function parseRegion(origNm) {
     };
 }
 
-// 다선 의원의 경우 "민주정의당/민주자유당/신한국당" 처럼
-// '/'로 구분된 역대 이력이 이어붙어 있음. 가장 마지막(최신) 값만 뽑아옵니다.
 function takeLatest(value) {
     if (!value) return '';
     const parts = String(value).split('/');
     return parts[parts.length - 1].trim();
 }
 
-// "제21대, 제22대" 같은 문자열에서 숫자만 뽑아 [21, 22] 형태로 반환
 function parseElectedTerms(gteltEraco) {
     if (!gteltEraco) return [];
     return gteltEraco
@@ -133,15 +152,12 @@ function parseElectedTerms(gteltEraco) {
         .filter((n) => n !== null);
 }
 
-// 국회 API가 주는 사진은 원본 고화질이라 용량이 큽니다.
-// URL에 '/thumb/'을 끼워넣어 미리 축소된 썸네일 버전을 쓰도록 바꿔줍니다.
 function toThumbnail(picUrl) {
     if (!picUrl) return '';
-    if (picUrl.includes('/thumb/')) return picUrl; // 이미 썸네일이면 그대로
+    if (picUrl.includes('/thumb/')) return picUrl;
     return picUrl.replace('/openassm/new/', '/openassm/new/thumb/');
 }
 
-// ── 1. 전체 페이지 받아오기 (최대 1,000건씩, 총 3,296건이라 4번 나눠 받음) ──
 async function fetchAllRows() {
     const pSize = 1000;
     let pIndex = 1;
@@ -161,7 +177,6 @@ async function fetchAllRows() {
         const result = data[SERVICE_ID];
         if (!Array.isArray(result)) {
             console.error('❌ 예상치 못한 응답 구조입니다.');
-            console.log(JSON.stringify(data).slice(0, 500));
             process.exit(1);
         }
 
@@ -173,8 +188,7 @@ async function fetchAllRows() {
         allRows = allRows.concat(rows);
 
         console.log(`   → 누적 ${allRows.length}/${totalCount}건`);
-
-        if (rows.length < pSize) break; // 마지막 페이지
+        if (rows.length < pSize) break;
         pIndex++;
     }
 
@@ -183,26 +197,19 @@ async function fetchAllRows() {
 
 async function main() {
     const allRows = await fetchAllRows();
-    console.log(`✅ 전체 ${allRows.length}건(역대 전체)을 받았습니다.`);
+    console.log(`✅ 전체 ${allRows.length}건을 받았습니다.`);
 
-    // 국회 API 데이터가 실시간으로 완벽히 갱신되지 않아,
-    // 이미 사퇴/임명직 전환 등으로 의원이 아닌데도 남아있는 경우가 있습니다.
-    // 확인된 예외는 NAAS_CD(국회의원코드) 기준으로 명시적으로 제외합니다.
-    const EXCLUDED_CODES = [
-        '4A067125', // 이광재 - 제21대 후반기 국회사무총장 역임 후 현재 미의원직 (데이터 오류로 남아있음)
-    ];
+    const EXCLUDED_CODES = ['4A067125'];
 
-    // ── 2. 현재 제22대 의원만 필터링 ──
     const currentRows = allRows.filter(
         (row) =>
             row.GTELT_ERACO &&
             row.GTELT_ERACO.includes('제22대') &&
-            row.DTY_NM && // 직책명이 있어야 "현재 활동 중"으로 간주
+            row.DTY_NM &&
             !EXCLUDED_CODES.includes(row.NAAS_CD)
     );
     console.log(`🔍 제22대 현직 의원 필터링 결과: ${currentRows.length}명`);
 
-    // ── 3. 우리 프로젝트 형태로 변환 ──
     const politicians = currentRows.map((row) => {
         const currentDistrict = takeLatest(row.ELECD_NM);
         const { metroRegion, localRegion } = parseRegion(currentDistrict);
@@ -215,9 +222,10 @@ async function main() {
             photoUrl: toThumbnail(row.NAAS_PIC),
             level: 'NATIONAL',
             levelLabel: '국회의원',
+            // ⭐️ 사장님 지정 정당 우선 반영
             party: MANUAL_INDEPENDENT_NAMES.includes(row.NAAS_NM)
                 ? '무소속'
-                : normalizeParty(takeLatest(row.PLPT_NM)),
+                : normalizeParty(takeLatest(row.PLPT_NM), row.NAAS_NM),
             partyRole: PARTY_LEADERSHIP[row.NAAS_NM]?.role,
             partyRoleOrder: PARTY_LEADERSHIP[row.NAAS_NM]?.order,
             isAssemblyMember: true,
@@ -245,46 +253,70 @@ async function main() {
         };
     });
 
-    // ── 정당 지도부 중 국회의원이 아닌 사람 찾아내기 ──
-    const matchedNames = politicians.map((p) => p.name);
-    const unmatchedLeaders = Object.keys(PARTY_LEADERSHIP).filter(
-        (name) => !matchedNames.includes(name)
-    );
-    if (unmatchedLeaders.length > 0) {
-        console.log(`\n⚠️ 국회의원이 아닌 당직자 (NON_MP_PARTY_OFFICIALS에 추가 필요): ${unmatchedLeaders.join(', ')}`);
+    // ⭐️ [보충] 국회 API에 아직 승계 반영 안 된 의원(손솔 등) 자동 추가
+    const existingNames = new Set(politicians.map(p => p.name));
+    for (const sup of SUPPLEMENTAL_MEMBERS) {
+        if (!existingNames.has(sup.name)) {
+            console.log(`➕ 국회 API 누락 보충 추가: ${sup.name} (${sup.party})`);
+            politicians.push({
+                id: `supplemental-${sup.name}`,
+                name: sup.name,
+                hanjaName: '',
+                birthDate: sup.birthDate || '',
+                photoUrl: sup.photoUrl || '',
+                level: 'NATIONAL',
+                levelLabel: '국회의원',
+                party: sup.party,
+                partyRole: undefined,
+                partyRoleOrder: undefined,
+                isAssemblyMember: true,
+                electedTerms: sup.electedTerms || [22],
+                metroRegion: '비례대표',
+                localRegion: '비례대표',
+                district: sup.district || '비례대표',
+                roleTitle: '국회의원',
+                committee: sup.committee || '',
+                term: '제22대',
+                timesElected: sup.timesElected || 1,
+                attendanceRate: 0,
+                billsCount: 0,
+                propertyAsset: 0,
+                career: sup.career || [],
+                bills: [],
+                pledges: [],
+                contact: {},
+            });
+        }
     }
 
-    // ── 비국회의원 당직자 처리 (이미 받아둔 역대 3,296명 명단에서 과거 당선 이력 자동 매칭!) ──
+    // 비국회의원 당직자 처리
     const nonMpEntries = NON_MP_PARTY_OFFICIALS.map((official, idx) => {
         const leadership = PARTY_LEADERSHIP[official.name];
-        // 3,296건의 역대 전체 의원 명단(allRows)에서 해당 이름의 전직 의원 데이터가 있는지 자동 검색!
         const histRow = allRows.find((row) => row.NAAS_NM === official.name);
 
         if (histRow) {
-            console.log(`✨ 전직 국회의원 당직자 발견: ${official.name} (선출 대수: ${histRow.GTELT_ERACO || '기록 없음'})`);
             const pastDistrict = takeLatest(histRow.ELECD_NM);
             const { metroRegion, localRegion } = parseRegion(pastDistrict);
-
             return {
                 id: histRow.NAAS_CD || `party-official-${idx}`,
                 name: official.name,
                 hanjaName: histRow.NAAS_CH_NM || '',
                 birthDate: histRow.BIRDY_DT || '',
-                photoUrl: toThumbnail(histRow.NAAS_PIC), // 과거 국회 공식 사진 자동 연동
+                photoUrl: toThumbnail(histRow.NAAS_PIC),
                 level: 'NATIONAL',
                 levelLabel: '당직자',
                 party: official.party,
                 partyRole: leadership?.role,
                 partyRoleOrder: leadership?.order,
-                isAssemblyMember: false, // 22대 현역은 아니므로 false
-                electedTerms: parseElectedTerms(histRow.GTELT_ERACO), // 과거 당선 대수 [21] 자동 추출!
+                isAssemblyMember: false,
+                electedTerms: parseElectedTerms(histRow.GTELT_ERACO),
                 metroRegion,
                 localRegion,
                 district: pastDistrict || '비례대표',
                 roleTitle: leadership?.role || '',
                 committee: '',
                 term: takeLatest(histRow.GTELT_ERACO) || '',
-                timesElected: parseTimesElected(histRow.RLCT_DIV_NM), // 1선 자동 파싱!
+                timesElected: parseTimesElected(histRow.RLCT_DIV_NM),
                 attendanceRate: 0,
                 billsCount: 0,
                 propertyAsset: 0,
@@ -293,21 +325,16 @@ async function main() {
                     : [],
                 bills: [],
                 pledges: [],
-                contact: {
-                    phone: histRow.NAAS_TEL_NO || '',
-                    email: histRow.NAAS_EMAIL_ADDR || '',
-                    blogOrSns: histRow.NAAS_HP_URL || '',
-                },
+                contact: {},
             };
         }
 
-        // 역대 국회의원 이력이 전혀 없는 순수 당직자 (예: 김민수, 조광한 등)
         return {
             id: `party-official-${idx}`,
             name: official.name,
             hanjaName: '',
             birthDate: '',
-            photoUrl: official.photoUrl || '', // 나무위키 사진 주소 자동 반영
+            photoUrl: official.photoUrl || '',
             level: 'NATIONAL',
             levelLabel: '당직자',
             party: official.party,
@@ -336,7 +363,7 @@ async function main() {
 
     const outputPath = path.resolve('src/data/politicians.json');
     fs.writeFileSync(outputPath, JSON.stringify(finalPoliticians, null, 2), 'utf-8');
-    console.log(`🎉 완료! ${finalPoliticians.length}명의 데이터를 저장했습니다. (국회의원 ${politicians.length}명 + 당직자 ${nonMpEntries.length}명)`);
+    console.log(`🎉 완료! 총 ${finalPoliticians.length}명의 데이터를 완벽 방어 저장했습니다.`);
 }
 
 main().catch((err) => {

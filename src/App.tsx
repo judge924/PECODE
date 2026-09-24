@@ -40,11 +40,33 @@ export function App() {
   }, [searchQuery]);
 
   const displayedPoliticians = useMemo(() => {
-    return [
+    // ⭐️ 관리자 모드에서 보정한 정당 목록 읽기
+    let overrides: Record<string, string> = {
+      '용혜인': '기본소득당',
+      '한창민': '사회민주당',
+      '손솔': '진보당',
+      '전종덕': '진보당',
+      '정혜경': '진보당',
+      '윤종오': '진보당'
+    };
+    try {
+      const saved = localStorage.getItem('pecode_party_overrides');
+      if (saved) overrides = { ...overrides, ...JSON.parse(saved) };
+    } catch (e) { }
+
+    const all = [
       ...currentHierarchy.nationalAssembly,
       ...currentHierarchy.metroCouncil,
       ...currentHierarchy.localCouncil,
     ];
+
+    // 관리자 오버라이드가 있으면 의원 정당을 강제 변경!
+    return all.map((p) => {
+      if (overrides[p.name]) {
+        return { ...p, party: overrides[p.name] };
+      }
+      return p;
+    });
   }, [currentHierarchy]);
 
   return (
