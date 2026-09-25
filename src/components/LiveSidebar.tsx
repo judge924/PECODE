@@ -62,13 +62,27 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
         const fetchLive = async () => {
             try {
-                const res = await fetch(apiUrl);
+                // ⭐️ [캐시 파괴] 매 요청마다 0.001초 단위 타임스탬프(?t=시간)를 붙여 브라우저와 CDN 캐시를 100% 무력화!
+                const cacheBuster = `t=${Date.now()}`;
+                const fetchUrl = apiUrl.includes('?') ? `${apiUrl}&${cacheBuster}` : `${apiUrl}?${cacheBuster}`;
+
+                const res = await fetch(fetchUrl, {
+                    cache: 'no-store', // 브라우저 캐시 저장 원천 차단
+                    headers: {
+                        'Pragma': 'no-cache',
+                        'Cache-Control': 'no-cache, no-store, must-revalidate'
+                    }
+                });
+
+                if (!res.ok) {
+                    throw new Error(`HTTP 에러 발생: ${res.status}`);
+                }
+
                 const data = await res.json();
                 const list: LiveChannel[] = isLeft ? data.left : data.right;
 
-                // ⭐️ [화면 보호] 새 데이터가 정상적으로 1개 이상 있을 때만 화면을 갱신하고,
-                // 만약 일시적인 랙으로 0개가 오면 기존에 잘 나오던 목록을 지우지 않고 유지!
-                if (list && list.length > 0) {
+                // ⭐️ 유효한 배열 데이터가 도착하면 최신 상태(방송 종료 0개 포함)를 즉각 반영!
+                if (Array.isArray(list)) {
                     setChannels(list);
                 }
             } catch (err) {
