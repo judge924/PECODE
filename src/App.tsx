@@ -12,7 +12,7 @@ import { AdminModal } from './components/AdminModal';
 import { FeedbackModal } from './components/FeedbackModal'; // ⭐️ 오류 제보 모달
 
 export function App() {
-  const LIVE_API_URL = "https://raw.githubusercontent.com/judge924/PECODE/main/public/live.json";
+  const LIVE_API_URL = "https://raw.githubusercontent.com/judge924/PORG/main/public/live.json";
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
