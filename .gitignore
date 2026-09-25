@@ -25,6 +25,7 @@ dist-ssr
 
 # Env
 .env
+.env.local
 
 # Lockfile (Windows/Linux 크로스플랫폼 빌드 문제로 제외)
 package-lock.json

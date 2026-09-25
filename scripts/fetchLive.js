@@ -5,7 +5,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const API_KEY = "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
+// ⭐️ 깃허브 금고(Secrets) 또는 내 컴퓨터 .env에서 키를 안전하게 꺼내옵니다.
+const API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
 async function updateLiveJson() {
