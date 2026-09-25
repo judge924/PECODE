@@ -1,20 +1,21 @@
 {
-  "left": [],
-  "right": [
+  "left": [
     {
-      "channelName": "GROUND C 그라운드씨",
-      "title": "[LIVE] 유시민 vs 이재명ㅣ李, '북 포로 송환' 우크라 직격ㅣ우크라 반박, 북송하려 했나?ㅣ군, 유엔사 DMZ조사 거부ㅣ좌파들 김현지 맹공",
-      "viewers": 12405,
-      "thumbnail": "https://i.ytimg.com/vi/qu8Do5RaKrA/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=qu8Do5RaKrA"
-    },
-    {
-      "channelName": "한길록 Hangilog",
-      "title": "올공 국토대장정 | 12일차 | 9.25(금) | 10:10 I 약목사거리로 갑니다 ! | 황간역 ~ 영동심천면 약목사거리",
-      "viewers": 1866,
-      "thumbnail": "https://i.ytimg.com/vi/coq-D29N9mo/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=coq-D29N9mo"
+      "channelName": "김두일tv",
+      "title": "정규방송 421회: 입만 열면 거짓말을 하는 유시민에게는 책임을 물어야 한다 & 대통령 지지율 매불쇼 19%, 겸공 26%, 이동형TV 88.5%",
+      "viewers": 534,
+      "thumbnail": "https://i.ytimg.com/vi/O4I1Y_AMvpY/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=O4I1Y_AMvpY"
     }
   ],
-  "updatedAt": "2026-09-25T01:42:21.164Z"
+  "right": [
+    {
+      "channelName": "이제봉교수",
+      "title": "[Live] 추석에는 올공 II 26. 9. 25. 오후 12:00",
+      "viewers": 65,
+      "thumbnail": "https://i.ytimg.com/vi/Kn7TvnMCbFc/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=Kn7TvnMCbFc"
+    }
+  ],
+  "updatedAt": "2026-09-25T03:02:36.764Z"
 }
