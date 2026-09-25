@@ -41,10 +41,11 @@ async function updateLiveJson() {
 
     console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 스캔 시작!`);
 
-    // 2. 85개 채널 RSS 피드에서 최신 영상 번호표(ID) 수집
+    // 2. 85개 채널 다중 감지 (RSS 최신 6개 검색 + 실시간 라이브 엔드포인트 지원)
     const detectedVideos = [];
     const fetchPromises = channels.map(async (ch) => {
         try {
+            // A. RSS 피드에서 최신 6개 영상 넉넉하게 수집 (쇼츠나 새 영상에 밀림 방지)
             const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`, {
                 headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
             });
@@ -52,13 +53,28 @@ async function updateLiveJson() {
             const regex = /<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g;
             let match;
             let count = 0;
-            while ((match = regex.exec(xml)) !== null && count < 2) {
+            while ((match = regex.exec(xml)) !== null && count < 6) {
                 detectedVideos.push({
                     camp: ch.camp,
                     channelName: ch.name,
                     videoId: match[1]
                 });
                 count++;
+            }
+
+            // B. 유튜브 공식 라이브 직행 주소에서 즉시 영상 ID 추출
+            const livePageRes = await fetch(`https://www.youtube.com/channel/${ch.channelId}/live`, {
+                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+                redirect: 'follow'
+            });
+            const liveHtml = await livePageRes.text();
+            const canonicalMatch = liveHtml.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})">/);
+            if (canonicalMatch && canonicalMatch[1]) {
+                detectedVideos.push({
+                    camp: ch.camp,
+                    channelName: ch.name,
+                    videoId: canonicalMatch[1]
+                });
             }
         } catch (err) { }
     });
