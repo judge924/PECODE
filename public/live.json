@@ -2,12 +2,26 @@
   "left": [],
   "right": [
     {
-      "channelName": "정완진TV",
-      "title": "[새벽을 여는 부자들] 이 시각 뉴스속보? 이 시각 뉴욕증시 분석? 주간 한국증시 분석? 원달러 환율? 비트코인? 국제금값? 국제유가? 자영업자?",
-      "viewers": 1221,
-      "thumbnail": "https://i.ytimg.com/vi/7w3BxUWVm5U/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=7w3BxUWVm5U"
+      "channelName": "고성국TV",
+      "title": "[고성국TV 생방송 26년 9월 26일 (토) 생방송] 지뢰 폭발사고, 이재명이 밝혀야",
+      "viewers": 8941,
+      "thumbnail": "https://i.ytimg.com/vi/_t4RGqQsxBQ/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=_t4RGqQsxBQ"
+    },
+    {
+      "channelName": "한길록 Hangilog",
+      "title": "올공 국토대장정 | 13일차 | 9.26(토) | 08:00분 I 옥천역으로 갑니다 ! |",
+      "viewers": 720,
+      "thumbnail": "https://i.ytimg.com/vi/GM6Cfbrn1os/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=GM6Cfbrn1os"
+    },
+    {
+      "channelName": "이제봉교수",
+      "title": "[Live] 한동훈 특검법, 무력화된  DMZ, 김현지와 강훈식, 청년 신규 채용이 없는 사회 26. 9. 26. 오전 8:00",
+      "viewers": 524,
+      "thumbnail": "https://i.ytimg.com/vi/RTy9jQu8bM0/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=RTy9jQu8bM0"
     }
   ],
-  "updatedAt": "2026-09-25T20:23:06.986Z"
+  "updatedAt": "2026-09-25T23:21:36.582Z"
 }
