@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ⭐️ 깃허브 금고(Secrets) 또는 내 컴퓨터 .env에서 키를 안전하게 꺼내옵니다.
+// ⭐️ 깃허브 금고(Secrets) 또는 내 컴퓨터 환경에서 키를 안전하게 꺼내옵니다.
 const API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
@@ -13,15 +13,8 @@ async function updateLiveJson() {
     console.log("🚀 [GitHub Actions] 실시간 정치 유튜브 라이브 데이터 수집 시작...");
 
     const outputPath = path.join(__dirname, '../public/live.json');
-    let previousData = { left: [], right: [] };
 
-    if (fs.existsSync(outputPath)) {
-        try {
-            previousData = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
-        } catch (e) { }
-    }
-
-    // 1. 사장님이 구글 시트에 직접 채워두신 '진짜 활성 채널 85개' 가져오기
+    // 1. 구글 시트에서 활성 채널 명단 가져오기
     console.log("📋 구글 시트에서 활성 채널 명단 가져오는 중...");
     let channels = [];
     try {
@@ -35,55 +28,66 @@ async function updateLiveJson() {
     }
 
     if (channels.length === 0) {
-        console.warn("⚠️ 활성 채널 명단을 불러오지 못했습니다. 기존 데이터를 유지합니다.");
+        console.warn("⚠️ 활성 채널 명단을 불러오지 못했습니다. 작업을 중단합니다.");
         return;
     }
 
     console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 스캔 시작!`);
 
-    // 2. 85개 채널 다중 감지 (RSS 최신 6개 검색 + 실시간 라이브 엔드포인트 지원)
+    // 2. 10개씩 조를 나누어 유튜브 차단(429) 없이 안전하게 전수 조사
     const detectedVideos = [];
-    const fetchPromises = channels.map(async (ch) => {
-        try {
-            // A. RSS 피드에서 최신 6개 영상 넉넉하게 수집 (쇼츠나 새 영상에 밀림 방지)
-            const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
-            });
-            const xml = await res.text();
-            const regex = /<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g;
-            let match;
-            let count = 0;
-            while ((match = regex.exec(xml)) !== null && count < 6) {
-                detectedVideos.push({
-                    camp: ch.camp,
-                    channelName: ch.name,
-                    videoId: match[1]
-                });
-                count++;
-            }
+    const CHUNK_SIZE = 10;
 
-            // B. 유튜브 공식 라이브 직행 주소에서 즉시 영상 ID 추출
-            const livePageRes = await fetch(`https://www.youtube.com/channel/${ch.channelId}/live`, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
-                redirect: 'follow'
-            });
-            const liveHtml = await livePageRes.text();
-            const canonicalMatch = liveHtml.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})">/);
-            if (canonicalMatch && canonicalMatch[1]) {
-                detectedVideos.push({
-                    camp: ch.camp,
-                    channelName: ch.name,
-                    videoId: canonicalMatch[1]
+    for (let i = 0; i < channels.length; i += CHUNK_SIZE) {
+        const chunk = channels.slice(i, i + CHUNK_SIZE);
+        await Promise.all(chunk.map(async (ch) => {
+            try {
+                // A. RSS 피드에서 최신 5개 영상 수집
+                const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`, {
+                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
                 });
-            }
-        } catch (err) { }
-    });
+                if (res.ok) {
+                    const xml = await res.text();
+                    const regex = /<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g;
+                    let match;
+                    let count = 0;
+                    while ((match = regex.exec(xml)) !== null && count < 5) {
+                        detectedVideos.push({
+                            camp: ch.camp,
+                            channelName: ch.name,
+                            videoId: match[1]
+                        });
+                        count++;
+                    }
+                }
 
-    await Promise.all(fetchPromises);
+                // B. 유튜브 공식 라이브 직행문(/live)에서 즉시 영상 ID 추출
+                const livePageRes = await fetch(`https://www.youtube.com/channel/${ch.channelId}/live`, {
+                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+                    redirect: 'follow'
+                });
+                if (livePageRes.ok) {
+                    const liveHtml = await livePageRes.text();
+                    const canonicalMatch = liveHtml.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})">/);
+                    if (canonicalMatch && canonicalMatch[1]) {
+                        detectedVideos.push({
+                            camp: ch.camp,
+                            channelName: ch.name,
+                            videoId: canonicalMatch[1]
+                        });
+                    }
+                }
+            } catch (err) { }
+        }));
+
+        // 유튜브 서버를 배려하는 0.15초 매너 딜레이 (차단 방지 핵심)
+        await new Promise(r => setTimeout(r, 150));
+    }
+
     const uniqueIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
     console.log(`📡 감지된 총 후보 영상: ${uniqueIds.length}개`);
 
-    // 3. 구글 공식 API로 생방송 여부 및 시청자 수 조회
+    // 3. 구글 공식 API로 생방송 여부 및 시청자 수 조회 (50개씩 묶음 검문)
     const detailsMap = {};
     if (uniqueIds.length > 0) {
         for (let i = 0; i < uniqueIds.length; i += 50) {
@@ -116,7 +120,7 @@ async function updateLiveJson() {
         }
     }
 
-    // 4. 좌/우 분류 및 랭킹 정렬
+    // 4. 좌/우 분류 및 시청자 순 랭킹 정렬
     const leftMap = {};
     const rightMap = {};
 
@@ -143,12 +147,7 @@ async function updateLiveJson() {
     const leftList = Object.values(leftMap).sort((a, b) => b.viewers - a.viewers);
     const rightList = Object.values(rightMap).sort((a, b) => b.viewers - a.viewers);
 
-    // ⭐️ [절대 방어] 만약 이번 스캔이 0개라면 기존 파일 보존
-    if (leftList.length === 0 && rightList.length === 0 && (previousData.left?.length > 0 || previousData.right?.length > 0)) {
-        console.warn("⚠️ 감지된 생방송이 0개여서 기존 데이터를 100% 보존합니다.");
-        return;
-    }
-
+    // 5. ⭐️ 0개이든 몇 개이든 최신 상태와 시간을 칼같이 저장 (시간 멈춤 족쇄 완전 해제!)
     const finalResult = {
         left: leftList,
         right: rightList,
@@ -161,7 +160,7 @@ async function updateLiveJson() {
     }
 
     fs.writeFileSync(outputPath, JSON.stringify(finalResult, null, 2), 'utf8');
-    console.log(`\n🎉 [최종 성공] live.json 저장 완료! (좌파: ${leftList.length}개, 우파: ${rightList.length}개)`);
+    console.log(`\n🎉 [최종 성공] live.json 저장 완료! (좌파: ${leftList.length}개, 우파: ${rightList.length}개, 시간: ${finalResult.updatedAt})`);
 }
 
 updateLiveJson();
