@@ -217,22 +217,15 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 {isLeft ? 'The Left' : 'The Right'}
                             </span>
 
-                            {/* ⭐️ 1층: 5분 간격 갱신 / 2층: 최근 갱신 시간 칼정렬 */}
-                            <div className="flex flex-col shrink-0 justify-center">
-                                <div className="flex items-center gap-1">
-                                    <span className="relative flex h-1.5 w-1.5 shrink-0">
-                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                                    </span>
-                                    <span className="text-[8.5px] font-medium text-neutral-400 tracking-tight leading-none">
-                                        5분 간격 갱신
-                                    </span>
-                                </div>
-                                {lastUpdated && (
-                                    <span className="text-[7.5px] font-medium text-neutral-400/80 font-mono tracking-tight pl-2.5 leading-tight mt-0.5">
-                                        최근 갱신 {lastUpdated}
-                                    </span>
-                                )}
+                            {/* ⭐️ 초록불 + 1줄 미니멀: 최근 갱신 12:02 (5분 주기) */}
+                            <div className="flex items-center gap-1 shrink-0">
+                                <span className="relative flex h-1.5 w-1.5 shrink-0">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                                </span>
+                                <span className="text-[7.5px] font-normal text-neutral-400 tracking-tight whitespace-nowrap">
+                                    {lastUpdated ? `최근 갱신 ${lastUpdated} (5분 주기)` : '5분 간격 갱신'}
+                                </span>
                             </div>
                         </div>
 
