@@ -37,6 +37,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const isLeft = camp === 'left';
     const [channels, setChannels] = useState<LiveChannel[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [lastUpdated, setLastUpdated] = useState<string>(''); // ⭐️ 최근 갱신 시간 상태
     const sidebarRef = useRef<HTMLElement | null>(null);
     const scrollableRef = useRef<HTMLDivElement | null>(null);
 
@@ -77,6 +78,16 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
                 if (Array.isArray(list)) {
                     setChannels(list);
+                }
+
+                // ⭐️ 깃허브가 찍어준 도장 시간을 "12:50" 한국 시각 형태로 자동 변환
+                if (data.updatedAt) {
+                    try {
+                        const date = new Date(data.updatedAt);
+                        const hours = String(date.getHours()).padStart(2, '0');
+                        const minutes = String(date.getMinutes()).padStart(2, '0');
+                        setLastUpdated(`${hours}:${minutes}`);
+                    } catch (e) { }
                 }
             } catch (err) {
                 console.warn("라이브 데이터 갱신 중:", err);
@@ -206,15 +217,22 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 {isLeft ? 'The Left' : 'The Right'}
                             </span>
 
-                            {/* ⭐️ 초록색 펄스 라이브 점 + 5분 간격 갱신 */}
-                            <div className="flex items-center gap-1 shrink-0">
-                                <span className="relative flex h-1.5 w-1.5 shrink-0">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-                                </span>
-                                <span className="text-[8.5px] font-medium text-neutral-400 tracking-tight">
-                                    5분 간격 갱신
-                                </span>
+                            {/* ⭐️ 1층: 5분 간격 갱신 / 2층: 최근 갱신 시간 칼정렬 */}
+                            <div className="flex flex-col shrink-0 justify-center">
+                                <div className="flex items-center gap-1">
+                                    <span className="relative flex h-1.5 w-1.5 shrink-0">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                                    </span>
+                                    <span className="text-[8.5px] font-medium text-neutral-400 tracking-tight leading-none">
+                                        5분 간격 갱신
+                                    </span>
+                                </div>
+                                {lastUpdated && (
+                                    <span className="text-[7.5px] font-medium text-neutral-400/80 font-mono tracking-tight pl-2.5 leading-tight mt-0.5">
+                                        최근 갱신 {lastUpdated}
+                                    </span>
+                                )}
                             </div>
                         </div>
 
