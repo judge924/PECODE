@@ -19,6 +19,13 @@ const formatViewers = (count: number) => {
     return `${count.toLocaleString()}명`;
 };
 
+// ⭐️ 클릭 시 새 탭에서 생방송이 즉각 자동 재생되도록 강제하는 헬퍼 함수
+const getAutoplayLiveUrl = (url: string) => {
+    if (!url) return '';
+    const sep = url.includes('?') ? '&' : '?';
+    return url.includes('autoplay=') ? url : `${url}${sep}autoplay=1`;
+};
+
 const extractVideoId = (url: string, thumb?: string): string => {
     if (url) {
         const vMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
@@ -205,8 +212,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         <>
             <aside
                 ref={setSidebarRef}
-                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[150px] ${isLeft ? 'left-4' : 'right-4'
-                    } max-h-[calc(100vh-165px)] z-20 pointer-events-auto select-none`}
+                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
+                    } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
             >
                 {/* 1. 상단 헤더 영역 (1줄 미니멀 칼정렬) */}
                 <div className="shrink-0 flex flex-col pb-1.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
@@ -259,7 +266,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                     {/* ⭐️ 대망의 1위 고정 채널 카드 */}
                     {!loading && firstChannel && (
                         <a
-                            href={firstChannel.liveUrl}
+                            href={getAutoplayLiveUrl(firstChannel.liveUrl)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 mt-0.5"
@@ -329,7 +336,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                             return (
                                 <a
                                     key={idx}
-                                    href={channel.liveUrl}
+                                    href={getAutoplayLiveUrl(channel.liveUrl)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onMouseEnter={() => setHoveredIdx(idx)}

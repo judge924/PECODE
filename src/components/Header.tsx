@@ -44,25 +44,21 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 interface HeadOrgan {
   id: string;
   branch: string;
-  titleLine1: string;   // 직책 1행
-  titleLine2?: string;  // 직책 2행 (직무대행)
-  name: string;         // 인물명
+  title: string;        // 직책 (볼드 블랙)
+  name: string;         // 인물명 (일반 굵기 블랙)
   image: string;        // 인물 사진 경로
-  isCore: boolean;      // 삼권분립 핵심 여부
   chapterTitle: string; // 헌법 장 명칭
   articles: { num: string; text: string }[];
 }
 
 const CONSTITUTION_HEADS: HeadOrgan[] = [
-  // 1. 선관위 (보조 독립기관 - 좌측)
+  // 1. 선관위 (좌측)
   {
     id: 'nec',
     branch: '중앙선거관리위원회',
-    titleLine1: '선관위원장',
-    titleLine2: '(직무대행)',
-    name: '위철환', // ⭐️ [요청 반영] 위철환
+    title: '선관위원장(대행)',
+    name: '위철환',
     image: '/images/heads/nec.png',
-    isCore: false,
     chapterTitle: '대한민국 헌법 제7장 선거관리',
     articles: [
       { num: '제114조', text: '① 선거와 국민투표의 공정한 관리 및 정당에 관한 사무를 처리하기 위하여 선거관리위원회를 둔다.\n② 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서 선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은 위원중에서 호선한다.\n③ 위원의 임기는 6년으로 한다.\n④ 위원은 정당에 가입하거나 정치에 관여할 수 없다.\n⑤ 위원은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다.\n⑥ 중앙선거관리위원회는 법령의 범위안에서 선거관리·국민투표관리 또는 정당사무에 관한 규칙을 제정할 수 있으며, 법률에 저촉되지 아니하는 범위안에서 내부규율에 관한 규칙을 제정할 수 있다.' },
@@ -70,14 +66,13 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제116조', text: '① 선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다.\n② 선거에 관한 경비는 법률이 정하는 경우를 제외하고는 정당 또는 후보자에게 부담시킬 수 없다.' }
     ]
   },
-  // 2. 입법부 (삼권분립 핵심)
+  // 2. 입법부
   {
     id: 'assembly',
     branch: '입법부',
-    titleLine1: '국회의장',
-    name: '조정식', // ⭐️ [요청 반영] 조정식
+    title: '국회의장',
+    name: '조정식',
     image: '/images/heads/assembly.png',
-    isCore: true,
     chapterTitle: '대한민국 헌법 제3장 국회',
     articles: [
       { num: '제40조', text: '입법권은 국회에 속한다.' },
@@ -93,14 +88,13 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제50조', text: '① 국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다.' }
     ]
   },
-  // 3. 행정부 (삼권분립 핵심 - 정중앙)
+  // 3. 행정부 (정중앙)
   {
     id: 'president',
     branch: '행정부',
-    titleLine1: '대통령',
-    name: '이재명', // ⭐️ [요청 반영] 이재명
+    title: '대통령',
+    name: '이재명',
     image: '/images/heads/president.png',
-    isCore: true,
     chapterTitle: '대한민국 헌법 제4장 정부 (제1절 대통령)',
     articles: [
       { num: '제66조', text: '① 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.\n② 대통령은 국가의 독립·영토의 보전·국가의 계속성과 헌법을 수호할 책무를 진다.\n③ 대통령은 조국의 평화적 통일을 위한 성실한 의무를 진다.\n④ 행정권은 대통령을 수반으로 하는 정부에 속한다.' },
@@ -114,14 +108,13 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제74조', text: '① 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.' }
     ]
   },
-  // 4. 사법부 (삼권분립 핵심)
+  // 4. 사법부
   {
     id: 'court',
     branch: '사법부',
-    titleLine1: '대법원장',
+    title: '대법원장',
     name: '조희대',
     image: '/images/heads/court.png',
-    isCore: true,
     chapterTitle: '대한민국 헌법 제5장 법원',
     articles: [
       { num: '제101조', text: '① 사법권은 법관으로 구성된 법원에 속한다.\n② 법원은 최고법원인 대법원과 각급법원으로 조직된다.\n③ 법관의 자격은 법률로 정한다.' },
@@ -132,14 +125,13 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제106조', text: '① 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.' }
     ]
   },
-  // 5. 헌법재판소 (보조 독립기관 - 우측)
+  // 5. 헌법재판소 (우측)
   {
     id: 'const_court',
     branch: '헌법재판소',
-    titleLine1: '헌재소장',
+    title: '헌재소장',
     name: '김상환',
     image: '/images/heads/const_court.png',
-    isCore: false,
     chapterTitle: '대한민국 헌법 제6장 헌법재판소',
     articles: [
       { num: '제111조', text: '① 헌법재판소는 다음 사항을 관장한다.\n  1. 법원의 제청에 의한 법률의 위헌여부 심판\n  2. 탄핵의 심판\n  3. 정당의 해산 심판\n  4. 국가기관 상호간, 국가기관과 지방자치단체간 및 지방자치단체 상호간의 권한쟁의에 관한 심판\n  5. 법률이 정하는 헌법소원에 관한 심판\n② 헌법재판소는 재판관 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다.\n③ 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다.\n④ 헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다.' },
@@ -162,7 +154,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md select-none">
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
-        <div className="flex items-center justify-between h-[96px] gap-4">
+        <div className="flex items-center justify-between h-[88px] gap-4">
 
           {/* 1. 왼쪽: [태극기 심볼] + 브랜드명 + 국회 선택창 */}
           <div className="flex items-center gap-4 shrink-0 z-10">
@@ -198,8 +190,8 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 액자 하단 맞춤 + 직책/이름 완벽 수평 칼정렬 */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-4 z-20 pt-1">
+          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 모던 프로필 갤러리 + 직책/이름 초밀착 칼정렬 */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-center gap-3.5 z-20 pt-1">
             {CONSTITUTION_HEADS.map((organ) => {
               const isHovered = activeHead?.id === organ.id;
 
@@ -210,55 +202,34 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActiveHead(organ)}
                   onMouseLeave={() => setActiveHead(null)}
                 >
-                  {/* ⭐️ [Task 2 반영] 높이 64px 투명 상자에 담아 5개 액자 모두 '하단 기준(items-end)' 완벽 일치! */}
-                  <div className="h-[64px] flex items-end justify-center">
-                    <div
-                      className={`relative flex items-center justify-center transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105 ${organ.isCore ? 'w-[48px] h-[64px]' : 'w-[40px] h-[54px]'
-                        }`}
-                    >
-                      {/* 생생한 컬러 인물 사진 */}
-                      <div className="absolute inset-[15%] overflow-hidden bg-neutral-100 flex items-center justify-center rounded-[1px]">
-                        <img
-                          src={organ.image}
-                          alt={organ.name}
-                          loading="eager"
-                          className="w-full h-full object-cover object-top"
-                          onError={(e) => {
-                            (e.target as HTMLElement).style.display = 'none';
-                          }}
-                        />
-                      </div>
-
-                      {/* 실물 바로크 액자 틀 (frame-gold.png) */}
-                      <img
-                        src="/images/heads/frame-gold.png"
-                        alt="바로크 액자"
-                        className={`relative z-10 w-full h-full object-fill pointer-events-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] ${!organ.isCore ? 'grayscale contrast-125 brightness-95' : ''
-                          }`}
-                      />
-                    </div>
+                  {/* [1단: 액자 없이 5개 모두 동일한 규격의 모던 사각 프로필 카드] */}
+                  <div className="w-[44px] h-[54px] rounded-lg overflow-hidden bg-neutral-100 border border-neutral-200/90 shadow-xs transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-neutral-900 relative">
+                    <img
+                      src={organ.image}
+                      alt={organ.name}
+                      loading="eager"
+                      className="w-full h-full object-cover object-top"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                    />
                   </div>
 
-                  {/* ⭐️ [Task 3 반영] 직책: 높이 22px 밴드 안에서 중앙 정렬되어 5개 모두 수평선 일치! */}
-                  <div className="h-[22px] flex flex-col justify-center items-center mt-1 text-center">
-                    <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block">
-                      {organ.titleLine1}
+                  {/* [2단: 직책 (굵은 블랙, 1줄 통일)] */}
+                  <div className="mt-1.5 text-center">
+                    <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block whitespace-nowrap">
+                      {organ.title}
                     </span>
-                    {organ.titleLine2 && (
-                      <span className="text-[7px] font-bold text-black tracking-tighter leading-tight mt-0.5 block">
-                        {organ.titleLine2}
-                      </span>
-                    )}
                   </div>
 
-                  {/* ⭐️ [Task 3 반영] 이름: 직책 바로 밑, 5명 모두 완벽하게 동일한 수평선(Baseline) 칼정렬! */}
-                  <div className="text-center mt-0.5">
-                    <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block">
+                  {/* [3단: 이름 (일반 굵기 블랙, 직책 바로 1px 밑에 초밀착!)] */}
+                  <div className="mt-1 text-center">
+                    <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block whitespace-nowrap">
                       {organ.name}
                     </span>
                   </div>
 
-                  {/* 📜 [모던 블랙&화이트 헌법 전문 팝업] - 스크롤 없이 시원하게 전문 전체 노출! */}
+                  {/* 📜 [4단: 모던 블랙&화이트 헌법 전문 팝업 - 스크롤 없이 시원하게 전체 노출] */}
                   {isHovered && (
                     <div
                       className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[430px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
@@ -273,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
                               {organ.chapterTitle}
                             </div>
                             <div className="text-[10px] text-neutral-500 font-medium">
-                              {organ.branch} 수장 · {organ.titleLine1} {organ.titleLine2 ? `${organ.titleLine2} ` : ''}{organ.name}
+                              {organ.branch} 수장 · {organ.title} {organ.name}
                             </div>
                           </div>
                         </div>
