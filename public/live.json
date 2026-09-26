@@ -1,5 +1,13 @@
 {
   "left": [],
-  "right": [],
-  "updatedAt": "2026-09-26T04:26:27.158Z"
+  "right": [
+    {
+      "channelName": "YTN",
+      "title": "[LIVE] 대한민국 24시간 뉴스채널 YTN - 국내 시청자용",
+      "viewers": 2464,
+      "thumbnail": "https://i.ytimg.com/vi/aZyD6EPl6KU/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=aZyD6EPl6KU"
+    }
+  ],
+  "updatedAt": "2026-09-26T04:31:09.543Z"
 }
