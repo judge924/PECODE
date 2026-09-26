@@ -1,21 +1,5 @@
 {
-  "left": [
-    {
-      "channelName": "김두일tv",
-      "title": "🔴 Três Espiãs Demais 🚨 Temporada 1 | EPISÓDO COMPLETO",
-      "viewers": 1569,
-      "thumbnail": "https://i.ytimg.com/vi/VikYJ5l3XsM/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=VikYJ5l3XsM"
-    }
-  ],
-  "right": [
-    {
-      "channelName": "한길록 Hangilog",
-      "title": "김진 앵커와 이번주 정치 이슈 총정리 ㅣ 9월 4주",
-      "viewers": 551,
-      "thumbnail": "https://i.ytimg.com/vi/vJjQat1Z0dI/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=vJjQat1Z0dI"
-    }
-  ],
-  "updatedAt": "2026-09-26T04:18:35.653Z"
+  "left": [],
+  "right": [],
+  "updatedAt": "2026-09-26T04:22:27.860Z"
 }
