@@ -196,7 +196,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 순수 무테 사진 + 삼권분립 크기 차등화 + 아랫변 칼정렬 */}
+          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 원형 아바타 패밀리룩 + 칼정렬 */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-4 z-20 pt-1">
             {CONSTITUTION_HEADS.map((organ) => {
               const isHovered = activeHead?.id === organ.id;
@@ -208,20 +208,24 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActiveHead(organ)}
                   onMouseLeave={() => setActiveHead(null)}
                 >
-                  {/* [1단: 높이 56px 고정 받침대 ➔ 사진 아랫변(items-end) 0.1mm 칼정렬!] */}
-                  <div className="h-[56px] flex items-end justify-center">
-                    {/* ⭐️ [Task 1, 2 반영] 테두리 선(border) 완전 삭제! 순수 사진 + 크기 차등화 */}
+                  {/* [1단: 원형 아바타 받침대 ➔ 아랫변(items-end) 칼정렬로 직책/이름 수평선 100% 일치] */}
+                  <div className="h-[50px] flex items-end justify-center">
                     <div
-                      className={`overflow-hidden bg-neutral-100 shadow-xs transition-all duration-200 group-hover:-translate-y-1 group-hover:shadow-md ${organ.isCore
-                          ? 'w-[44px] h-[56px] rounded-lg'   // 삼권분립 3인은 큼직하게
-                          : 'w-[36px] h-[46px] rounded-md opacity-95' // 선관위·헌재는 살짝 작게
+                      className={`overflow-hidden bg-neutral-100 shadow-xs transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md rounded-full ${organ.isCore
+                          ? 'w-[50px] h-[50px]'            // 삼권 핵심: 50px 큼직한 원형
+                          : 'w-[42px] h-[42px] opacity-95' // 선관위·헌재: 42px 아담한 원형
                         }`}
                     >
                       <img
                         src={organ.image}
                         alt={organ.name}
                         loading="eager"
-                        className="w-full h-full object-cover object-top"
+                        style={{
+                          imageRendering: '-webkit-optimize-contrast',
+                          transform: 'translateZ(0)', // 고화질 축소 뭉개짐 방지 GPU 가속
+                          backfaceVisibility: 'hidden',
+                        }}
+                        className="w-full h-full object-cover object-top filter contrast-[1.03]"
                         onError={(e) => {
                           (e.target as HTMLElement).style.display = 'none';
                         }}
@@ -229,21 +233,21 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   </div>
 
-                  {/* [2단: 직책 (선명한 굵은 블랙 1줄)] */}
+                  {/* [2단: 직책 (볼드 블랙, 1줄 단정)] */}
                   <div className="mt-1.5 text-center">
                     <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block whitespace-nowrap">
                       {organ.title}
                     </span>
                   </div>
 
-                  {/* [3단: 이름 (단아한 일반 블랙, 직책 바로 밑에 초밀착!)] */}
+                  {/* [3단: 이름 (일반 굵기 블랙, 직책 바로 밑 1px 초밀착!)] */}
                   <div className="mt-1 text-center">
                     <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block whitespace-nowrap">
                       {organ.name}
                     </span>
                   </div>
 
-                  {/* 📜 [4단: 모던 블랙&화이트 헌법 전문 팝업 - 스크롤 없이 전체 노출] */}
+                  {/* 📜 [4단: 모던 블랙&화이트 헌법 전문 팝업 - 스크롤 없이 전문 전체 노출] */}
                   {isHovered && (
                     <div
                       className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[430px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
