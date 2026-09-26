@@ -44,8 +44,8 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 interface HeadOrgan {
   id: string;
   branch: string;
-  title: string;        // 직책 (국회의원 카드와 동일하게 일반 그레이)
-  name: string;         // 인물명 (국회의원 카드와 동일하게 볼드 블랙)
+  title: string;        // 직책 (볼드 블랙 text-[9.5px])
+  name: string;         // 인물명 (일반 폰트 그레이 text-[8.5px])
   image: string;
   chapterTitle: string;
   articles: { num: string; text: string }[];
@@ -167,10 +167,10 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md select-none">
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
-        <div className="flex items-center justify-between h-[88px] gap-4">
+        <div className="flex items-center justify-between h-[92px] gap-4">
 
-          {/* ⭐️ [왼쪽 영역] 브랜드명 ➔ [제22대 국회] ➔ [태극기] ➔ [헌법 제1조 캘리그래피] ➔ [6대 수장 갤러리] */}
-          <div className="flex items-center gap-3.5 shrink-0 z-10">
+          {/* ⭐️ [왼쪽 그룹] 로고 ➔ 국회 선택창 ➔ 대형 태극기 ➔ 헌법 제1조 캘리그래피 ➔ 6대 수장 */}
+          <div className="flex items-center gap-4 shrink-0 z-10">
 
             {/* 1. 피코드 KOREA 로고 */}
             <div className="flex flex-col justify-center">
@@ -187,7 +187,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            <div className="h-4 w-[1px] bg-neutral-200 hidden sm:block" />
+            {/* ⭐️ [Task 1 반영] 구분선 삭제! 바로 국회 선택창으로 연결 */}
 
             {/* 2. 제22대 국회 선택창 */}
             <div className="relative flex items-center">
@@ -201,25 +201,24 @@ export const Header: React.FC<HeaderProps> = ({
               <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none" />
             </div>
 
-            {/* ⭐️ 3. [국회 버튼 오른쪽으로 이사 온 태극기] */}
-            <div className="flex items-center ml-1">
-              <Taegeukgi className="w-[42px] h-[28px] rounded-[2px]" />
+            {/* ⭐️ [Task 2 반영] 대형 태극기: 6부요인 사진 상단부터 이름 하단까지의 높이(66px)와 1:1 완벽 일치! */}
+            <div className="flex items-center">
+              <Taegeukgi className="w-[99px] h-[66px] rounded-[3px] select-none block shrink-0" />
             </div>
 
-            {/* ⭐️ 4. [헌법 제1조 단아한 캘리그래피 명조 서체] - 테두리 없이 순수 텍스트 */}
-            <div className="hidden 2xl:flex flex-col justify-center select-none font-serif italic text-neutral-600 pl-1 leading-tight border-l border-neutral-200/60 ml-1">
-              <span className="text-[10px] tracking-tight font-medium text-neutral-800">
+            {/* ⭐️ [Task 4 반영] 헌법 제1조: 1행·2행 모두 검정색, 동일 크기, 테두리 일체 없이 명조 이탤릭 캘리그래피 */}
+            <div className="hidden 2xl:flex flex-col justify-center select-none font-serif italic leading-snug">
+              <span className="text-[10.5px] tracking-tight font-medium text-neutral-900">
                 대한민국은 민주공화국이다.
               </span>
-              <span className="text-[8.5px] tracking-tighter text-neutral-400 mt-0.5">
+              <span className="text-[10.5px] tracking-tight font-medium text-neutral-900 mt-1">
                 모든 권력은 국민으로부터 나온다.
               </span>
             </div>
 
-            {/* ⭐️ [구분선] */}
-            <div className="h-6 w-[1px] bg-neutral-200 hidden xl:block ml-2 mr-1" />
+            {/* ⭐️ [Task 1 반영] 구분선 삭제! 바로 6대 수장 갤러리로 연결 */}
 
-            {/* ⭐️ 5. [6대 수장 갤러리] 의원 카드와 100% 동일한 직책(일반 그레이) / 이름(볼드 블랙) */}
+            {/* ⭐️ 5. [6대 수장 갤러리] (Task 3 반영: 직책=볼드 블랙, 이름=일반 폰트 그레이) */}
             <div className="hidden xl:flex items-center gap-3">
               {CONSTITUTION_HEADS.map((organ) => {
                 const isHovered = activeHead?.id === organ.id;
@@ -249,16 +248,16 @@ export const Header: React.FC<HeaderProps> = ({
                       />
                     </div>
 
-                    {/* [직책 (의원 카드와 동일하게 일반 그레이 font-normal)] */}
+                    {/* ⭐️ [Task 3 반영] 직책: 볼드 블랙, 지금 이름 크기 text-[9.5px] */}
                     <div className="mt-1 text-center">
-                      <span className="text-[8.5px] font-normal text-neutral-500 tracking-tight leading-none block whitespace-nowrap">
+                      <span className="text-[9.5px] font-bold text-black tracking-tight leading-none block whitespace-nowrap">
                         {organ.title}
                       </span>
                     </div>
 
-                    {/* [이름 (의원 카드와 동일하게 볼드 블랙 font-bold, 직책 바로 1px 밑!)] */}
+                    {/* ⭐️ [Task 3 반영] 이름: 일반 폰트, 지금 직책 색상 text-neutral-500, 크기 text-[8.5px] */}
                     <div className="mt-0.5 text-center">
-                      <span className="text-[9.5px] font-bold text-neutral-950 tracking-tight leading-none block whitespace-nowrap">
+                      <span className="text-[8.5px] font-normal text-neutral-500 tracking-tight leading-none block whitespace-nowrap">
                         {organ.name}
                       </span>
                     </div>
