@@ -44,9 +44,9 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 interface HeadOrgan {
   id: string;
   branch: string;
-  titleLine1: string;   // 직책 1행 (볼드 블랙)
-  titleLine2?: string;  // 직책 2행 (직무대행 등)
-  name: string;         // 인물명 (일반 굵기 블랙)
+  titleLine1: string;   // 직책 1행
+  titleLine2?: string;  // 직책 2행 (직무대행)
+  name: string;         // 인물명
   image: string;        // 인물 사진 경로
   isCore: boolean;      // 삼권분립 핵심 여부
   chapterTitle: string; // 헌법 장 명칭
@@ -59,8 +59,8 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
     id: 'nec',
     branch: '중앙선거관리위원회',
     titleLine1: '선관위원장',
-    titleLine2: '직무대행',
-    name: '김용빈',
+    titleLine2: '(직무대행)',
+    name: '위철환', // ⭐️ [요청 반영] 위철환
     image: '/images/heads/nec.png',
     isCore: false,
     chapterTitle: '대한민국 헌법 제7장 선거관리',
@@ -75,7 +75,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
     id: 'assembly',
     branch: '입법부',
     titleLine1: '국회의장',
-    name: '우원식',
+    name: '조정식', // ⭐️ [요청 반영] 조정식
     image: '/images/heads/assembly.png',
     isCore: true,
     chapterTitle: '대한민국 헌법 제3장 국회',
@@ -98,7 +98,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
     id: 'president',
     branch: '행정부',
     titleLine1: '대통령',
-    name: '윤석열',
+    name: '이재명', // ⭐️ [요청 반영] 이재명
     image: '/images/heads/president.png',
     isCore: true,
     chapterTitle: '대한민국 헌법 제4장 정부 (제1절 대통령)',
@@ -160,10 +160,8 @@ export const Header: React.FC<HeaderProps> = ({
   const [activeHead, setActiveHead] = useState<HeadOrgan | null>(null);
 
   return (
-    // ⭐️ [Task 7 반영] border-b 구분선을 완전히 제거하여 블랙티켓과 자연스럽게 연결!
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md select-none">
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
-        {/* ⭐️ [Task 6 반영] 헤더 높이를 h-[96px]로 시원하게 확장하여 여유 확보! */}
         <div className="flex items-center justify-between h-[96px] gap-4">
 
           {/* 1. 왼쪽: [태극기 심볼] + 브랜드명 + 국회 선택창 */}
@@ -200,9 +198,8 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 누끼 실물 액자 + 3단 밀착 칼정렬 */}
-          {/* [Task 1 반영] pt-1.5로 액자 상단에 숨 쉴 수 있는 편안한 여백 부여! */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-3.5 z-20 pt-1.5">
+          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 액자 하단 맞춤 + 직책/이름 완벽 수평 칼정렬 */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-4 z-20 pt-1">
             {CONSTITUTION_HEADS.map((organ) => {
               const isHovered = activeHead?.id === organ.id;
 
@@ -213,44 +210,50 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActiveHead(organ)}
                   onMouseLeave={() => setActiveHead(null)}
                 >
-                  {/* [1단: 대표님이 누끼 딴 frame-gold.png 실물 액자 도킹] */}
-                  <div
-                    className={`relative flex items-center justify-center transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105 ${organ.isCore ? 'w-[48px] h-[64px]' : 'w-[40px] h-[52px]'
-                      }`}
-                  >
-                    {/* ⭐️ [Task 2 반영] 100% 원본 생생한 컬러 사진 안착! */}
-                    <div className="absolute inset-[15%] overflow-hidden bg-neutral-100 flex items-center justify-center rounded-[1px]">
+                  {/* ⭐️ [Task 2 반영] 높이 64px 투명 상자에 담아 5개 액자 모두 '하단 기준(items-end)' 완벽 일치! */}
+                  <div className="h-[64px] flex items-end justify-center">
+                    <div
+                      className={`relative flex items-center justify-center transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105 ${organ.isCore ? 'w-[48px] h-[64px]' : 'w-[40px] h-[54px]'
+                        }`}
+                    >
+                      {/* 생생한 컬러 인물 사진 */}
+                      <div className="absolute inset-[15%] overflow-hidden bg-neutral-100 flex items-center justify-center rounded-[1px]">
+                        <img
+                          src={organ.image}
+                          alt={organ.name}
+                          loading="eager"
+                          className="w-full h-full object-cover object-top"
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.display = 'none';
+                          }}
+                        />
+                      </div>
+
+                      {/* 실물 바로크 액자 틀 (frame-gold.png) */}
                       <img
-                        src={organ.image}
-                        alt={organ.name}
-                        loading="eager"
-                        className="w-full h-full object-cover object-top"
-                        onError={(e) => {
-                          (e.target as HTMLElement).style.display = 'none';
-                        }}
+                        src="/images/heads/frame-gold.png"
+                        alt="바로크 액자"
+                        className={`relative z-10 w-full h-full object-fill pointer-events-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] ${!organ.isCore ? 'grayscale contrast-125 brightness-95' : ''
+                          }`}
                       />
                     </div>
-
-                    {/* 대표님의 실물 금박 조각 액자 틀 (선관위/헌재는 은은한 플래티넘 실버 필터 자동 적용) */}
-                    <img
-                      src="/images/heads/frame-gold.png"
-                      alt="바로크 액자 프레임"
-                      className={`relative z-10 w-full h-full object-fill pointer-events-none drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)] ${!organ.isCore ? 'grayscale contrast-125 brightness-95' : ''
-                        }`}
-                    />
                   </div>
 
-                  {/* ⭐️ [Task 3, 4 반영] 직책(굵은 블랙) 바로 밑에 이름(일반 블랙) 밀착! */}
-                  <div className="flex flex-col items-center mt-1 text-center">
-                    <span className="text-[9px] font-bold text-black tracking-tight leading-tight block">
+                  {/* ⭐️ [Task 3 반영] 직책: 높이 22px 밴드 안에서 중앙 정렬되어 5개 모두 수평선 일치! */}
+                  <div className="h-[22px] flex flex-col justify-center items-center mt-1 text-center">
+                    <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block">
                       {organ.titleLine1}
                     </span>
                     {organ.titleLine2 && (
-                      <span className="text-[7.5px] font-bold text-black tracking-tighter leading-tight block">
+                      <span className="text-[7px] font-bold text-black tracking-tighter leading-tight mt-0.5 block">
                         {organ.titleLine2}
                       </span>
                     )}
-                    <span className="text-[9px] font-normal text-black tracking-tight leading-tight mt-0.5 block">
+                  </div>
+
+                  {/* ⭐️ [Task 3 반영] 이름: 직책 바로 밑, 5명 모두 완벽하게 동일한 수평선(Baseline) 칼정렬! */}
+                  <div className="text-center mt-0.5">
+                    <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block">
                       {organ.name}
                     </span>
                   </div>
@@ -258,7 +261,7 @@ export const Header: React.FC<HeaderProps> = ({
                   {/* 📜 [모던 블랙&화이트 헌법 전문 팝업] - 스크롤 없이 시원하게 전문 전체 노출! */}
                   {isHovered && (
                     <div
-                      className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[420px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
+                      className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[430px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
                     >
                       <div className="flex items-center justify-between border-b border-neutral-200 pb-3 mb-4">
                         <div className="flex items-center gap-2">
@@ -270,7 +273,7 @@ export const Header: React.FC<HeaderProps> = ({
                               {organ.chapterTitle}
                             </div>
                             <div className="text-[10px] text-neutral-500 font-medium">
-                              {organ.branch} 수장 · {organ.titleLine1} {organ.titleLine2 ? `(${organ.titleLine2}) ` : ''}{organ.name}
+                              {organ.branch} 수장 · {organ.titleLine1} {organ.titleLine2 ? `${organ.titleLine2} ` : ''}{organ.name}
                             </div>
                           </div>
                         </div>
