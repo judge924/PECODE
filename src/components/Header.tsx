@@ -39,11 +39,11 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 );
 
 // -------------------------------------------------------------
-// 대한민국 역대 대통령 아카이브 데이터
+// 대한민국 14대 대통령 아카이브 데이터
 // -------------------------------------------------------------
 interface PresidentData {
   id: string;
-  termTitle: string; // 예: 제1·2·3대
+  termTitle: string; // 대수
   name: string;      // 이름
   years: string;     // 재임 기간
   image: string;     // 얼굴 사진 (public/images/presidents/...)
@@ -79,18 +79,17 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md select-none">
-      <div className="w-full px-4 sm:px-6 lg:px-10 relative">
-        <div className="flex items-center justify-between h-[92px] gap-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex items-center justify-between h-[92px] gap-2 lg:gap-4">
 
-          {/* ⭐️ [왼쪽 영역] 대형 태극기(원래 자리 복귀!) ➔ 피코드 KOREA ➔ 국회 선택창 ➔ 역대 대통령 갤러리 */}
-          <div className="flex items-center gap-4 shrink-0 z-10">
-
-            {/* 1. ⭐️ [원래 맨 왼쪽 자리로 복귀한 대형 태극기] (크기 그대로 99px x 66px 웅장하게 유지!) */}
+          {/* 1. [왼쪽 영역] 대형 태극기(99px x 66px) ➔ 피코드 KOREA ➔ 국회 선택창 (좌측 고정) */}
+          <div className="flex items-center gap-3 shrink-0 z-10">
+            {/* 대형 태극기 */}
             <div className="flex items-center">
               <Taegeukgi className="w-[99px] h-[66px] rounded-[3px] select-none block shrink-0" />
             </div>
 
-            {/* 2. 피코드 KOREA 브랜드 로고 */}
+            {/* 피코드 KOREA 브랜드 로고 */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-1.5">
                 <span className="font-black text-lg sm:text-xl tracking-tight text-neutral-950 leading-none">
@@ -105,7 +104,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* 3. 제22대 국회 선택창 */}
+            {/* 제22대 국회 선택창 */}
             <div className="relative flex items-center">
               <select
                 value={currentRegion}
@@ -116,85 +115,83 @@ export const Header: React.FC<HeaderProps> = ({
               </select>
               <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none" />
             </div>
-
-            {/* ⭐️ 4. [역대 대통령 아카이브 갤러리] (국회 버튼 우측에 일렬 도열) */}
-            <div className="hidden xl:flex items-center gap-3 overflow-x-auto scrollbar-none py-1">
-              {HISTORICAL_PRESIDENTS.map((pres) => {
-                const isHovered = activePres?.id === pres.id;
-
-                return (
-                  <div
-                    key={pres.id}
-                    className="relative group cursor-pointer flex flex-col items-center shrink-0"
-                    onMouseEnter={() => setActivePres(pres)}
-                    onMouseLeave={() => setActivePres(null)}
-                  >
-                    {/* [1단: 역대 대통령 원형 얼굴 아바타 (42px 동일 규격)] */}
-                    <div className="w-[42px] h-[42px] overflow-hidden bg-white shadow-xs rounded-full transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md">
-                      <img
-                        src={pres.image}
-                        alt={pres.name}
-                        loading="eager"
-                        style={{
-                          imageRendering: '-webkit-optimize-contrast',
-                          transform: 'translateZ(0)', // 고화질 축소 뭉개짐 방지 GPU 가속
-                          backfaceVisibility: 'hidden',
-                        }}
-                        className="w-full h-full object-cover object-top filter contrast-[1.03]"
-                        onError={(e) => {
-                          // 사진 준비 전일 때 단아한 글자 대체
-                          const target = e.target as HTMLElement;
-                          target.style.display = 'none';
-                        }}
-                      />
-                    </div>
-
-                    {/* [2단: ⭐️ 직책 대신 들어가는 동일 규격 친필 서명(사인) 이미지] */}
-                    <div className="w-[48px] h-[20px] flex items-center justify-center mt-1 overflow-hidden">
-                      <img
-                        src={pres.signature}
-                        alt={`${pres.name} 서명`}
-                        loading="eager"
-                        style={{
-                          imageRendering: '-webkit-optimize-contrast',
-                          transform: 'translateZ(0)', // 서명 선명도 사수 GPU 가속
-                          backfaceVisibility: 'hidden',
-                        }}
-                        className="max-w-full max-h-full object-contain filter contrast-125"
-                        onError={(e) => {
-                          // 서명 준비 전일 때 대통령 이름으로 깔끔하게 대체 표출
-                          const parent = (e.target as HTMLElement).parentElement;
-                          if (parent) {
-                            parent.innerHTML = `<span class="text-[9px] font-bold text-neutral-800 tracking-tight leading-none">${pres.name}</span>`;
-                          }
-                        }}
-                      />
-                    </div>
-
-                    {/* 📜 [호버 카드] 마우스 올리면 뜨는 대통령 재임 및 정보 카드 */}
-                    {isHovered && (
-                      <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-neutral-900 rounded-lg shadow-xl px-3 py-2 z-50 animate-fade-in pointer-events-none whitespace-nowrap text-center">
-                        <div className="text-[10px] font-mono text-neutral-400 font-bold leading-none">
-                          {pres.termTitle} 대한민국 대통령
-                        </div>
-                        <div className="text-xs font-bold text-neutral-950 mt-1 leading-none">
-                          {pres.name}
-                        </div>
-                        <div className="text-[9px] font-mono text-neutral-500 mt-1 leading-none">
-                          재임: {pres.years}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-
           </div>
 
-          {/* 5. 오른쪽: 검색창 + [오류 제보 버튼] + [관리자 버튼] */}
-          <div className="ml-auto flex items-center gap-2 z-10">
-            <div className="w-56 lg:w-72 relative hidden md:flex items-center">
+          {/* ⭐️ 2. [가운데 영역] 국회 선택창 우측 ~ 검색창 좌측 공간을 100% 꽉 채우는 14명 대통령 균등 배분정렬(justify-between)! */}
+          <div className="hidden xl:flex flex-1 items-center justify-between px-2 2xl:px-6 z-20 min-w-0">
+            {HISTORICAL_PRESIDENTS.map((pres) => {
+              const isHovered = activePres?.id === pres.id;
+
+              return (
+                <div
+                  key={pres.id}
+                  className="relative group cursor-pointer flex flex-col items-center shrink-0"
+                  onMouseEnter={() => setActivePres(pres)}
+                  onMouseLeave={() => setActivePres(null)}
+                >
+                  {/* [1단: 역대 대통령 원형 얼굴 아바타 (42px 동일 규격)] */}
+                  <div className="w-[42px] h-[42px] overflow-hidden bg-white shadow-xs rounded-full transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md">
+                    <img
+                      src={pres.image}
+                      alt={pres.name}
+                      loading="eager"
+                      style={{
+                        imageRendering: '-webkit-optimize-contrast',
+                        transform: 'translateZ(0)', // 고화질 축소 뭉개짐 방지 GPU 가속
+                        backfaceVisibility: 'hidden',
+                      }}
+                      className="w-full h-full object-cover object-top filter contrast-[1.03]"
+                      onError={(e) => {
+                        const target = e.target as HTMLElement;
+                        target.style.display = 'none';
+                      }}
+                    />
+                  </div>
+
+                  {/* [2단: 직책 대신 들어가는 동일 규격 친필 서명(사인) 이미지] */}
+                  <div className="w-[48px] h-[20px] flex items-center justify-center mt-1 overflow-hidden">
+                    <img
+                      src={pres.signature}
+                      alt={`${pres.name} 서명`}
+                      loading="eager"
+                      style={{
+                        imageRendering: '-webkit-optimize-contrast',
+                        transform: 'translateZ(0)', // 서명 선명도 사수 GPU 가속
+                        backfaceVisibility: 'hidden',
+                      }}
+                      className="max-w-full max-h-full object-contain filter contrast-125"
+                      onError={(e) => {
+                        // 서명 이미지 준비 전일 때 대통령 이름으로 깔끔하게 대체 표출
+                        const parent = (e.target as HTMLElement).parentElement;
+                        if (parent) {
+                          parent.innerHTML = `<span class="text-[9px] font-bold text-neutral-800 tracking-tight leading-none">${pres.name}</span>`;
+                        }
+                      }}
+                    />
+                  </div>
+
+                  {/* 📜 [호버 카드] 마우스 올리면 뜨는 대통령 재임 정보 */}
+                  {isHovered && (
+                    <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-neutral-900 rounded-lg shadow-xl px-3 py-2 z-50 animate-fade-in pointer-events-none whitespace-nowrap text-center">
+                      <div className="text-[10px] font-mono text-neutral-400 font-bold leading-none">
+                        {pres.termTitle} 대한민국 대통령
+                      </div>
+                      <div className="text-xs font-bold text-neutral-950 mt-1 leading-none">
+                        {pres.name}
+                      </div>
+                      <div className="text-[9px] font-mono text-neutral-500 mt-1 leading-none">
+                        재임: {pres.years}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* 3. [오른쪽 영역] 검색창 + [오류 제보] + [관리자] (우측 고정) */}
+          <div className="flex items-center gap-2 shrink-0 z-10">
+            <div className="w-52 lg:w-64 relative hidden md:flex items-center">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />
               <input
                 type="text"
@@ -222,7 +219,7 @@ export const Header: React.FC<HeaderProps> = ({
             {onAdminClick && (
               <button
                 onClick={onAdminClick}
-                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
+                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-white hover:bg-neutral-100 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
                 title="PECODE 채널 관리자 모드"
               >
                 <span className="text-xs">🛡️</span>
