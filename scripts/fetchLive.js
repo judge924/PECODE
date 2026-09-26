@@ -106,16 +106,20 @@ async function updateLiveJson() {
                             ? parseInt(item.liveStreamingDetails.concurrentViewers, 10)
                             : 0;
 
-                        // ⭐️ 핵심 방어선: 진짜 지금 생방송 중이면서, 우리 구글 시트 등록 채널일 때만 최종 합격!
-                        if (isLive && viewers > 0 && channelMapById.has(videoOwnerChannelId)) {
-                            const registeredChannel = channelMapById.get(videoOwnerChannelId);
-                            console.log(`   🔴 [생방송 확정] ${item.snippet?.title} (${registeredChannel.name}) - 시청자: ${viewers.toLocaleString()}명`);
-                            detailsMap[item.id] = {
-                                channelName: registeredChannel.name,
-                                camp: registeredChannel.camp,
-                                viewers,
-                                title: item.snippet?.title || ''
-                            };
+                        // ⭐️ 라이브 감지 시 무조건 진짜 소유자 ID를 콘솔에 출력하여 불일치 여부 확인!
+                        if (isLive && viewers > 0) {
+                            if (channelMapById.has(videoOwnerChannelId)) {
+                                const registeredChannel = channelMapById.get(videoOwnerChannelId);
+                                console.log(`   🔴 [생방송 확정] ${item.snippet?.title} (${registeredChannel.name}) - 시청자: ${viewers.toLocaleString()}명`);
+                                detailsMap[item.id] = {
+                                    channelName: registeredChannel.name,
+                                    camp: registeredChannel.camp,
+                                    viewers,
+                                    title: item.snippet?.title || ''
+                                };
+                            } else {
+                                console.log(`   ⚠️ [등록 채널ID 불일치로 보류] 방송: "${item.snippet?.title}" | 방송한 채널명: "${item.snippet?.channelTitle}" | 진짜 채널ID: "${videoOwnerChannelId}"`);
+                            }
                         }
                     }
                 }
