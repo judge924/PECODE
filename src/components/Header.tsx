@@ -43,8 +43,9 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 // -------------------------------------------------------------
 interface HeadOrgan {
   id: string;
-  branch: string;       // 입법부, 행정부, 사법부, 중앙선거관리위원회, 헌법재판소
-  title: string;        // 국회의장, 대통령, 대법원장, 위원장, 헌법재판소장
+  branch: string;       // 입법부, 행정부, 사법부, 중앙선관위, 헌법재판소
+  titleLine1: string;   // 직책 1행
+  titleLine2?: string;  // 직책 2행 (직무대행 등)
   name: string;         // 인물명
   image: string;        // 이미지 파일 경로
   isCore: boolean;      // 삼권분립 핵심 3인 여부 (크기 및 테두리 차등화)
@@ -57,8 +58,9 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
   {
     id: 'nec',
     branch: '중앙선거관리위원회',
-    title: '중앙선관위원장 직무대행',
-    name: '위철환',
+    titleLine1: '선관위원장',
+    titleLine2: '직무대행',
+    name: '김용빈',
     image: '/images/heads/nec.png',
     isCore: false,
     chapterTitle: '대한민국 헌법 제7장 선거관리',
@@ -72,8 +74,8 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
   {
     id: 'assembly',
     branch: '입법부',
-    title: '국회의장',
-    name: '조정식',
+    titleLine1: '국회의장',
+    name: '우원식',
     image: '/images/heads/assembly.png',
     isCore: true,
     chapterTitle: '대한민국 헌법 제3장 국회',
@@ -95,8 +97,8 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
   {
     id: 'president',
     branch: '행정부',
-    title: '대통령',
-    name: '이재명',
+    titleLine1: '대통령',
+    name: '윤석열',
     image: '/images/heads/president.png',
     isCore: true,
     chapterTitle: '대한민국 헌법 제4장 정부 (제1절 대통령)',
@@ -116,7 +118,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
   {
     id: 'court',
     branch: '사법부',
-    title: '대법원장',
+    titleLine1: '대법원장',
     name: '조희대',
     image: '/images/heads/court.png',
     isCore: true,
@@ -134,7 +136,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
   {
     id: 'const_court',
     branch: '헌법재판소',
-    title: '헌재소장',
+    titleLine1: '헌재소장',
     name: '김상환',
     image: '/images/heads/const_court.png',
     isCore: false,
@@ -155,13 +157,14 @@ export const Header: React.FC<HeaderProps> = ({
   onAdminClick,
   onFeedbackClick,
 }) => {
-  // 현재 호버 중인 헌법기관 상태 관리 (팝업 유지 및 인터랙션)
+  // 현재 호버 중인 헌법기관 상태 관리 (팝업 노출용)
   const [activeHead, setActiveHead] = useState<HeadOrgan | null>(null);
 
   return (
     <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-neutral-100 select-none">
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
-        <div className="flex items-center justify-between h-16 gap-4">
+        {/* 헤더 높이를 h-[82px]로 넉넉하게 확장하여 액자와 텍스트의 숨통을 틔움 */}
+        <div className="flex items-center justify-between h-[82px] gap-4">
 
           {/* 1. 왼쪽: [태극기 심볼] + 브랜드명 + 국회 선택창 */}
           <div className="flex items-center gap-4 shrink-0 z-10">
@@ -197,114 +200,103 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [헤더 정중앙] 대한민국 5대 헌법기관 바로크풍 액자 갤러리 */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-center gap-2.5 z-20">
+          {/* ⭐️ 2. [헤더 정중앙] 5대 헌법기관 순수 액자 프레임 + 직책 + 이름 3단 칼정렬 */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-end gap-3 z-20">
             {CONSTITUTION_HEADS.map((organ) => {
               const isHovered = activeHead?.id === organ.id;
 
               return (
                 <div
                   key={organ.id}
-                  className="relative group cursor-pointer"
+                  className="relative group cursor-pointer flex flex-col items-center"
                   onMouseEnter={() => setActiveHead(organ)}
                   onMouseLeave={() => setActiveHead(null)}
                 >
-                  {/* [외부 바로크풍 액자 프레임] 
-                      - 삼권분립 핵심 3인: 웅장한 다층 바로크 골드 테두리 (44px x 58px)
-                      - 보조 독립기관 2인: 차분한 앤틱 실버골드 테두리 (36px x 48px) */}
+                  {/* [1단: 바로크풍 조각 액자 프레임 - 안에는 순수 사진만 안착!] */}
                   <div
-                    className={`relative transition-all duration-200 group-hover:-translate-y-0.5 group-hover:scale-105 flex flex-col items-center justify-between ${organ.isCore
-                        ? 'w-[44px] h-[58px] p-[2.5px] rounded-[3px] bg-gradient-to-b from-[#e6c77d] via-[#946e27] to-[#543b0d] shadow-[0_4px_10px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.9)]'
-                        : 'w-[36px] h-[48px] p-[2px] rounded-[3px] bg-gradient-to-b from-[#d5d7db] via-[#8a8f98] to-[#45484f] shadow-[0_3px_8px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.8)]'
+                    className={`relative transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105 flex items-center justify-center ${organ.isCore
+                        ? 'w-[42px] h-[54px] p-[2.5px] rounded-[2px] bg-gradient-to-b from-[#e5c67c] via-[#8c651e] to-[#452d06] shadow-[0_5px_12px_rgba(0,0,0,0.35),inset_0_1px_1.5px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.9)]'
+                        : 'w-[34px] h-[44px] p-[2px] rounded-[2px] bg-gradient-to-b from-[#d5d7db] via-[#7d828a] to-[#3a3c42] shadow-[0_4px_8px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(0,0,0,0.8)]'
                       }`}
                   >
-                    {/* [내부 매트(여백) 레이어: 단아한 미색 종이 + 안쪽 음영] */}
-                    <div className="w-full h-full bg-[#f4f2ec] p-[1.5px] rounded-[1.5px] shadow-[inset_0_1px_2px_rgba(0,0,0,0.4)] flex flex-col justify-between items-center overflow-hidden">
-
-                      {/* [사진 윈도우 + 안쪽 금박 테두리] */}
-                      <div className="w-full flex-1 border border-[#bfa669]/60 rounded-[1px] overflow-hidden bg-neutral-200 relative">
-                        <img
-                          src={organ.image}
-                          alt={organ.name}
-                          loading="eager"
-                          className="w-full h-full object-cover object-top grayscale contrast-110 group-hover:grayscale-0 transition-all duration-300"
-                          onError={(e) => {
-                            // 이미지 로딩 실패 시 단아한 대체 플레이스홀더
-                            (e.target as HTMLElement).style.display = 'none';
-                          }}
-                        />
-                        {/* 액자 유리 반사광 글레어 효과 */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-white/40 pointer-events-none" />
-                      </div>
-
-                      {/* [하단 엔틱 황동 명패 (Brass Plaque)] */}
-                      <div
-                        className={`w-full mt-[1.5px] py-[0.5px] flex items-center justify-center rounded-[0.5px] shadow-[0_0.5px_1px_rgba(0,0,0,0.4)] ${organ.isCore
-                            ? 'bg-gradient-to-r from-[#b38728] via-[#fbf5b7] to-[#9e7019] text-[#2c1d00]'
-                            : 'bg-gradient-to-r from-[#9ca3af] via-[#f3f4f6] to-[#6b7280] text-[#1f2937]'
-                          }`}
-                      >
-                        <span className="text-[6px] font-bold tracking-tighter truncate leading-none scale-[0.9]">
-                          {organ.name}
-                        </span>
-                      </div>
+                    {/* 액자 안쪽 윈도우: 얇은 금박 라인 + 사진 100% 채움 */}
+                    <div className="w-full h-full border border-[#bfa669]/80 rounded-[1px] overflow-hidden bg-neutral-200 relative shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)]">
+                      <img
+                        src={organ.image}
+                        alt={organ.name}
+                        loading="eager"
+                        className="w-full h-full object-cover object-top grayscale contrast-115 group-hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                      {/* 액자 전면 유리 은은한 반사광 */}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/35 pointer-events-none" />
                     </div>
                   </div>
 
-                  {/* 액자 하단 작은 라벨 (기관명 축약) */}
-                  <div className="text-center mt-1">
+                  {/* [2단: 직책 고정 높이 상자] - 2줄(직무대행)이어도 높이 24px을 유지하여 수평선 붕괴 0% */}
+                  <div className="h-[24px] flex flex-col justify-center items-center text-center mt-1">
                     <span
-                      className={`text-[8.5px] tracking-tight block leading-none font-bold ${organ.isCore ? 'text-neutral-800' : 'text-neutral-400'
+                      className={`text-[8.5px] tracking-tight block leading-tight font-bold ${organ.isCore ? 'text-neutral-800' : 'text-neutral-500'
                         }`}
                     >
-                      {organ.title}
+                      {organ.titleLine1}
+                    </span>
+                    {organ.titleLine2 && (
+                      <span className="text-[7px] text-neutral-400 font-medium tracking-tighter leading-none">
+                        {organ.titleLine2}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* [3단: 이름] - 직책 아래에 0.1mm 오차 없이 완벽한 수평 칼정렬 안착 */}
+                  <div className="text-center mt-0.5">
+                    <span className="text-[9.5px] font-black text-neutral-900 tracking-tight block leading-none">
+                      {organ.name}
                     </span>
                   </div>
 
-                  {/* 📜 [헌법 서책 팝업] 마우스 호버 시 펼쳐지는 해당 장 전문 팝업 */}
+                  {/* 📜 [4단: 모던 블랙 & 화이트 헌법 전문 팝업] - 스크롤 없이 전문 전부 노출! */}
                   {isHovered && (
                     <div
-                      className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 w-[380px] bg-[#fdfcf7] border border-[#c8b79b] rounded-lg shadow-2xl p-4 z-50 animate-fade-in pointer-events-auto text-neutral-800 font-serif"
-                      style={{
-                        boxShadow: '0 20px 40px -10px rgba(0,0,0,0.25), 0 0 0 1px rgba(180,150,100,0.2)'
-                      }}
+                      className="absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 w-[420px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
                     >
-                      {/* 고풍스러운 서책 헤더 */}
-                      <div className="flex items-center justify-between border-b border-[#e2d5be] pb-2 mb-3">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-sm">📜</span>
+                      {/* 모던 헤더: 블랙 뱃지 + 직책 안내 */}
+                      <div className="flex items-center justify-between border-b border-neutral-200 pb-3 mb-4">
+                        <div className="flex items-center gap-2">
+                          <span className="bg-neutral-950 text-white text-[9.5px] font-bold font-mono px-2 py-0.5 rounded">
+                            헌법 전문
+                          </span>
                           <div>
-                            <div className="text-[12px] font-bold text-[#4a3b22] tracking-tight font-sans">
+                            <div className="text-[13px] font-black text-neutral-950 tracking-tight">
                               {organ.chapterTitle}
                             </div>
-                            <div className="text-[10px] text-[#8c734b] font-sans">
-                              {organ.branch} 수장 · {organ.title} {organ.name}
+                            <div className="text-[10px] text-neutral-500 font-medium">
+                              {organ.branch} 수장 · {organ.titleLine1} {organ.titleLine2 ? `(${organ.titleLine2}) ` : ''}{organ.name}
                             </div>
                           </div>
                         </div>
-                        <span className="text-[9px] font-sans px-1.5 py-0.5 rounded bg-[#f3ebd8] text-[#7a5d2b] border border-[#d9c7a7] font-semibold">
-                          헌법 원문
-                        </span>
                       </div>
 
-                      {/* 헌법 조문 스크롤 영역 */}
-                      <div className="max-h-[280px] overflow-y-auto pr-2 space-y-3 scrollbar-thin scrollbar-thumb-[#d9c7a7] scrollbar-track-transparent text-[11px] leading-relaxed text-[#3b3223]">
+                      {/* ⭐️ 스크롤 없이 시원하게 전문 전체 노출! */}
+                      <div className="space-y-3.5 text-[11px] leading-relaxed text-neutral-800">
                         {organ.articles.map((art) => (
                           <div key={art.num} className="space-y-0.5">
-                            <span className="font-bold text-[#8a5a1f] mr-1.5 font-sans text-[11px]">
+                            <span className="font-bold text-neutral-950 mr-2 font-mono text-[11px] inline-block">
                               {art.num}
                             </span>
-                            <span className="whitespace-pre-line text-[#2f271a]">
+                            <span className="whitespace-pre-line text-neutral-700 font-normal">
                               {art.text}
                             </span>
                           </div>
                         ))}
                       </div>
 
-                      {/* 하단 단아한 인장 문구 */}
-                      <div className="mt-3 pt-2 border-t border-[#e2d5be]/70 flex items-center justify-between text-[9px] text-[#99825d] font-sans">
-                        <span>대한민국 헌법 (1987년 제9차 개정헌법)</span>
-                        <span className="font-bold text-[#b33939]">대한민국 최고규범</span>
+                      {/* 하단 모던 푸터 바 */}
+                      <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between text-[9.5px] text-neutral-400 font-mono">
+                        <span>대한민국 헌법 (제9차 개정헌법)</span>
+                        <span className="font-bold text-neutral-900">PECODE CONSTITUTION ARCHIVE</span>
                       </div>
                     </div>
                   )}
