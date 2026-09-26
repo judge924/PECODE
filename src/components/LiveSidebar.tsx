@@ -212,12 +212,12 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         <>
             <aside
                 ref={setSidebarRef}
-                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
-                    } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
+                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[170px] ${isLeft ? 'left-4' : 'right-4'
+                    } max-h-[calc(100vh-185px)] z-20 pointer-events-auto select-none`}
             >
-                {/* 1. 상단 헤더 영역 (1줄 미니멀 칼정렬) */}
-                <div className="shrink-0 flex flex-col pb-1.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
-                    <div className="flex items-center justify-between pb-1 border-b border-neutral-200/50">
+                {/* 1. 상단 헤더 영역 (구분선 없이 깨끗하고 미니멀한 여백) */}
+                <div className="shrink-0 flex flex-col pb-1.5 bg-[#fcfcfc]">
+                    <div className="flex items-center justify-between pb-1">
                         {/* 좌측: 타이틀 + 5분 간격 갱신 */}
                         <div className="flex items-center gap-1.5 min-w-0">
                             <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider shrink-0">
