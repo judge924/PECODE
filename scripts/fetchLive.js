@@ -39,7 +39,11 @@ async function updateLiveJson() {
 
     console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 /live 직행 검사 시작!`);
 
-    // 2. 죽은 RSS(404) 제거 ➔ 100% 확실한 /live 직행 통로로만 초고속 전수 검사
+    // ⭐️ 89개 정식 채널 ID 사전 구축 (남의 추천 영상 100% 걸러내기용)
+    const channelMapById = new Map();
+    channels.forEach(ch => channelMapById.set(ch.channelId, ch));
+
+    // 2. 10개씩 조를 나누어 라이브 직행문 검사
     const detectedVideos = [];
     const CHUNK_SIZE = 10;
 
@@ -57,23 +61,25 @@ async function updateLiveJson() {
                 });
 
                 if (res.ok) {
-                    // 1) 리다이렉트된 최종 주소에서 바로 영상 ID 추출 (가장 정확함)
                     let videoId = '';
+                    // 1) 리다이렉트된 최종 주소에서 영상 ID 추출
                     if (res.url && res.url.includes('watch?v=')) {
                         const urlObj = new URL(res.url);
                         videoId = urlObj.searchParams.get('v');
                     }
 
-                    // 2) 만약 주소로 안 잡히면 HTML 본문에서 영상 ID 추출
+                    // 2) HTML 본문에서 canonical 영상 ID만 엄격하게 추출
                     if (!videoId) {
                         const html = await res.text();
-                        const vMatch = html.match(/"videoId":"([a-zA-Z0-9_-]{11})"/);
-                        const cMatch = html.match(/href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})"/);
-                        videoId = (vMatch && vMatch[1]) || (cMatch && cMatch[1]);
+                        const cMatch = html.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})">/);
+                        if (cMatch && cMatch[1]) {
+                            videoId = cMatch[1];
+                        }
                     }
 
                     if (videoId) {
                         detectedVideos.push({
+                            targetChannelId: ch.channelId,
                             camp: ch.camp,
                             channelName: ch.name,
                             videoId: videoId
@@ -83,14 +89,13 @@ async function updateLiveJson() {
             } catch (err) { }
         }));
 
-        // 유튜브 서버를 배려하는 0.1초 매너 딜레이
         await new Promise(r => setTimeout(r, 100));
     }
 
     const uniqueIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
-    console.log(`📡 감지된 총 라이브 후보 영상: ${uniqueIds.length}개`);
+    console.log(`📡 감지된 라이브 후보 영상: ${uniqueIds.length}개`);
 
-    // 3. 구글 공식 API로 생방송 여부 및 시청자 수 조회 (50개씩 묶음 검문)
+    // 3. 구글 공식 API 검문 (⭐️ 89개 명단과 진짜 주인이 일치하는지 엄격 대조!)
     const detailsMap = {};
     if (uniqueIds.length > 0) {
         for (let i = 0; i < uniqueIds.length; i += 50) {
@@ -104,13 +109,18 @@ async function updateLiveJson() {
                 } else if (data.items) {
                     for (const item of data.items) {
                         const isLive = item.snippet?.liveBroadcastContent === 'live';
+                        const videoOwnerChannelId = item.snippet?.channelId; // 영상의 진짜 소유자 ID
                         const viewers = item.liveStreamingDetails?.concurrentViewers
                             ? parseInt(item.liveStreamingDetails.concurrentViewers, 10)
                             : 0;
 
-                        if (isLive && viewers > 0) {
-                            console.log(`   🔴 [생방송 감지] ${item.snippet?.title} (${item.snippet?.channelTitle}) - 시청자: ${viewers.toLocaleString()}명`);
+                        // ⭐️ 핵심 방어선: 생방송 중이면서, 진짜 우리 89개 채널 명단에 속한 채널일 때만 합격!
+                        if (isLive && viewers > 0 && channelMapById.has(videoOwnerChannelId)) {
+                            const registeredChannel = channelMapById.get(videoOwnerChannelId);
+                            console.log(`   🔴 [생방송 확정] ${item.snippet?.title} (${registeredChannel.name}) - 시청자: ${viewers.toLocaleString()}명`);
                             detailsMap[item.id] = {
+                                channelName: registeredChannel.name,
+                                camp: registeredChannel.camp,
                                 viewers,
                                 title: item.snippet?.title || ''
                             };
@@ -127,23 +137,20 @@ async function updateLiveJson() {
     const leftMap = {};
     const rightMap = {};
 
-    for (const item of detectedVideos) {
-        const detail = detailsMap[item.videoId];
-        if (detail && detail.viewers > 0) {
-            const card = {
-                channelName: item.channelName,
-                title: detail.title,
-                viewers: detail.viewers,
-                thumbnail: `https://i.ytimg.com/vi/${item.videoId}/hqdefault.jpg`,
-                liveUrl: `https://www.youtube.com/watch?v=${item.videoId}`
-            };
+    for (const [videoId, detail] of Object.entries(detailsMap)) {
+        const card = {
+            channelName: detail.channelName,
+            title: detail.title,
+            viewers: detail.viewers,
+            thumbnail: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+            liveUrl: `https://www.youtube.com/watch?v=${videoId}`
+        };
 
-            const isLeft = item.camp.toLowerCase().includes('left') || item.camp.includes('좌');
-            const targetMap = isLeft ? leftMap : rightMap;
+        const isLeft = detail.camp.toLowerCase().includes('left') || detail.camp.includes('좌');
+        const targetMap = isLeft ? leftMap : rightMap;
 
-            if (!targetMap[item.channelName] || card.viewers > targetMap[item.channelName].viewers) {
-                targetMap[item.channelName] = card;
-            }
+        if (!targetMap[detail.channelName] || card.viewers > targetMap[detail.channelName].viewers) {
+            targetMap[detail.channelName] = card;
         }
     }
 
