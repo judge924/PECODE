@@ -205,8 +205,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         <>
             <aside
                 ref={setSidebarRef}
-                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[125px] ${isLeft ? 'left-4' : 'right-4'
-                    } max-h-[calc(100vh-140px)] z-20 pointer-events-auto select-none`}
+                className={`hidden 2xl:flex flex-col w-[195px] fixed top-[150px] ${isLeft ? 'left-4' : 'right-4'
+                    } max-h-[calc(100vh-165px)] z-20 pointer-events-auto select-none`}
             >
                 {/* 1. 상단 헤더 영역 (1줄 미니멀 칼정렬) */}
                 <div className="shrink-0 flex flex-col pb-1.5 border-b border-neutral-200/70 bg-[#fcfcfc]">
