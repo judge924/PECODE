@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
@@ -37,6 +37,73 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
     </g>
   </svg>
 );
+
+// -------------------------------------------------------------
+// ⭐️ [자체 자동 리사이징 & 스무딩 컴포넌트]
+// 거대한 원본 사진을 2배수 레티나 규격(84px)으로 매끄럽게 다운샘플링하여 자글거림 원천 차단!
+// -------------------------------------------------------------
+const OptimizedPresidentAvatar: React.FC<{
+  src: string;
+  alt: string;
+  targetSize?: number;
+}> = ({ src, alt, targetSize = 42 }) => {
+  const [smoothedSrc, setSmoothedSrc] = useState<string>(src);
+
+  useEffect(() => {
+    let isMounted = true;
+    const img = new Image();
+    img.src = src;
+
+    img.onload = () => {
+      if (!isMounted) return;
+      const renderSize = targetSize * 2; // 2x 레티나 초선명 규격 (84px)
+
+      // 원본이 표시 크기보다 클 때 고품질 캔버스 스무딩 리사이즈 수행
+      if (img.width > renderSize || img.height > renderSize) {
+        const canvas = document.createElement('canvas');
+        canvas.width = renderSize;
+        canvas.height = renderSize;
+        const ctx = canvas.getContext('2d');
+
+        if (ctx) {
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+
+          const scale = Math.max(renderSize / img.width, renderSize / img.height);
+          const w = img.width * scale;
+          const h = img.height * scale;
+          const x = (renderSize - w) / 2;
+          const y = 0; // 얼굴이 잘리지 않도록 상단 기준 정렬
+
+          ctx.drawImage(img, x, y, w, h);
+          try {
+            const dataUrl = canvas.toDataURL('image/png');
+            setSmoothedSrc(dataUrl);
+          } catch (e) {
+            setSmoothedSrc(src);
+          }
+        }
+      }
+    };
+
+    return () => {
+      isMounted = false;
+    };
+  }, [src, targetSize]);
+
+  return (
+    <img
+      src={smoothedSrc}
+      alt={alt}
+      loading="eager"
+      className="w-full h-full object-cover object-top select-none pointer-events-none"
+      onError={(e) => {
+        const target = e.target as HTMLElement;
+        target.style.display = 'none';
+      }}
+    />
+  );
+};
 
 // -------------------------------------------------------------
 // 대한민국 14대 대통령 아카이브 데이터
@@ -117,7 +184,7 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [가운데 영역] 국회 선택창 우측 ~ 검색창 좌측 공간을 100% 꽉 채우는 14명 대통령 균등 배분정렬(justify-between)! */}
+          {/* ⭐️ 2. [가운데 영역] 14명 대통령 자체 스무딩 리사이징 + 균등 배분정렬(justify-between)! */}
           <div className="hidden xl:flex flex-1 items-center justify-between px-2 2xl:px-6 z-20 min-w-0">
             {HISTORICAL_PRESIDENTS.map((pres) => {
               const isHovered = activePres?.id === pres.id;
@@ -129,39 +196,23 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActivePres(pres)}
                   onMouseLeave={() => setActivePres(null)}
                 >
-                  {/* [1단: 역대 대통령 원형 얼굴 아바타 (42px 동일 규격)] */}
+                  {/* [1단: 자체 캔버스 다운샘플러로 깨짐 현상을 원천 방지한 원형 아바타] */}
                   <div className="w-[42px] h-[42px] overflow-hidden bg-white shadow-xs rounded-full transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md">
-                    <img
+                    <OptimizedPresidentAvatar
                       src={pres.image}
                       alt={pres.name}
-                      loading="eager"
-                      style={{
-                        imageRendering: '-webkit-optimize-contrast',
-                        transform: 'translateZ(0)', // 고화질 축소 뭉개짐 방지 GPU 가속
-                        backfaceVisibility: 'hidden',
-                      }}
-                      className="w-full h-full object-cover object-top filter contrast-[1.03]"
-                      onError={(e) => {
-                        const target = e.target as HTMLElement;
-                        target.style.display = 'none';
-                      }}
+                      targetSize={42}
                     />
                   </div>
 
-                  {/* [2단: 직책 대신 들어가는 동일 규격 친필 서명(사인) 이미지] */}
+                  {/* [2단: 친필 서명(사인) 이미지] */}
                   <div className="w-[48px] h-[20px] flex items-center justify-center mt-1 overflow-hidden">
                     <img
                       src={pres.signature}
                       alt={`${pres.name} 서명`}
                       loading="eager"
-                      style={{
-                        imageRendering: '-webkit-optimize-contrast',
-                        transform: 'translateZ(0)', // 서명 선명도 사수 GPU 가속
-                        backfaceVisibility: 'hidden',
-                      }}
                       className="max-w-full max-h-full object-contain filter contrast-125"
                       onError={(e) => {
-                        // 서명 이미지 준비 전일 때 대통령 이름으로 깔끔하게 대체 표출
                         const parent = (e.target as HTMLElement).parentElement;
                         if (parent) {
                           parent.innerHTML = `<span class="text-[9px] font-bold text-neutral-800 tracking-tight leading-none">${pres.name}</span>`;
@@ -219,7 +270,7 @@ export const Header: React.FC<HeaderProps> = ({
             {onAdminClick && (
               <button
                 onClick={onAdminClick}
-                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-white hover:bg-neutral-100 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
+                className="h-9 px-3 text-xs font-semibold text-neutral-700 hover:text-neutral-950 bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg flex items-center gap-1.5 transition-colors shrink-0 shadow-sm cursor-pointer"
                 title="PECODE 채널 관리자 모드"
               >
                 <span className="text-xs">🛡️</span>
