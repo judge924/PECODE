@@ -39,7 +39,7 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 );
 
 // -------------------------------------------------------------
-// 헌법기관 6대 수장 데이터 및 헌법 전문
+// 헌법기관 7대 수장 데이터 및 헌법 전문
 // -------------------------------------------------------------
 interface HeadOrgan {
   id: string;
@@ -53,7 +53,23 @@ interface HeadOrgan {
 }
 
 const CONSTITUTION_HEADS: HeadOrgan[] = [
-  // 1. 헌재소장 (좌측 끝 - 살짝 작게)
+  // 1. 감사원장 (좌측 끝 - 살짝 작게 38px)
+  {
+    id: 'audit',
+    branch: '감사원',
+    title: '감사원장',
+    name: '김호철',
+    image: '/images/heads/audit.png',
+    sizeTier: 'aux',
+    chapterTitle: '대한민국 헌법 제4장 정부 (제2절 행정부 제4관 감사원)',
+    articles: [
+      { num: '제97조', text: '국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.' },
+      { num: '제98조', text: '① 감사원은 원장을 포함한 5인 이상 11인 이하의 감사위원으로 구성한다.\n② 원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.\n③ 감사위원은 원장의 제청으로 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다.' },
+      { num: '제99조', text: '감사원은 세입·세출의 결산을 매년 검사하여 대통령과 차기국회에 그 결과를 보고하여야 한다.' },
+      { num: '제100조', text: '감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의 범위 기타 필요한 사항은 법률로 정한다.' }
+    ]
+  },
+  // 2. 헌재소장 (살짝 작게 38px)
   {
     id: 'const_court',
     branch: '헌법재판소',
@@ -68,7 +84,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제113조', text: '① 헌법재판소에서 법률의 위헌결정, 탄핵의 결정, 정당해산의 결정 또는 헌법소원에 관한 인용결정을 할 때에는 재판관 6인 이상의 찬성이 있어야 한다.\n② 헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.' }
     ]
   },
-  // 2. 대법원장 (사법부 - 핵심 규격)
+  // 3. 대법원장 (사법부 - 핵심 규격 46px)
   {
     id: 'court',
     branch: '사법부',
@@ -86,7 +102,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제106조', text: '① 법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.' }
     ]
   },
-  // 3. 대통령 (행정부/국가원수 - 정중앙 가장 크게!)
+  // 4. 대통령 (행정부/국가원수 - 정중앙 가장 큼직하게 54px!)
   {
     id: 'president',
     branch: '행정부',
@@ -107,7 +123,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제74조', text: '① 대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다.' }
     ]
   },
-  // 4. 국회의장 (입법부 - 핵심 규격)
+  // 5. 국회의장 (입법부 - 핵심 규격 46px)
   {
     id: 'assembly',
     branch: '입법부',
@@ -130,12 +146,12 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제50조', text: '① 국회의 회의는 공개한다. 다만, 출석의원 과반수의 찬성이 있거나 의장이 국가의 안전보장을 위하여 필요하다고 인정할 때에는 공개하지 아니할 수 있다.' }
     ]
   },
-  // 5. 국무총리 (행정 통할 - 핵심 규격)
+  // 6. 국무총리 (행정 통할 - 핵심 규격 46px)
   {
     id: 'prime_minister',
     branch: '행정부 (국무총리)',
     title: '국무총리',
-    name: '한성숙', // ⭐️ 원하시는 국무총리 성함으로 자유롭게 변경 가능
+    name: '한덕수',
     image: '/images/heads/prime_minister.png',
     sizeTier: 'core',
     chapterTitle: '대한민국 헌법 제4장 정부 (제2절 행정부 제1관 국무총리)',
@@ -144,7 +160,7 @@ const CONSTITUTION_HEADS: HeadOrgan[] = [
       { num: '제87조', text: '① 국무위원은 국무총리의 제청으로 대통령이 임명한다.\n② 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.\n③ 국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다.\n④ 군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다.' }
     ]
   },
-  // 6. 중앙선관위장 (우측 끝 - 살짝 작게)
+  // 7. 중앙선관위장 (우측 끝 - 살짝 작게 38px)
   {
     id: 'nec',
     branch: '중앙선거관리위원회',
@@ -171,15 +187,15 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [activeHead, setActiveHead] = useState<HeadOrgan | null>(null);
 
-  // ⭐️ 3단계 크기 규격 헬퍼 함수
+  // ⭐️ 3단계 크기 차등화 (피라미드 대칭)
   const getAvatarSizeClass = (tier: 'president' | 'core' | 'aux') => {
     switch (tier) {
       case 'president':
-        return 'w-[54px] h-[54px] shadow-sm';   // 대통령 (살짝 큼직하게 54px)
+        return 'w-[54px] h-[54px] shadow-sm';   // 정중앙 대통령 (54px)
       case 'core':
         return 'w-[46px] h-[46px] shadow-xs';   // 대법원장, 국회의장, 국무총리 (46px)
       case 'aux':
-        return 'w-[38px] h-[38px] shadow-xs opacity-95'; // 헌재소장, 선관위원장 (살짝 작게 38px)
+        return 'w-[38px] h-[38px] shadow-xs opacity-95'; // 감사원장, 헌재소장, 선관위원장 (38px)
     }
   };
 
@@ -222,8 +238,8 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
 
-          {/* ⭐️ 2. [헤더 정중앙] 6대 수장 대칭형 배치 (헌재소장 ~ 중앙선관위장) + 하단선 0.1mm 칼정렬 */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-3.5 z-20 pt-1">
+          {/* ⭐️ 2. [헤더 정중앙] 7대 수장 완벽한 3:1:3 황금 대칭 (감사원장 ~ 대통령 ~ 선관위원장) */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden xl:flex items-start gap-3 z-20 pt-1">
             {CONSTITUTION_HEADS.map((organ) => {
               const isHovered = activeHead?.id === organ.id;
 
@@ -234,7 +250,7 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActiveHead(organ)}
                   onMouseLeave={() => setActiveHead(null)}
                 >
-                  {/* [1단: 높이 54px 고정 받침대 ➔ 아랫변(items-end) 일치로 하단 텍스트 수평선 100% 사수] */}
+                  {/* [1단: 아랫변(items-end) 칼정렬 ➔ 54px 높이 받침대] */}
                   <div className="h-[54px] flex items-end justify-center">
                     <div
                       className={`overflow-hidden bg-white transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md rounded-full ${getAvatarSizeClass(
@@ -258,14 +274,14 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   </div>
 
-                  {/* [2단: 직책 (선명한 볼드 블랙 1줄)] */}
+                  {/* [2단: 직책 (볼드 블랙, 1줄 단정)] */}
                   <div className="mt-1.5 text-center">
                     <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block whitespace-nowrap">
                       {organ.title}
                     </span>
                   </div>
 
-                  {/* [3단: 이름 (단아한 일반 굵기 블랙, 직책 바로 밑 1px 밀착!)] */}
+                  {/* [3단: 이름 (일반 굵기 블랙, 직책 바로 1px 밑에 초밀착!)] */}
                   <div className="mt-1 text-center">
                     <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block whitespace-nowrap">
                       {organ.name}
