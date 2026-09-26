@@ -37,13 +37,13 @@ async function updateLiveJson() {
         return;
     }
 
-    console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 /live 직행 검사 시작!`);
+    console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 [라이브 탭(/streams)] 전수 스캔 시작!`);
 
-    // ⭐️ 90개 정식 채널 ID 사전 구축 (남의 추천 영상 100% 걸러내기용 신분증 리스트)
+    // ⭐️ 90개 정식 채널 ID 사전 구축 (남의 추천 영상 100% 차단용)
     const channelMapById = new Map();
     channels.forEach(ch => channelMapById.set(ch.channelId, ch));
 
-    // 2. 10개씩 조를 나누어 라이브 직행문 검사 (단일 방송 + YTN 다중 방송 동시 포착)
+    // 2. [전략 C] 라이브 전용 탭(/streams) 직행 + 라이브 뱃지 암호 핀포인트 수집
     const detectedVideos = [];
     const CHUNK_SIZE = 10;
 
@@ -51,8 +51,9 @@ async function updateLiveJson() {
         const chunk = channels.slice(i, i + CHUNK_SIZE);
         await Promise.all(chunk.map(async (ch) => {
             try {
-                const liveUrl = `https://www.youtube.com/channel/${ch.channelId}/live`;
-                const res = await fetch(liveUrl, {
+                // 오직 실시간/라이브만 모아두는 유튜브 공식 [라이브] 전용 탭 직행!
+                const streamsUrl = `https://www.youtube.com/channel/${ch.channelId}/streams`;
+                const res = await fetch(streamsUrl, {
                     headers: {
                         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
                         'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
@@ -61,33 +62,40 @@ async function updateLiveJson() {
                 });
 
                 if (res.ok) {
-                    // A. 단일 라이브 리다이렉트 URL에서 추출
-                    if (res.url && res.url.includes('watch?v=')) {
-                        const urlObj = new URL(res.url);
-                        const v = urlObj.searchParams.get('v');
-                        if (v) detectedVideos.push({ videoId: v });
+                    const html = await res.text();
+
+                    // A. 빨간 라이브 뱃지 암호 (BADGE_STYLE_TYPE_LIVE_NOW) 영상 핀포인트 추출
+                    const badgeMatches = html.matchAll(/"videoId":"([a-zA-Z0-9_-]{11})"[^}]+"style":"BADGE_STYLE_TYPE_LIVE_NOW"/g);
+                    for (const m of badgeMatches) {
+                        detectedVideos.push({ videoId: m[1] });
                     }
 
-                    // B. YTN 등 다중 동시 라이브 방송 및 본문 영상 ID 추출 (최대 3개)
-                    const html = await res.text();
-                    const liveMatches = html.matchAll(/"videoId":"([a-zA-Z0-9_-]{11})"/g);
+                    // B. 라이브 전용 썸네일 암호 (hqdefault_live.jpg) 핀포인트 추출
+                    const liveThumbMatches = html.matchAll(/\/vi\/([a-zA-Z0-9_-]{11})\/hqdefault_live\.jpg/g);
+                    for (const m of liveThumbMatches) {
+                        detectedVideos.push({ videoId: m[1] });
+                    }
+
+                    // C. 라이브 탭의 최상단 최신 영상 2개 후보 수집 (방금 시작된 라이브 방어선)
+                    const streamMatches = html.matchAll(/"videoId":"([a-zA-Z0-9_-]{11})"/g);
                     let count = 0;
-                    for (const match of liveMatches) {
-                        if (count >= 3) break;
-                        detectedVideos.push({ videoId: match[1] });
+                    for (const m of streamMatches) {
+                        if (count >= 2) break;
+                        detectedVideos.push({ videoId: m[1] });
                         count++;
                     }
                 }
             } catch (err) { }
         }));
 
+        // 유튜브 서버를 배려하는 0.1초 매너 딜레이 (15초 쾌속 완료)
         await new Promise(r => setTimeout(r, 100));
     }
 
     const uniqueIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
     console.log(`📡 감지된 라이브 후보 영상: ${uniqueIds.length}개`);
 
-    // 3. 구글 공식 API 검문 (⭐️ 90개 명단과 진짜 주인이 일치하는지 엄격 대조!)
+    // 3. 구글 공식 API 검문 (90개 등록 채널 명단과 진짜 소유자 100% 일치 검증)
     const detailsMap = {};
     if (uniqueIds.length > 0) {
         for (let i = 0; i < uniqueIds.length; i += 50) {
@@ -101,25 +109,21 @@ async function updateLiveJson() {
                 } else if (data.items) {
                     for (const item of data.items) {
                         const isLive = item.snippet?.liveBroadcastContent === 'live';
-                        const videoOwnerChannelId = item.snippet?.channelId; // 영상의 진짜 소유자 ID
+                        const videoOwnerChannelId = item.snippet?.channelId;
                         const viewers = item.liveStreamingDetails?.concurrentViewers
                             ? parseInt(item.liveStreamingDetails.concurrentViewers, 10)
                             : 0;
 
-                        // ⭐️ 라이브 감지 시 무조건 진짜 소유자 ID를 콘솔에 출력하여 불일치 여부 확인!
-                        if (isLive && viewers > 0) {
-                            if (channelMapById.has(videoOwnerChannelId)) {
-                                const registeredChannel = channelMapById.get(videoOwnerChannelId);
-                                console.log(`   🔴 [생방송 확정] ${item.snippet?.title} (${registeredChannel.name}) - 시청자: ${viewers.toLocaleString()}명`);
-                                detailsMap[item.id] = {
-                                    channelName: registeredChannel.name,
-                                    camp: registeredChannel.camp,
-                                    viewers,
-                                    title: item.snippet?.title || ''
-                                };
-                            } else {
-                                console.log(`   ⚠️ [등록 채널ID 불일치로 보류] 방송: "${item.snippet?.title}" | 방송한 채널명: "${item.snippet?.channelTitle}" | 진짜 채널ID: "${videoOwnerChannelId}"`);
-                            }
+                        // ⭐️ 핵심 방어선: 실시간 방송 중 + 등록된 90개 채널과 소유자 일치 시 최종 확정!
+                        if (isLive && viewers > 0 && channelMapById.has(videoOwnerChannelId)) {
+                            const registeredChannel = channelMapById.get(videoOwnerChannelId);
+                            console.log(`   🔴 [생방송 확정] ${item.snippet?.title} (${registeredChannel.name}) - 시청자: ${viewers.toLocaleString()}명`);
+                            detailsMap[item.id] = {
+                                channelName: registeredChannel.name,
+                                camp: registeredChannel.camp,
+                                viewers,
+                                title: item.snippet?.title || ''
+                            };
                         }
                     }
                 }
