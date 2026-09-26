@@ -293,8 +293,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* 1위 영상 화면: 썸네일이 5초간 완벽히 가려주어 일시정지 아이콘 노출 0% */}
-                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
+                            {/* 1위 영상 화면 (무테) */}
+                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5">
                                 {firstVideoId && (
                                     <iframe
                                         src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
@@ -363,8 +363,8 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                         </div>
                                     )}
 
-                                    {/* 2위 이하 호버 재생 */}
-                                    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm border border-neutral-200/60 mt-0.5">
+                                    {/* 2위 이하 호버 재생 (무테) */}
+                                    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5">
                                         {isHovered && videoId && (
                                             <iframe
                                                 src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}

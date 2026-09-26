@@ -104,7 +104,7 @@ export const BlackTicketGauge: React.FC<BlackTicketGaugeProps> = ({ politicians 
     };
 
     return (
-        <div className="w-full bg-[#fcfcfc] py-3.5 relative select-none">
+        <div className="w-full bg-transparent py-3.5 relative select-none">
 
             {/* 화살표 깜빡임 애니메이션 */}
             <style>{`

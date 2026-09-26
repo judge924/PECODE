@@ -44,10 +44,10 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 interface HeadOrgan {
   id: string;
   branch: string;
-  title: string;        // 직책 (볼드 블랙)
-  name: string;         // 인물명 (일반 굵기 블랙)
-  image: string;        // 인물 사진 경로
-  chapterTitle: string; // 헌법 장 명칭
+  title: string;        // 직책 (국회의원 카드와 동일하게 일반 그레이)
+  name: string;         // 인물명 (국회의원 카드와 동일하게 볼드 블랙)
+  image: string;
+  chapterTitle: string;
   articles: { num: string; text: string }[];
 }
 
@@ -169,30 +169,27 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="w-full px-4 sm:px-6 lg:px-10 relative">
         <div className="flex items-center justify-between h-[88px] gap-4">
 
-          {/* ⭐️ 1. [왼쪽 영역] 태극기 + 피코드 + 제22대 국회 + [⭐️ 6대 수장 갤러리 바로 연결!] */}
+          {/* ⭐️ [왼쪽 영역] 브랜드명 ➔ [제22대 국회] ➔ [태극기] ➔ [헌법 제1조 캘리그래피] ➔ [6대 수장 갤러리] */}
           <div className="flex items-center gap-3.5 shrink-0 z-10">
-            {/* 로고 & 태극기 */}
-            <div className="flex items-center gap-3">
-              <Taegeukgi className="w-[45px] h-[30px] sm:w-[50px] sm:h-[33px] rounded-[2px]" />
 
-              <div className="flex flex-col justify-center">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-black text-lg sm:text-xl tracking-tight text-neutral-950 leading-none">
-                    피코드
-                  </span>
-                  <span className="text-[9px] font-mono uppercase bg-neutral-100 text-neutral-700 border border-neutral-200 px-1.5 py-0.5 rounded font-bold leading-none">
-                    KOREA
-                  </span>
-                </div>
-                <div className="text-[10px] text-neutral-400 font-medium mt-1 leading-none hidden sm:block">
-                  복잡한 정치를 한눈에
-                </div>
+            {/* 1. 피코드 KOREA 로고 */}
+            <div className="flex flex-col justify-center">
+              <div className="flex items-center gap-1.5">
+                <span className="font-black text-lg sm:text-xl tracking-tight text-neutral-950 leading-none">
+                  피코드
+                </span>
+                <span className="text-[9px] font-mono uppercase bg-neutral-100 text-neutral-700 border border-neutral-200 px-1.5 py-0.5 rounded font-bold leading-none">
+                  KOREA
+                </span>
+              </div>
+              <div className="text-[10px] text-neutral-400 font-medium mt-1 leading-none hidden sm:block">
+                복잡한 정치를 한눈에
               </div>
             </div>
 
             <div className="h-4 w-[1px] bg-neutral-200 hidden sm:block" />
 
-            {/* 국회 선택창 */}
+            {/* 2. 제22대 국회 선택창 */}
             <div className="relative flex items-center">
               <select
                 value={currentRegion}
@@ -204,10 +201,25 @@ export const Header: React.FC<HeaderProps> = ({
               <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none" />
             </div>
 
-            {/* ⭐️ [국회 버튼 바로 옆 세로선] */}
-            <div className="h-6 w-[1px] bg-neutral-200 hidden xl:block ml-1 mr-1" />
+            {/* ⭐️ 3. [국회 버튼 오른쪽으로 이사 온 태극기] */}
+            <div className="flex items-center ml-1">
+              <Taegeukgi className="w-[42px] h-[28px] rounded-[2px]" />
+            </div>
 
-            {/* ⭐️ [국회 버튼 우측에 도열하는 대한민국 6대 수장 라인업] */}
+            {/* ⭐️ 4. [헌법 제1조 단아한 캘리그래피 명조 서체] - 테두리 없이 순수 텍스트 */}
+            <div className="hidden 2xl:flex flex-col justify-center select-none font-serif italic text-neutral-600 pl-1 leading-tight border-l border-neutral-200/60 ml-1">
+              <span className="text-[10px] tracking-tight font-medium text-neutral-800">
+                대한민국은 민주공화국이다.
+              </span>
+              <span className="text-[8.5px] tracking-tighter text-neutral-400 mt-0.5">
+                모든 권력은 국민으로부터 나온다.
+              </span>
+            </div>
+
+            {/* ⭐️ [구분선] */}
+            <div className="h-6 w-[1px] bg-neutral-200 hidden xl:block ml-2 mr-1" />
+
+            {/* ⭐️ 5. [6대 수장 갤러리] 의원 카드와 100% 동일한 직책(일반 그레이) / 이름(볼드 블랙) */}
             <div className="hidden xl:flex items-center gap-3">
               {CONSTITUTION_HEADS.map((organ) => {
                 const isHovered = activeHead?.id === organ.id;
@@ -219,7 +231,7 @@ export const Header: React.FC<HeaderProps> = ({
                     onMouseEnter={() => setActiveHead(organ)}
                     onMouseLeave={() => setActiveHead(null)}
                   >
-                    {/* [1단: 6명 모두 동일한 크기(42px x 42px)의 깔끔한 원형 아바타] */}
+                    {/* [원형 아바타 (42px 동일 규격)] */}
                     <div className="w-[42px] h-[42px] overflow-hidden bg-white shadow-xs rounded-full transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md">
                       <img
                         src={organ.image}
@@ -237,21 +249,21 @@ export const Header: React.FC<HeaderProps> = ({
                       />
                     </div>
 
-                    {/* [2단: 직책 (볼드 블랙, 1줄 단정)] */}
+                    {/* [직책 (의원 카드와 동일하게 일반 그레이 font-normal)] */}
                     <div className="mt-1 text-center">
-                      <span className="text-[8.5px] font-bold text-black tracking-tight leading-none block whitespace-nowrap">
+                      <span className="text-[8.5px] font-normal text-neutral-500 tracking-tight leading-none block whitespace-nowrap">
                         {organ.title}
                       </span>
                     </div>
 
-                    {/* [3단: 이름 (일반 굵기 블랙, 직책 바로 밑 1px 밀착!)] */}
-                    <div className="mt-1 text-center">
-                      <span className="text-[9.5px] font-normal text-black tracking-tight leading-none block whitespace-nowrap">
+                    {/* [이름 (의원 카드와 동일하게 볼드 블랙 font-bold, 직책 바로 1px 밑!)] */}
+                    <div className="mt-0.5 text-center">
+                      <span className="text-[9.5px] font-bold text-neutral-950 tracking-tight leading-none block whitespace-nowrap">
                         {organ.name}
                       </span>
                     </div>
 
-                    {/* 📜 [4단: 모던 블랙&화이트 헌법 전문 팝업 - 스크롤 없이 전체 노출] */}
+                    {/* 📜 [모던 블랙&화이트 헌법 전문 팝업] */}
                     {isHovered && (
                       <div
                         className="absolute top-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-[430px] max-w-[90vw] bg-white border-2 border-neutral-900 rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] p-5 z-50 animate-fade-in pointer-events-auto text-neutral-900 font-sans"
@@ -295,9 +307,10 @@ export const Header: React.FC<HeaderProps> = ({
                 );
               })}
             </div>
+
           </div>
 
-          {/* 2. 오른쪽: 검색창 + [오류 제보 버튼] + [관리자 버튼] */}
+          {/* 6. 오른쪽: 검색창 + [오류 제보 버튼] + [관리자 버튼] */}
           <div className="ml-auto flex items-center gap-2 z-10">
             <div className="w-56 lg:w-72 relative hidden md:flex items-center">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />

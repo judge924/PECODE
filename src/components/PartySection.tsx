@@ -231,11 +231,11 @@ const MiniAvatar = ({
                     <span className={`text-neutral-400 font-bold ${textSize}`}>{politician.name.slice(0, 1)}</span>
                 )}
             </div>
-            <div className={`font-normal text-neutral-900 mt-1 leading-tight ${nameSize} ${blurred ? 'blur-sm' : ''}`}>
+            <div className={`font-bold text-neutral-900 mt-1 leading-tight ${nameSize} ${blurred ? 'blur-sm' : ''}`}>
                 {politician.name}
             </div>
-            {/* ⭐️ min-h-[26px]로 글자가 1줄이든 2줄이든 카드 높이를 완벽 일치시켜 토글키 수평 칼정렬! */}
-            <div className={`text-neutral-500 leading-tight min-h-[26px] flex items-center justify-center ${subSize}`}>
+            {/* ⭐️ justify-start 상단 정렬로 1줄이든 2줄이든 이름 바로 밑 1px에 초밀착! min-h로 수평선은 완벽 사수! */}
+            <div className={`text-neutral-500 leading-tight min-h-[26px] flex flex-col justify-start items-center mt-0.5 ${subSize}`}>
                 {roleLabel(politician)}
             </div>
         </button>
