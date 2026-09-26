@@ -24,7 +24,7 @@ async function updateLiveJson() {
             channels = sheetData.channels
                 .map(c => ({
                     ...c,
-                    channelId: (c.channelId || '').trim() // ⭐️ 보이지 않는 앞뒤 공백 싹 청소!
+                    channelId: (c.channelId || '').trim()
                 }))
                 .filter(c => c.channelId && c.channelId.startsWith('UC'));
         }
@@ -37,68 +37,58 @@ async function updateLiveJson() {
         return;
     }
 
-    console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 스캔 시작!`);
+    console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 /live 직행 검사 시작!`);
 
-    // 2. 10개씩 조를 나누어 유튜브 404 차단 회피 전수 조사 (UU 재생목록 치트키 적용)
+    // 2. 죽은 RSS(404) 제거 ➔ 100% 확실한 /live 직행 통로로만 초고속 전수 검사
     const detectedVideos = [];
     const CHUNK_SIZE = 10;
 
     for (let i = 0; i < channels.length; i += CHUNK_SIZE) {
         const chunk = channels.slice(i, i + CHUNK_SIZE);
         await Promise.all(chunk.map(async (ch) => {
-            // A. 유튜브 404 차단을 회피하는 UU 재생목록 RSS 수집
             try {
-                // ⭐️ UC를 UU로 자동 치환하여 폐기된 channel_id 404 차단을 100% 우회!
-                const playlistId = 'UU' + ch.channelId.substring(2);
-                const res = await fetch(`https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`, {
-                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
-                });
-                if (res.ok) {
-                    const xml = await res.text();
-                    const regex = /<yt:videoId>([a-zA-Z0-9_-]{11})<\/yt:videoId>/g;
-                    let match;
-                    let count = 0;
-                    while ((match = regex.exec(xml)) !== null && count < 5) {
-                        detectedVideos.push({
-                            camp: ch.camp,
-                            channelName: ch.name,
-                            videoId: match[1]
-                        });
-                        count++;
-                    }
-                } else {
-                    console.log(`❌ [차단/응답실패] ${ch.name} -> HTTP 상태코드: ${res.status}`);
-                }
-            } catch (err) {
-                console.log(`⚠️ [네트워크 에러] ${ch.name}:`, err.message);
-            }
-
-            // B. 유튜브 공식 라이브 직행문(/live)에서 즉시 영상 ID 추출
-            try {
-                const livePageRes = await fetch(`https://www.youtube.com/channel/${ch.channelId}/live`, {
-                    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' },
+                const liveUrl = `https://www.youtube.com/channel/${ch.channelId}/live`;
+                const res = await fetch(liveUrl, {
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                        'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
+                    },
                     redirect: 'follow'
                 });
-                if (livePageRes.ok) {
-                    const liveHtml = await livePageRes.text();
-                    const canonicalMatch = liveHtml.match(/<link rel="canonical" href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})">/);
-                    if (canonicalMatch && canonicalMatch[1]) {
+
+                if (res.ok) {
+                    // 1) 리다이렉트된 최종 주소에서 바로 영상 ID 추출 (가장 정확함)
+                    let videoId = '';
+                    if (res.url && res.url.includes('watch?v=')) {
+                        const urlObj = new URL(res.url);
+                        videoId = urlObj.searchParams.get('v');
+                    }
+
+                    // 2) 만약 주소로 안 잡히면 HTML 본문에서 영상 ID 추출
+                    if (!videoId) {
+                        const html = await res.text();
+                        const vMatch = html.match(/"videoId":"([a-zA-Z0-9_-]{11})"/);
+                        const cMatch = html.match(/href="https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]{11})"/);
+                        videoId = (vMatch && vMatch[1]) || (cMatch && cMatch[1]);
+                    }
+
+                    if (videoId) {
                         detectedVideos.push({
                             camp: ch.camp,
                             channelName: ch.name,
-                            videoId: canonicalMatch[1]
+                            videoId: videoId
                         });
                     }
                 }
             } catch (err) { }
         }));
 
-        // 유튜브 서버를 배려하는 0.15초 매너 딜레이 (차단 방지)
-        await new Promise(r => setTimeout(r, 150));
+        // 유튜브 서버를 배려하는 0.1초 매너 딜레이
+        await new Promise(r => setTimeout(r, 100));
     }
 
     const uniqueIds = Array.from(new Set(detectedVideos.map(v => v.videoId)));
-    console.log(`📡 감지된 총 후보 영상: ${uniqueIds.length}개`);
+    console.log(`📡 감지된 총 라이브 후보 영상: ${uniqueIds.length}개`);
 
     // 3. 구글 공식 API로 생방송 여부 및 시청자 수 조회 (50개씩 묶음 검문)
     const detailsMap = {};
@@ -160,7 +150,7 @@ async function updateLiveJson() {
     const leftList = Object.values(leftMap).sort((a, b) => b.viewers - a.viewers);
     const rightList = Object.values(rightMap).sort((a, b) => b.viewers - a.viewers);
 
-    // 5. ⭐️ 최신 상태와 시간을 칼같이 저장 (시간 멈춤 족쇄 완전 해제!)
+    // 5. 최신 상태와 시간을 칼같이 저장
     const finalResult = {
         left: leftList,
         right: rightList,
