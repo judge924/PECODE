@@ -21,7 +21,12 @@ async function updateLiveJson() {
         const sheetRes = await fetch(`${APPS_SCRIPT_URL}?action=channels`);
         const sheetData = await sheetRes.json();
         if (sheetData.channels && Array.isArray(sheetData.channels)) {
-            channels = sheetData.channels.filter(c => c.channelId && c.channelId.startsWith('UC'));
+            channels = sheetData.channels
+                .map(c => ({
+                    ...c,
+                    channelId: (c.channelId || '').trim() // ⭐️ 보이지 않는 앞뒤 공백 싹 청소!
+                }))
+                .filter(c => c.channelId && c.channelId.startsWith('UC'));
         }
     } catch (err) {
         console.error("구글 시트 연동 실패:", err);
@@ -34,16 +39,18 @@ async function updateLiveJson() {
 
     console.log(`✅ 등록된 총 ${channels.length}개 정식 채널 스캔 시작!`);
 
-    // 2. 10개씩 조를 나누어 유튜브 차단(429) 없이 안전하게 전수 조사
+    // 2. 10개씩 조를 나누어 유튜브 404 차단 회피 전수 조사 (UU 재생목록 치트키 적용)
     const detectedVideos = [];
     const CHUNK_SIZE = 10;
 
     for (let i = 0; i < channels.length; i += CHUNK_SIZE) {
         const chunk = channels.slice(i, i + CHUNK_SIZE);
         await Promise.all(chunk.map(async (ch) => {
-            // A. RSS 피드에서 최신 5개 영상 수집
+            // A. 유튜브 404 차단을 회피하는 UU 재생목록 RSS 수집
             try {
-                const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${ch.channelId}`, {
+                // ⭐️ UC를 UU로 자동 치환하여 폐기된 channel_id 404 차단을 100% 우회!
+                const playlistId = 'UU' + ch.channelId.substring(2);
+                const res = await fetch(`https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`, {
                     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
                 });
                 if (res.ok) {
@@ -86,7 +93,7 @@ async function updateLiveJson() {
             } catch (err) { }
         }));
 
-        // 유튜브 서버를 배려하는 0.15초 매너 딜레이 (차단 방지 핵심)
+        // 유튜브 서버를 배려하는 0.15초 매너 딜레이 (차단 방지)
         await new Promise(r => setTimeout(r, 150));
     }
 
