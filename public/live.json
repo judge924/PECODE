@@ -3,7 +3,7 @@
     {
       "channelName": "강성범tv",
       "title": "[낚시사 4탄] 라이브 보스호 갑오징어",
-      "viewers": 192,
+      "viewers": 185,
       "thumbnail": "https://i.ytimg.com/vi/6lyv3z0xC-o/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=6lyv3z0xC-o"
     }
@@ -12,24 +12,24 @@
     {
       "channelName": "한길록 Hangilog",
       "title": "올공국토대장정 | 14일차 | 9.27(일) | 11:50 I 옥천역 - 대전 구암역",
-      "viewers": 4636,
+      "viewers": 4507,
       "thumbnail": "https://i.ytimg.com/vi/kVxeu_UAs54/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=kVxeu_UAs54"
     },
     {
-      "channelName": "청년의소리TV",
-      "title": "[LIVE] 자랑스러운 역사를 반드시 지킵시다.",
-      "viewers": 159,
-      "thumbnail": "https://i.ytimg.com/vi/Vz78cpIZYQ4/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=Vz78cpIZYQ4"
-    },
-    {
       "channelName": "망기토TV",
       "title": "[LIVE] 마지막 추석 연휴, 기토 달려",
-      "viewers": 18,
+      "viewers": 206,
       "thumbnail": "https://i.ytimg.com/vi/ez4ZkTGpUww/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=ez4ZkTGpUww"
+    },
+    {
+      "channelName": "청년의소리TV",
+      "title": "[LIVE] 자랑스러운 역사를 반드시 지킵시다.",
+      "viewers": 168,
+      "thumbnail": "https://i.ytimg.com/vi/Vz78cpIZYQ4/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=Vz78cpIZYQ4"
     }
   ],
-  "updatedAt": "2026-09-27T05:01:02.186Z"
+  "updatedAt": "2026-09-27T05:05:35.173Z"
 }
