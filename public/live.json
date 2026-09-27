@@ -1,49 +1,56 @@
 {
   "left": [
     {
-      "channelName": "최한욱TV",
-      "title": "비굴한 정청래, 비주류 대표도 비겁해서 못 한다/오윤혜가 매불쇼 출연을 거부한 이유/문탁의 교묘한 대통령 돌려까기/문재인의 경쟁자는 이명박 등/독썰나이트 886화",
-      "viewers": 5929,
-      "thumbnail": "https://i.ytimg.com/vi/5y3Jkn1N_aQ/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=5y3Jkn1N_aQ"
-    },
-    {
       "channelName": "시사타파TV",
       "title": "[심층분석 LIVE] - 중수청장 김지용 임명 강행 기류 ... 지지층과의 이별의 시간이 다가오고 있다.",
-      "viewers": 5089,
+      "viewers": 6712,
       "thumbnail": "https://i.ytimg.com/vi/wtt-FeM197E/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=wtt-FeM197E"
     },
     {
+      "channelName": "최한욱TV",
+      "title": "비굴한 정청래, 비주류 대표도 비겁해서 못 한다/오윤혜가 매불쇼 출연을 거부한 이유/문탁의 교묘한 대통령 돌려까기/문재인의 경쟁자는 이명박 등/독썰나이트 886화",
+      "viewers": 6081,
+      "thumbnail": "https://i.ytimg.com/vi/5y3Jkn1N_aQ/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=5y3Jkn1N_aQ"
+    },
+    {
       "channelName": "뉴탐사 NewTamsa",
       "title": "【260927】[추석특집 한동훈 편] 한동훈 악마의 가위손, 부메랑 되나 ‘오빠독약로비’ 무차별 폭로가 남긴 후유증",
-      "viewers": 3824,
+      "viewers": 3754,
       "thumbnail": "https://i.ytimg.com/vi/HS5Sbg7dyOQ/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=HS5Sbg7dyOQ"
     },
     {
       "channelName": "장용진TV",
       "title": "[오밤중NEWS]트럼프 11월 중간선거 비상 시진핑에게 당했다??/지뢰사고 ‘현장조사 가자’는데‘안간다’ 거부한 국힘당/조희대 사법쿠데타 29일 첫 번째 고비",
-      "viewers": 199,
+      "viewers": 303,
       "thumbnail": "https://i.ytimg.com/vi/o256Ul8njP4/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=o256Ul8njP4"
     }
   ],
   "right": [
     {
+      "channelName": "젊은시각",
+      "title": "[🔴LIVE] 든든한 2030 선동 끄떡없네.. 유니클로 불매운동 먹히던 10년 전과 다르다!",
+      "viewers": 2873,
+      "thumbnail": "https://i.ytimg.com/vi/Fniht5r_kHk/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=Fniht5r_kHk"
+    },
+    {
       "channelName": "유재일",
       "title": "[라이브] 역사를 ㄸㄲ로 배운 좌파 & 거대한 문선대가 되어 버린 연예계 & 등등.",
-      "viewers": 1688,
+      "viewers": 1641,
       "thumbnail": "https://i.ytimg.com/vi/XoLn91ytaPk/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=XoLn91ytaPk"
     },
     {
       "channelName": "문갑식의 진짜 TV",
       "title": "實거주-實경작이 보여주는 혁명의 정치와 에드먼드 버크가 내세운 보수주의의 대두!",
-      "viewers": 3,
+      "viewers": 5,
       "thumbnail": "https://i.ytimg.com/vi/isYyZ67_h9c/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=isYyZ67_h9c"
     }
   ],
-  "updatedAt": "2026-09-27T14:01:01.482Z"
+  "updatedAt": "2026-09-27T14:05:39.111Z"
 }
