@@ -1,9 +1,23 @@
 {
   "left": [
     {
+      "channelName": "띵굴TV",
+      "title": "[260927] 수다가 필요해 ...!",
+      "viewers": 167,
+      "thumbnail": "https://i.ytimg.com/vi/C4j4H9qjeOM/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=C4j4H9qjeOM"
+    },
+    {
+      "channelName": "최한욱TV",
+      "title": "유신발의 깔창은 1%/유신발과 깔창들의 유훈비즈니스/탁현민은 결코 노무현을 팔지 않는다 등/압도적 까리스마 까왕쇼 18화",
+      "viewers": 115,
+      "thumbnail": "https://i.ytimg.com/vi/n_jNUJt1R4k/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=n_jNUJt1R4k"
+    },
+    {
       "channelName": "강성범tv",
       "title": "[낚시사 4탄] 라이브 보스호 갑오징어",
-      "viewers": 78,
+      "viewers": 67,
       "thumbnail": "https://i.ytimg.com/vi/6lyv3z0xC-o/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=6lyv3z0xC-o"
     }
@@ -12,10 +26,10 @@
     {
       "channelName": "망기토TV",
       "title": "[LIVE] 마지막 추석 연휴, 기토 달려",
-      "viewers": 451,
+      "viewers": 481,
       "thumbnail": "https://i.ytimg.com/vi/ez4ZkTGpUww/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=ez4ZkTGpUww"
     }
   ],
-  "updatedAt": "2026-09-27T05:50:36.658Z"
+  "updatedAt": "2026-09-27T05:55:32.562Z"
 }
