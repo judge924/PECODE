@@ -1,3 +1,4 @@
+// src/components/LiveSidebar.tsx
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 
 export interface LiveChannel {
@@ -44,15 +45,15 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const isLeft = camp === 'left';
     const [channels, setChannels] = useState<LiveChannel[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [lastUpdated, setLastUpdated] = useState<string>(''); // ⭐️ 최근 갱신 시간 상태
+    const [lastUpdated, setLastUpdated] = useState<string>('');
     const sidebarRef = useRef<HTMLElement | null>(null);
     const scrollableRef = useRef<HTMLDivElement | null>(null);
 
-    // 2위 이하 호버 재생
-    const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-
-    // ⭐️ 1위 영상 일시정지 아이콘 완벽 방어 타이머
+    // ⭐️ 1위 영상 초기 5초 가림막 타이머
     const [isVideoReady, setIsVideoReady] = useState(false);
+
+    // ⭐️ [백화점 폐점 기법] 떠날 때 닫고, 돌아와서 4.5초 뒤 걷어내는 황금 타이머
+    const [isWindowHidden, setIsWindowHidden] = useState(false);
 
     // 건의하기 팝업 상태
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,7 +71,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
 
         const fetchLive = async () => {
             try {
-                // ⭐️ CORS 에러 유발 헤더를 제거하고, ?t=타임스탬프로만 캐시를 100% 우회!
                 const cacheBuster = `t=${Date.now()}`;
                 const fetchUrl = apiUrl.includes('?') ? `${apiUrl}&${cacheBuster}` : `${apiUrl}?${cacheBuster}`;
 
@@ -87,7 +87,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                     setChannels(list);
                 }
 
-                // ⭐️ 깃허브가 찍어준 도장 시간을 "12:50" 한국 시각 형태로 자동 변환
                 if (data.updatedAt) {
                     try {
                         const date = new Date(data.updatedAt);
@@ -108,7 +107,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         return () => clearInterval(timer);
     }, [apiUrl, isLeft]);
 
-    // ⭐️ [스크롤 제어] 1위 고정 및 스크롤 전파 방지
+    // 스크롤 제어
     const handleWheel = useCallback((e: WheelEvent) => {
         const scrollEl = scrollableRef.current;
         if (!scrollEl) {
@@ -160,16 +159,49 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
     const restChannels = uniqueChannels.slice(1);
     const firstVideoId = firstChannel ? extractVideoId(firstChannel.liveUrl, firstChannel.thumbnail) : '';
 
-    // ⭐️ [핵심] 1위 영상 ID가 "실제로 도착한 시점"부터 5초간 썸네일 가림막 완벽 유지
+    // 1위 영상 도착 시 첫 5초 가림막
     useEffect(() => {
         if (firstVideoId) {
             setIsVideoReady(false);
             const timer = setTimeout(() => {
                 setIsVideoReady(true);
-            }, 5000); // 5초 동안 일시정지 아이콘과 버퍼링을 썸네일 뒤에서 완전히 통과시킴
+            }, 5000);
             return () => clearTimeout(timer);
         }
     }, [firstVideoId]);
+
+    // ⭐️ [황금 타이밍 4.5초 동기화] 창을 떠날 때 미리 닫고 돌아와서 4.5초 뒤 걷어냄
+    useEffect(() => {
+        let returnTimer: ReturnType<typeof setTimeout>;
+
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                setIsWindowHidden(true);
+            } else if (document.visibilityState === 'visible') {
+                returnTimer = setTimeout(() => {
+                    setIsWindowHidden(false);
+                }, 4500);
+            }
+        };
+
+        const handleBlur = () => setIsWindowHidden(true);
+        const handleFocus = () => {
+            returnTimer = setTimeout(() => {
+                setIsWindowHidden(false);
+            }, 4500);
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        window.addEventListener('blur', handleBlur);
+        window.addEventListener('focus', handleFocus);
+
+        return () => {
+            clearTimeout(returnTimer);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+            window.removeEventListener('blur', handleBlur);
+            window.removeEventListener('focus', handleFocus);
+        };
+    }, []);
 
     const handleSuggestSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -215,16 +247,14 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                 className={`hidden 2xl:flex flex-col w-[195px] fixed top-[170px] ${isLeft ? 'left-4' : 'right-4'
                     } max-h-[calc(100vh-185px)] z-20 pointer-events-auto select-none`}
             >
-                {/* 1. 상단 헤더 영역 (구분선 없이 깨끗하고 미니멀한 여백) */}
+                {/* 1. 상단 헤더 영역 */}
                 <div className="shrink-0 flex flex-col pb-1.5 bg-[#fcfcfc]">
                     <div className="flex items-center justify-between pb-1">
-                        {/* 좌측: 타이틀 + 5분 간격 갱신 */}
                         <div className="flex items-center gap-1.5 min-w-0">
                             <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider shrink-0">
                                 {isLeft ? 'The Left' : 'The Right'}
                             </span>
 
-                            {/* ⭐️ 초록불 + 1줄 미니멀: 최근 갱신 12:02 (5분 주기) */}
                             <div className="flex items-center gap-1 shrink-0">
                                 <span className="relative flex h-1.5 w-1.5 shrink-0">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -236,7 +266,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                             </div>
                         </div>
 
-                        {/* 우측: 채널 건의 버튼 */}
                         <button
                             onClick={() => {
                                 setSuggestCamp(isLeft ? '좌파' : '우파');
@@ -248,7 +277,6 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                         </button>
                     </div>
 
-                    {/* ⭐️ [첫 1초 로딩 중 화면] 세련된 미니 스피너 및 안내 메시지 */}
                     {loading && (
                         <div className="py-6 flex flex-col items-center justify-center gap-2 text-neutral-400">
                             <div className="w-4 h-4 border-2 border-neutral-200 border-t-neutral-700 rounded-full animate-spin" />
@@ -256,20 +284,19 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                         </div>
                     )}
 
-                    {/* 로딩 완료 후 방송이 0개일 때 */}
                     {!loading && uniqueChannels.length === 0 && (
                         <div className="py-6 text-center text-[10px] text-neutral-400 font-normal leading-relaxed">
                             현재 진행 중인<br />생방송이 없습니다.
                         </div>
                     )}
 
-                    {/* ⭐️ 대망의 1위 고정 채널 카드 */}
+                    {/* ⭐️ 1위 고정 채널 카드 (정비율 1:1 교정) */}
                     {!loading && firstChannel && (
                         <a
                             href={getAutoplayLiveUrl(firstChannel.liveUrl)}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 mt-0.5"
+                            className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 mt-0.5 cursor-pointer"
                         >
                             <div className="flex items-center justify-between gap-1 text-[11px]">
                                 <div className="flex items-center gap-1.5 min-w-0">
@@ -293,23 +320,25 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 </div>
                             )}
 
-                            {/* 1위 영상 화면 (무테) */}
-                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5">
+                            {/* 1위 영상 화면 (찌그러짐 없는 정비율) */}
+                            <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5 pointer-events-auto">
                                 {firstVideoId && (
                                     <iframe
-                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                                        src={`https://www.youtube-nocookie.com/embed/${firstVideoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0&iv_load_policy=3`}
                                         title={firstChannel.channelName}
-                                        className="w-full h-full object-cover pointer-events-none scale-105"
+                                        tabIndex={-1}
+                                        aria-hidden="true"
+                                        className="w-full h-full object-cover pointer-events-none select-none"
                                         allow="autoplay; encrypted-media"
                                     />
                                 )}
 
-                                {/* ⭐️ z-20 층수 잠금: 5초 동안 일시정지 아이콘이 절대 뚫고 나오지 못함 */}
+                                {/* ⭐️ 초기 5초 가림막 + [4.5초 황금 셔터] */}
                                 {firstChannel.thumbnail && (
                                     <img
                                         src={firstChannel.thumbnail}
                                         alt={firstChannel.channelName}
-                                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none z-20 ${isVideoReady ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                                        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-500 pointer-events-none z-20 ${isVideoReady && !isWindowHidden ? 'opacity-0' : 'opacity-100'
                                             }`}
                                         referrerPolicy="no-referrer"
                                     />
@@ -323,74 +352,67 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                     )}
                 </div>
 
-                {/* 2. 하단 독립 스크롤 영역 (2위부터) */}
+                {/* 2. 하단 독립 스크롤 영역 (2위부터: [클릭 시 이동] 대칭 뱃지 탑재) */}
                 {!loading && restChannels.length > 0 && (
                     <div
                         ref={scrollableRef}
                         className="flex-1 overflow-y-auto overscroll-y-contain scrollbar-none pt-2.5 flex flex-col gap-3"
                     >
-                        {restChannels.map((channel, idx) => {
-                            const videoId = extractVideoId(channel.liveUrl, channel.thumbnail);
-                            const isHovered = hoveredIdx === idx;
-
-                            return (
-                                <a
-                                    key={idx}
-                                    href={getAutoplayLiveUrl(channel.liveUrl)}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onMouseEnter={() => setHoveredIdx(idx)}
-                                    onMouseLeave={() => setHoveredIdx(null)}
-                                    className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5"
-                                >
-                                    <div className="flex items-center justify-between gap-1 text-[11px]">
-                                        <div className="flex items-center gap-1.5 min-w-0">
-                                            <span className="w-3.5 h-3.5 flex items-center justify-center rounded text-[9px] font-black shrink-0 bg-neutral-200 text-neutral-600">
-                                                {idx + 2}
-                                            </span>
-                                            <span className="font-normal text-neutral-800 truncate group-hover:text-black">
-                                                {channel.channelName}
-                                            </span>
-                                        </div>
-                                        <span className="font-normal text-neutral-900 shrink-0 tabular-nums text-[10px]">
-                                            {formatViewers(channel.viewers)}
+                        {restChannels.map((channel, idx) => (
+                            <a
+                                key={idx}
+                                href={getAutoplayLiveUrl(channel.liveUrl)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex flex-col gap-1 transition-transform duration-150 hover:-translate-y-0.5 cursor-pointer"
+                            >
+                                <div className="flex items-center justify-between gap-1 text-[11px]">
+                                    <div className="flex items-center gap-1.5 min-w-0">
+                                        <span className="w-3.5 h-3.5 flex items-center justify-center rounded text-[9px] font-black shrink-0 bg-neutral-200 text-neutral-600">
+                                            {idx + 2}
+                                        </span>
+                                        <span className="font-normal text-neutral-800 truncate group-hover:text-black">
+                                            {channel.channelName}
                                         </span>
                                     </div>
+                                    <span className="font-normal text-neutral-900 shrink-0 tabular-nums text-[10px]">
+                                        {formatViewers(channel.viewers)}
+                                    </span>
+                                </div>
 
-                                    {channel.title && (
-                                        <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
-                                            {channel.title}
+                                {channel.title && (
+                                    <div className="text-[10px] text-neutral-500 font-normal truncate group-hover:text-neutral-700 leading-tight">
+                                        {channel.title}
+                                    </div>
+                                )}
+
+                                {/* ⭐️ 2위 이하: 왜곡 없는 정비율 + [좌: 클릭 시 이동] vs [우: LIVE] 완벽 대칭 */}
+                                <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5">
+                                    {channel.thumbnail ? (
+                                        <img
+                                            src={channel.thumbnail}
+                                            alt={channel.channelName}
+                                            className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300 select-none"
+                                            referrerPolicy="no-referrer"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-neutral-800 flex items-center justify-center text-[10px] text-neutral-400">
+                                            LIVE
                                         </div>
                                     )}
 
-                                    {/* 2위 이하 호버 재생 (무테) */}
-                                    <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow-sm mt-0.5">
-                                        {isHovered && videoId && (
-                                            <iframe
-                                                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&playsinline=1&rel=0`}
-                                                title={channel.channelName}
-                                                className="w-full h-full object-cover pointer-events-none scale-105"
-                                                allow="autoplay; encrypted-media"
-                                            />
-                                        )}
+                                    {/* ⭐️ [좌측 하단] 클릭 시 이동 안내 뱃지 */}
+                                    <span className="absolute bottom-1 left-1 bg-black/70 backdrop-blur-xs text-[8px] font-medium text-neutral-200 px-1.5 py-0.5 rounded leading-none pointer-events-none z-10 tracking-tight">
+                                        클릭 시 이동
+                                    </span>
 
-                                        {/* 호버되지 않았을 때 썸네일 표시 */}
-                                        {!isHovered && channel.thumbnail && (
-                                            <img
-                                                src={channel.thumbnail}
-                                                alt={channel.channelName}
-                                                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-200 z-10"
-                                                referrerPolicy="no-referrer"
-                                            />
-                                        )}
-
-                                        <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none z-30">
-                                            LIVE
-                                        </span>
-                                    </div>
-                                </a>
-                            );
-                        })}
+                                    {/* ⭐️ [우측 하단] LIVE 뱃지 */}
+                                    <span className="absolute bottom-1 right-1 bg-red-600 text-[8px] font-black text-white px-1 py-0.5 rounded leading-none pointer-events-none z-10">
+                                        LIVE
+                                    </span>
+                                </div>
+                            </a>
+                        ))}
                     </div>
                 )}
             </aside>
@@ -490,7 +512,7 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full mt-2 py-2.5 bg-neutral-900 hover:bg-black text-white text-xs font-bold rounded-lg transition disabled:bg-neutral-400"
+                                    className="w-full mt-2 py-2.5 bg-neutral-900 hover:bg-black text-white text-xs font-bold rounded-lg transition disabled:bg-neutral-400 cursor-pointer"
                                 >
                                     {isSubmitting ? '전송 중...' : '건의하기'}
                                 </button>
@@ -502,3 +524,5 @@ export const LiveSidebar: React.FC<LiveSidebarProps> = ({ camp, apiUrl, suggestA
         </>
     );
 };
+
+export default LiveSidebar;

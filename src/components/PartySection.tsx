@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Politician } from '../types/politician';
 import rawPoliticiansData from '../data/politicians.json';
+import { OptimizedAvatar } from './OptimizedAvatar'; // ⭐️ 초고화질 스무딩 아바타 탑재
 
 // ⭐️ [1대~22대 전체 자동 수집] src/data/terms/ 폴더 내 모든 국회 타임캡슐 파일을 100% 완전 자동 로드!
 const termFiles = import.meta.glob('../data/terms/term-*.json', { eager: true });
@@ -215,21 +216,12 @@ const MiniAvatar = ({
                 className={`relative rounded-full overflow-hidden bg-neutral-100 flex items-center justify-center shrink-0 transition-transform ${dims} ${selected && !blurred ? 'ring-2 ring-black ring-offset-2' : ''
                     } ${blurred ? 'blur-sm' : 'group-hover:-translate-y-0.5'}`}
             >
-                {politician.photoUrl ? (
-                    <img
-                        src={politician.photoUrl}
-                        alt={politician.name}
-                        referrerPolicy="no-referrer" // 나무위키 외부 링크 차단 보안 우회
-                        className="w-full h-full object-cover select-none"
-                        draggable={false}
-                        onDragStart={(e) => e.preventDefault()}
-                        onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                        }}
-                    />
-                ) : (
-                    <span className={`text-neutral-400 font-bold ${textSize}`}>{politician.name.slice(0, 1)}</span>
-                )}
+                <OptimizedAvatar
+                    src={politician.photoUrl}
+                    alt={politician.name}
+                    targetSize={size === 'lg' ? 56 : size === 'md' ? 48 : 44}
+                    fallbackText={politician.name.slice(0, 1)}
+                />
             </div>
             <div className={`font-bold text-neutral-900 mt-1 leading-tight ${nameSize} ${blurred ? 'blur-sm' : ''}`}>
                 {politician.name}
@@ -475,14 +467,22 @@ export const PartySection: React.FC<PartySectionProps> = ({
 
     const leader = members.find((p) => p.partyRoleOrder === 1) || null;
 
-    // 지도부 정렬: 직책 서열 순(원내대표 -> 최고위원 -> 정책위의장 -> 사무총장)
-    // 단, 동일 직책(최고위원들)끼리는 이름 가나다순(ㄱ->ㅎ)으로 완벽하게 정렬!
+    // ⭐️ [지도부 정렬] 직책 서열 순(원내대표 -> 최고위원 -> 정책위의장 -> 사무총장)
+    // 최고위원 등 동일 직책 내에서는: 국회의원 당선 횟수 많은 순(다선) ➔ 동선이면 이름 가나다순!
     const restLeadership = members
         .filter((p) => p.partyRoleOrder != null && p.partyRoleOrder !== 1)
         .sort((a, b) => {
+            // 1순위: 직책 서열 (원내대표 -> 최고위원 -> 정책위의장 -> 사무총장)
             const orderDiff = (a.partyRoleOrder ?? 99) - (b.partyRoleOrder ?? 99);
-            // 직책 번호가 같으면(예: 최고위원들끼리) 이름 가나다순으로 정렬
             if (orderDiff !== 0) return orderDiff;
+
+            // 2순위: 국회의원 당선 횟수(선수) 많은 순
+            const aTermsCount = a.electedTerms?.length || a.timesElected || 0;
+            const bTermsCount = b.electedTerms?.length || b.timesElected || 0;
+            const termsDiff = bTermsCount - aTermsCount;
+            if (termsDiff !== 0) return termsDiff;
+
+            // 3순위: 당선 횟수까지 같으면 이름 가나다순
             return a.name.localeCompare(b.name, 'ko');
         });
 
@@ -525,20 +525,12 @@ export const PartySection: React.FC<PartySectionProps> = ({
                         onClick={() => onSelectPolitician(leader)}
                         className="relative w-14 h-14 rounded-full overflow-hidden bg-neutral-100 flex items-center justify-center shrink-0 z-10 hover:-translate-y-0.5 transition-transform"
                     >
-                        {leader.photoUrl ? (
-                            <img
-                                src={leader.photoUrl}
-                                alt={leader.name}
-                                className="w-full h-full object-cover select-none"
-                                draggable={false}
-                                onDragStart={(e) => e.preventDefault()}
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).style.display = 'none';
-                                }}
-                            />
-                        ) : (
-                            <span className="text-neutral-400 font-bold text-lg">{leader.name.slice(0, 1)}</span>
-                        )}
+                        <OptimizedAvatar
+                            src={leader.photoUrl}
+                            alt={leader.name}
+                            targetSize={56}
+                            fallbackText={leader.name.slice(0, 1)}
+                        />
                     </button>
 
                     <div className="border border-black rounded-xl px-6 pt-8 pb-5 -mt-6 text-center min-w-[180px] bg-white">

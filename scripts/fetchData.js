@@ -98,25 +98,25 @@ const NON_MP_PARTY_OFFICIALS = [
     {
         name: '김민수',
         party: '국민의힘',
-        photoUrl: 'https://i.namu.wiki/i/3hNg00sBYmh31g_QH-ro7L0qq0_DxKrPOXz3DbLMvU7uv1FAQv_u7mgmOUE1ikZWFwuVst9IJ1ooj0UcTez8FILo8GeC-sFO9fj4kUPZYnBeAnib7MZwmD55kozMdrVR-6waSY4zw4QTRwQyV9tZEQ.webp',
+        photoUrl: '/images/leaders/kim_ms.png', // ⭐️ 우리 자체 보관소 파일!
     },
     {
         name: '조광한',
         party: '국민의힘',
-        photoUrl: 'https://i.namu.wiki/i/U3SVaCRCT6CQ4oXbYQAgEL5UbAvrWANuo7xBXva1bvxylo9c19TrpFHvGG7KXt5tQNjoJH9uNoHtNwOpRXVOlHuHWoYjmpFCC-cJX0__zsoe27YjCDlscy-D6jEK5BjEBTwcJqErvIHylMtMZJhACQ.webp',
-    },
-    {
-        name: '김재원',
-        party: '국민의힘',
-    },
-    {
-        name: '양향자',
-        party: '국민의힘',
+        photoUrl: '/images/leaders/cho_kh.png',
     },
     {
         name: '권미경',
         party: '더불어민주당',
-        photoUrl: 'https://i.namu.wiki/i/MCjMWzpg7uI875UnnCMdX9Exgng_2pYzU9zTpxiQhSPTsVZi2yKoonEnDVW8TIeHw3KV55yOXAwSfO6afqnlJy--mlQs1XwVYelMu11Ej86mDMz_yM-vJ13H5rCCrMMlZYfr1yt6EKOKeTru4xrqzQ.webp',
+        photoUrl: '/images/leaders/kwon_mk.png',
+    },
+    {
+        name: '김재원',
+        party: '국민의힘', // (김재원·양향자는 국회 API에 사진이 있어서 photoUrl 생략해도 자동 매칭!)
+    },
+    {
+        name: '양향자',
+        party: '국민의힘',
     },
 ];
 
