@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Search, ChevronDown } from 'lucide-react';
 
 interface HeaderProps {
+  currentTerm: number;
+  availableTerms: number[];
+  onTermChange: (term: number) => void;
   currentRegion: string;
   onRegionChange: (region: string) => void;
   viewMode?: 'chart' | 'list';
@@ -40,7 +43,6 @@ const Taegeukgi: React.FC<{ className?: string }> = ({ className = 'w-10 h-6.5' 
 
 // -------------------------------------------------------------
 // ⭐️ [자체 자동 리사이징 & 스무딩 컴포넌트]
-// 거대한 원본 사진을 2배수 레티나 규격(84px)으로 매끄럽게 다운샘플링하여 자글거림 원천 차단!
 // -------------------------------------------------------------
 const OptimizedPresidentAvatar: React.FC<{
   src: string;
@@ -56,9 +58,8 @@ const OptimizedPresidentAvatar: React.FC<{
 
     img.onload = () => {
       if (!isMounted) return;
-      const renderSize = targetSize * 2; // 2x 레티나 초선명 규격 (84px)
+      const renderSize = targetSize * 2;
 
-      // 원본이 표시 크기보다 클 때 고품질 캔버스 스무딩 리사이즈 수행
       if (img.width > renderSize || img.height > renderSize) {
         const canvas = document.createElement('canvas');
         canvas.width = renderSize;
@@ -73,7 +74,7 @@ const OptimizedPresidentAvatar: React.FC<{
           const w = img.width * scale;
           const h = img.height * scale;
           const x = (renderSize - w) / 2;
-          const y = 0; // 얼굴이 잘리지 않도록 상단 기준 정렬
+          const y = 0;
 
           ctx.drawImage(img, x, y, w, h);
           try {
@@ -110,11 +111,11 @@ const OptimizedPresidentAvatar: React.FC<{
 // -------------------------------------------------------------
 interface PresidentData {
   id: string;
-  termTitle: string; // 대수
-  name: string;      // 이름
-  years: string;     // 재임 기간
-  image: string;     // 얼굴 사진 (public/images/presidents/...)
-  signature: string; // 친필 서명 (public/images/presidents/..._sig.png)
+  termTitle: string;
+  name: string;
+  years: string;
+  image: string;
+  signature: string;
 }
 
 const HISTORICAL_PRESIDENTS: PresidentData[] = [
@@ -135,6 +136,9 @@ const HISTORICAL_PRESIDENTS: PresidentData[] = [
 ];
 
 export const Header: React.FC<HeaderProps> = ({
+  currentTerm,
+  availableTerms,
+  onTermChange,
   currentRegion,
   onRegionChange,
   searchQuery,
@@ -149,14 +153,14 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="w-full px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-[92px] gap-2 lg:gap-4">
 
-          {/* 1. [왼쪽 영역] 대형 태극기(99px x 66px) ➔ 피코드 KOREA ➔ 국회 선택창 (좌측 고정) */}
+          {/* 1. [왼쪽 영역] 대형 태극기(99px x 66px) ➔ 피코드 KOREA ➔ 국회 타임머신 선택창 */}
           <div className="flex items-center gap-3 shrink-0 z-10">
             {/* 대형 태극기 */}
             <div className="flex items-center">
               <Taegeukgi className="w-[99px] h-[66px] rounded-[3px] select-none block shrink-0" />
             </div>
 
-            {/* 피코드 KOREA 브랜드 로고 */}
+            {/* 피코드 KOREA 로고 */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-1.5">
                 <span className="font-black text-lg sm:text-xl tracking-tight text-neutral-950 leading-none">
@@ -171,20 +175,24 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* 제22대 국회 선택창 */}
+            {/* 🕰️ 역대 국회 동적 타임머신 드롭다운 */}
             <div className="relative flex items-center">
               <select
-                value={currentRegion}
-                onChange={(e) => onRegionChange(e.target.value)}
+                value={currentTerm}
+                onChange={(e) => onTermChange(Number(e.target.value))}
                 className="appearance-none h-9 text-xs font-bold bg-neutral-100 hover:bg-neutral-200/80 border border-neutral-200 rounded-lg pl-3 pr-8 text-neutral-900 cursor-pointer focus:outline-none transition-colors"
               >
-                <option value="대한민국 국회">제22대 국회</option>
+                {availableTerms.map((term) => (
+                  <option key={term} value={term}>
+                    제{term}대 국회 {term === 22 ? '(현행)' : ''}
+                  </option>
+                ))}
               </select>
               <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-neutral-500 pointer-events-none" />
             </div>
           </div>
 
-          {/* ⭐️ 2. [가운데 영역] 14명 대통령 자체 스무딩 리사이징 + 균등 배분정렬(justify-between)! */}
+          {/* ⭐️ 2. [가운데 영역] 14명 대통령 파노라마 갤러리 */}
           <div className="hidden xl:flex flex-1 items-center justify-between px-2 2xl:px-6 z-20 min-w-0">
             {HISTORICAL_PRESIDENTS.map((pres) => {
               const isHovered = activePres?.id === pres.id;
@@ -196,7 +204,6 @@ export const Header: React.FC<HeaderProps> = ({
                   onMouseEnter={() => setActivePres(pres)}
                   onMouseLeave={() => setActivePres(null)}
                 >
-                  {/* [1단: 자체 캔버스 다운샘플러로 깨짐 현상을 원천 방지한 원형 아바타] */}
                   <div className="w-[42px] h-[42px] overflow-hidden bg-white shadow-xs rounded-full transition-all duration-200 group-hover:-translate-y-1 group-hover:scale-105 group-hover:shadow-md">
                     <OptimizedPresidentAvatar
                       src={pres.image}
@@ -205,7 +212,6 @@ export const Header: React.FC<HeaderProps> = ({
                     />
                   </div>
 
-                  {/* [2단: 친필 서명(사인) 이미지] */}
                   <div className="w-[48px] h-[20px] flex items-center justify-center mt-1 overflow-hidden">
                     <img
                       src={pres.signature}
@@ -221,7 +227,6 @@ export const Header: React.FC<HeaderProps> = ({
                     />
                   </div>
 
-                  {/* 📜 [호버 카드] 마우스 올리면 뜨는 대통령 재임 정보 */}
                   {isHovered && (
                     <div className="absolute top-[calc(100%+8px)] left-1/2 -translate-x-1/2 bg-white border border-neutral-900 rounded-lg shadow-xl px-3 py-2 z-50 animate-fade-in pointer-events-none whitespace-nowrap text-center">
                       <div className="text-[10px] font-mono text-neutral-400 font-bold leading-none">
@@ -240,7 +245,7 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </div>
 
-          {/* 3. [오른쪽 영역] 검색창 + [오류 제보] + [관리자] (우측 고정) */}
+          {/* 3. [오른쪽 영역] 검색창 + [오류 제보] + [관리자] */}
           <div className="flex items-center gap-2 shrink-0 z-10">
             <div className="w-52 lg:w-64 relative hidden md:flex items-center">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" />

@@ -2020,7 +2020,7 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "더불어민주당",
-    "partyRole": "당대표",
+    "partyRole": "대표",
     "partyRoleOrder": 1,
     "isAssemblyMember": true,
     "electedTerms": [
@@ -15061,7 +15061,7 @@
     "level": "NATIONAL",
     "levelLabel": "국회의원",
     "party": "국민의힘",
-    "partyRole": "당대표",
+    "partyRole": "대표",
     "partyRoleOrder": 1,
     "isAssemblyMember": true,
     "electedTerms": [
@@ -19368,7 +19368,93 @@
     "contact": {}
   },
   {
-    "id": "party-official-2",
+    "id": "QZU9232M",
+    "name": "김재원",
+    "hanjaName": "金在原",
+    "birthDate": "1964-12-20",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/QZU9232M.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [
+      17,
+      19,
+      20
+    ],
+    "termsDetails": [
+      {
+        "term": 17,
+        "district": "경북 군위,의성군",
+        "isProportional": false
+      },
+      {
+        "term": 19,
+        "district": "경북 군위군의성군청송군",
+        "isProportional": false
+      },
+      {
+        "term": 20,
+        "district": "경북 상주시군위군의성군청송군",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "",
+    "localRegion": "",
+    "district": "",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "",
+    "timesElected": 3,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {}
+  },
+  {
+    "id": "WHV3448W",
+    "name": "양향자",
+    "hanjaName": "梁香子",
+    "birthDate": "1967-04-04",
+    "photoUrl": "https://www.assembly.go.kr/static/portal/img/openassm/WHV3448W.jpg",
+    "level": "NATIONAL",
+    "levelLabel": "당직자",
+    "party": "국민의힘",
+    "partyRole": "최고위원",
+    "partyRoleOrder": 3,
+    "isAssemblyMember": false,
+    "electedTerms": [
+      21
+    ],
+    "termsDetails": [
+      {
+        "term": 21,
+        "district": "광주 서구을",
+        "isProportional": false
+      }
+    ],
+    "metroRegion": "",
+    "localRegion": "",
+    "district": "",
+    "roleTitle": "최고위원",
+    "committee": "",
+    "term": "",
+    "timesElected": 1,
+    "attendanceRate": 0,
+    "billsCount": 0,
+    "propertyAsset": 0,
+    "career": [],
+    "bills": [],
+    "pledges": [],
+    "contact": {}
+  },
+  {
+    "id": "party-official-4",
     "name": "권미경",
     "hanjaName": "",
     "birthDate": "",

@@ -168,10 +168,10 @@ function roleLabel(p: Politician): string {
     const termsStr = getElectedTerms(p); // 예: "21" 또는 "20•21•22"
 
     // 1. 당직(당대표, 원내대표, 최고위원 등)이 있는 경우:
-    // 현역이든 전직이든 당선 이력이 있으면 "직책, 선출기수" (예: "최고위원, 21", "당대표, 21•22")
-    // 당선된 적이 없는 순수 원외 인사면 직책만 출력 (예: "최고위원")
+    // '당대표'는 '대표'로 깔끔하게 변경하여 출력
     if (p.partyRole) {
-        return termsStr ? `${p.partyRole}, ${termsStr}` : p.partyRole;
+        const displayRole = p.partyRole === '당대표' ? '대표' : p.partyRole;
+        return termsStr ? `${displayRole}, ${termsStr}` : displayRole;
     }
 
     // 2. 당직이 없는 경우:

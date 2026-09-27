@@ -69,7 +69,7 @@ const SUPPLEMENTAL_MEMBERS = [
 ];
 
 const PARTY_LEADERSHIP = {
-    '장동혁': { role: '당대표', order: 1 },
+    '장동혁': { role: '대표', order: 1 }, // ⭐️ '당대표' -> '대표'로 통일
     '정점식': { role: '원내대표', order: 2 },
     '신동욱': { role: '최고위원', order: 3 },
     '김민수': { role: '최고위원', order: 3 },
@@ -80,7 +80,7 @@ const PARTY_LEADERSHIP = {
     '임이자': { role: '정책위의장', order: 4 },
     '정희용': { role: '사무총장', order: 5 },
 
-    '김민석': { role: '당대표', order: 1 },
+    '김민석': { role: '대표', order: 1 }, // ⭐️ '당대표' -> '대표'로 통일
     '한병도': { role: '원내대표', order: 2 },
     '최민희': { role: '최고위원', order: 3 },
     '박선원': { role: '최고위원', order: 3 },
@@ -93,6 +93,7 @@ const PARTY_LEADERSHIP = {
     '한정애': { role: '사무총장', order: 5 },
 };
 
+// ⭐️ 원외 지도부 명단에 김재원, 양향자 등록 (국회 공식 사진과 과거 대수는 스크립트가 자동 매칭!)
 const NON_MP_PARTY_OFFICIALS = [
     {
         name: '김민수',
@@ -103,6 +104,14 @@ const NON_MP_PARTY_OFFICIALS = [
         name: '조광한',
         party: '국민의힘',
         photoUrl: 'https://i.namu.wiki/i/U3SVaCRCT6CQ4oXbYQAgEL5UbAvrWANuo7xBXva1bvxylo9c19TrpFHvGG7KXt5tQNjoJH9uNoHtNwOpRXVOlHuHWoYjmpFCC-cJX0__zsoe27YjCDlscy-D6jEK5BjEBTwcJqErvIHylMtMZJhACQ.webp',
+    },
+    {
+        name: '김재원',
+        party: '국민의힘',
+    },
+    {
+        name: '양향자',
+        party: '국민의힘',
     },
     {
         name: '권미경',

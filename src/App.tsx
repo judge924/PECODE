@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { Politician } from './types/politician';
 import { REGIONS_DATA, ALL_POLITICIANS } from './data/politicians';
+import { getAvailableTerms, loadTermData } from './utils/termLoader';
 import { Header } from './components/Header';
 import { BlackTicketGauge } from './components/BlackTicketGauge';
 import { LiveSidebar } from './components/LiveSidebar';
@@ -9,38 +10,68 @@ import { ListView } from './components/ListView';
 import { HomeOrgView } from './components/HomeOrgView';
 import { PoliticianDetailDrawer } from './components/PoliticianDetailDrawer';
 import { AdminModal } from './components/AdminModal';
-import { FeedbackModal } from './components/FeedbackModal'; // ⭐️ 오류 제보 모달
+import { FeedbackModal } from './components/FeedbackModal';
 
 export function App() {
   const LIVE_API_URL = "https://raw.githubusercontent.com/judge924/PORG/main/public/live.json";
   const SUGGEST_API_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
+
+  // 1. 국회 타임머신 상태 관리 (기본값: 22대)
+  const availableTerms = useMemo(() => getAvailableTerms(), []);
+  const [currentTerm, setCurrentTerm] = useState<number>(22);
+  const [termPoliticians, setTermPoliticians] = useState<Politician[] | null>(null);
 
   const [currentRegion, setCurrentRegion] = useState<string>('대한민국 국회');
   const [viewMode, setViewMode] = useState<'chart' | 'list'>('list');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
 
-  // 모달 오픈 상태 관리
+  // 모달 상태
   const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
-  const [isFeedbackOpen, setIsFeedbackOpen] = useState<boolean>(false); // ⭐️ 오류 제보 상태
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState<boolean>(false);
+
+  // 2. 대수 변경 시 해당 JSON 데이터를 비동기로 불러오는 범용 이펙트
+  useEffect(() => {
+    let isMounted = true;
+
+    async function fetchTerm() {
+      if (currentTerm === 22) {
+        // 22대는 기본 탑재된 상세 데이터 사용
+        setTermPoliticians(null);
+        return;
+      }
+
+      const data = await loadTermData(currentTerm);
+      if (!isMounted) return;
+
+      if (data && Array.isArray(data)) {
+        // term-X.json이 의원 배열 형태일 때
+        setTermPoliticians(data);
+      } else if (data && data.politicians && Array.isArray(data.politicians)) {
+        // term-X.json이 { politicians: [...] } 형태일 때 호환
+        setTermPoliticians(data.politicians);
+      } else {
+        setTermPoliticians([]);
+      }
+    }
+
+    fetchTerm();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [currentTerm]);
 
   const currentHierarchy = REGIONS_DATA[currentRegion] || REGIONS_DATA['대한민국 국회'];
 
-  const searchResults = useMemo(() => {
-    if (!searchQuery.trim()) return null;
-    const query = searchQuery.toLowerCase().trim();
-    return ALL_POLITICIANS.filter((p) => {
-      return (
-        p.name.toLowerCase().includes(query) ||
-        p.party.toLowerCase().includes(query) ||
-        p.district.toLowerCase().includes(query) ||
-        p.committee.toLowerCase().includes(query) ||
-        p.localRegion.toLowerCase().includes(query)
-      );
-    });
-  }, [searchQuery]);
-
+  // 3. 현재 화면에 표시할 최종 의원 목록 계산
   const displayedPoliticians = useMemo(() => {
+    // 과거 대수 데이터가 로드된 경우 이를 우선 반환
+    if (currentTerm !== 22 && termPoliticians !== null) {
+      return termPoliticians;
+    }
+
+    // 제22대 현행 데이터 (당적 오버라이드 및 지방의회 포함)
     let overrides: Record<string, string> = {
       '용혜인': '기본소득당',
       '한창민': '사회민주당',
@@ -66,19 +97,42 @@ export function App() {
       }
       return p;
     });
-  }, [currentHierarchy]);
+  }, [currentTerm, termPoliticians, currentHierarchy]);
+
+  // 4. 검색 결과 필터링 (현재 선택된 대수의 전체 의원 대상)
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return null;
+    const query = searchQuery.toLowerCase().trim();
+    const sourcePool = currentTerm === 22 ? ALL_POLITICIANS : displayedPoliticians;
+
+    return sourcePool.filter((p) => {
+      return (
+        p.name?.toLowerCase().includes(query) ||
+        p.party?.toLowerCase().includes(query) ||
+        p.district?.toLowerCase().includes(query) ||
+        p.committee?.toLowerCase().includes(query) ||
+        p.localRegion?.toLowerCase().includes(query)
+      );
+    });
+  }, [searchQuery, currentTerm, displayedPoliticians]);
 
   return (
     <div className="min-h-screen bg-[#fcfcfc] text-neutral-900 flex flex-col font-sans selection:bg-black selection:text-white relative">
-      {/* 좌측 날개 */}
+      {/* 좌측 라이브 날개 */}
       <LiveSidebar camp="left" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
-      {/* 우측 날개 */}
+      {/* 우측 라이브 날개 */}
       <LiveSidebar camp="right" apiUrl={LIVE_API_URL} suggestApiUrl={SUGGEST_API_URL} />
 
       {/* 상단 고정 헤더 & 블랙티켓 */}
       <div className="sticky top-0 z-30 bg-[#fcfcfc]">
         <Header
+          currentTerm={currentTerm}
+          availableTerms={availableTerms}
+          onTermChange={(term) => {
+            setCurrentTerm(term);
+            setSearchQuery('');
+          }}
           currentRegion={currentRegion}
           onRegionChange={(reg) => {
             setCurrentRegion(reg);
@@ -89,7 +143,7 @@ export function App() {
           searchQuery={searchQuery}
           onSearchChange={setSearchQuery}
           onAdminClick={() => setIsAdminOpen(true)}
-          onFeedbackClick={() => setIsFeedbackOpen(true)} // ⭐️ 오류 제보 버튼 클릭 연결!
+          onFeedbackClick={() => setIsFeedbackOpen(true)}
         />
         <BlackTicketGauge politicians={displayedPoliticians} />
       </div>
@@ -101,15 +155,15 @@ export function App() {
             <div className="max-w-6xl mx-auto mb-6 flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold text-neutral-900">
-                  ‘{searchQuery}’ 검색 결과
+                  ‘{searchQuery}’ 검색 결과 (제{currentTerm}대)
                 </h2>
                 <p className="text-xs text-neutral-500 mt-0.5">
-                  총 {searchResults.length}명의 선출직 의원이 검색되었습니다.
+                  총 {searchResults.length}명의 의원이 검색되었습니다.
                 </p>
               </div>
               <button
                 onClick={() => setSearchQuery('')}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-neutral-300 hover:bg-neutral-100 text-neutral-700"
+                className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-neutral-300 hover:bg-neutral-100 text-neutral-700 cursor-pointer"
               >
                 검색 초기화
               </button>
@@ -122,7 +176,7 @@ export function App() {
           </div>
         ) : (
           <div className="py-4">
-            {viewMode === 'chart' ? (
+            {viewMode === 'chart' && currentTerm === 22 ? (
               <OrgChart
                 hierarchy={currentHierarchy}
                 selectedPolitician={selectedPolitician}
@@ -150,7 +204,7 @@ export function App() {
         onClose={() => setIsAdminOpen(false)}
       />
 
-      {/* ⭐️ 오류 수정 제보 모달 */}
+      {/* 오류 수정 제보 모달 */}
       <FeedbackModal
         isOpen={isFeedbackOpen}
         onClose={() => setIsFeedbackOpen(false)}
