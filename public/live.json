@@ -1,5 +1,20 @@
 {
-  "left": [],
+  "left": [
+    {
+      "channelName": "띵굴TV",
+      "title": "[260928] 김지용 중수청장 임명 쪽으로 가닥?",
+      "viewers": 377,
+      "thumbnail": "https://i.ytimg.com/vi/4IaQ35P9yS0/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=4IaQ35P9yS0"
+    },
+    {
+      "channelName": "뉴스한땀",
+      "title": "[2026년 9월 28일] 생방송 #새벽브리핑 '청와대, 우크라이나에 해명-사과 요구' 오늘의 뉴스- 어제부터 읽다!",
+      "viewers": 32,
+      "thumbnail": "https://i.ytimg.com/vi/euolWDu5ZTY/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=euolWDu5ZTY"
+    }
+  ],
   "right": [],
-  "updatedAt": "2026-09-27T20:45:37.133Z"
+  "updatedAt": "2026-09-27T20:55:36.068Z"
 }
