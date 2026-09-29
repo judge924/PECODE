@@ -1,13 +1,13 @@
 {
-  "left": [],
-  "right": [
+  "left": [
     {
-      "channelName": "정완진TV",
-      "title": "[새벽을 여는 부자들] 이 시각 뉴스속보? 이 시각 뉴욕증시 분석? 오늘의 한국증시 전망? 원달러 환율? 비트코인? 국제금값? 국제유가? 자영업자?",
-      "viewers": 1113,
-      "thumbnail": "https://i.ytimg.com/vi/Sl7d7eJzG2Q/hqdefault.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=Sl7d7eJzG2Q"
+      "channelName": "띵굴TV",
+      "title": "[260930] 주진우 의원 “유해진은 ‘북한상’”",
+      "viewers": 34,
+      "thumbnail": "https://i.ytimg.com/vi/NhaXnFWChJQ/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=NhaXnFWChJQ"
     }
   ],
-  "updatedAt": "2026-09-29T20:45:42.213Z"
+  "right": [],
+  "updatedAt": "2026-09-29T20:50:45.735Z"
 }
