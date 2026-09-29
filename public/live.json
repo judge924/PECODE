@@ -1,13 +1,21 @@
 {
-  "left": [],
+  "left": [
+    {
+      "channelName": "민주당티비 [더불어민주당]",
+      "title": "새벽 민생일정 ⑥ 강서소방서 격려 방문 생중계 - 더불어민주당",
+      "viewers": 215,
+      "thumbnail": "https://i.ytimg.com/vi/CY8cQllVG4Y/hqdefault.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=CY8cQllVG4Y"
+    }
+  ],
   "right": [
     {
       "channelName": "정완진TV",
       "title": "[새벽을 여는 부자들] 이 시각 뉴스속보? 이 시각 뉴욕증시 분석? 오늘의 한국증시 전망? 원달러 환율? 비트코인? 국제금값? 국제유가? 자영업자?",
-      "viewers": 1029,
+      "viewers": 1230,
       "thumbnail": "https://i.ytimg.com/vi/Sl7d7eJzG2Q/hqdefault.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=Sl7d7eJzG2Q"
     }
   ],
-  "updatedAt": "2026-09-29T19:55:39.161Z"
+  "updatedAt": "2026-09-29T20:05:38.047Z"
 }
