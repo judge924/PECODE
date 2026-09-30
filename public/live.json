@@ -1,16 +1,9 @@
 {
   "left": [
     {
-      "channelName": "이동형TV",
-      "title": "[이이제이] 성기홍 홍보소통수석. 방송사고후 재방송!?",
-      "viewers": 6002,
-      "thumbnail": "https://i.ytimg.com/vi/I1Z3bQsyGOs/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=I1Z3bQsyGOs"
-    },
-    {
       "channelName": "신인규 박영식의 시방쇼",
       "title": "이재명 대통령, 지뢰 사고 장병 비공개 위문 방문..\"충분한 예우 반드시 챙겨달라\"",
-      "viewers": 2847,
+      "viewers": 2989,
       "thumbnail": "https://i.ytimg.com/vi/tff6qalOFdk/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=tff6qalOFdk"
     }
@@ -19,31 +12,38 @@
     {
       "channelName": "송국건의 혼술",
       "title": "★김민석 “이재명의 읍소” 뿌리쳤다! 초단기 결별, 친위 쿠데타? 벌써? ★李에 ‘대외비 비밀 보고’ 파문 ★‘조희대 대망론’ 진짜?",
-      "viewers": 7039,
+      "viewers": 7037,
       "thumbnail": "https://i.ytimg.com/vi/FUY8wiywN84/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=FUY8wiywN84"
     },
     {
       "channelName": "최국튜브",
       "title": "[라이브] 달게 받아라...",
-      "viewers": 2414,
+      "viewers": 2379,
       "thumbnail": "https://i.ytimg.com/vi/bQXdeLjd-64/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=bQXdeLjd-64"
     },
     {
       "channelName": "손상대TV2",
       "title": "李지지율 또 최저치, 서울·30대에서 부정평가 70% 넘어ㅣ대외비 문건 SNS에 올린 李, 선관위와 내통 발각ㅣ지지부진한 선관위 특검 한 달, 참을만큼 참았다 [오후LIVE]",
-      "viewers": 1951,
+      "viewers": 1975,
       "thumbnail": "https://i.ytimg.com/vi/OtOuNnJkLMw/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=OtOuNnJkLMw"
     },
     {
       "channelName": "펜앤마이크TV",
       "title": "[🚨긴급] 주진우,선관위 특검 내통 정황 포착 긴급 기자회견",
-      "viewers": 1410,
+      "viewers": 1520,
       "thumbnail": "https://i.ytimg.com/vi/WoDXh6W8SZA/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=WoDXh6W8SZA"
+    },
+    {
+      "channelName": "1waynews 한길뉴스",
+      "title": "[LIVE] DMZ 北지뢰 은폐 지연, 이적죄로 향한다 I 러우전쟁-포로송환-대북송금, 모두 DMZ에 있다 I 조희대는 사실 누군가의 X을 치우고 있었다",
+      "viewers": 607,
+      "thumbnail": "https://i.ytimg.com/vi/SynmCX5xneg/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=SynmCX5xneg"
     }
   ],
-  "updatedAt": "2026-09-30T11:45:44.113Z"
+  "updatedAt": "2026-09-30T11:50:48.124Z"
 }
