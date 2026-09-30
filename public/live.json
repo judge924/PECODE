@@ -3,11 +3,19 @@
     {
       "channelName": "시사의품격",
       "title": "[이슈브리핑] 진보 원로 황석영 작가의 작심 발언 '김어준 유시민 오만하다' / 한국 이지스 6척 체제의 마지막 퍼즐 '대호 김종서함' [2026.09.28]",
-      "viewers": 3073,
+      "viewers": 3047,
       "thumbnail": "https://i.ytimg.com/vi/-RqQ7flqyYk/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=-RqQ7flqyYk"
     }
   ],
-  "right": [],
-  "updatedAt": "2026-09-30T19:10:41.188Z"
+  "right": [
+    {
+      "channelName": "정완진TV",
+      "title": "[새벽을 여는 부자들] 이 시각 뉴스속보? 이 시각 뉴욕증시 분석? 오늘의 한국증시 전망? 원달러 환율? 비트코인? 국제금값? 국제유가? 자영업자?",
+      "viewers": 202,
+      "thumbnail": "https://i.ytimg.com/vi/xNNfFmJjPSs/sddefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=xNNfFmJjPSs"
+    }
+  ],
+  "updatedAt": "2026-09-30T19:15:41.262Z"
 }
