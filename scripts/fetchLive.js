@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ⭐️ 환경 변수 (GitHub Secrets 및 로컬 환경 호환)
+// ⭐️ 환경 변수 (GitHub Secrets 및 환경 호환)
 const API_KEY = process.env.YOUTUBE_API_KEY || "AIzaSyAziLfeAgAV628fdd28i1cfr_SrA5PlW94";
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_3oCwwq2VHCHZ_1N6S9hYF2a0IsSaFeidFdncqwaPY6q8Z4IvRNQvycjaE3q52Zk3/exec";
 
@@ -17,7 +17,7 @@ const SUPABASE_KEY = process.env.SUPABASE_KEY || "";
 async function syncToSupabase(detailsMap) {
     const videoEntries = Object.entries(detailsMap);
     if (!SUPABASE_URL || !SUPABASE_KEY || videoEntries.length === 0) {
-        console.log("ℹ️ [Supabase] 동기화할 활성 방송이 없거나 설정이 누락되어 건너뜁니다.");
+        console.log("ℹ️ [Supabase] 동기화할 활성 방송이 없거나 KEY 설정이 없어 건너뜁니다.");
         return;
     }
 
@@ -190,7 +190,6 @@ async function updateLiveJson() {
         for (let i = 0; i < uniqueIds.length; i += 50) {
             const batch = uniqueIds.slice(i, i + 50);
             try {
-                // part 파라미터에 statistics를 무상 탑재하여 좋아요 수 수집
                 const apiRes = await fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet,liveStreamingDetails,statistics&id=${batch.join(',')}&key=${API_KEY}`);
                 const data = await apiRes.json();
 
@@ -209,7 +208,6 @@ async function updateLiveJson() {
                             const likeCount = item.statistics?.likeCount ? parseInt(item.statistics.likeCount, 10) : 0;
                             const tags = item.snippet?.tags || [];
 
-                            // 최고 해상도 썸네일 선별
                             const thumbnails = item.snippet?.thumbnails || {};
                             const bestThumb = (thumbnails.maxres || thumbnails.standard || thumbnails.high || thumbnails.medium)?.url
                                 || `https://i.ytimg.com/vi/${item.id}/hqdefault.jpg`;
@@ -235,7 +233,7 @@ async function updateLiveJson() {
         }
     }
 
-    // 4. 좌/우 분류 및 시청자 순 랭킹 정렬 (프론트엔드 호환)
+    // 4. 좌/우 분류 및 시청자 순 랭킹 정렬
     const leftMap = {};
     const rightMap = {};
 
