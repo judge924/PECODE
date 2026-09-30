@@ -1,77 +1,63 @@
 {
   "left": [
     {
-      "channelName": "박시영TV",
-      "title": "[LIVE] 화제의 박은정 겸공 소신 발언 / 국정지지율이 떨어지니 이런 일도.. (ft. 민동기, 장인수, 이혜연)",
-      "viewers": 14911,
-      "thumbnail": "https://i.ytimg.com/vi/N62NoFjAA7w/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=N62NoFjAA7w"
-    },
-    {
       "channelName": "이동형TV",
       "title": "[이이제이] 09/30 생방송",
-      "viewers": 2166,
+      "viewers": 5290,
       "thumbnail": "https://i.ytimg.com/vi/I1Z3bQsyGOs/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=I1Z3bQsyGOs"
     },
     {
       "channelName": "신인규 박영식의 시방쇼",
       "title": "이재명 대통령, 지뢰 사고 장병 비공개 위문 방문..\"충분한 예우 반드시 챙겨달라\"",
-      "viewers": 1899,
+      "viewers": 2682,
       "thumbnail": "https://i.ytimg.com/vi/tff6qalOFdk/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=tff6qalOFdk"
     }
   ],
   "right": [
     {
-      "channelName": "한길록 Hangilog",
-      "title": "저보다 빠른 사람 있으면 덤비세요 | 17일차 | 9.30(수) | 15:00 | 성환역으로 갑니다!",
-      "viewers": 4476,
-      "thumbnail": "https://i.ytimg.com/vi/V9FSeVvIuuA/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=V9FSeVvIuuA"
-    },
-    {
       "channelName": "송국건의 혼술",
       "title": "★김민석 “이재명의 읍소” 뿌리쳤다! 초단기 결별, 친위 쿠데타? 벌써? ★李에 ‘대외비 비밀 보고’ 파문 ★‘조희대 대망론’ 진짜?",
-      "viewers": 3487,
+      "viewers": 5968,
       "thumbnail": "https://i.ytimg.com/vi/FUY8wiywN84/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=FUY8wiywN84"
     },
     {
-      "channelName": "BJ톨",
-      "title": "이재명 당장 내려와! 올해 내 퇴진 작전 장동혁의 시나리오! 10월3일 최대 분기점. 군의 선택은.(260930)",
-      "viewers": 1874,
-      "thumbnail": "https://i.ytimg.com/vi/Bc3ybf7mYo4/sddefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=Bc3ybf7mYo4"
+      "channelName": "한길록 Hangilog",
+      "title": "저보다 빠른 사람 있으면 덤비세요 | 17일차 | 9.30(수) | 15:00 | 성환역으로 갑니다!",
+      "viewers": 4473,
+      "thumbnail": "https://i.ytimg.com/vi/V9FSeVvIuuA/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=V9FSeVvIuuA"
     },
     {
       "channelName": "최국튜브",
       "title": "[라이브] 달게 받아라...",
-      "viewers": 1385,
+      "viewers": 2288,
       "thumbnail": "https://i.ytimg.com/vi/bQXdeLjd-64/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=bQXdeLjd-64"
     },
     {
-      "channelName": "펜앤마이크TV",
-      "title": "[🚨긴급] 주진우,선관위 특검 내통 정황 포착 긴급 기자회견",
-      "viewers": 1327,
-      "thumbnail": "https://i.ytimg.com/vi/WoDXh6W8SZA/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=WoDXh6W8SZA"
-    },
-    {
       "channelName": "손상대TV2",
       "title": "李지지율 또 최저치, 서울·30대에서 부정평가 70% 넘어ㅣ대외비 문건 SNS에 올린 李, 선관위와 내통 발각ㅣ지지부진한 선관위 특검 한 달, 참을만큼 참았다 [오후LIVE]",
-      "viewers": 1288,
+      "viewers": 1720,
       "thumbnail": "https://i.ytimg.com/vi/OtOuNnJkLMw/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=OtOuNnJkLMw"
     },
     {
-      "channelName": "가로세로연구소",
-      "title": "[충격분노] 정전협정 위반",
-      "viewers": 721,
-      "thumbnail": "https://i.ytimg.com/vi/4tIv60wmfaU/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=4tIv60wmfaU"
+      "channelName": "BJ톨",
+      "title": "이재명 당장 내려와! 올해 내 퇴진 작전 장동혁의 시나리오! 10월3일 최대 분기점. 군의 선택은.(260930)",
+      "viewers": 1431,
+      "thumbnail": "https://i.ytimg.com/vi/Bc3ybf7mYo4/sddefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=Bc3ybf7mYo4"
+    },
+    {
+      "channelName": "펜앤마이크TV",
+      "title": "[🚨긴급] 주진우,선관위 특검 내통 정황 포착 긴급 기자회견",
+      "viewers": 1317,
+      "thumbnail": "https://i.ytimg.com/vi/WoDXh6W8SZA/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=WoDXh6W8SZA"
     }
   ],
-  "updatedAt": "2026-09-30T11:11:06.461Z"
+  "updatedAt": "2026-09-30T11:25:33.367Z"
 }
