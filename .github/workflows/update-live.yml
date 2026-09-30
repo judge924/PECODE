@@ -21,7 +21,9 @@ jobs:
 
       - name: 라이브 데이터 수집 실행
         env:
-          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }} # ⭐️ 깃허브 금고 열쇠 전달!
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: node scripts/fetchLive.js
 
       - name: live.json 변경사항 깃허브 자동 커밋 & 푸시
