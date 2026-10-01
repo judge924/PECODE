@@ -1,20 +1,28 @@
 {
-  "left": [],
+  "left": [
+    {
+      "channelName": "시사의품격",
+      "title": "[이슈브리핑] '78년 검찰 문 닫는다' 중수청 공소청 출범 (feat) 박은정의 개소리 / NBS 지표조사 분석 [2026.10.01]",
+      "viewers": 110,
+      "thumbnail": "https://i.ytimg.com/vi/vIcSeg6RxDE/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=vIcSeg6RxDE"
+    }
+  ],
   "right": [
     {
       "channelName": "젊은시각",
       "title": "[🔴LIVE] 10월2일 올림픽공원 새벽반 '국군의날' 항상 감사합니다!",
-      "viewers": 145,
+      "viewers": 159,
       "thumbnail": "https://i.ytimg.com/vi/pT_7gjNbXvg/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=pT_7gjNbXvg"
     },
     {
       "channelName": "도련님열사 킬문tv4",
       "title": "#올공사찰 찢 #2탄 school again? 지뢰라고 말 못하는 찢",
-      "viewers": 35,
+      "viewers": 36,
       "thumbnail": "https://i.ytimg.com/vi/L94Vd0pepxg/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=L94Vd0pepxg"
     }
   ],
-  "updatedAt": "2026-10-01T16:26:01.994Z"
+  "updatedAt": "2026-10-01T16:31:04.344Z"
 }
