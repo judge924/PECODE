@@ -3,54 +3,61 @@
     {
       "channelName": "박시영TV",
       "title": "[LIVE] 검찰개혁 관련 조국의 충언 / 조국혁신당, 레드팀 자처한 이유 (ft. 조국, 김승현, 김대호)",
-      "viewers": 16762,
+      "viewers": 17277,
       "thumbnail": "https://i.ytimg.com/vi/eoOxAbFBN9s/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=eoOxAbFBN9s"
     },
     {
       "channelName": "이동형TV",
-      "title": "[이동형의 촉] 10/01 생방송",
-      "viewers": 11980,
+      "title": "[저널리즘M] 10/01 생방송",
+      "viewers": 11704,
       "thumbnail": "https://i.ytimg.com/vi/xUrpa5OY_Rw/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=xUrpa5OY_Rw"
     },
     {
       "channelName": "김어준의 겸손은힘들다 뉴스공장",
       "title": "주기자라이브 l 2026년 10월 1일 (목) l 거짓말과 사이비 아니면 안되는 윤석열 김건희 (김은지 / 최명기)",
-      "viewers": 4433,
+      "viewers": 4358,
       "thumbnail": "https://i.ytimg.com/vi/LQcNQ07KL6M/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=LQcNQ07KL6M"
+    },
+    {
+      "channelName": "신인규 박영식의 시방쇼",
+      "title": "靑, 김지용 후보자 임명절차 강행! 청문회서 '친윤 진위 공방' 펼쳐지나..?",
+      "viewers": 67,
+      "thumbnail": "https://i.ytimg.com/vi/Y07bMqOdTwg/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=Y07bMqOdTwg"
     }
   ],
   "right": [
     {
       "channelName": "한길록 Hangilog",
       "title": "올공이 가까워질수록 느낌이.. | 18일차 | 10.1(목) | 10:50~ | 성환역 - 오산역",
-      "viewers": 5217,
+      "viewers": 5284,
       "thumbnail": "https://i.ytimg.com/vi/aekq21zWQCI/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=aekq21zWQCI"
     },
     {
-      "channelName": "펜앤마이크TV",
-      "title": "美하원, 트럼프 정부에 \"이재명을 감시하라\"│北지뢰도발 부상 장병을 교통사고 취급한 이재명 | \"좌아하게\"가 뭐길래...민주당 지지자들 \"부끄럽다\" [이것이 뉴스다]",
-      "viewers": 2896,
-      "thumbnail": "https://i.ytimg.com/vi/_pOo_Ifv0Pc/maxresdefault_live.jpg",
-      "liveUrl": "https://www.youtube.com/watch?v=_pOo_Ifv0Pc"
-    },
-    {
       "channelName": "BJ톨",
       "title": "청와대 국회 간첩단 초유의 사태! 장동혁 초강력 호재 떴다! 오세훈 허위증거(?) 가망없다.(261001)",
-      "viewers": 2138,
+      "viewers": 2249,
       "thumbnail": "https://i.ytimg.com/vi/zVVhQjGHiYI/sddefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=zVVhQjGHiYI"
     },
     {
+      "channelName": "펜앤마이크TV",
+      "title": "[이진숙 긴급] 이재명 순방 규탄 긴급 기자회견",
+      "viewers": 1398,
+      "thumbnail": "https://i.ytimg.com/vi/nPm0n7htwJ4/maxresdefault_live.jpg",
+      "liveUrl": "https://www.youtube.com/watch?v=nPm0n7htwJ4"
+    },
+    {
       "channelName": "가로세로연구소",
       "title": "[충격분노]  미안하다 사랑한다",
-      "viewers": 784,
+      "viewers": 800,
       "thumbnail": "https://i.ytimg.com/vi/ddIPtt7wuH8/maxresdefault_live.jpg",
       "liveUrl": "https://www.youtube.com/watch?v=ddIPtt7wuH8"
     }
   ],
-  "updatedAt": "2026-10-01T10:45:43.425Z"
+  "updatedAt": "2026-10-01T10:50:49.099Z"
 }
